@@ -3,20 +3,20 @@
 
 clear
 
-PROTOCOL_PATH = 'Z:\DBS\Batch\P08_artifact_criteria_E';
+PATH_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
 PROTOCOL_FUNCTION = 'P08_detect_artifact_criteria_E';
 PROTOCOL_TABLE = 'P08_Subjects_3000.txt';
 ARTIFACT_CRIT = 'E'; 
 exe_daytime = datestr(now,'yyyymmdd_HHMM');
-addpath(PROTOCOL_PATH);
-diary([PROTOCOL_PATH filesep 'batch_' PROTOCOL_FUNCTION '_' exe_daytime '.log'])
+addpath(PATH_PROTOCOL);
+diary([PATH_PROTOCOL filesep 'batch_' PROTOCOL_FUNCTION '_' exe_daytime '.log'])
 
 SKIP_OK = false; %Should previous protocols run by this script successfully be skipped
 FORCE = true; %Archive all previous versions of the script and run current 
               %overrides any manual modification
 
 PATH_DATA = 'Z:\DBS';
-cd(PROTOCOL_PATH)
+cd(PATH_PROTOCOL)
 
 subject_table = readtable(PROTOCOL_TABLE);         
 fprintf('=== Running protocol %s ===\n',PROTOCOL_FUNCTION)
@@ -24,7 +24,7 @@ if FORCE; fprintf('Forced run, overwritting any manual change.\n'); end
 if SKIP_OK; fprintf('Skipping previously successfully executed protocols.\n'); end
 
 sub_inds_to_run = 1:height(subject_table);
-sub_inds_to_run = [4 5];
+sub_inds_to_run = [5];
 % sub_inds_to_run = 1:29;
 
 
@@ -46,22 +46,6 @@ for isub = sub_inds_to_run
     rereferenced_highgamma_savename = [PATH_SUBJECT '/Preprocessed Data/FieldTrip' filesep SUBJECT...
         '_ft_hg_trial_ref_criteria_' ARTIFACT_CRIT '_denoised.mat'];
 
-  %loading simple file verification
-    sfv_fname = [PROTOCOL_PATH filesep 'protocols.sfv'];
-  
-  if isfile(sfv_fname)
-    opts = detectImportOptions(sfv_fname,'FileType','text');
-    opts.Delimiter = {'\t'};
-    opts.VariableNamesLine = 0;
-    opts.DataLine = 1;
-    opts.VariableNames = {'filename','checksum'};
-    sfv = readtable(sfv_fname,opts);    
-    fprintf('Loaded sfv file. ')
-  else
-    sfv = cell2table(cell(0,2),'VariableNames',{'filename','checksum'});
-    fprintf('No sfv file, ')
-  end
-  
 	new_proto_fname = [SUBJECT '_' PROTOCOL_FUNCTION '_' exe_daytime]; 
   old_proto = dir([PATH_SYNC filesep SUBJECT '_' PROTOCOL_FUNCTION '*.m']);
   
@@ -100,19 +84,12 @@ for isub = sub_inds_to_run
   elseif merge
     fprintf('\nProtocol in subject''s folder modified manually. Copying protocol to folder for manual merging.\n')
     
-    copyfile([PROTOCOL_PATH filesep PROTOCOL_FUNCTION '.m'],...
+    copyfile([PATH_PROTOCOL filesep PROTOCOL_FUNCTION '.m'],...
              [PATH_SYNC filesep new_proto_fname '_TO_MERGE.m']);
-
-    %updating sfv
-    sfv = [sfv; 
-           cell2table({[new_proto_fname '.m'],checksum},'VariableNames',{'filename','checksum'}); 
-           cell2table({[new_proto_fname '_TO_MERGE.m'],checksum},'VariableNames',{'filename','checksum'})];
   else
     fprintf('Running protocol.')
        
     %running protocol
-% % % % % % % % % %     try
-        
         PATH_DATA='Z:\DBS';
         PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
         PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
@@ -132,19 +109,7 @@ for isub = sub_inds_to_run
             P09_highgamma_from_denoised_rereferenced(SUBJECT,rereferenced_ft_file,ARTIFACT_CRIT,rereferenced_highgamma_savename);
 
         end
-      
-% % % % % % % % % % % % % % % % %     catch err
-% % % % % % % % % % % % % % % % %       fprintf('FAILED: %s\n',err.message)
-% % % % % % % % % % % % % % % % %       copyfile([PROTOCOL_PATH filesep PROTOCOL_FUNCTION '.m'],...
-% % % % % % % % % % % % % % % % %                [PATH_SYNC filesep new_proto_fname '_FAILED.m']);  
-% % % % % % % % % % % % % % % % %       %updating sfv
-% % % % % % % % % % % % % % % % %       sfv = [sfv; 
-% % % % % % % % % % % % % % % % %              cell2table({[new_proto_fname '.m'],checksum},'VariableNames',{'filename','checksum'}); 
-% % % % % % % % % % % % % % % % %              cell2table({[new_proto_fname '_FAILED.m'],checksum},'VariableNames',{'filename','checksum'})];
-% % % % % % % % % % % % % % % % %     end
 
   end
-  
-% % % % % % % 	writetable(sfv,sfv_fname,'FileType','text','Delimiter','\t','WriteVariableNames',false);
 end
 diary('off')

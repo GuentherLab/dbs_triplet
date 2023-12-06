@@ -18,17 +18,23 @@ DATE=datestr(now,'yyyymmdd');
 PATH_DATA='Z:\DBS';
 PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
 PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
-PATH_PROTOCOL = 'Z:\DBS\Batch\P09_artifact_criteria_E';
+PATH_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
 PATH_ANNOT = [PATH_SYNC '/annot']; 
 
 cd(PATH_SYNC)
 
 session= bml_annot_read(['annot/' SUBJECT '_session.txt']);
 electrode = bml_annot_read(['annot/' SUBJECT '_electrode.txt']);
-trials = readtable([PATH_ANNOT filesep SUBJECT '_trial_epoch.txt']);
+trial_epoch = readtable([PATH_ANNOT filesep SUBJECT '_trial_epoch.txt']);
 
 %% Loading FieldTrip data 
 load([PATH_SUBJECT filesep 'Preprocessed Data' filesep 'FieldTrip' filesep SUBJECT '_ft_hg_trial_denoised.mat'],'D_hg_trial');
+
+%   cut out of trialtable all rows for which the vibration-denoised trial is missing
+cfg = []; 
+cfg.plot_times = 0; 
+cfg.trials = trial_epoch; 
+[trials,  = remove_trialrows_missing_from_fieldtrip(cfg,D_hg_trial); 
 
 %% concatenate non-overlaping parts of trials, sorting by run
 session_ids = unique(trials.session_id);

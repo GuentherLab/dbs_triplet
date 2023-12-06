@@ -21,7 +21,7 @@ PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
 SAMPLE_RATE = 100; % downsample rate in hz for high gamma traces
 
 %%%%%%%% change this path once crit E is finalized
-PATH_ART_PROTOCOL = 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E';
+PATH_ART_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
 
 cd(PATH_SYNC)
 
