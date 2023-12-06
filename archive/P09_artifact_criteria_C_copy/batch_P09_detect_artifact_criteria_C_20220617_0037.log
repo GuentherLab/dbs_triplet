@@ -1,0 +1,487 @@
+=== Running protocol P09_detect_artifact_criteria_C ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Previous script(s) found. Archiving. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_C', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m', 74)" style="font-weight:bold">P09_detect_artifact_criteria_C</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m',74,0)">line 74</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20200525', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\batch_P09_20200525.m', 99)" style="font-weight:bold">batch_P09_20200525</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\batch_P09_20200525.m',99,0)">line 99</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 14 seconds
+doing DBS3001 ecog_delta 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m',159,1)">159 </a>  clf(f); set(f,'Position',[0 0 600 600]);
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+[Warning: group 1 has only 51 rows] 
+[Warning: partial epoch 42 loaded] 
+[Warning: partial epoch 50 loaded] 
+[Warning: partial epoch 51 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+conn  1 conn  2 conn  3 conn  4 
+consolidating by default overlap/contiguity criterion
+using labels from template
+doing DBS3001 ecog_theta 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m',159,1)">159 </a>  clf(f); set(f,'Position',[0 0 600 600]);
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+[Warning: group 1 has only 22 rows] 
+[Warning: partial epoch 6 loaded] 
+[Warning: partial epoch 8 loaded] 
+[Warning: partial epoch 22 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+conn  1 conn  2 conn  3 conn  4 
+using labels from template
+doing DBS3001 ecog_alpha 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m',159,1)">159 </a>  clf(f); set(f,'Position',[0 0 600 600]);
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+[Warning: group 1 has only 10 rows] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+conn  1 conn  2 conn  3 conn  4 
+using labels from template
+doing DBS3001 ecog_beta 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m',159,1)">159 </a>  clf(f); set(f,'Position',[0 0 600 600]);
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+[Warning: group 1 has only 25 rows] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+conn  1 conn  2 conn  3 conn  4 
+using labels from template
+doing DBS3001 ecog_gamma_L 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m',159,1)">159 </a>  clf(f); set(f,'Position',[0 0 600 600]);
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+[Warning: group 1 has only 12 rows] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+conn  1 conn  2 conn  3 conn  4 
+using labels from template
+doing DBS3001 ecog_gamma_H 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C_copy\P09_detect_artifact_criteria_C.m',159,1)">159 </a>  clf(f); set(f,'Position',[0 0 600 600]);
+histogram(v)
+xlabel('log10 power')
+ylabel('count')
+xline(THRESHOLD_FIX(1))
+xline(THRESHOLD_FIX(2))
+mean(v > THRESHOLD_FIX(2))
+
+ans =
+
+     3.858024691358025e-05
+
+mean(v < THRESHOLD_FIX(1))
+
+ans =
+
+     9.645061728395061e-04
+
+title('150hz')
+nnz(v < THRESHOLD_FIX(1))
+
+ans =
+
+    25
+

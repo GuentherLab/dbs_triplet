@@ -1,0 +1,134 @@
+=== Running protocol P09_detect_artifact_criteria_C2 ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_C2', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m', 74)" style="font-weight:bold">P09_detect_artifact_criteria_C2</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m',74,0)">line 74</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220331', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m', 107)" style="font-weight:bold">batch_P09_20220331</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 9 seconds
+doing DBS3001 ecog_gamma_M 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m',130,1)">130 </a>  cfg=[];
+ses = 1;
+med1 = squeeze(nanmedian(D_hpf_eltype_env.trial{ses},2))
+
+med1 =
+
+   1.0e+05 *
+
+   0.833744600840989
+   1.014920627693898
+   1.904035882982559
+   2.889753510025239
+   3.639482694422622
+   2.422439397146985
+   1.266197950716255
+   0.920882250226901
+   0.708658923068005
+   0.618169218316221
+   0.756946119998361
+   0.758944011826184
+   0.911566032760983
+   1.783318961812911
+   3.379271036842057
+   2.828993519918561
+   1.041754150553948
+   0.751392849339047
+   2.013383932303957
+   0.863772007357346
+   0.727796641193184
+   0.887696866893734
+   1.477144817260826
+   2.194379974174977
+   2.440250217731737
+   1.828312900043610
+   0.831044911337086
+   0.661184391980937
+   0.723117249706596
+   0.766222468837311
+   1.073100073089055
+   4.267820036393877
+   4.531041418723379
+   2.131509152353859
+   1.940284890460934
+   2.221839924390274
+   1.293280706393909
+   1.021223254329092
+   0.948271099227845
+   0.926821500068321
+   0.889998854087517
+   0.882930921599630
+   0.893268542572180
+   0.898874313519131
+   0.794390547255462
+   0.780215404052218
+   0.781177019041653
+   0.798102112662795
+   4.375981284287363
+   3.897848389821353
+   2.245923000384436
+   2.821516125011814
+   7.283396467540658
+   8.551545265115456
+
+plot(med1')
+set(gca,'YScale','log')
+ses = 1;
+med1 = (nanmedian(D_hpf_eltype_env.trial{ses},2));
+plot(med1')
+set(gca,'YScale','log')
+plot(D_hpf_eltype_env.trial{1}(20,:))
+1e1
+
+ans =
+
+    10
+
+plot(D_hpf_eltype_env.trial{1}(20,2e4:3e4))
+plot(D_hpf_eltype_env.trial{1}(20,2e4:2.1e4))
+plot(D_hpf_eltype_env.trial{1}(20,2e4:2.5e4))
+uiopen('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',1)
+uiopen('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',1)
+if system_dependent('IsDebugMode')==1, dbquit; end
+clear
+P09_detect_artifact_criteria_E
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_E', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m', 21)" style="font-weight:bold">P09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',21,0)">line 21</a>)
+PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
+} 
+opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',21,0)
+batch_P09_20220614

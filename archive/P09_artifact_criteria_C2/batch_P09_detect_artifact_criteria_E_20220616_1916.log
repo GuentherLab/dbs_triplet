@@ -1,0 +1,40 @@
+=== Running protocol P09_detect_artifact_criteria_E ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_E', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m', 63)" style="font-weight:bold">P09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',63,0)">line 63</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220614', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m', 107)" style="font-weight:bold">batch_P09_20220614</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 9 seconds
+doing DBS3001 ecog_gamma_M 
+FAILED: Unrecognized table variable name 'wav_freq'.
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('copyfile')" style="font-weight:bold">copyfile</a>
+No matching files were found.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220614', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m', 125)" style="font-weight:bold">batch_P09_20220614</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',125,0)">line 125</a>)
+      copyfile([PROTOCOL_PATH filesep PROTOCOL_FUNCTION '.m'],...
+} 
+opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',125,0)
+clear
+batch_P09_20220614

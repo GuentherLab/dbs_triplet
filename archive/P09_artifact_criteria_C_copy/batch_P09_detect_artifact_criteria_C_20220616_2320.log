@@ -1,0 +1,5 @@
+{Unable to resolve the name Simulink.getFileChecksum.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20200525', 'Z:\DBS\Batch\P09_artifact_criteria_C\batch_P09_20200525.m', 16)" style="font-weight:bold">batch_P09_20200525</a> (<a href="matlab: opentoline('Z:\DBS\Batch\P09_artifact_criteria_C\batch_P09_20200525.m',16,0)">line 16</a>)
+checksum = Simulink.getFileChecksum([PROTOCOL_PATH filesep PROTOCOL_FUNCTION '.m']);
+} 

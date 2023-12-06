@@ -1,0 +1,14 @@
+=== Running protocol P09_detect_artifact_criteria_C2 ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_C2', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m', 44)" style="font-weight:bold">P09_detect_artifact_criteria_C2</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m',44,0)">line 44</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220614', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m', 107)" style="font-weight:bold">batch_P09_20220614</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',107,0)">line 107</a>)
+      proto(SUBJECT,timetol);
+} 
+clear
+batch_P09_20220614

@@ -1,0 +1,50 @@
+=== Running protocol P09_detect_artifact_criteria_E ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_E', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m', 63)" style="font-weight:bold">P09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',63,0)">line 63</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220614', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m', 107)" style="font-weight:bold">batch_P09_20220614</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 10 seconds
+doing DBS3001 ecog_gamma_M 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',74,1)">74  </a>  wav_freq = param.wav_freq(idx);
+param
+
+param =
+
+  3×17 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+      <strong>subject</strong>            <strong>name</strong>           <strong>electrode_type</strong>    <strong>wav_freq_min</strong>    <strong>wav_freq_max</strong>    <strong>n_wav_freqs</strong>    <strong>wav_width</strong>    <strong>env_bin_size</strong>    <strong>env_mult_factor</strong>    <strong>th_fix_min</strong>    <strong>th_fix_max</strong>    <strong>th_factor_std_low</strong>    <strong>th_factor_std_high</strong>    <strong>th_consolidation</strong>    <strong>th_frac_coverage</strong>    <strong>th_conn_low</strong>    <strong>th_conn_high</strong>
+    <strong>___________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>____________</strong>    <strong>____________</strong>    <strong>___________</strong>    <strong>_________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>__________</strong>    <strong>__________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>________________</strong>    <strong>________________</strong>    <strong>___________</strong>    <strong>____________</strong>
+
+    {'default'}    {'ecog_gamma_M' }      {'ecog' }            70             150              8             9             1                 1               5              8               1.5                    3                   3                  0.5                4              8      
+    {'default'}    {'macro_gamma_M'}      {'macro'}            70             150              8             9             1                 1               7             11               1.5                  2.5                   3                  0.5                2              3      
+    {'default'}    {'dbs_gamma_M'  }      {'dbs'  }            70             150              8             9             1                 1               5            9.5               1.5                  2.5                   3                  0.5                3              4      
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+param
+{Unrecognized function or variable 'param'.
+} 
+clear
+batch_P09_20220614

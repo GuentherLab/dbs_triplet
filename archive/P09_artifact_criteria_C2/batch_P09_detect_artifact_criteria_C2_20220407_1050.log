@@ -1,0 +1,608 @@
+=== Running protocol P09_detect_artifact_criteria_C2 ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+ In <a href = "matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',90,1)">fixsampleinfo at line 90</a>
+ In <a href = "matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,1)">ft_datatype_raw at line 149</a>
+ In <a href = "matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,1)">ft_checkdata at line 267</a>
+ In <a href = "matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,1)">ft_preprocessing at line 292</a>
+
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_C2', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m', 74)" style="font-weight:bold">P09_detect_artifact_criteria_C2</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m',74,0)">line 74</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220331', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m', 107)" style="font-weight:bold">batch_P09_20220331</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('filtfilt', 'C:\MATLAB_external_libs\fieldtrip\external\signal\filtfilt.m', 95)" style="font-weight:bold">filtfilt</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\external\signal\filtfilt.m',95,0)">line 95</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('filter_with_correction', 'C:\MATLAB_external_libs\fieldtrip\preproc\private\filter_with_correction.m', 73)" style="font-weight:bold">filter_with_correction</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\preproc\private\filter_with_correction.m',73,0)">line 73</a>)
+    filt = filtfilt(B, A, dat')';
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preproc_highpassfilter', 'C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_highpassfilter.m', 284)" style="font-weight:bold">ft_preproc_highpassfilter</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_highpassfilter.m',284,0)">line 284</a>)
+  filt = filter_with_correction(B,A,dat,dir,usefftfilt);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('preproc', 'C:\MATLAB_external_libs\fieldtrip\private\preproc.m', 443)" style="font-weight:bold">preproc</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\private\preproc.m',443,0)">line 443</a>)
+  if strcmp(cfg.hpfilter, 'yes'),     dat = ft_preproc_highpassfilter(dat, fsample, cfg.hpfreq, cfg.hpfiltord,
+  cfg.hpfilttype, cfg.hpfiltdir, cfg.hpinstabilityfix, cfg.hpfiltdf, cfg.hpfiltwintype, cfg.hpfiltdev,
+  cfg.plotfiltresp, cfg.usefftfilt); end
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 379)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',379,0)">line 379</a>)
+    [dataout.trial{i}, dataout.label, dataout.time{i}, cfg] = preproc(data.trial{i}, data.label,  data.time{i}, cfg,
+    begpadding, endpadding);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_C2', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m', 74)" style="font-weight:bold">P09_detect_artifact_criteria_C2</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m',74,0)">line 74</a>)
+D_hpf = ft_preprocessing(cfg,D);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220331', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m', 107)" style="font-weight:bold">batch_P09_20220331</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m',107,0)">line 107</a>)
+      proto(SUBJECT,timetol);
+} 
+help bml_annot_rowbind
+  <strong>bml_annot_rowbind</strong> binds tables by rows, conforming to first non-empty table
+ 
+  Use as
+     annot = <strong>bml_annot_rowbind</strong>(annot1, annot2, annot3, ...)
+
+clwr
+{Unrecognized function or variable 'clwr'.
+} 
+clear
+% Loading packages
+ft_defaults
+bml_defaults
+format long
+
+% Loading parameters
+SUBJECT='DBS3012';
+DATE=datestr(now,'yyyymmdd');
+PATH_DATA='Z:\DBS';
+PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
+PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
+PATH_SAVE_PREPROCESSED = [PATH_SUBJECT '/Preprocessed Data/FieldTrip'];
+cd(PATH_SYNC)
+electrode = bml_annot_read(['annot/' SUBJECT '_electrode.txt']);
+artifact = bml_annot_read(['annot/' SUBJECT '_artifact_criteria_A.txt']);
+empty_electrode = bml_annot_read(['annot/' SUBJECT '_empty_electrode.txt']);
+cue_presentation = bml_annot_read(['annot/' SUBJECT '_cue_presentation.txt']);
+load([PATH_SUBJECT filesep 'Preprocessed Data' filesep 'FieldTrip' filesep SUBJECT '_ft_raw_session.mat']);
+D_annot = bml_raw2annot(D);
+Fl=[60 120 180 240 300 360 420 480];
+D_annot.nSamples2 = round(floor(D_annot.nSamples .* Fl(1)./D_annot.Fs) .* D_annot.Fs./Fl(1));
+D_annot.nSamples2 = round(floor(D_annot.nSamples2 .* Fl(1)./D_annot.Fs) .* D_annot.Fs./Fl(1));
+D_annot.nSamples2 = D_annot.nSamples2(:,1);
+D_annot.ends = D_annot.starts + D_annot.nSamples2 ./ D_annot.Fs;
+
+cfg=[];
+cfg.epoch=D_annot;
+D1= bml_redefinetrial(cfg,D);
+[Warning: correcting numerical inaccuracy in the time axes] 
+['annot/' SUBJECT '_artifact_criteria_A.txt']
+
+ans =
+
+    'annot/DBS3012_artifact_criteria_A.txt'
+
+electrode = bml_annot_read(['annot/' SUBJECT '_electrode.txt']);
+artifact = bml_annot_read(...
+    'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\artifact_C2_params.txt');
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_annot_table', 'C:\MATLAB_external_libs\bml\annot\bml_annot_table.m', 61)" style="font-weight:bold">bml_annot_table</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\bml\annot\bml_annot_table.m',61,0)">line 61</a>)
+x should have variable 'starts'
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_annot_read', 'C:\MATLAB_external_libs\bml\annot\bml_annot_read.m', 33)" style="font-weight:bold">bml_annot_read</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\bml\annot\bml_annot_read.m',33,0)">line 33</a>)
+annot = bml_annot_table(annot,name);
+} 
+artifact = bml_annot_read(...
+    'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\annot\' SUBJECT '_artifact_criteria_C2.txt');
+     'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\annot\' SUBJECT '_artifact_criteria_C2.txt');
+                                                                          ↑
+{Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other syntax
+error. To construct matrices, use brackets instead of parentheses.
+} 
+artifact = bml_annot_read(...
+    ['C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\annot\' SUBJECT '_artifact_criteria_C2.txt']);
+D_annot = bml_raw2annot(D);
+Fl=[60 120 180 240 300 360 420 480];
+D_annot.nSamples2 = round(floor(D_annot.nSamples .* Fl(1)./D_annot.Fs) .* D_annot.Fs./Fl(1));
+D_annot.nSamples2 = round(floor(D_annot.nSamples2 .* Fl(1)./D_annot.Fs) .* D_annot.Fs./Fl(1));
+D_annot.nSamples2 = D_annot.nSamples2(:,1);
+D_annot.ends = D_annot.starts + D_annot.nSamples2 ./ D_annot.Fs;
+cfg=[];
+cfg.epoch=D_annot;
+D1= bml_redefinetrial(cfg,D);
+[Warning: correcting numerical inaccuracy in the time axes] 
+cfg=[];
+cfg.channel={'ecog_*','macro_*','micro_*','dbs_*'};
+D_sel = ft_selectdata(cfg,D1);
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+
+cfg=[];
+cfg.remask_nan = true;
+cfg.value = 0;
+D_sel = bml_mask(cfg, D_sel);
+cfg=[];
+cfg.hpfilter='yes';
+cfg.hpfreq=1;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.dftfilter='yes';
+cfg.dftreplace='neighbour';  %using spectrum interpolation method Mewett et al 2004
+cfg.dftfreq           = [60 120 180 240 300 360 420 480];
+cfg.dftbandwidth      = [ 1   1   1   1   1   1   1   1];
+cfg.dftneighbourwidth = [ 2   2   2   2   2   2   2   2];
+D_sel_filt = ft_preprocessing(cfg,D_sel);
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+preprocessing
+preprocessing trial 2 from 5
+preprocessing trial 3 from 5
+preprocessing trial 4 from 5
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preproc_dftfilter', 'C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m', 155)" style="font-weight:bold">ft_preproc_dftfilter</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m',155,0)">line 155</a>)
+Spectrum interpolation requires that the data length fits complete cycles of the powerline frequency, e.g., exact
+multiples of 20 ms for a 50 Hz line frequency (sampling rate of 1000 Hz).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('preproc', 'C:\MATLAB_external_libs\fieldtrip\private\preproc.m', 494)" style="font-weight:bold">preproc</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\private\preproc.m',494,0)">line 494</a>)
+    dat     = ft_preproc_dftfilter(dat, fsample, cfg.dftfreq, optarg{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 379)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',379,0)">line 379</a>)
+    [dataout.trial{i}, dataout.label, dataout.time{i}, cfg] = preproc(data.trial{i}, data.label,  data.time{i}, cfg,
+    begpadding, endpadding);
+} 
+clear
+ft_defaults
+bml_defaults
+format long
+
+% Loading parameters
+SUBJECT='DBS3012';
+DATE=datestr(now,'yyyymmdd');
+PATH_DATA='Z:\DBS';
+PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
+PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
+PATH_SAVE_PREPROCESSED = [PATH_SUBJECT '/Preprocessed Data/FieldTrip'];
+cd(PATH_SYNC)
+
+% % % Load annotation tables
+
+electrode = bml_annot_read(['annot/' SUBJECT '_electrode.txt']);
+artifact = bml_annot_read(... % use 'mid gamma' 110hz artifact
+    ['C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\annot\' SUBJECT '_artifact_criteria_C2.txt']);
+empty_electrode = bml_annot_read(['annot/' SUBJECT '_empty_electrode.txt']);
+cue_presentation = bml_annot_read(['annot/' SUBJECT '_cue_presentation.txt']);
+
+
+% % % Load FieldTrip raw data
+
+load([PATH_SUBJECT filesep 'Preprocessed Data' filesep 'FieldTrip' filesep SUBJECT '_ft_raw_session.mat']);
+
+% % % Adjusting length of sessions for notch filter to work
+
+ 
+D_annot = bml_raw2annot(D);
+Fl=[60 120 180 240 300 360 420 480];
+D_annot.nSamples2 = round(floor(D_annot.nSamples .* Fl(1)./D_annot.Fs) .* D_annot.Fs./Fl(1));
+D_annot.nSamples2 = round(floor(D_annot.nSamples2 .* Fl(1)./D_annot.Fs) .* D_annot.Fs./Fl(1));
+D_annot.nSamples2 = D_annot.nSamples2(:,1);
+D_annot.ends = D_annot.starts + D_annot.nSamples2 ./ D_annot.Fs;
+
+cfg=[];
+cfg.epoch=D_annot;
+D1= bml_redefinetrial(cfg,D);
+[Warning: correcting numerical inaccuracy in the time axes] 
+
+
+% % % Selecting electrodes and remasking with zeros instead of NaNs
+
+% % % Some of FieldTrip's functions don't work with NaNs, so we are going to temporary replace NaNs with zeros to avoid issues. 
+
+cfg=[];
+cfg.channel={'ecog_*','macro_*','micro_*','dbs_*'};
+D_sel = ft_selectdata(cfg,D1);
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+
+cfg=[];
+cfg.remask_nan = true;
+cfg.value = 0;
+D_sel = bml_mask(cfg, D_sel);
+
+% % % Applying high pass filter and line noise removal filter
+
+cfg=[];
+cfg.hpfilter='yes';
+cfg.hpfreq=1;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.dftfilter='yes';
+cfg.dftreplace='neighbour';  %using spectrum interpolation method Mewett et al 2004
+cfg.dftfreq           = [60 120 180 240 300 360 420 480];
+cfg.dftbandwidth      = [ 1   1   1   1   1   1   1   1];
+cfg.dftneighbourwidth = [ 2   2   2   2   2   2   2   2];
+D_sel_filt = ft_preprocessing(cfg,D_sel);
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+preprocessing
+preprocessing trial 2 from 5
+preprocessing trial 3 from 5
+preprocessing trial 4 from 5
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preproc_dftfilter', 'C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m', 155)" style="font-weight:bold">ft_preproc_dftfilter</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m',155,0)">line 155</a>)
+Spectrum interpolation requires that the data length fits complete cycles of the powerline frequency, e.g., exact
+multiples of 20 ms for a 50 Hz line frequency (sampling rate of 1000 Hz).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('preproc', 'C:\MATLAB_external_libs\fieldtrip\private\preproc.m', 494)" style="font-weight:bold">preproc</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\private\preproc.m',494,0)">line 494</a>)
+    dat     = ft_preproc_dftfilter(dat, fsample, cfg.dftfreq, optarg{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 379)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',379,0)">line 379</a>)
+    [dataout.trial{i}, dataout.label, dataout.time{i}, cfg] = preproc(data.trial{i}, data.label,  data.time{i}, cfg,
+    begpadding, endpadding);
+} 
+cfg=[];
+cfg.channel={'ecog_*','macro_*','micro_*','dbs_*'};
+        cfg.trial = [1 1 1 1 0];
+D_sel = ft_selectdata(cfg,D1);
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+cfg=[];
+cfg.remask_nan = true;
+cfg.value = 0;
+D_sel = bml_mask(cfg, D_sel
+ D_sel = bml_mask(cfg, D_sel
+                            ↑
+{Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched
+delimiters.
+} 
+cfg=[];
+cfg.remask_nan = true;
+cfg.value = 0;
+D_sel = bml_mask(cfg, D_sel);
+cfg=[];
+cfg.hpfilter='yes';
+cfg.hpfreq=1;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.dftfilter='yes';
+cfg.dftreplace='neighbour';  %using spectrum interpolation method Mewett et al 2004
+cfg.dftfreq           = [60 120 180 240 300 360 420 480];
+cfg.dftbandwidth      = [ 1   1   1   1   1   1   1   1];
+cfg.dftneighbourwidth = [ 2   2   2   2   2   2   2   2];
+D_sel_filt = ft_preprocessing(cfg,D_sel);
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+preprocessing
+preprocessing trial 2 from 5
+preprocessing trial 3 from 5
+preprocessing trial 4 from 5
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preproc_dftfilter', 'C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m', 155)" style="font-weight:bold">ft_preproc_dftfilter</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m',155,0)">line 155</a>)
+Spectrum interpolation requires that the data length fits complete cycles of the powerline frequency, e.g., exact
+multiples of 20 ms for a 50 Hz line frequency (sampling rate of 1000 Hz).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('preproc', 'C:\MATLAB_external_libs\fieldtrip\private\preproc.m', 494)" style="font-weight:bold">preproc</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\private\preproc.m',494,0)">line 494</a>)
+    dat     = ft_preproc_dftfilter(dat, fsample, cfg.dftfreq, optarg{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 379)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',379,0)">line 379</a>)
+    [dataout.trial{i}, dataout.label, dataout.time{i}, cfg] = preproc(data.trial{i}, data.label,  data.time{i}, cfg,
+    begpadding, endpadding);
+} 
+cfg=[];
+cfg.channel={'ecog_*','macro_*','micro_*','dbs_*'};
+        cfg.trials = [1 1 1 1 0];
+D_sel = ft_selectdata(cfg,D1);
+[Warning: correcting numerical inaccuracy in the time axes] 
+{Array indices must be positive integers or logical values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_selectdata>cellmatselect', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_selectdata.m', 1279)" style="font-weight:bold">ft_selectdata>cellmatselect</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_selectdata.m',1279,0)">line 1279</a>)
+    x = x(selindx);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_selectdata>makeselection', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_selectdata.m', 518)" style="font-weight:bold">ft_selectdata>makeselection</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_selectdata.m',518,0)">line 518</a>)
+        data.(datfield) = cellmatselect(data.(datfield), seldim, selindx, numel(dimtok)==1);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_selectdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_selectdata.m', 311)" style="font-weight:bold">ft_selectdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_selectdata.m',311,0)">line 311</a>)
+    if fieldhasrpt,     varargin{i} = makeselection(varargin{i}, datfield{j}, dimtok, rptdim{i},
+    selrpt{i},     avgoverrpt,      'intersect', average); end
+} 
+cfg=[];
+cfg.channel={'ecog_*','macro_*','micro_*','dbs_*'};
+        cfg.trials = logical([1 1 1 1 0]);
+D_sel = ft_selectdata(cfg,D1);
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+cfg=[];
+cfg.remask_nan = true;
+cfg.value = 0;
+D_sel = bml_mask(cfg, D_sel);
+cfg=[];
+cfg.hpfilter='yes';
+cfg.hpfreq=1;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.dftfilter='yes';
+cfg.dftreplace='neighbour';  %using spectrum interpolation method Mewett et al 2004
+cfg.dftfreq           = [60 120 180 240 300 360 420 480];
+cfg.dftbandwidth      = [ 1   1   1   1   1   1   1   1];
+cfg.dftneighbourwidth = [ 2   2   2   2   2   2   2   2];
+D_sel_filt = ft_preprocessing(cfg,D_sel);
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+the call to "ft_selectdata" took 0 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preproc_dftfilter', 'C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m', 155)" style="font-weight:bold">ft_preproc_dftfilter</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m',155,0)">line 155</a>)
+Spectrum interpolation requires that the data length fits complete cycles of the powerline frequency, e.g., exact
+multiples of 20 ms for a 50 Hz line frequency (sampling rate of 1000 Hz).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('preproc', 'C:\MATLAB_external_libs\fieldtrip\private\preproc.m', 494)" style="font-weight:bold">preproc</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\private\preproc.m',494,0)">line 494</a>)
+    dat     = ft_preproc_dftfilter(dat, fsample, cfg.dftfreq, optarg{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 379)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',379,0)">line 379</a>)
+    [dataout.trial{i}, dataout.label, dataout.time{i}, cfg] = preproc(data.trial{i}, data.label,  data.time{i}, cfg,
+    begpadding, endpadding);
+} 
+opentoline('C:\MATLAB_external_libs\fieldtrip\preproc\ft_preproc_dftfilter.m',155,0)
+cfg=[];
+cfg.hpfilter='yes';
+cfg.hpfreq=1;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.dftfilter='yes';
+% cfg.dftreplace='neighbour';  %using spectrum interpolation method Mewett et al 2004
+cfg.dftfreq           = [60 120 180 240 300 360 420 480];
+cfg.dftbandwidth      = [ 1   1   1   1   1   1   1   1];
+cfg.dftneighbourwidth = [ 2   2   2   2   2   2   2   2];
+D_sel_filt = ft_preprocessing(cfg,D_sel);
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+the call to "ft_selectdata" took 0 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 60 seconds
+cfg=[];
+cfg.hpfilter='yes';
+cfg.hpfreq=1;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.dftfilter='yes';
+% cfg.dftreplace='neighbour';  %using spectrum interpolation method Mewett et al 2004
+cfg.dftfreq           = [60 120 180 240 300 360 420 480];
+cfg.dftbandwidth      = [ 1   1   1   1   1   1   1   1];
+cfg.dftneighbourwidth = [ 2   2   2   2   2   2   2   2];
+D_sel_filt = ft_preprocessing(cfg,D_sel);
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+the call to "ft_selectdata" took 0 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 60 seconds
+cfg=[];
+cfg.channel={'ecog_*','macro_*','micro_*','dbs_*'};
+% % %         cfg.trials = logical([1 1 1 1 0]);
+D_sel = ft_selectdata(cfg,D1);
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+
+cfg=[];
+cfg.remask_nan = true;
+cfg.value = 0;
+D_sel = bml_mask(cfg, D_sel);
+
+% % % Applying high pass filter and line noise removal filter
+
+cfg=[];
+cfg.hpfilter='yes';
+cfg.hpfreq=1;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.dftfilter='yes';
+% cfg.dftreplace='neighbour';  %using spectrum interpolation method Mewett et al 2004
+cfg.dftfreq           = [60 120 180 240 300 360 420 480];
+cfg.dftbandwidth      = [ 1   1   1   1   1   1   1   1];
+cfg.dftneighbourwidth = [ 2   2   2   2   2   2   2   2];
+D_sel_filt = ft_preprocessing(cfg,D_sel);
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+preprocessing
+preprocessing trial 2 from 5
+preprocessing trial 3 from 5
+preprocessing trial 4 from 5
+preprocessing trial 5 from 5
+
+the call to "ft_preprocessing" took 73 seconds
+epoch = cue_presentation(:,{'stim1_onset','ends','session_id','trial_id'});
+epoch.starts = epoch.stim1_onset - 1.5;
+epoch.ends = epoch.ends + 2;
+epoch = bml_annot_table(epoch);
+cfg = [];
+cfg.epoch = epoch;
+D_sel_filt_trial = bml_redefinetrial(cfg,D_sel_filt);
+[Warning: correcting numerical inaccuracy in the time axes] 
+%combining artifacts with empty_electrode table
+cfg=[];
+cfg.groupby='label';
+artifact_empty = bml_annot_union(cfg, artifact, empty_electrode);
+%masking artifacts and empty_electrodes with NaNs
+cfg=[];
+cfg.annot=artifact_empty;
+cfg.label_colname = 'label';
+cfg.complete_trial = true; %masks entire trials
+cfg.value=NaN;
+D_sel_filt_trial_mask = bml_mask(cfg,D_sel_filt_trial);
+
+% % % Common trimmed av
+el_ecog = electrode(electrode.type=="ecog",:);
+
+cfg=[];
+cfg.label = el_ecog.electrode;
+cfg.group = el_ecog.connector;
+cfg.method = 'CTAR'; %using trimmed average referencing
+cfg.percent = 50; %percentage of 'extreme' channels in group to trim 
+D_sel_filt_trial_mask_ref = bml_rereference(cfg,D_sel_filt_trial_mask);
+% % % Adding unfiltered channels
+
+%% Adding unfiltered channels
+cfg =[];
+cfg.channel = setdiff(D.label, D_sel_filt_trial_mask_ref.label);
+D_unfilt = ft_selectdata(cfg,D);
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+
+cfg = [];
+cfg.epoch = epoch;
+D_unfilt_trial = bml_redefinetrial(cfg,D_unfilt);
+[Warning: correcting numerical inaccuracy in the time axes] 
+
+cfg=[];
+cfg.appenddim = 'chan';
+D_trial_ref = ft_appenddata(cfg,D_sel_filt_trial_mask_ref, D_unfilt_trial);
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_appenddata', 'C:\MATLAB_external_libs\fieldtrip\ft_appenddata.m', 194)" style="font-weight:bold">ft_appenddata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_appenddata.m',194,0)">line 194</a>)
+data has different time, cannot append over channels
+} 
+%% Adding unfiltered channels
+cfg =[];
+cfg.channel = setdiff(D.label, D_sel_filt_trial_mask_ref.label);
+D_unfilt = ft_selectdata(cfg,D);
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+
+cfg = [];
+cfg.epoch = epoch;
+D_unfilt_trial = bml_redefinetrial(cfg,D_unfilt);
+[Warning: correcting numerical inaccuracy in the time axes] 
+cfg=[];
+cfg.appenddim = 'chan';
+D_trial_ref = ft_appenddata(cfg,D_sel_filt_trial_mask_ref, D_unfilt_trial);
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_appenddata', 'C:\MATLAB_external_libs\fieldtrip\ft_appenddata.m', 194)" style="font-weight:bold">ft_appenddata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_appenddata.m',194,0)">line 194</a>)
+data has different time, cannot append over channels
+} 
+cfg=[];
+cfg.remask_nan = true;
+cfg.value = 0;
+% % % % D_trial_ref_mask0 = bml_mask(cfg,D_trial_ref);
+D_trial_ref_mask0 = bml_mask(cfg,D_sel_filt_trial_mask_ref)
+
+D_trial_ref_mask0 = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+      trial: {1×444 cell}
+       time: {1×444 cell}
+      label: {77×1 cell}
+        hdr: [1×1 struct]
+    fsample: 1000
+
+cfg=[];
+cfg.covariance = 'yes';
+cfg.vartrllength = 2;
+cfg.trials = 1; %selecting only first trial to assess crosscorrelation
+TL_sel=ft_timelockanalysis(cfg,D_sel);
+the input is raw data with 77 channels and 5 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'C:\MATLAB_external_libs\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 1 seconds
+cfg=[];
+cfg.covariance = 'yes';
+cfg.vartrllength = 2;
+cfg.trials = 1; %selecting only first trial to assess crosscorrelation
+TL_sel_filt=ft_timelockanalysis(cfg,D_sel_filt);
+the input is raw data with 77 channels and 5 trials
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 1 seconds
+cfg=[];
+cfg.covariance = 'yes';
+cfg.vartrllength = 2;
+cfg.trials = 1; %selecting only first trial to assess crosscorrelation
+TL_ref_mask0=ft_timelockanalysis(cfg,D_trial_ref_mask0);
+the input is raw data with 77 channels and 444 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'C:\MATLAB_external_libs\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds

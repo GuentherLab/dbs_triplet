@@ -1,0 +1,116 @@
+=== Running protocol P09_detect_artifact_criteria_C2 ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+ In <a href = "matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_defaults.m',382,1)">ft_defaults>checkIncorrectPath at line 382</a>
+ In <a href = "matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_defaults.m',126,1)">ft_defaults at line 126</a>
+
+[Warning: Multiple versions of FieldTrip on your path will confuse FieldTrip] 
+[Warning: one version of FieldTrip is found here: C:\MATLAB_external_libs\fieldtrip\ft_defaults.m] 
+[Warning: one version of FieldTrip is found here: C:\MATLAB_external_libs\spm12\external\fieldtrip\ft_defaults.m] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of spm on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of mne on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of eeprobe on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of bemcp on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of freesurfer on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of neuroshare on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of ctf on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of gifti on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of iso2mesh on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Multiple versions of yokogawa_meg_reader on your path will confuse FieldTrip] 
+[Warning: You probably used addpath(genpath('path_to_fieldtrip')), this can lead to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_C2', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m', 74)" style="font-weight:bold">P09_detect_artifact_criteria_C2</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m',74,0)">line 74</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220331', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m', 107)" style="font-weight:bold">batch_P09_20220331</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 10 seconds
+doing DBS3001 ecog_gamma_M 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\P09_detect_artifact_criteria_C2.m',159,1)">159 </a>  clf(f); set(f,'Position',[0 0 600 600]);
+histogram(v)
+if system_dependent('IsDebugMode')==1, dbquit; end
+clear
+param = readtable('artifact_C_params.txt')
+
+param =
+
+  23×15 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+      <strong>subject</strong>             <strong>name</strong>            <strong>electrode_type</strong>    <strong>wav_freq</strong>    <strong>wav_width</strong>    <strong>env_bin_size</strong>    <strong>env_mult_factor</strong>    <strong>th_fix_min</strong>    <strong>th_fix_max</strong>    <strong>th_factor_std_low</strong>    <strong>th_factor_std_high</strong>    <strong>th_consolidation</strong>    <strong>th_frac_coverage</strong>    <strong>th_conn_low</strong>    <strong>th_conn_high</strong>
+    <strong>___________</strong>    <strong>___________________</strong>    <strong>______________</strong>    <strong>________</strong>    <strong>_________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>__________</strong>    <strong>__________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>________________</strong>    <strong>________________</strong>    <strong>___________</strong>    <strong>____________</strong>
+
+    {'default'}    {'ecog_delta'     }      {'ecog' }           3           9             1                 1                5            10               1.5                    2                   3                  0.5                4              8      
+    {'default'}    {'ecog_theta'     }      {'ecog' }           6           9             1                 1                5            10               1.5                  2.5                   3                  0.5                4              8      
+    {'default'}    {'ecog_alpha'     }      {'ecog' }          10           9             1                 1                5            10               1.5                    3                   3                  0.5                4              8      
+    {'default'}    {'ecog_beta'      }      {'ecog' }          21           9             1                 1                5            10               1.5                    3                   3                  0.5                4              8      
+    {'default'}    {'ecog_gamma_L'   }      {'ecog' }          45           9             1                 1                5             9               1.5                    3                   3                  0.5                4              8      
+    {'default'}    {'ecog_gamma_H'   }      {'ecog' }         160           9             1                 1                5             8               1.5                    3                   3                  0.5                4              8      
+    {'default'}    {'macro_delta'    }      {'macro'}           3           9             1                 1                7            11               1.5                  2.5                   3                  0.5                2              3      
+    {'default'}    {'macro_theta'    }      {'macro'}           6           9             1                 1                7            11               1.5                  2.5                   3                  0.5                2              3      
+    {'default'}    {'macro_alpha'    }      {'macro'}          10           9             1                 1                7            11               1.5                    3                   3                  0.5                2              3      
+    {'default'}    {'macro_beta'     }      {'macro'}          21           9             1                 1                7            11               1.5                    3                   3                  0.5                2              3      
+    {'default'}    {'macro_delta_inv'}      {'macro'}           3           9             1                -1              -11            -7               2.5                    4                   3                  0.5                2              3      
+    {'default'}    {'macro_theta_inv'}      {'macro'}           6           9             1                -1              -11            -7               2.5                    4                   3                  0.5                2              3      
+    {'default'}    {'macro_alpha_inv'}      {'macro'}          10           9             1                -1              -11            -7               2.5                    4                   3                  0.5                2              3      
+    {'default'}    {'macro_beta_inv' }      {'macro'}          21           9             1                -1              -11            -7               2.5                    4                   3                  0.5                2              3      
+    {'default'}    {'dbs_delta'      }      {'dbs'  }           3           9             1                 1                5           9.5               1.5                  2.5                   3                  0.5                3              4      
+    {'default'}    {'dbs_theta'      }      {'dbs'  }           6           9             1                 1                5           9.5               1.5                  2.5                   3                  0.5                3              4      
+    {'default'}    {'dbs_alpha'      }      {'dbs'  }          10           9             1                 1                5           9.5               1.5                    3                   3                  0.5                3              4      
+    {'default'}    {'dbs_beta'       }      {'dbs'  }          21           9             1                 1                5           9.5               1.5                    3                   3                  0.5                3              4      
+    {'DBS3022'}    {'dbs_delta'      }      {'dbs'  }           3           9             1                 1                6            12               1.5                  2.5                   3                  0.5                3              4      
+    {'DBS3022'}    {'dbs_theta'      }      {'dbs'  }           6           9             1                 1                6            12               1.5                  2.5                   3                  0.5                3              4      
+    {'DBS3022'}    {'dbs_alpha'      }      {'dbs'  }          10           9             1                 1                6            12               1.5                    3                   3                  0.5                3              4      
+    {'DBS3022'}    {'dbs_beta'       }      {'dbs'  }          21           9             1                 1                6            12               1.5                    3                   3                  0.5                3              4      
+    {'DBS3024'}    {'dbs_beta'       }      {'dbs'  }          21           9             1                 1                5           9.5               1.5                    4                   3                  0.5                3              4      
+
+batch_P09_20200525

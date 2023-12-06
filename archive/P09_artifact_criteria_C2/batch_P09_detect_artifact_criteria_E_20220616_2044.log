@@ -1,0 +1,263 @@
+=== Running protocol P09_detect_artifact_criteria_E ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_E', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m', 68)" style="font-weight:bold">P09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',68,0)">line 68</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220614', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m', 107)" style="font-weight:bold">batch_P09_20220614</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 46 seconds
+doing DBS3001 ecog_gamma_M 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',142,1)">142 </a>  cfg=[];
+NaN(0,1)
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
+NaN(0,0,3)
+
+ans =
+
+  0×0×3 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> array
+
+q = NaN(0,0,3)
+
+q =
+
+  0×0×3 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> array
+
+q(:,:1) = magic(5)
+ q(:,:1) = magic(5)
+      ↑
+{Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other syntax
+error. To construct matrices, use brackets instead of parentheses.
+} 
+q(:,:,1) = magic(5)
+{Unable to perform assignment because the size of the left side is 0-by-0 and the size of the right side is 5-by-5.
+} 
+q = []
+
+q =
+
+     []
+
+q(:,:,1) = magic(5)
+
+q =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9
+
+q(:,:,3) = magic(5) + 1
+
+q(:,:,1) =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9
+
+
+q(:,:,2) =
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+
+
+q(:,:,3) =
+
+    18    25     2     9    16
+    24     6     8    15    17
+     5     7    14    21    23
+    11    13    20    22     4
+    12    19    26     3    10
+
+normed_pow = []; 
+    for ifreq = 1:nfreqs
+      %calculating absolute value envelope at 1Hz (1s chunks)
+      cfg=[];
+      cfg.out_freq = 100;
+      cfg.wav_freq = wav_freqs(ifreq);
+      cfg.wav_width = wav_width;
+      D_multifreq_eltype_env{ifreq} = bml_envelope_wavpow(cfg,D_hpf_eltype);
+      nblocks = length(D_multifreq_eltype_env{ifreq}.trial);
+      nchannels = length(D_multifreq_eltype_env{ifreq}.label);
+      D_multifreq_eltype_env{ifreq}.med_pow_per_block = NaN(nchannels, nblocks); % initialize
+      for iblock = 1:nblocks % for each block, normalize by median power
+        % rows are channels, so take the median across columns (power at timepoints for each channel)
+          D_multifreq_eltype_env{ifreq}.med_pow_per_block(:,iblock) = median(D_multifreq_eltype_env{ifreq}.trial{iblock},2);
+          % normalize power by median values within each channel for htis block
+          %%% normed_pow will be filled with all normed powers across blocks and frequencies; we will average across the 4th dimension (frequency)
+          normed_pow(:,:,iblock,ifreq) = D_multifreq_eltype_env{ifreq}.trial{iblock} ./ D_multifreq_eltype_env{ifreq}.med_pow_per_block(:,iblock);
+      end
+    end
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+{Unable to perform assignment because the size of the left side is 54-by-48882 and the size of the right side is
+54-by-48163.
+} 
+length(D_hpf_eltype.trial)
+
+ans =
+
+     4
+
+nfreqs = param.n_wav_freqs(idx); 
+    nblocks = length(D_hpf_eltype.trial);
+    wav_freqs = round(logspace(log10(param.wav_freq_min(idx)),log10(param.wav_freq_max(idx)),nfreqs));
+    D_multifreq_eltype_env = cell(nfreqs,1);
+    
+    normed_pow = cell(1,nblocks); 
+    for ifreq = 1:nfreqs
+      %calculating absolute value envelope at 1Hz (1s chunks)
+      cfg=[];
+      cfg.out_freq = 100;
+      cfg.wav_freq = wav_freqs(ifreq);
+      cfg.wav_width = wav_width;
+      D_multifreq_eltype_env{ifreq} = bml_envelope_wavpow(cfg,D_hpf_eltype);
+      
+      nchannels = length(D_multifreq_eltype_env{ifreq}.label);
+      D_multifreq_eltype_env{ifreq}.med_pow_per_block = NaN(nchannels, nblocks); % initialize
+      for iblock = 1:nblocks % for each block, normalize by median power
+        % rows are channels, so take the median across columns (power at timepoints for each channel)
+          D_multifreq_eltype_env{ifreq}.med_pow_per_block(:,iblock) = median(D_multifreq_eltype_env{ifreq}.trial{iblock},2);
+          % normalize power by median values within each channel for this block
+          %%% normed_pow will be filled with all normed powers across blocks and frequencies; we will average across the 3rd dimension (frequency)
+          normed_pow{iblock}(:,:,ifreq) = D_multifreq_eltype_env{ifreq}.trial{iblock} ./ D_multifreq_eltype_env{ifreq}.med_pow_per_block(:,iblock);
+      end
+    end
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+D_hg_eltype_env = struct; % averaged high gamma
+        D_hg_eltype_env.hdr = D_multifreq_eltype_env{1}.hdr;
+        D_hg_eltype_env.trial = D_multifreq_eltype_env{1}.trial;
+        D_hg_eltype_env.sampleinfo = D_multifreq_eltype_env{1}.sampleinfo;
+        D_hg_eltype_env.trial = cell(1,nblocks); % to be filled
+        D_hg_eltype_env.time = D_multifreq_eltype_env{1}.time;
+        D_hg_eltype_env.label = D_multifreq_eltype_env{1}.label;
+    % get averaged high gamma
+    for iblock = 1:nblocks
+        D_hg_eltype_env.trial{iblock} = mean(normed_pow{iblock},3);
+    end
+ENVELOPE_BIN_SIZE_SECONDS
+
+ENVELOPE_BIN_SIZE_SECONDS =
+
+     1
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+batch_P09_20220614

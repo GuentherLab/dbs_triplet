@@ -1,0 +1,535 @@
+=== Running protocol P09_detect_artifact_criteria_E ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_E', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m', 68)" style="font-weight:bold">P09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',68,0)">line 68</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220614', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m', 107)" style="font-weight:bold">batch_P09_20220614</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 45 seconds
+doing DBS3001 ecog_gamma_M 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',158,1)">158 </a>  D_hg_eltype_env = bml_envelope_binabs(cfg,D_hg_eltype);
+D_hg_eltype_env = bml_envelope_binabs(cfg,D_hg_eltype);
+D_hg_eltype_env_log10 = bml_apply(@(x) env_mult_factor .* log10(x),D_hg_eltype_env);
+cfg=[];
+  cfg.remask_inf=true;
+  cfg.value=NaN;
+  D_hg_eltype_env_log10 = bml_mask(cfg,D_hg_eltype_env_log10);
+%calculating distribution robust statistics. 
+  THRESHOLD = nan(nTrials,2);
+  max_v=nan(1,nTrials);
+  min_v=nan(1,nTrials);
+  for i=1:nTrials
+    v = reshape(D_hg_eltype_env_log10.trial{i},1,[]);
+    v1 = v((v>THRESHOLD_FIX(1)) & (v<THRESHOLD_FIX(2)));
+    m = median(v1);
+    std = bml_robust_std(v1);
+    if ~isempty(v1)
+      max_v(i)=max(v);
+      min_v(i)=min(v);
+      THRESHOLD(i,:) = m + THRESHOLD_STD_FACTORS.*std;
+    end
+  end
+%plotting histogram to asses threshold levels
+  clf(f); set(f,'Position',[0 0 600 600]);
+  for i=1:nTrials
+    subplot(ceil(nTrials/2),2,i)
+    hold on;
+    h=histogram(D_hg_eltype_env_log10.trial{i},linspace(min(min_v),max(max_v),61),...
+      'FaceAlpha',0.1,'EdgeAlpha',1);
+    maxBinCount = max(h.BinCounts);
+    plot([THRESHOLD(i,1),THRESHOLD(i,1)],[0,maxBinCount .* 1.1]);
+    plot([THRESHOLD(i,2),THRESHOLD(i,2)],[0,maxBinCount .* 1.1]);
+    %set(gca,'YScale','log')
+    title(['session ' num2str(i)]);
+  end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('histogram')" style="font-weight:bold">histogram</a>
+Expected input number 2, edges, to be monotonically increasing.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('histogram>parseinput', 'C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\math\histogram.m', 291)" style="font-weight:bold">histogram>parseinput</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\math\histogram.m',291,0)">line 291</a>)
+                    validateattributes(in,{'numeric','logical'},{'vector','nonempty', ...
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('histogram', 'C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\math\histogram.m', 145)" style="font-weight:bold">histogram</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\math\histogram.m',145,0)">line 145</a>)
+[opts,passthrough,dispatchToCategorical] = parseinput(args,firstaxesinput);
+} 
+nnz(isnan(D_hg_eltype.trial{1}))
+
+ans =
+
+     0
+
+nnz(isnan(D_hg_eltype.trial{2}))
+
+ans =
+
+     0
+
+nnz(isnan(D_hg_eltype.trial{4}))
+
+ans =
+
+     0
+
+nnz(isnan(D_hg_eltype.trial{3}))
+
+ans =
+
+     0
+
+if system_dependent('IsDebugMode')==1, dbstep in; end
+<a href="matlab: opentoline('C:\MATLAB_external_libs\bml\signal\bml_envelope_binabs.m',20,1)">20  </a>DEFAULT_TARGET_FSAMPLE=100;
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_E', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m', 158)" style="font-weight:bold">P09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',158,0)">line 158</a>)
+plot(v)
+close all
+plot(v)
+uiopen('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2\batch_P09_20220331.m',1)
+histogram(v)
+nnz(v<0)
+
+ans =
+
+     0
+
+vs = sort(v);
+5/6
+
+ans =
+
+   0.833333333333333
+
+vs(round(1e-3 * length(vs))
+ vs(round(1e-3 * length(vs))
+                            ↑
+{Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for
+mismatched delimiters.
+} 
+vs(round(1e-3 * length(vs)))
+
+ans =
+
+   0.145984382629038
+
+vs(round(1e-4 * length(vs)))
+
+ans =
+
+   0.083451185995095
+
+vs(round(1e-5 * length(vs)))
+{Array indices must be positive integers or logical values.
+} 
+round(1e-5 * length(vs))
+
+ans =
+
+     0
+
+round(1e-4 * length(vs))
+
+ans =
+
+     3
+
+vs(1:10)
+
+ans =
+
+  Columns 1 through 5
+
+   0.010101210507856   0.073633694502201   0.083451185995095   0.084065657576557   0.093806158336112
+
+  Columns 6 through 10
+
+   0.100820946316425   0.101908550432049   0.104427891385961   0.109023932397382   0.112436407424720
+
+vs(end - round(1e-4 * length(vs)))
+
+ans =
+
+   2.392476598981316
+
+mean(v > 2.5)
+
+ans =
+
+     3.858024691358025e-05
+
+vs(end-10:end)
+
+ans =
+
+  Columns 1 through 5
+
+   2.273744842685871   2.279674566353641   2.279991397399715   2.298797731989335   2.317336324544153
+
+  Columns 6 through 10
+
+   2.318261699840323   2.364173253049751   2.392476598981316   2.490259969069550   2.490888236040429
+
+  Column 11
+
+   3.009620752242899
+
+mean(v > 2.5)
+
+ans =
+
+     3.858024691358025e-05
+
+THRESHOLD_FIX = [0.01 2.5];
+%calculating distribution robust statistics. 
+  THRESHOLD = nan(nTrials,2);
+  max_v=nan(1,nTrials);
+  min_v=nan(1,nTrials);
+  for i=1:nTrials
+    v = reshape(D_hg_eltype_env_log10.trial{i},1,[]);
+    v1 = v((v>THRESHOLD_FIX(1)) & (v<THRESHOLD_FIX(2)));
+    m = median(v1);
+    std = bml_robust_std(v1);
+    if ~isempty(v1)
+      max_v(i)=max(v);
+      min_v(i)=min(v);
+      THRESHOLD(i,:) = m + THRESHOLD_STD_FACTORS.*std;
+    end
+  end
+%plotting histogram to asses threshold levels
+  clf(f); set(f,'Position',[0 0 600 600]);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('clf', 'C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\clf.m', 52)" style="font-weight:bold">clf</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\clf.m',52,0)">line 52</a>)
+Figure input must be a valid scalar figure.
+} 
+xline(0.01)
+xline(2.5)
+xlabel('log10 power')
+ylabel('count')
+title('70-150hz median-normed, averaged')
+f = figure;
+%plotting histogram to asses threshold levels
+clf(f); set(f,'Position',[0 0 600 600]);
+for i=1:nTrials
+subplot(ceil(nTrials/2),2,i)
+hold on;
+h=histogram(D_hg_eltype_env_log10.trial{i},linspace(min(min_v),max(max_v),61),...
+'FaceAlpha',0.1,'EdgeAlpha',1);
+maxBinCount = max(h.BinCounts);
+plot([THRESHOLD(i,1),THRESHOLD(i,1)],[0,maxBinCount .* 1.1]);
+plot([THRESHOLD(i,2),THRESHOLD(i,2)],[0,maxBinCount .* 1.1]);
+%set(gca,'YScale','log')
+title(['session ' num2str(i)]);
+end
+saveas(f,['figures/' SUBJECT '_' pname '_artifact_env_log10_hist.png'])
+%detecting segments of time for each channel above threshold
+  artifact_eltype_1 = table();
+  for i=1:nTrials
+    cfg=[];
+    cfg.threshold = THRESHOLD(i,:);
+    cfg.trials = i;
+    artifact_eltype_1 = bml_annot_rowbind(artifact_eltype_1, bml_annot_detect(cfg,D_hg_eltype_env_log10));
+  end
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+  if isempty(artifact_eltype_1)
+    continue
+  end
+{Error: A CONTINUE may only be used within a FOR or WHILE loop.
+} 
+%making figure with random snippets of detected artifacts
+  cfg=[];
+  cfg.n = 1;
+  cfg.groupby  = 'label';
+  artifact_eltype_1_sample = bml_annot_sample(cfg, artifact_eltype_1);
+  artifact_eltype_1_sample = bml_annot_extend(artifact_eltype_1_sample,2,2);
+
+  cfg=[];
+  cfg.n = 60;
+  artifact_eltype_1_sample = bml_annot_sample(cfg, artifact_eltype_1_sample);
+[Warning: group 1 has only 47 rows] 
+  
+  cfg=[];
+  cfg.epoch = artifact_eltype_1_sample;
+  [D_hpf_eltype_sample, epoch_hpf_eltype_sample] = bml_redefinetrial(cfg,D_hpf_eltype);
+[Warning: partial epoch 11 loaded] 
+[Warning: partial epoch 12 loaded] 
+[Warning: partial epoch 13 loaded] 
+[Warning: partial epoch 14 loaded] 
+[Warning: partial epoch 47 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+ 
+  D_p = D_hpf_eltype_sample;
+  E_p = epoch_hpf_eltype_sample;
+  nx=10; ny=floor(numel(D_p.trial)/nx);
+  if ny==0
+    ny=1; nx=numel(D_p.trial);
+  end
+  clf(f); set(f,'Position',[0 0 nx*200 ny*200]);
+  for i=1:ny
+      for j=1:nx
+          pidx = (i-1)*nx+j;
+          l = E_p.label(pidx);
+          l_idx = bml_getidx(l,D_p.label);
+          subplot(ny,nx,pidx);
+          plot(D_p.time{pidx},D_p.trial{pidx}(l_idx,:));
+          title(E_p.label(pidx));
+      end
+  end
+  saveas(f,['figures/' SUBJECT '_' pname '_artifact_snippets.png'])
+[Warning: removing "C:\MATLAB_external_libs\fieldtrip\compat\matlablt2012a" from your path, see
+http://bit.ly/2SPPjUS] 
+%consolidating annotations with CONSOLIDATION_TIME_TOLERANCE margin of overlap
+  cfg=[];
+  cfg.criterion = @(x) (x.starts(end) - max(x.ends(1:(end-1))) < CONSOLIDATION_TIME_TOLERANCE);
+  cfg.groupby = 'label';
+  artifact_eltype_2 = bml_annot_consolidate(cfg,artifact_eltype_1);
+
+%   %creating ft_raw from annotations for visualization
+%   cfg=[];
+%   cfg.template = D_hpf_eltype_env_log10;
+%   cfg.annot_label_colname='label';
+%   artifact_eltype_3_raw = bml_annot2raw(cfg,artifact_eltype_2);
+% 
+%   %raster plot of artifacts for session 1
+%   f=figure();
+%   bml_plot_raster(artifact_eltype_3_raw)
+
+  %check if excluded segments are correct
+%   cfg=[];
+%   cfg.label_colname = 'label';
+%   cfg.annot = artifact_eltype_2;
+%   cfg.value = NaN;
+%   D_hpf_eltype_mask = bml_mask(cfg, D_hpf_eltype);
+% 
+%   cfg=[];
+%   cfg.viewmode = 'vertical';
+%   cfg.blocksize = 30;
+%   cfg.ylim = 'maxmin';
+%   cfg.continuous = 'yes';
+%   ft_databrowser(cfg,D_hpf_eltype_mask);
+
+  %% rejecting faulty channels 
+
+  %decide which artifacts to include. Usually just ECoG artifacts
+  %artifact = bml_annot_rowbind(artifact_ecog_3,artifact_macro_3,artifact_dbs_3);
+  artifact_1 = artifact_eltype_2;
+
+
+  cfg = [];
+  cfg.groupby = 'label';
+  artifact_1_session_cvg = bml_annot_coverage(cfg,artifact_1,session);
+
+  %histogram(artifact_1_session_cvg.coverage,linspace(0,1,51))
+
+  %if a channel in a session has more than COVERAGE_THRESHOLD of the time with
+  %artifacts, the entire channel gets rejected for that session
+
+  artifact_1_session_cvg_sel = artifact_1_session_cvg(artifact_1_session_cvg.coverage >= ELECTRODE_COVERAGE_THRESHOLD,:);
+  artifact_2 = bml_annot_rowbind(artifact_1,artifact_1_session_cvg_sel);
+  cfg=[];
+  cfg.groupby = 'label';
+  artifact_2 = bml_annot_consolidate(cfg,artifact_2);
+consolidating by default overlap/contiguity criterion
+
+%   %creating ft_raw from annotations for visualization
+%   cfg=[];
+%   cfg.template = D_hpf_env;
+%   cfg.annot_label_colname='label';
+%   artifact2_raw = bml_annot2raw(cfg,artifact_2);
+% 
+%   %raster plot of artifacts for session 1
+%   f=figure();
+%   bml_plot_raster(artifact2_raw)
+
+  %% cheking coverage per connector group
+  %if several channels of the same connector group have an artifact, reject
+  %the entire connector group
+
+  %adding connector information to artifac annotation table
+  electrode.conn_label = strcat({'conn'},num2str(electrode.connector));
+  artifact_2.conn_label = bml_map(artifact_2.label, electrode.electrode, electrode.conn_label);
+%for each connector and bin, count number of faulty channels
+  cfg=[];
+  cfg.roi = bml_raw2annot(D_hg_eltype_env);
+  cfg.annot_label_colname = 'conn_label';
+  connector_artifact_2_cvg_raw = bml_annot2raw(cfg,artifact_2);
+using levels of conn_label as labels
+
+%   f=figure();
+%   cfg.colorbar = true;
+%   bml_plot_raster(cfg,connector_artifact_2_cvg_raw)
+
+  %detecting faulty connectors
+  cfg=[];
+  cfg.threshold = CONNECTOR_THRESHOLD;
+  connector_artifact_3 = bml_annot_detect(cfg,connector_artifact_2_cvg_raw);
+
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 1, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 2, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 3, labels: 
+conn  1 conn  2 conn  3 conn  4 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead
+to unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+Detecting trial 4, labels: 
+conn  1 conn  2 conn  3 conn  4 
+if ~isempty(connector_artifact_3)
+    %for each period a connector is faulty, create table with all channels
+    %corresponding to that connctor
+    cfg=[];
+    cfg.groupby_x='conn_label'; %grouping variable in electrode table
+    cfg.groupby_y='label'; %corresponding grouping variable in connector_artifact_3
+    artifact_4=bml_annot_intersect(cfg,electrode,connector_artifact_3);
+
+    if ~isempty(artifact_4)
+      %combining with previously detected artifacts
+      artifact_4.label = artifact_4.electrode;
+      artifact_5 = bml_annot_rowbind(artifact_2, artifact_4);
+      cfg=[];
+      cfg.groupby = 'label';
+      artifact_5 = bml_annot_consolidate(cfg,artifact_5);
+    else
+      artifact_5 = artifact_2;
+    end
+  else
+    artifact_5 = artifact_2;
+  end
+consolidating by default overlap/contiguity criterion
+
+  %final raster plot for artifacts
+  cfg=[];
+  cfg.template = D_hg_eltype_env;
+  cfg.annot_label_colname = 'label';
+  artifact_5_raw = bml_annot2raw(cfg,artifact_5);
+using labels from template
+
+  clf(f); set(f,'Position',[0 0 600 600]);
+  cfg.trial_name='session';
+  bml_plot_raster(cfg,artifact_5_raw)
+  saveas(f,['figures/' SUBJECT '_' pname '_artifact_mask.png'])
+[Warning: Removing "C:\MATLAB_external_libs\spm12\external\fieldtrip\compat\matlablt2012a" from your path.
+See http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path/] 
+
+  artifact_5.pname = repmat({pname},height(artifact_5),1);
+  
+%% saving  artifact annotation table
+  artifact = bml_annot_rowbind(artifact,...
+    artifact_5(:,{'id','starts','ends','duration','label','conn_label','pname'}));
+if system_dependent('IsDebugMode')==1, dbquit all; end
+clear
+batch_P09_20220614

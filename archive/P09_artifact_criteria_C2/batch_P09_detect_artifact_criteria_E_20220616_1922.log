@@ -1,0 +1,193 @@
+=== Running protocol P09_detect_artifact_criteria_E ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3001: Loaded sfv file. Running protocol.[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: the trial definition in the configuration is inconsistent with the actual data] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_preprocessing', 'C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m', 292)" style="font-weight:bold">ft_preprocessing</a> (<a href="matlab: opentoline('C:\MATLAB_external_libs\fieldtrip\ft_preprocessing.m',292,0)">line 292</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_detect_artifact_criteria_E', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m', 63)" style="font-weight:bold">P09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',63,0)">line 63</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P09_20220614', 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m', 107)" style="font-weight:bold">batch_P09_20220614</a> (<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\batch_P09_20220614.m',107,0)">line 107</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+preprocessing
+preprocessing trial 2 from 4
+preprocessing trial 3 from 4
+preprocessing trial 4 from 4
+
+the call to "ft_preprocessing" took 9 seconds
+doing DBS3001 ecog_gamma_M 
+<a href="matlab: opentoline('C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_E\P09_detect_artifact_criteria_E.m',73,1)">73  </a>  el_type = strip(param.electrode_type{idx});
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+[Warning: Your path is set up incorrectly. You probably used addpath(genpath('path_to_fieldtrip')), this can lead to
+unexpected behavior. See
+http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+if system_dependent('IsDebugMode')==1, dbcont; end
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+bml_wavtransform: trial 1
+bml_wavtransform: trial 2
+bml_wavtransform: trial 3
+bml_wavtransform: trial 4
+downsample to 100.000000 using the average method 
+length(D_multifreq_eltype_env{ifreq}.trial)
+{Dot indexing is not supported for variables of this type.
+} 
+D_multifreq_eltype_env = D_hpf_eltype_env;
+length(D_multifreq_eltype_env{ifreq}.trial)
+
+ans =
+
+     4
+
+length(D_multifreq_eltype_env{ifreq}.trial{1})
+
+ans =
+
+       48882
+
+for iblock = 1:length(D_multifreq_eltype_env{ifreq}.trial) % for each block, normalize by median power
+        % rows are channels, so take the median across columns (power at timepoints for each channel)
+          median_pow = median(D_multifreq_eltype_env{ifreq}.trial{iblock},2);
+      end
+D_multifreq_eltype_env{ifreq}.med_pow_per_block = NaN(nchannels, nblocks); % initialize
+{Unrecognized function or variable 'nchannels'.
+} 
+nblocks = length(D_multifreq_eltype_env{ifreq}.trial);
+      nchannels = length(D_multifreq_eltype_env{ifreq}.label);
+      D_multifreq_eltype_env{ifreq}.med_pow_per_block = NaN(nchannels, nblocks); % initialize
+      for iblock = 1:nblocks % for each block, normalize by median power
+        % rows are channels, so take the median across columns (power at timepoints for each channel)
+          D_multifreq_eltype_env{ifreq}.med_pow_per_block = median(D_multifreq_eltype_env{ifreq}.trial{iblock},2);
+      end
+for iblock = 1:nblocks % for each block, normalize by median power
+        % rows are channels, so take the median across columns (power at timepoints for each channel)
+          D_multifreq_eltype_env{ifreq}.med_pow_per_block(:,iblock) = median(D_multifreq_eltype_env{ifreq}.trial{iblock},2);
+      end
+for ifreq = 1:nfreqs
+for iblock = 1:nblocks % for each block, normalize by median power
+% rows are channels, so take the median across columns (power at timepoints for each channel)
+D_multifreq_eltype_env{ifreq}.med_pow_per_block(:,iblock) = median(D_multifreq_eltype_env{ifreq}.trial{iblock},2);
+end
+end
+close all
+nchans_to_plot = 10;
+block_to_plot = 3; 
+medpow = [];
+for ifreq = 1:8
+medpow(1:nchans_to_plot,ifreq) = D_multifreq_eltype_env{ifreq}.med_pow_per_block(1:nchans_to_plot,block_to_plot);
+end
+plot(medpow')
+plot(wav_freqs, medpow')
+log10(logspace(60,160,4))
+
+ans =
+
+   1.0e+02 *
+
+   0.600000000000000   0.933333333333333   1.266666666666667   1.600000000000000
+
+set(gca,'YScale','log')
+set(gca,'XScale','log')
+ylabel('median power during block')
+xlabel('Hz')
+plot(wav_freqs, medpow')
+set(gca,'YScale','log')
+set(gca,'XScale','log')
+ylabel('median power during block')
+xlabel('Hz')
+wav_freqs
+
+wav_freqs =
+
+    70    78    87    97   108   121   135   150
+
+round(logspace(log10(70),log10(150),nfreqs))
+
+ans =
+
+    70    78    87    97   108   121   135   150
+
+round(logspace(log10(70),log10(150),9))
+
+ans =
+
+    70    77    85    93   102   113   124   136   150
+
+round(logspace(log10(70),log10(150),10))
+
+ans =
+
+    70    76    83    90    98   107   116   127   138   150
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+batch_P09_20220614

@@ -1,0 +1,2028 @@
+id	starts	ends	duration	label	conn_label	pname
+1	38210.6395	38213.6395	3	ecog_117	conn 2	ecog_gamma_M
+2	38210.6395	38213.6395	3	ecog_132	conn 2	ecog_gamma_M
+3	38210.6395	38213.6395	3	ecog_163	conn 4	ecog_gamma_M
+4	38210.6395	38213.6395	3	ecog_202	conn 5	ecog_gamma_M
+5	38210.6395	38213.6395	3	ecog_203	conn 5	ecog_gamma_M
+6	38210.6395	38213.6395	3	ecog_209	conn 5	ecog_gamma_M
+7	38210.6395	38213.6395	3	ecog_212	conn 5	ecog_gamma_M
+8	38210.6395	38213.6395	3	ecog_217	conn 6	ecog_gamma_M
+9	38210.6395	38213.6395	3	ecog_218	conn 6	ecog_gamma_M
+10	38210.6395	38213.6395	3	ecog_219	conn 6	ecog_gamma_M
+11	38210.6395	38213.6395	3	ecog_220	conn 6	ecog_gamma_M
+12	38210.6395	38213.6395	3	ecog_223	conn 6	ecog_gamma_M
+13	38210.6395	38213.6395	3	ecog_224	conn 6	ecog_gamma_M
+14	38210.6395	38213.6395	3	ecog_225	conn 6	ecog_gamma_M
+15	38210.6395	38213.6395	3	ecog_226	conn 6	ecog_gamma_M
+16	38210.6395	38213.6395	3	ecog_227	conn 6	ecog_gamma_M
+17	38210.6395	38213.6395	3	ecog_228	conn 6	ecog_gamma_M
+18	38210.6395	38213.6395	3	ecog_229	conn 6	ecog_gamma_M
+19	38210.6395	38213.6395	3	ecog_230	conn 6	ecog_gamma_M
+20	38210.6395	38213.6395	3	ecog_231	conn 6	ecog_gamma_M
+21	38210.6395	38213.6395	3	ecog_232	conn 6	ecog_gamma_M
+22	38210.6395	38213.6395	3	ecog_249	conn 8	ecog_gamma_M
+23	38210.6395	38213.6395	3	ecog_250	conn 8	ecog_gamma_M
+24	38210.6395	38213.6395	3	ecog_251	conn 8	ecog_gamma_M
+25	38210.6395	38213.6395	3	ecog_252	conn 8	ecog_gamma_M
+26	38210.6395	38215.6395	5	ecog_257	conn 8	ecog_gamma_M
+27	38210.6395	38213.6395	3	ecog_258	conn 8	ecog_gamma_M
+28	38210.6395	38213.6395	3	ecog_263	conn 8	ecog_gamma_M
+29	38212.64	38213.1395	0.499499999998079	ecog_221	conn 6	ecog_gamma_M
+30	38212.64	38213.1395	0.499499999998079	ecog_222	conn 6	ecog_gamma_M
+31	38216.6395	38226.6395	10	ecog_126	conn 2	ecog_gamma_M
+32	38219.6395	38225.6395	6	ecog_258	conn 8	ecog_gamma_M
+33	38220.6395	38231.6395	11	ecog_225	conn 6	ecog_gamma_M
+34	38220.6395	38231.6395	11	ecog_226	conn 6	ecog_gamma_M
+35	38222.6395	38225.6395	3	ecog_227	conn 6	ecog_gamma_M
+36	38227.6395	38232.6395	5	ecog_117	conn 2	ecog_gamma_M
+37	38227.6395	38232.6395	5	ecog_118	conn 2	ecog_gamma_M
+38	38237.6395	38240.6395	3	ecog_224	conn 6	ecog_gamma_M
+39	38242.6395	38244.6395	2	ecog_124	conn 2	ecog_gamma_M
+40	38242.6395	38244.6395	2	ecog_125	conn 2	ecog_gamma_M
+41	38244.1395	38249.6395	5.5	dbs_L1	conn10	dbs_gamma_M
+42	38244.1395	38249.6395	5.5	dbs_L2A	conn10	dbs_gamma_M
+43	38244.1395	38249.6395	5.5	dbs_L2B	conn10	dbs_gamma_M
+44	38244.1395	38249.6395	5.5	dbs_L2C	conn10	dbs_gamma_M
+45	38244.1395	38249.6395	5.5	dbs_L3A	conn10	dbs_gamma_M
+46	38244.1395	38249.6395	5.5	dbs_L3B	conn10	dbs_gamma_M
+47	38244.1395	38249.6395	5.5	dbs_L3C	conn10	dbs_gamma_M
+48	38244.1395	38249.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+49	38246.6395	38249.6395	3	ecog_227	conn 6	ecog_gamma_M
+50	38252.6395	38254.6395	2	ecog_117	conn 2	ecog_gamma_M
+51	38252.6395	38254.6395	2	ecog_221	conn 6	ecog_gamma_M
+52	38253.1395	38256.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+53	38253.1395	38256.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+54	38253.1395	38256.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+55	38253.1395	38256.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+56	38253.1395	38256.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+57	38253.1395	38256.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+58	38253.1395	38256.1395	3	dbs_L3C	conn10	dbs_gamma_M
+59	38253.1395	38256.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+60	38255.6395	38257.6395	2	ecog_257	conn 8	ecog_gamma_M
+61	38257.6395	38261.6395	4	ecog_213	conn 5	ecog_gamma_M
+62	38257.6395	38261.6395	4	ecog_214	conn 5	ecog_gamma_M
+63	38264.6395	38267.6395	3	ecog_226	conn 6	ecog_gamma_M
+64	38266.1395	38269.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+65	38266.1395	38269.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+66	38266.1395	38269.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+67	38266.1395	38269.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+68	38266.1395	38269.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+69	38266.1395	38269.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+70	38266.1395	38269.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+71	38266.1395	38269.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+72	38274.1395	38279.6395	5.5	dbs_L1	conn10	dbs_gamma_M
+73	38274.1395	38279.6395	5.5	dbs_L2A	conn10	dbs_gamma_M
+74	38274.1395	38279.6395	5.5	dbs_L2B	conn10	dbs_gamma_M
+75	38274.1395	38279.6395	5.5	dbs_L2C	conn10	dbs_gamma_M
+76	38274.1395	38279.6395	5.5	dbs_L3A	conn10	dbs_gamma_M
+77	38274.1395	38279.6395	5.5	dbs_L3B	conn10	dbs_gamma_M
+78	38274.1395	38279.6395	5.5	dbs_L3C	conn10	dbs_gamma_M
+79	38274.1395	38279.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+80	38283.6395	38286.6395	3	ecog_229	conn 6	ecog_gamma_M
+81	38284.1395	38287.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+82	38284.1395	38287.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+83	38284.1395	38287.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+84	38284.1395	38287.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+85	38284.1395	38287.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+86	38284.1395	38287.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+87	38284.1395	38287.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+88	38284.1395	38287.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+89	38284.6395	38287.6395	3	ecog_212	conn 5	ecog_gamma_M
+90	38285.6395	38287.6395	2	ecog_105	conn 1	ecog_gamma_M
+91	38285.6395	38290.6395	5	ecog_124	conn 2	ecog_gamma_M
+92	38285.6395	38288.6395	3	ecog_203	conn 5	ecog_gamma_M
+93	38286.6395	38289.6395	3	ecog_122	conn 2	ecog_gamma_M
+94	38286.6395	38289.6395	3	ecog_123	conn 2	ecog_gamma_M
+95	38286.6395	38289.6395	3	ecog_125	conn 2	ecog_gamma_M
+96	38286.6395	38289.6395	3	ecog_126	conn 2	ecog_gamma_M
+97	38286.6395	38289.6395	3	ecog_127	conn 2	ecog_gamma_M
+98	38288.6395	38291.6395	3	ecog_258	conn 8	ecog_gamma_M
+99	38292.6395	38295.6395	3	ecog_117	conn 2	ecog_gamma_M
+100	38293.1395	38297.6395	4.5	dbs_L1	conn10	dbs_gamma_M
+101	38293.1395	38297.6395	4.5	dbs_L2A	conn10	dbs_gamma_M
+102	38293.1395	38297.6395	4.5	dbs_L2B	conn10	dbs_gamma_M
+103	38293.1395	38297.6395	4.5	dbs_L2C	conn10	dbs_gamma_M
+104	38293.1395	38297.6395	4.5	dbs_L3A	conn10	dbs_gamma_M
+105	38293.1395	38297.6395	4.5	dbs_L3B	conn10	dbs_gamma_M
+106	38293.1395	38297.6395	4.5	dbs_L3C	conn10	dbs_gamma_M
+107	38293.1395	38297.6395	4.5	dbs_L4	conn10	dbs_gamma_M
+108	38298.6395	38302.6395	4	ecog_261	conn 8	ecog_gamma_M
+109	38300.6395	38303.6395	3	ecog_241	conn 7	ecog_gamma_M
+110	38301.6395	38304.6395	3	ecog_103	conn 1	ecog_gamma_M
+111	38301.6395	38304.6395	3	ecog_104	conn 1	ecog_gamma_M
+112	38301.6395	38304.6395	3	ecog_105	conn 1	ecog_gamma_M
+113	38307.1395	38322.6395	15.5	dbs_L1	conn10	dbs_gamma_M
+114	38307.1395	38322.6395	15.5	dbs_L2A	conn10	dbs_gamma_M
+115	38307.1395	38322.6395	15.5	dbs_L2B	conn10	dbs_gamma_M
+116	38307.1395	38322.6395	15.5	dbs_L2C	conn10	dbs_gamma_M
+117	38307.1395	38322.6395	15.5	dbs_L3A	conn10	dbs_gamma_M
+118	38307.1395	38322.1395	15	dbs_L3B	conn10	dbs_gamma_M
+119	38307.1395	38322.1395	15	dbs_L3C	conn10	dbs_gamma_M
+120	38307.1395	38322.6395	15.5	dbs_L4	conn10	dbs_gamma_M
+121	38311.6395	38314.6395	3	ecog_254	conn 8	ecog_gamma_M
+122	38314.6395	38320.6395	6	ecog_203	conn 5	ecog_gamma_M
+123	38314.6395	38320.6395	6	ecog_211	conn 5	ecog_gamma_M
+124	38314.6395	38320.6395	6	ecog_212	conn 5	ecog_gamma_M
+125	38316.1395	38320.1395	4	V0_con4a	conn 4	ecog_gamma_M
+126	38316.1395	38320.1395	4	V0_con8a	conn 8	ecog_gamma_M
+127	38316.1395	38320.6395	4.5	ecog_101	conn 1	ecog_gamma_M
+128	38316.1395	38320.6395	4.5	ecog_102	conn 1	ecog_gamma_M
+129	38316.1395	38320.6395	4.5	ecog_103	conn 1	ecog_gamma_M
+130	38316.1395	38320.6395	4.5	ecog_104	conn 1	ecog_gamma_M
+131	38316.1395	38320.6395	4.5	ecog_105	conn 1	ecog_gamma_M
+132	38316.1395	38320.6395	4.5	ecog_106	conn 1	ecog_gamma_M
+133	38316.1395	38320.6395	4.5	ecog_107	conn 1	ecog_gamma_M
+134	38316.1395	38320.6395	4.5	ecog_108	conn 1	ecog_gamma_M
+135	38316.1395	38320.6395	4.5	ecog_109	conn 1	ecog_gamma_M
+136	38316.1395	38320.6395	4.5	ecog_110	conn 1	ecog_gamma_M
+137	38316.1395	38320.6395	4.5	ecog_111	conn 1	ecog_gamma_M
+138	38316.1395	38320.6395	4.5	ecog_112	conn 1	ecog_gamma_M
+139	38316.1395	38320.6395	4.5	ecog_113	conn 1	ecog_gamma_M
+140	38316.1395	38320.6395	4.5	ecog_114	conn 1	ecog_gamma_M
+141	38316.1395	38320.6395	4.5	ecog_115	conn 1	ecog_gamma_M
+142	38316.1395	38320.6395	4.5	ecog_116	conn 1	ecog_gamma_M
+143	38316.1395	38321.6395	5.5	ecog_117	conn 2	ecog_gamma_M
+144	38316.1395	38321.6395	5.5	ecog_118	conn 2	ecog_gamma_M
+145	38316.1395	38320.6395	4.5	ecog_119	conn 2	ecog_gamma_M
+146	38316.1395	38320.6395	4.5	ecog_120	conn 2	ecog_gamma_M
+147	38316.1395	38320.6395	4.5	ecog_121	conn 2	ecog_gamma_M
+148	38316.1395	38320.6395	4.5	ecog_122	conn 2	ecog_gamma_M
+149	38316.1395	38320.6395	4.5	ecog_123	conn 2	ecog_gamma_M
+150	38316.1395	38320.6395	4.5	ecog_124	conn 2	ecog_gamma_M
+151	38316.1395	38320.6395	4.5	ecog_125	conn 2	ecog_gamma_M
+152	38316.1395	38320.6395	4.5	ecog_126	conn 2	ecog_gamma_M
+153	38316.1395	38320.6395	4.5	ecog_127	conn 2	ecog_gamma_M
+154	38316.1395	38320.6395	4.5	ecog_128	conn 2	ecog_gamma_M
+155	38316.1395	38320.6395	4.5	ecog_129	conn 2	ecog_gamma_M
+156	38316.1395	38320.6395	4.5	ecog_130	conn 2	ecog_gamma_M
+157	38316.1395	38320.6395	4.5	ecog_131	conn 2	ecog_gamma_M
+158	38316.1395	38320.6395	4.5	ecog_132	conn 2	ecog_gamma_M
+159	38316.1395	38320.6395	4.5	ecog_133	conn 3	ecog_gamma_M
+160	38316.1395	38320.6395	4.5	ecog_134	conn 3	ecog_gamma_M
+161	38316.1395	38320.6395	4.5	ecog_135	conn 3	ecog_gamma_M
+162	38316.1395	38320.6395	4.5	ecog_136	conn 3	ecog_gamma_M
+163	38316.1395	38320.6395	4.5	ecog_137	conn 3	ecog_gamma_M
+164	38316.1395	38320.6395	4.5	ecog_138	conn 3	ecog_gamma_M
+165	38316.1395	38320.6395	4.5	ecog_139	conn 3	ecog_gamma_M
+166	38316.1395	38320.6395	4.5	ecog_140	conn 3	ecog_gamma_M
+167	38316.1395	38320.6395	4.5	ecog_141	conn 3	ecog_gamma_M
+168	38316.1395	38320.6395	4.5	ecog_142	conn 3	ecog_gamma_M
+169	38316.1395	38320.6395	4.5	ecog_143	conn 3	ecog_gamma_M
+170	38316.1395	38320.6395	4.5	ecog_144	conn 3	ecog_gamma_M
+171	38316.1395	38320.6395	4.5	ecog_145	conn 3	ecog_gamma_M
+172	38316.1395	38320.6395	4.5	ecog_146	conn 3	ecog_gamma_M
+173	38316.1395	38320.6395	4.5	ecog_147	conn 3	ecog_gamma_M
+174	38316.1395	38320.6395	4.5	ecog_148	conn 3	ecog_gamma_M
+175	38316.1395	38320.6395	4.5	ecog_149	conn 4	ecog_gamma_M
+176	38316.1395	38320.6395	4.5	ecog_150	conn 4	ecog_gamma_M
+177	38316.1395	38320.6395	4.5	ecog_151	conn 4	ecog_gamma_M
+178	38316.1395	38320.6395	4.5	ecog_152	conn 4	ecog_gamma_M
+179	38316.1395	38320.6395	4.5	ecog_153	conn 4	ecog_gamma_M
+180	38316.1395	38320.6395	4.5	ecog_154	conn 4	ecog_gamma_M
+181	38316.1395	38320.6395	4.5	ecog_155	conn 4	ecog_gamma_M
+182	38316.1395	38320.6395	4.5	ecog_156	conn 4	ecog_gamma_M
+183	38316.1395	38320.6395	4.5	ecog_157	conn 4	ecog_gamma_M
+184	38316.1395	38320.6395	4.5	ecog_158	conn 4	ecog_gamma_M
+185	38316.1395	38320.6395	4.5	ecog_159	conn 4	ecog_gamma_M
+186	38316.1395	38320.6395	4.5	ecog_160	conn 4	ecog_gamma_M
+187	38316.1395	38320.6395	4.5	ecog_161	conn 4	ecog_gamma_M
+188	38316.1395	38320.6395	4.5	ecog_162	conn 4	ecog_gamma_M
+189	38316.1395	38320.6395	4.5	ecog_163	conn 4	ecog_gamma_M
+190	38316.1395	38320.6395	4.5	ecog_201	conn 5	ecog_gamma_M
+191	38316.1395	38320.6395	4.5	ecog_202	conn 5	ecog_gamma_M
+192	38316.1395	38320.6395	4.5	ecog_204	conn 5	ecog_gamma_M
+193	38316.1395	38320.6395	4.5	ecog_205	conn 5	ecog_gamma_M
+194	38316.1395	38320.6395	4.5	ecog_206	conn 5	ecog_gamma_M
+195	38316.1395	38320.6395	4.5	ecog_207	conn 5	ecog_gamma_M
+196	38316.1395	38320.6395	4.5	ecog_208	conn 5	ecog_gamma_M
+197	38316.1395	38320.6395	4.5	ecog_209	conn 5	ecog_gamma_M
+198	38316.1395	38320.6395	4.5	ecog_210	conn 5	ecog_gamma_M
+199	38316.1395	38320.6395	4.5	ecog_213	conn 5	ecog_gamma_M
+200	38316.1395	38320.6395	4.5	ecog_214	conn 5	ecog_gamma_M
+201	38316.1395	38320.6395	4.5	ecog_215	conn 5	ecog_gamma_M
+202	38316.1395	38320.6395	4.5	ecog_216	conn 5	ecog_gamma_M
+203	38316.1395	38320.6395	4.5	ecog_217	conn 6	ecog_gamma_M
+204	38316.1395	38320.6395	4.5	ecog_218	conn 6	ecog_gamma_M
+205	38316.1395	38320.6395	4.5	ecog_219	conn 6	ecog_gamma_M
+206	38316.1395	38320.6395	4.5	ecog_220	conn 6	ecog_gamma_M
+207	38316.1395	38320.6395	4.5	ecog_221	conn 6	ecog_gamma_M
+208	38316.1395	38320.6395	4.5	ecog_222	conn 6	ecog_gamma_M
+209	38316.1395	38320.6395	4.5	ecog_223	conn 6	ecog_gamma_M
+210	38316.1395	38320.6395	4.5	ecog_224	conn 6	ecog_gamma_M
+211	38316.1395	38320.6395	4.5	ecog_225	conn 6	ecog_gamma_M
+212	38316.1395	38320.6395	4.5	ecog_226	conn 6	ecog_gamma_M
+213	38316.1395	38320.6395	4.5	ecog_227	conn 6	ecog_gamma_M
+214	38316.1395	38320.6395	4.5	ecog_228	conn 6	ecog_gamma_M
+215	38316.1395	38320.6395	4.5	ecog_229	conn 6	ecog_gamma_M
+216	38316.1395	38320.6395	4.5	ecog_230	conn 6	ecog_gamma_M
+217	38316.1395	38320.6395	4.5	ecog_231	conn 6	ecog_gamma_M
+218	38316.1395	38320.6395	4.5	ecog_232	conn 6	ecog_gamma_M
+219	38316.1395	38320.6395	4.5	ecog_233	conn 7	ecog_gamma_M
+220	38316.1395	38320.6395	4.5	ecog_234	conn 7	ecog_gamma_M
+221	38316.1395	38320.6395	4.5	ecog_235	conn 7	ecog_gamma_M
+222	38316.1395	38320.6395	4.5	ecog_236	conn 7	ecog_gamma_M
+223	38316.1395	38320.6395	4.5	ecog_237	conn 7	ecog_gamma_M
+224	38316.1395	38320.6395	4.5	ecog_238	conn 7	ecog_gamma_M
+225	38316.1395	38320.6395	4.5	ecog_239	conn 7	ecog_gamma_M
+226	38316.1395	38320.6395	4.5	ecog_240	conn 7	ecog_gamma_M
+227	38316.1395	38320.6395	4.5	ecog_241	conn 7	ecog_gamma_M
+228	38316.1395	38320.6395	4.5	ecog_242	conn 7	ecog_gamma_M
+229	38316.1395	38324.6395	8.5	ecog_243	conn 7	ecog_gamma_M
+230	38316.1395	38320.6395	4.5	ecog_244	conn 7	ecog_gamma_M
+231	38316.1395	38320.6395	4.5	ecog_245	conn 7	ecog_gamma_M
+232	38316.1395	38320.6395	4.5	ecog_246	conn 7	ecog_gamma_M
+233	38316.1395	38320.6395	4.5	ecog_247	conn 7	ecog_gamma_M
+234	38316.1395	38320.6395	4.5	ecog_248	conn 7	ecog_gamma_M
+235	38316.1395	38320.6395	4.5	ecog_249	conn 8	ecog_gamma_M
+236	38316.1395	38320.6395	4.5	ecog_250	conn 8	ecog_gamma_M
+237	38316.1395	38320.6395	4.5	ecog_251	conn 8	ecog_gamma_M
+238	38316.1395	38320.6395	4.5	ecog_252	conn 8	ecog_gamma_M
+239	38316.1395	38320.6395	4.5	ecog_253	conn 8	ecog_gamma_M
+240	38316.1395	38320.6395	4.5	ecog_254	conn 8	ecog_gamma_M
+241	38316.1395	38320.6395	4.5	ecog_255	conn 8	ecog_gamma_M
+242	38316.1395	38320.6395	4.5	ecog_256	conn 8	ecog_gamma_M
+243	38316.1395	38320.6395	4.5	ecog_257	conn 8	ecog_gamma_M
+244	38316.1395	38320.6395	4.5	ecog_258	conn 8	ecog_gamma_M
+245	38316.1395	38320.6395	4.5	ecog_259	conn 8	ecog_gamma_M
+246	38316.1395	38320.6395	4.5	ecog_260	conn 8	ecog_gamma_M
+247	38316.1395	38320.6395	4.5	ecog_261	conn 8	ecog_gamma_M
+248	38316.1395	38320.6395	4.5	ecog_262	conn 8	ecog_gamma_M
+249	38316.1395	38320.6395	4.5	ecog_263	conn 8	ecog_gamma_M
+250	38324.6395	38329.6395	5	ecog_122	conn 2	ecog_gamma_M
+251	38324.6395	38329.6395	5	ecog_123	conn 2	ecog_gamma_M
+252	38325.6395	38329.6395	4	ecog_124	conn 2	ecog_gamma_M
+253	38327.6395	38329.6395	2	ecog_121	conn 2	ecog_gamma_M
+254	38333.1395	38336.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+255	38333.1395	38336.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+256	38333.1395	38336.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+257	38333.1395	38336.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+258	38333.1395	38336.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+259	38333.1395	38336.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+260	38333.1395	38336.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+261	38333.1395	38336.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+262	38335.6395	38342.6395	7	ecog_145	conn 3	ecog_gamma_M
+263	38337.6395	38340.6395	3	ecog_230	conn 6	ecog_gamma_M
+264	38338.6395	38348.6395	10	ecog_105	conn 1	ecog_gamma_M
+265	38338.6395	38347.6395	9	ecog_106	conn 1	ecog_gamma_M
+266	38338.6395	38345.6395	7	ecog_107	conn 1	ecog_gamma_M
+267	38339.1395	38345.6395	6.5	dbs_L1	conn10	dbs_gamma_M
+268	38339.1395	38345.6395	6.5	dbs_L2A	conn10	dbs_gamma_M
+269	38339.1395	38345.6395	6.5	dbs_L2B	conn10	dbs_gamma_M
+270	38339.1395	38345.6395	6.5	dbs_L2C	conn10	dbs_gamma_M
+271	38339.1395	38345.6395	6.5	dbs_L3A	conn10	dbs_gamma_M
+272	38339.1395	38345.6395	6.5	dbs_L3B	conn10	dbs_gamma_M
+273	38339.1395	38345.6395	6.5	dbs_L3C	conn10	dbs_gamma_M
+274	38339.1395	38345.6395	6.5	dbs_L4	conn10	dbs_gamma_M
+275	38352.6395	38355.6395	3	ecog_117	conn 2	ecog_gamma_M
+276	38352.6395	38357.6395	5	ecog_229	conn 6	ecog_gamma_M
+277	38352.6395	38356.6395	4	ecog_231	conn 6	ecog_gamma_M
+278	38353.6395	38360.6395	7	ecog_230	conn 6	ecog_gamma_M
+279	38353.6395	38356.6395	3	ecog_232	conn 6	ecog_gamma_M
+280	38354.1395	38359.6395	5.5	dbs_L1	conn10	dbs_gamma_M
+281	38354.1395	38359.6395	5.5	dbs_L2A	conn10	dbs_gamma_M
+282	38354.1395	38359.6395	5.5	dbs_L2B	conn10	dbs_gamma_M
+283	38354.1395	38359.6395	5.5	dbs_L2C	conn10	dbs_gamma_M
+284	38354.1395	38359.6395	5.5	dbs_L3A	conn10	dbs_gamma_M
+285	38354.1395	38359.6395	5.5	dbs_L3B	conn10	dbs_gamma_M
+286	38354.1395	38359.6395	5.5	dbs_L3C	conn10	dbs_gamma_M
+287	38354.1395	38359.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+288	38361.6395	38363.6395	2	ecog_121	conn 2	ecog_gamma_M
+289	38361.6395	38363.6395	2	ecog_227	conn 6	ecog_gamma_M
+290	38361.6395	38367.6395	6	ecog_259	conn 8	ecog_gamma_M
+291	38362.6395	38367.6395	5	ecog_260	conn 8	ecog_gamma_M
+292	38365.6395	38372.6395	7	ecog_115	conn 1	ecog_gamma_M
+293	38365.6395	38372.6395	7	ecog_116	conn 1	ecog_gamma_M
+294	38366.6395	38370.6395	4	ecog_112	conn 1	ecog_gamma_M
+295	38366.6395	38372.6395	6	ecog_113	conn 1	ecog_gamma_M
+296	38367.6395	38370.6395	3	ecog_110	conn 1	ecog_gamma_M
+297	38367.6395	38370.6395	3	ecog_111	conn 1	ecog_gamma_M
+298	38367.6395	38372.6395	5	ecog_114	conn 1	ecog_gamma_M
+299	38372.6395	38374.6395	2	ecog_117	conn 2	ecog_gamma_M
+300	38380.1395	38384.6395	4.5	dbs_L1	conn10	dbs_gamma_M
+301	38380.1395	38384.6395	4.5	dbs_L2A	conn10	dbs_gamma_M
+302	38380.1395	38384.6395	4.5	dbs_L2B	conn10	dbs_gamma_M
+303	38380.1395	38384.6395	4.5	dbs_L2C	conn10	dbs_gamma_M
+304	38380.1395	38384.6395	4.5	dbs_L3A	conn10	dbs_gamma_M
+305	38380.1395	38384.6395	4.5	dbs_L3B	conn10	dbs_gamma_M
+306	38380.1395	38384.6395	4.5	dbs_L3C	conn10	dbs_gamma_M
+307	38380.1395	38384.6395	4.5	dbs_L4	conn10	dbs_gamma_M
+308	38384.6395	38389.6395	5	ecog_230	conn 6	ecog_gamma_M
+309	38385.6395	38389.6395	4	ecog_229	conn 6	ecog_gamma_M
+310	38400.1395	38404.6395	4.5	dbs_L1	conn10	dbs_gamma_M
+311	38400.1395	38404.6395	4.5	dbs_L2A	conn10	dbs_gamma_M
+312	38400.1395	38404.6395	4.5	dbs_L2B	conn10	dbs_gamma_M
+313	38400.1395	38404.6395	4.5	dbs_L2C	conn10	dbs_gamma_M
+314	38400.1395	38404.6395	4.5	dbs_L3A	conn10	dbs_gamma_M
+315	38400.1395	38404.6395	4.5	dbs_L3B	conn10	dbs_gamma_M
+316	38400.1395	38404.6395	4.5	dbs_L3C	conn10	dbs_gamma_M
+317	38400.1395	38404.6395	4.5	dbs_L4	conn10	dbs_gamma_M
+318	38400.6395	38402.6395	2	ecog_228	conn 6	ecog_gamma_M
+319	38400.6395	38402.6395	2	ecog_229	conn 6	ecog_gamma_M
+320	38406.1395	38412.6395	6.5	dbs_L1	conn10	dbs_gamma_M
+321	38406.1395	38412.6395	6.5	dbs_L2A	conn10	dbs_gamma_M
+322	38406.1395	38412.6395	6.5	dbs_L2B	conn10	dbs_gamma_M
+323	38406.1395	38412.6395	6.5	dbs_L2C	conn10	dbs_gamma_M
+324	38406.1395	38412.6395	6.5	dbs_L3A	conn10	dbs_gamma_M
+325	38406.1395	38412.6395	6.5	dbs_L3B	conn10	dbs_gamma_M
+326	38406.1395	38412.6395	6.5	dbs_L3C	conn10	dbs_gamma_M
+327	38406.1395	38412.6395	6.5	dbs_L4	conn10	dbs_gamma_M
+328	38406.6395	38408.6395	2	ecog_104	conn 1	ecog_gamma_M
+329	38407.6395	38412.6395	5	ecog_120	conn 2	ecog_gamma_M
+330	38407.6395	38411.6395	4	ecog_211	conn 5	ecog_gamma_M
+331	38408.6395	38413.6395	5	ecog_226	conn 6	ecog_gamma_M
+332	38417.6395	38421.6395	4	ecog_230	conn 6	ecog_gamma_M
+333	38422.6395	38426.6395	4	ecog_213	conn 5	ecog_gamma_M
+334	38422.6395	38426.6395	4	ecog_214	conn 5	ecog_gamma_M
+335	38422.6395	38426.6395	4	ecog_215	conn 5	ecog_gamma_M
+336	38422.6395	38426.6395	4	ecog_216	conn 5	ecog_gamma_M
+337	38422.6395	38427.6395	5	ecog_257	conn 8	ecog_gamma_M
+338	38426.6395	38429.6395	3	ecog_159	conn 4	ecog_gamma_M
+339	38432.6395	38435.6395	3	ecog_261	conn 8	ecog_gamma_M
+340	38437.1395	38449.6395	12.5	dbs_L1	conn10	dbs_gamma_M
+341	38437.1395	38449.6395	12.5	dbs_L2A	conn10	dbs_gamma_M
+342	38437.1395	38449.6395	12.5	dbs_L2B	conn10	dbs_gamma_M
+343	38437.1395	38449.6395	12.5	dbs_L2C	conn10	dbs_gamma_M
+344	38437.1395	38449.6395	12.5	dbs_L3A	conn10	dbs_gamma_M
+345	38437.1395	38449.6395	12.5	dbs_L3B	conn10	dbs_gamma_M
+346	38437.1395	38449.6395	12.5	dbs_L3C	conn10	dbs_gamma_M
+347	38437.1395	38449.6395	12.5	dbs_L4	conn10	dbs_gamma_M
+348	38441.6395	38445.6395	4	ecog_228	conn 6	ecog_gamma_M
+349	38441.6395	38447.6395	6	ecog_229	conn 6	ecog_gamma_M
+350	38441.6395	38447.6395	6	ecog_230	conn 6	ecog_gamma_M
+351	38441.6395	38445.6395	4	ecog_231	conn 6	ecog_gamma_M
+352	38441.6395	38445.6395	4	ecog_232	conn 6	ecog_gamma_M
+353	38443.6395	38445.6395	2	ecog_227	conn 6	ecog_gamma_M
+354	38448.6395	38452.6395	4	ecog_243	conn 7	ecog_gamma_M
+355	38449.6395	38451.6395	2	ecog_105	conn 1	ecog_gamma_M
+356	38460.1395	38465.6395	5.5	dbs_L1	conn10	dbs_gamma_M
+357	38460.1395	38465.6395	5.5	dbs_L2A	conn10	dbs_gamma_M
+358	38460.1395	38465.6395	5.5	dbs_L2B	conn10	dbs_gamma_M
+359	38460.1395	38465.6395	5.5	dbs_L2C	conn10	dbs_gamma_M
+360	38460.1395	38465.6395	5.5	dbs_L3A	conn10	dbs_gamma_M
+361	38460.1395	38465.6395	5.5	dbs_L3B	conn10	dbs_gamma_M
+362	38460.1395	38465.6395	5.5	dbs_L3C	conn10	dbs_gamma_M
+363	38460.1395	38465.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+364	38461.6395	38465.6395	4	ecog_158	conn 4	ecog_gamma_M
+365	38461.6395	38465.6395	4	ecog_159	conn 4	ecog_gamma_M
+366	38462.6395	38466.6395	4	ecog_257	conn 8	ecog_gamma_M
+367	38471.6395	38473.6395	2	ecog_225	conn 6	ecog_gamma_M
+368	38471.6395	38473.6395	2	ecog_226	conn 6	ecog_gamma_M
+369	38471.6395	38473.6395	2	ecog_227	conn 6	ecog_gamma_M
+370	38482.6395	38484.6395	2	ecog_209	conn 5	ecog_gamma_M
+371	38484.6395	38487.6395	3	ecog_214	conn 5	ecog_gamma_M
+372	38487.6395	38489.6395	2	ecog_258	conn 8	ecog_gamma_M
+373	38489.6395	38494.6395	5	ecog_225	conn 6	ecog_gamma_M
+374	38489.6395	38495.6395	6	ecog_226	conn 6	ecog_gamma_M
+375	38489.6395	38494.6395	5	ecog_227	conn 6	ecog_gamma_M
+376	38490.6395	38493.6395	3	dbs_L1	conn10	dbs_gamma_M
+377	38498.6395	38501.6395	3	ecog_155	conn 4	ecog_gamma_M
+378	38503.1395	38509.6395	6.5	dbs_L1	conn10	dbs_gamma_M
+379	38503.1395	38509.6395	6.5	dbs_L2A	conn10	dbs_gamma_M
+380	38503.1395	38509.6395	6.5	dbs_L2B	conn10	dbs_gamma_M
+381	38503.1395	38509.6395	6.5	dbs_L2C	conn10	dbs_gamma_M
+382	38503.1395	38509.6395	6.5	dbs_L3A	conn10	dbs_gamma_M
+383	38503.1395	38509.6395	6.5	dbs_L3B	conn10	dbs_gamma_M
+384	38503.1395	38509.6395	6.5	dbs_L3C	conn10	dbs_gamma_M
+385	38503.1395	38509.6395	6.5	dbs_L4	conn10	dbs_gamma_M
+386	38503.6395	38506.6395	3	ecog_118	conn 2	ecog_gamma_M
+387	38511.6395	38515.6395	4	ecog_122	conn 2	ecog_gamma_M
+388	38511.6395	38515.6395	4	ecog_123	conn 2	ecog_gamma_M
+389	38512.6395	38514.6395	2	ecog_124	conn 2	ecog_gamma_M
+390	38513.1395	38516.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+391	38513.1395	38516.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+392	38513.1395	38516.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+393	38513.1395	38516.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+394	38513.1395	38516.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+395	38513.1395	38516.1395	3	dbs_L3B	conn10	dbs_gamma_M
+396	38513.1395	38516.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+397	38513.1395	38516.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+398	38516.6395	38519.6395	3	ecog_254	conn 8	ecog_gamma_M
+399	38522.6395	38525.6395	3	ecog_104	conn 1	ecog_gamma_M
+400	38522.6395	38525.6395	3	ecog_119	conn 2	ecog_gamma_M
+401	38526.6395	38528.6395	2	dbs_L1	conn10	dbs_gamma_M
+402	38532.6395	38534.6395	2	dbs_L3A	conn10	dbs_gamma_M
+403	38535.6395	38537.6395	2	ecog_224	conn 6	ecog_gamma_M
+404	38542.6395	38547.6395	5	ecog_228	conn 6	ecog_gamma_M
+405	38542.6395	38547.6395	5	ecog_229	conn 6	ecog_gamma_M
+406	38543.1395	38547.6395	4.5	dbs_L1	conn10	dbs_gamma_M
+407	38543.1395	38547.6395	4.5	dbs_L2A	conn10	dbs_gamma_M
+408	38543.1395	38547.6395	4.5	dbs_L2B	conn10	dbs_gamma_M
+409	38543.1395	38547.6395	4.5	dbs_L2C	conn10	dbs_gamma_M
+410	38543.1395	38547.6395	4.5	dbs_L3A	conn10	dbs_gamma_M
+411	38543.1395	38547.6395	4.5	dbs_L3B	conn10	dbs_gamma_M
+412	38543.1395	38547.6395	4.5	dbs_L3C	conn10	dbs_gamma_M
+413	38543.1395	38547.1395	4	dbs_L4	conn10	dbs_gamma_M
+414	38555.1395	38561.6395	6.5	dbs_L1	conn10	dbs_gamma_M
+415	38555.1395	38561.6395	6.5	dbs_L2A	conn10	dbs_gamma_M
+416	38555.1395	38561.6395	6.5	dbs_L2B	conn10	dbs_gamma_M
+417	38555.1395	38561.6395	6.5	dbs_L2C	conn10	dbs_gamma_M
+418	38555.1395	38561.6395	6.5	dbs_L3A	conn10	dbs_gamma_M
+419	38555.1395	38561.6395	6.5	dbs_L3B	conn10	dbs_gamma_M
+420	38555.1395	38561.6395	6.5	dbs_L3C	conn10	dbs_gamma_M
+421	38555.1395	38561.6395	6.5	dbs_L4	conn10	dbs_gamma_M
+422	38557.6395	38567.6395	10	ecog_225	conn 6	ecog_gamma_M
+423	38558.6395	38564.6395	6	ecog_226	conn 6	ecog_gamma_M
+424	38588.1395	38591.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+425	38588.1395	38591.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+426	38588.1395	38591.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+427	38588.1395	38591.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+428	38588.1395	38591.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+429	38588.1395	38591.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+430	38588.1395	38591.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+431	38588.1395	38591.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+432	38592.6395	38596.6395	4	ecog_250	conn 8	ecog_gamma_M
+433	38592.6395	38596.6395	4	ecog_251	conn 8	ecog_gamma_M
+434	38597.1395	38600.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+435	38597.1395	38600.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+436	38597.1395	38600.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+437	38597.1395	38600.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+438	38597.1395	38600.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+439	38597.1395	38600.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+440	38597.1395	38600.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+441	38597.1395	38600.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+442	38597.6395	38599.6395	2	ecog_252	conn 8	ecog_gamma_M
+443	38598.6395	38601.6395	3	ecog_258	conn 8	ecog_gamma_M
+444	38602.1395	38609.6395	7.5	dbs_L1	conn10	dbs_gamma_M
+445	38602.1395	38609.6395	7.5	dbs_L2A	conn10	dbs_gamma_M
+446	38602.1395	38609.6395	7.5	dbs_L2B	conn10	dbs_gamma_M
+447	38602.1395	38609.6395	7.5	dbs_L2C	conn10	dbs_gamma_M
+448	38602.1395	38609.6395	7.5	dbs_L3A	conn10	dbs_gamma_M
+449	38602.1395	38609.6395	7.5	dbs_L3B	conn10	dbs_gamma_M
+450	38602.1395	38609.6395	7.5	dbs_L3C	conn10	dbs_gamma_M
+451	38602.1395	38609.6395	7.5	dbs_L4	conn10	dbs_gamma_M
+452	38604.6395	38606.6395	2	ecog_117	conn 2	ecog_gamma_M
+453	38612.6395	38614.6395	2	ecog_224	conn 6	ecog_gamma_M
+454	38618.6395	38620.6395	2	ecog_227	conn 6	ecog_gamma_M
+455	38628.6395	38631.6395	3	ecog_113	conn 1	ecog_gamma_M
+456	38628.6395	38631.6395	3	ecog_114	conn 1	ecog_gamma_M
+457	38628.6395	38631.6395	3	ecog_115	conn 1	ecog_gamma_M
+458	38628.6395	38631.6395	3	ecog_116	conn 1	ecog_gamma_M
+459	38628.6395	38633.6395	5	ecog_263	conn 8	ecog_gamma_M
+460	38631.6395	38634.6395	3	ecog_229	conn 6	ecog_gamma_M
+461	38631.6395	38634.6395	3	ecog_230	conn 6	ecog_gamma_M
+462	38635.6395	38637.6395	2	dbs_L2A	conn10	dbs_gamma_M
+463	38635.6395	38637.6395	2	dbs_L2B	conn10	dbs_gamma_M
+464	38635.6395	38637.6395	2	dbs_L3B	conn10	dbs_gamma_M
+465	38641.6395	38645.6395	4	ecog_213	conn 5	ecog_gamma_M
+466	38641.6395	38645.6395	4	ecog_214	conn 5	ecog_gamma_M
+467	38642.1395	38645.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+468	38642.1395	38645.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+469	38642.1395	38645.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+470	38642.1395	38645.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+471	38642.1395	38645.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+472	38642.1395	38645.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+473	38642.1395	38645.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+474	38642.1395	38645.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+475	38642.6395	38647.6395	5	ecog_228	conn 6	ecog_gamma_M
+476	38642.6395	38647.6395	5	ecog_229	conn 6	ecog_gamma_M
+477	38647.6395	38651.6395	4	ecog_243	conn 7	ecog_gamma_M
+478	38653.1395	38658.6395	5.5	dbs_L1	conn10	dbs_gamma_M
+479	38653.1395	38658.6395	5.5	dbs_L2A	conn10	dbs_gamma_M
+480	38653.1395	38658.6395	5.5	dbs_L2B	conn10	dbs_gamma_M
+481	38653.1395	38658.6395	5.5	dbs_L2C	conn10	dbs_gamma_M
+482	38653.1395	38658.6395	5.5	dbs_L3A	conn10	dbs_gamma_M
+483	38653.1395	38658.6395	5.5	dbs_L3B	conn10	dbs_gamma_M
+484	38653.1395	38658.6395	5.5	dbs_L3C	conn10	dbs_gamma_M
+485	38653.1395	38658.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+486	38661.6395	38664.6395	3	ecog_104	conn 1	ecog_gamma_M
+487	38662.6395	38664.6395	2	ecog_221	conn 6	ecog_gamma_M
+488	38663.6395	38665.6395	2	ecog_211	conn 5	ecog_gamma_M
+489	38663.6395	38665.6395	2	ecog_212	conn 5	ecog_gamma_M
+490	38664.6395	38667.6395	3	ecog_225	conn 6	ecog_gamma_M
+491	38664.6395	38670.1395	5.5	dbs_L2C	conn10	dbs_gamma_M
+492	38665.1395	38670.1395	5	dbs_L1	conn10	dbs_gamma_M
+493	38665.1395	38670.6395	5.5	dbs_L2A	conn10	dbs_gamma_M
+494	38665.1395	38670.6395	5.5	dbs_L2B	conn10	dbs_gamma_M
+495	38665.1395	38670.6395	5.5	dbs_L3A	conn10	dbs_gamma_M
+496	38665.1395	38670.1395	5	dbs_L3B	conn10	dbs_gamma_M
+497	38665.1395	38670.6395	5.5	dbs_L3C	conn10	dbs_gamma_M
+498	38665.1395	38670.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+499	38670.6395	38674.6395	4	ecog_123	conn 2	ecog_gamma_M
+500	38672.6395	38676.6395	4	ecog_110	conn 1	ecog_gamma_M
+501	38674.6395	38678.6395	4	ecog_159	conn 4	ecog_gamma_M
+502	38676.6395	38678.6395	2	ecog_160	conn 4	ecog_gamma_M
+503	38681.6395	38683.6395	2	ecog_103	conn 1	ecog_gamma_M
+504	38696.6395	38699.6395	3	ecog_226	conn 6	ecog_gamma_M
+505	38704.6395	38707.6395	3	ecog_253	conn 8	ecog_gamma_M
+506	38704.6395	38707.6395	3	ecog_263	conn 8	ecog_gamma_M
+507	38705.1395	38712.6395	7.5	dbs_L1	conn10	dbs_gamma_M
+508	38705.1395	38712.6395	7.5	dbs_L2A	conn10	dbs_gamma_M
+509	38705.1395	38712.6395	7.5	dbs_L2B	conn10	dbs_gamma_M
+510	38705.1395	38712.6395	7.5	dbs_L2C	conn10	dbs_gamma_M
+511	38705.1395	38712.6395	7.5	dbs_L3A	conn10	dbs_gamma_M
+512	38705.1395	38712.6395	7.5	dbs_L3B	conn10	dbs_gamma_M
+513	38705.1395	38712.6395	7.5	dbs_L3C	conn10	dbs_gamma_M
+514	38705.1395	38712.6395	7.5	dbs_L4	conn10	dbs_gamma_M
+515	38709.6395	38711.6395	2	ecog_224	conn 6	ecog_gamma_M
+516	38715.1395	38718.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+517	38715.1395	38718.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+518	38715.1395	38718.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+519	38715.1395	38718.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+520	38715.1395	38718.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+521	38715.1395	38718.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+522	38715.1395	38718.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+523	38715.1395	38718.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+524	38719.6395	38721.6395	2	ecog_221	conn 6	ecog_gamma_M
+525	38719.6395	38721.6395	2	ecog_260	conn 8	ecog_gamma_M
+526	38725.1395	38728.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+527	38725.1395	38728.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+528	38725.1395	38728.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+529	38725.1395	38728.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+530	38725.1395	38728.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+531	38725.1395	38728.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+532	38725.1395	38728.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+533	38725.1395	38730.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+534	38733.6395	38735.6395	2	ecog_210	conn 5	ecog_gamma_M
+535	38734.6395	38736.6395	2	ecog_261	conn 8	ecog_gamma_M
+536	38734.6395	38736.6395	2	dbs_L1	conn10	dbs_gamma_M
+537	38737.6395	38741.6395	4	dbs_L2B	conn10	dbs_gamma_M
+538	38737.6395	38741.6395	4	dbs_L3B	conn10	dbs_gamma_M
+539	38737.6395	38741.6395	4	dbs_L3C	conn10	dbs_gamma_M
+540	38744.1395	38752.6395	8.5	dbs_L1	conn10	dbs_gamma_M
+541	38744.1395	38752.6395	8.5	dbs_L2A	conn10	dbs_gamma_M
+542	38744.1395	38752.6395	8.5	dbs_L2B	conn10	dbs_gamma_M
+543	38744.1395	38752.6395	8.5	dbs_L2C	conn10	dbs_gamma_M
+544	38744.1395	38752.6395	8.5	dbs_L3A	conn10	dbs_gamma_M
+545	38744.1395	38752.6395	8.5	dbs_L3B	conn10	dbs_gamma_M
+546	38744.1395	38752.6395	8.5	dbs_L3C	conn10	dbs_gamma_M
+547	38744.1395	38752.6395	8.5	dbs_L4	conn10	dbs_gamma_M
+548	38746.6395	38749.6395	3	ecog_128	conn 2	ecog_gamma_M
+549	38746.6395	38749.6395	3	ecog_129	conn 2	ecog_gamma_M
+550	38753.6395	38760.6395	7	ecog_159	conn 4	ecog_gamma_M
+551	38765.6395	38768.6395	3	ecog_118	conn 2	ecog_gamma_M
+552	38768.6395	38770.6395	2	ecog_229	conn 6	ecog_gamma_M
+553	38769.6395	38772.6395	3	ecog_210	conn 5	ecog_gamma_M
+554	38778.6395	38780.6395	2	ecog_263	conn 8	ecog_gamma_M
+555	38783.6395	38786.6395	3	ecog_259	conn 8	ecog_gamma_M
+556	38783.6395	38787.6395	4	ecog_261	conn 8	ecog_gamma_M
+557	38793.6395	38797.6395	4	ecog_217	conn 6	ecog_gamma_M
+558	38793.6395	38796.6395	3	ecog_218	conn 6	ecog_gamma_M
+559	38793.6395	38799.6395	6	ecog_219	conn 6	ecog_gamma_M
+560	38793.6395	38800.6395	7	ecog_220	conn 6	ecog_gamma_M
+561	38795.6395	38797.6395	2	ecog_255	conn 8	ecog_gamma_M
+562	38799.1395	38803.1395	4	dbs_L1	conn10	dbs_gamma_M
+563	38799.1395	38803.1395	4	dbs_L2A	conn10	dbs_gamma_M
+564	38799.1395	38803.1395	4	dbs_L2B	conn10	dbs_gamma_M
+565	38799.1395	38803.6395	4.5	dbs_L2C	conn10	dbs_gamma_M
+566	38799.1395	38803.6395	4.5	dbs_L3A	conn10	dbs_gamma_M
+567	38799.1395	38803.6395	4.5	dbs_L3B	conn10	dbs_gamma_M
+568	38799.1395	38803.6395	4.5	dbs_L3C	conn10	dbs_gamma_M
+569	38799.1395	38803.6395	4.5	dbs_L4	conn10	dbs_gamma_M
+570	38801.6395	38803.6395	2	ecog_224	conn 6	ecog_gamma_M
+571	38805.1395	38810.6395	5.5	dbs_L1	conn10	dbs_gamma_M
+572	38805.1395	38810.6395	5.5	dbs_L2A	conn10	dbs_gamma_M
+573	38805.1395	38810.6395	5.5	dbs_L2B	conn10	dbs_gamma_M
+574	38805.1395	38810.6395	5.5	dbs_L2C	conn10	dbs_gamma_M
+575	38805.1395	38810.6395	5.5	dbs_L3A	conn10	dbs_gamma_M
+576	38805.1395	38810.6395	5.5	dbs_L3B	conn10	dbs_gamma_M
+577	38805.1395	38810.6395	5.5	dbs_L3C	conn10	dbs_gamma_M
+578	38805.1395	38810.6395	5.5	dbs_L4	conn10	dbs_gamma_M
+579	38810.6395	38814.6395	4	ecog_104	conn 1	ecog_gamma_M
+580	38811.6395	38816.6395	5	ecog_257	conn 8	ecog_gamma_M
+581	38815.6395	38818.6395	3	ecog_101	conn 1	ecog_gamma_M
+582	38815.6395	38818.6395	3	ecog_102	conn 1	ecog_gamma_M
+583	38818.6395	38820.6395	2	ecog_163	conn 4	ecog_gamma_M
+584	38818.6395	38821.6395	3	ecog_255	conn 8	ecog_gamma_M
+585	38821.6395	38824.6395	3	dbs_L2A	conn10	dbs_gamma_M
+586	38821.6395	38824.6395	3	dbs_L2B	conn10	dbs_gamma_M
+587	38823.6395	38826.6395	3	ecog_127	conn 2	ecog_gamma_M
+588	38828.6395	38832.6395	4	ecog_254	conn 8	ecog_gamma_M
+589	38828.6395	38832.6395	4	ecog_255	conn 8	ecog_gamma_M
+590	38836.6395	38840.6395	4	ecog_104	conn 1	ecog_gamma_M
+591	38837.6395	38841.6395	4	ecog_160	conn 4	ecog_gamma_M
+592	38837.6395	38842.6395	5	ecog_259	conn 8	ecog_gamma_M
+593	38838.6395	38841.6395	3	ecog_159	conn 4	ecog_gamma_M
+594	38838.6395	38841.6395	3	ecog_161	conn 4	ecog_gamma_M
+595	38845.6395	38847.6395	2	ecog_220	conn 6	ecog_gamma_M
+596	38847.1395	38855.6395	8.5	dbs_L1	conn10	dbs_gamma_M
+597	38847.1395	38855.6395	8.5	dbs_L2A	conn10	dbs_gamma_M
+598	38847.1395	38855.6395	8.5	dbs_L2B	conn10	dbs_gamma_M
+599	38847.1395	38855.6395	8.5	dbs_L2C	conn10	dbs_gamma_M
+600	38847.1395	38855.6395	8.5	dbs_L3A	conn10	dbs_gamma_M
+601	38847.1395	38855.6395	8.5	dbs_L3B	conn10	dbs_gamma_M
+602	38847.1395	38855.6395	8.5	dbs_L3C	conn10	dbs_gamma_M
+603	38847.1395	38855.6395	8.5	dbs_L4	conn10	dbs_gamma_M
+604	38847.6395	38849.6395	2	ecog_158	conn 4	ecog_gamma_M
+605	38847.6395	38849.6395	2	ecog_159	conn 4	ecog_gamma_M
+606	38847.6395	38849.6395	2	ecog_160	conn 4	ecog_gamma_M
+607	38848.6395	38850.6395	2	ecog_227	conn 6	ecog_gamma_M
+608	38854.6395	38856.6395	2	ecog_123	conn 2	ecog_gamma_M
+609	38859.6395	38861.6395	2	dbs_L1	conn10	dbs_gamma_M
+610	38863.6395	38870.6395	7	ecog_120	conn 2	ecog_gamma_M
+611	38865.1395	38872.6395	7.5	dbs_L1	conn10	dbs_gamma_M
+612	38865.1395	38872.6395	7.5	dbs_L2A	conn10	dbs_gamma_M
+613	38865.1395	38872.6395	7.5	dbs_L2B	conn10	dbs_gamma_M
+614	38865.1395	38872.6395	7.5	dbs_L2C	conn10	dbs_gamma_M
+615	38865.1395	38872.6395	7.5	dbs_L3A	conn10	dbs_gamma_M
+616	38865.1395	38872.6395	7.5	dbs_L3B	conn10	dbs_gamma_M
+617	38865.1395	38872.6395	7.5	dbs_L3C	conn10	dbs_gamma_M
+618	38865.1395	38872.6395	7.5	dbs_L4	conn10	dbs_gamma_M
+619	38865.6395	38872.6395	7	ecog_119	conn 2	ecog_gamma_M
+620	38867.6395	38874.6395	7	ecog_160	conn 4	ecog_gamma_M
+621	38867.6395	38871.6395	4	ecog_261	conn 8	ecog_gamma_M
+622	38870.6395	38874.6395	4	ecog_159	conn 4	ecog_gamma_M
+623	38870.6395	38874.6395	4	ecog_161	conn 4	ecog_gamma_M
+624	38886.1395	38890.6395	4.5	dbs_L1	conn10	dbs_gamma_M
+625	38886.1395	38890.6395	4.5	dbs_L2A	conn10	dbs_gamma_M
+626	38886.1395	38890.6395	4.5	dbs_L2B	conn10	dbs_gamma_M
+627	38886.1395	38890.6395	4.5	dbs_L2C	conn10	dbs_gamma_M
+628	38886.1395	38890.6395	4.5	dbs_L3A	conn10	dbs_gamma_M
+629	38886.1395	38890.6395	4.5	dbs_L3B	conn10	dbs_gamma_M
+630	38886.1395	38890.6395	4.5	dbs_L3C	conn10	dbs_gamma_M
+631	38886.1395	38890.6395	4.5	dbs_L4	conn10	dbs_gamma_M
+632	38886.6395	38890.6395	4	ecog_256	conn 8	ecog_gamma_M
+633	38886.6395	38890.6395	4	ecog_257	conn 8	ecog_gamma_M
+634	38891.6395	38894.6395	3	ecog_229	conn 6	ecog_gamma_M
+635	38891.6395	38894.6395	3	ecog_230	conn 6	ecog_gamma_M
+636	38892.1395	38898.6395	6.5	dbs_L1	conn10	dbs_gamma_M
+637	38892.1395	38898.6395	6.5	dbs_L2A	conn10	dbs_gamma_M
+638	38892.1395	38898.6395	6.5	dbs_L2B	conn10	dbs_gamma_M
+639	38892.1395	38898.6395	6.5	dbs_L2C	conn10	dbs_gamma_M
+640	38892.1395	38898.6395	6.5	dbs_L3A	conn10	dbs_gamma_M
+641	38892.1395	38898.6395	6.5	dbs_L3B	conn10	dbs_gamma_M
+642	38892.1395	38898.6395	6.5	dbs_L3C	conn10	dbs_gamma_M
+643	38892.1395	38898.6395	6.5	dbs_L4	conn10	dbs_gamma_M
+644	38900.6395	38902.6395	2	ecog_122	conn 2	ecog_gamma_M
+645	38900.6395	38902.6395	2	ecog_123	conn 2	ecog_gamma_M
+646	38906.6395	38910.6395	4	ecog_160	conn 4	ecog_gamma_M
+647	38906.6395	38909.6395	3	ecog_161	conn 4	ecog_gamma_M
+648	38907.1395	38910.6395	3.5	dbs_L1	conn10	dbs_gamma_M
+649	38907.1395	38910.6395	3.5	dbs_L2A	conn10	dbs_gamma_M
+650	38907.1395	38910.6395	3.5	dbs_L2B	conn10	dbs_gamma_M
+651	38907.1395	38910.6395	3.5	dbs_L2C	conn10	dbs_gamma_M
+652	38907.1395	38910.6395	3.5	dbs_L3A	conn10	dbs_gamma_M
+653	38907.1395	38910.6395	3.5	dbs_L3B	conn10	dbs_gamma_M
+654	38907.1395	38910.6395	3.5	dbs_L3C	conn10	dbs_gamma_M
+655	38907.1395	38910.6395	3.5	dbs_L4	conn10	dbs_gamma_M
+656	38912.1395	38936.6395	24.5	dbs_L1	conn10	dbs_gamma_M
+657	38912.1395	38926.1395	14	dbs_L2A	conn10	dbs_gamma_M
+658	38912.1395	38926.1395	14	dbs_L2B	conn10	dbs_gamma_M
+659	38912.1395	38926.1395	14	dbs_L2C	conn10	dbs_gamma_M
+660	38912.1395	38926.6395	14.5	dbs_L3A	conn10	dbs_gamma_M
+661	38912.1395	38936.6395	24.5	dbs_L3B	conn10	dbs_gamma_M
+662	38912.1395	38926.6395	14.5	dbs_L3C	conn10	dbs_gamma_M
+663	38912.1395	38936.6395	24.5	dbs_L4	conn10	dbs_gamma_M
+664	38916.6395	38920.6395	4	ecog_155	conn 4	ecog_gamma_M
+665	38916.6395	38920.6395	4	ecog_156	conn 4	ecog_gamma_M
+666	38922.6395	38925.6395	3	ecog_129	conn 2	ecog_gamma_M
+667	38924.6395	38928.6395	4	ecog_104	conn 1	ecog_gamma_M
+668	38926.6395	38928.6395	2	ecog_225	conn 6	ecog_gamma_M
+669	38927.6395	38930.6395	3	ecog_123	conn 2	ecog_gamma_M
+670	38930.6395	38932.6395	2	ecog_159	conn 4	ecog_gamma_M
+671	38934.6395	38937.6395	3	ecog_228	conn 6	ecog_gamma_M
+672	38934.6395	38937.6395	3	ecog_229	conn 6	ecog_gamma_M
+673	38935.6395	38938.6395	3	ecog_227	conn 6	ecog_gamma_M
+674	38942.1395	38945	2.8605000000025	V0_con8a	conn 8	ecog_gamma_M
+675	38942.1395	38945.6395	3.5	ecog_101	conn 1	ecog_gamma_M
+676	38942.1395	38945.6395	3.5	ecog_102	conn 1	ecog_gamma_M
+677	38942.1395	38945.6395	3.5	ecog_103	conn 1	ecog_gamma_M
+678	38942.1395	38945.6395	3.5	ecog_104	conn 1	ecog_gamma_M
+679	38942.1395	38945.6395	3.5	ecog_105	conn 1	ecog_gamma_M
+680	38942.1395	38945.6395	3.5	ecog_106	conn 1	ecog_gamma_M
+681	38942.1395	38945.6395	3.5	ecog_107	conn 1	ecog_gamma_M
+682	38942.1395	38945.6395	3.5	ecog_108	conn 1	ecog_gamma_M
+683	38942.1395	38945	2.8605000000025	ecog_109	conn 1	ecog_gamma_M
+684	38942.1395	38945	2.8605000000025	ecog_110	conn 1	ecog_gamma_M
+685	38942.1395	38945	2.8605000000025	ecog_111	conn 1	ecog_gamma_M
+686	38942.1395	38945.6395	3.5	ecog_112	conn 1	ecog_gamma_M
+687	38942.1395	38945.6395	3.5	ecog_113	conn 1	ecog_gamma_M
+688	38942.1395	38945	2.8605000000025	ecog_114	conn 1	ecog_gamma_M
+689	38942.1395	38945.6395	3.5	ecog_115	conn 1	ecog_gamma_M
+690	38942.1395	38945	2.8605000000025	ecog_116	conn 1	ecog_gamma_M
+691	38942.1395	38945.6395	3.5	ecog_133	conn 3	ecog_gamma_M
+692	38942.1395	38945.6395	3.5	ecog_134	conn 3	ecog_gamma_M
+693	38942.1395	38945.6395	3.5	ecog_135	conn 3	ecog_gamma_M
+694	38942.1395	38945.6395	3.5	ecog_136	conn 3	ecog_gamma_M
+695	38942.1395	38945.6395	3.5	ecog_137	conn 3	ecog_gamma_M
+696	38942.1395	38945.6395	3.5	ecog_138	conn 3	ecog_gamma_M
+697	38942.1395	38945.6395	3.5	ecog_139	conn 3	ecog_gamma_M
+698	38942.1395	38945.6395	3.5	ecog_140	conn 3	ecog_gamma_M
+699	38942.1395	38945	2.8605000000025	ecog_141	conn 3	ecog_gamma_M
+700	38942.1395	38945	2.8605000000025	ecog_142	conn 3	ecog_gamma_M
+701	38942.1395	38945	2.8605000000025	ecog_143	conn 3	ecog_gamma_M
+702	38942.1395	38945.6395	3.5	ecog_144	conn 3	ecog_gamma_M
+703	38942.1395	38945.6395	3.5	ecog_145	conn 3	ecog_gamma_M
+704	38942.1395	38945.6395	3.5	ecog_146	conn 3	ecog_gamma_M
+705	38942.1395	38945.6395	3.5	ecog_147	conn 3	ecog_gamma_M
+706	38942.1395	38945.6395	3.5	ecog_148	conn 3	ecog_gamma_M
+707	38942.1395	38945.6395	3.5	ecog_201	conn 5	ecog_gamma_M
+708	38942.1395	38945	2.8605000000025	ecog_202	conn 5	ecog_gamma_M
+709	38942.1395	38945	2.8605000000025	ecog_203	conn 5	ecog_gamma_M
+710	38942.1395	38945.6395	3.5	ecog_204	conn 5	ecog_gamma_M
+711	38942.1395	38945	2.8605000000025	ecog_205	conn 5	ecog_gamma_M
+712	38942.1395	38945	2.8605000000025	ecog_206	conn 5	ecog_gamma_M
+713	38942.1395	38945.6395	3.5	ecog_207	conn 5	ecog_gamma_M
+714	38942.1395	38945.6395	3.5	ecog_208	conn 5	ecog_gamma_M
+715	38942.1395	38945.6395	3.5	ecog_209	conn 5	ecog_gamma_M
+716	38942.1395	38945.6395	3.5	ecog_210	conn 5	ecog_gamma_M
+717	38942.1395	38945.6395	3.5	ecog_211	conn 5	ecog_gamma_M
+718	38942.1395	38945.6395	3.5	ecog_212	conn 5	ecog_gamma_M
+719	38942.1395	38945	2.8605000000025	ecog_213	conn 5	ecog_gamma_M
+720	38942.1395	38945.6395	3.5	ecog_214	conn 5	ecog_gamma_M
+721	38942.1395	38945.6395	3.5	ecog_215	conn 5	ecog_gamma_M
+722	38942.1395	38945.6395	3.5	ecog_216	conn 5	ecog_gamma_M
+723	38942.1395	38945	2.8605000000025	ecog_217	conn 6	ecog_gamma_M
+724	38942.1395	38945.6395	3.5	ecog_218	conn 6	ecog_gamma_M
+725	38942.1395	38945	2.8605000000025	ecog_219	conn 6	ecog_gamma_M
+726	38942.1395	38945.6395	3.5	ecog_220	conn 6	ecog_gamma_M
+727	38942.1395	38945.6395	3.5	ecog_221	conn 6	ecog_gamma_M
+728	38942.1395	38945	2.8605000000025	ecog_222	conn 6	ecog_gamma_M
+729	38942.1395	38945.6395	3.5	ecog_223	conn 6	ecog_gamma_M
+730	38942.1395	38945.6395	3.5	ecog_224	conn 6	ecog_gamma_M
+731	38942.1395	38945	2.8605000000025	ecog_225	conn 6	ecog_gamma_M
+732	38942.1395	38945.6395	3.5	ecog_226	conn 6	ecog_gamma_M
+733	38942.1395	38945	2.8605000000025	ecog_227	conn 6	ecog_gamma_M
+734	38942.1395	38945.6395	3.5	ecog_228	conn 6	ecog_gamma_M
+735	38942.1395	38945.6395	3.5	ecog_229	conn 6	ecog_gamma_M
+736	38942.1395	38945.6395	3.5	ecog_230	conn 6	ecog_gamma_M
+737	38942.1395	38945	2.8605000000025	ecog_231	conn 6	ecog_gamma_M
+738	38942.1395	38945.6395	3.5	ecog_232	conn 6	ecog_gamma_M
+739	38942.1395	38945.6395	3.5	ecog_233	conn 7	ecog_gamma_M
+740	38942.1395	38945.6395	3.5	ecog_234	conn 7	ecog_gamma_M
+741	38942.1395	38945.6395	3.5	ecog_235	conn 7	ecog_gamma_M
+742	38942.1395	38945.6395	3.5	ecog_236	conn 7	ecog_gamma_M
+743	38942.1395	38945.6395	3.5	ecog_237	conn 7	ecog_gamma_M
+744	38942.1395	38945.6395	3.5	ecog_238	conn 7	ecog_gamma_M
+745	38942.1395	38945	2.8605000000025	ecog_239	conn 7	ecog_gamma_M
+746	38942.1395	38945.6395	3.5	ecog_240	conn 7	ecog_gamma_M
+747	38942.1395	38945.6395	3.5	ecog_241	conn 7	ecog_gamma_M
+748	38942.1395	38945.6395	3.5	ecog_242	conn 7	ecog_gamma_M
+749	38942.1395	38945.6395	3.5	ecog_243	conn 7	ecog_gamma_M
+750	38942.1395	38945.6395	3.5	ecog_244	conn 7	ecog_gamma_M
+751	38942.1395	38945.6395	3.5	ecog_245	conn 7	ecog_gamma_M
+752	38942.1395	38945.6395	3.5	ecog_246	conn 7	ecog_gamma_M
+753	38942.1395	38945.6395	3.5	ecog_247	conn 7	ecog_gamma_M
+754	38942.1395	38945.6395	3.5	ecog_248	conn 7	ecog_gamma_M
+755	38942.1395	38945.6395	3.5	ecog_249	conn 8	ecog_gamma_M
+756	38942.1395	38945.6395	3.5	ecog_250	conn 8	ecog_gamma_M
+757	38942.1395	38945.6395	3.5	ecog_251	conn 8	ecog_gamma_M
+758	38942.1395	38945.6395	3.5	ecog_252	conn 8	ecog_gamma_M
+759	38942.1395	38945.6395	3.5	ecog_253	conn 8	ecog_gamma_M
+760	38942.1395	38945.6395	3.5	ecog_254	conn 8	ecog_gamma_M
+761	38942.1395	38945.6395	3.5	ecog_255	conn 8	ecog_gamma_M
+762	38942.1395	38945	2.8605000000025	ecog_256	conn 8	ecog_gamma_M
+763	38942.1395	38945.6395	3.5	ecog_257	conn 8	ecog_gamma_M
+764	38942.1395	38945.6395	3.5	ecog_258	conn 8	ecog_gamma_M
+765	38942.1395	38945.6395	3.5	ecog_259	conn 8	ecog_gamma_M
+766	38942.1395	38945.6395	3.5	ecog_260	conn 8	ecog_gamma_M
+767	38942.1395	38945.6395	3.5	ecog_261	conn 8	ecog_gamma_M
+768	38942.1395	38945.6395	3.5	ecog_262	conn 8	ecog_gamma_M
+769	38942.1395	38945	2.8605000000025	ecog_263	conn 8	ecog_gamma_M
+770	38943.6395	38945.6395	2	ecog_117	conn 2	ecog_gamma_M
+771	38943.6395	38945.6395	2	ecog_120	conn 2	ecog_gamma_M
+772	38943.6395	38945.6395	2	ecog_121	conn 2	ecog_gamma_M
+773	38943.6395	38945.6395	2	ecog_122	conn 2	ecog_gamma_M
+774	38943.6395	38945.6395	2	ecog_123	conn 2	ecog_gamma_M
+775	38943.6395	38945.6395	2	ecog_124	conn 2	ecog_gamma_M
+776	38943.6395	38945.6395	2	ecog_129	conn 2	ecog_gamma_M
+777	38943.6395	38945.6395	2	ecog_149	conn 4	ecog_gamma_M
+778	38943.6395	38945.6395	2	ecog_150	conn 4	ecog_gamma_M
+779	38943.6395	38945.6395	2	ecog_151	conn 4	ecog_gamma_M
+780	38943.6395	38945.6395	2	ecog_152	conn 4	ecog_gamma_M
+781	38943.6395	38945.6395	2	ecog_155	conn 4	ecog_gamma_M
+782	38943.6395	38945.6395	2	ecog_157	conn 4	ecog_gamma_M
+783	38943.6395	38945.6395	2	ecog_159	conn 4	ecog_gamma_M
+784	41880.7005	41886.7005	6	dbs_L1	conn10	dbs_gamma_M
+785	41880.7005	41887.2005	6.5	dbs_L2A	conn10	dbs_gamma_M
+786	41880.7005	41887.2005	6.5	dbs_L2B	conn10	dbs_gamma_M
+787	41880.7005	41887.2005	6.5	dbs_L2C	conn10	dbs_gamma_M
+788	41880.7005	41887.2005	6.5	dbs_L3A	conn10	dbs_gamma_M
+789	41880.7005	41887.2005	6.5	dbs_L3B	conn10	dbs_gamma_M
+790	41880.7005	41886.7005	6	dbs_L3C	conn10	dbs_gamma_M
+791	41880.7005	41886.7005	6	dbs_L4	conn10	dbs_gamma_M
+792	41881.2005	41882.2005	1	ecog_125	conn 2	ecog_gamma_M
+793	41881.2005	41882.2005	1	ecog_126	conn 2	ecog_gamma_M
+794	41881.2005	41882.2005	1	ecog_133	conn 3	ecog_gamma_M
+795	41881.2005	41882.2005	1	ecog_136	conn 3	ecog_gamma_M
+796	41881.2005	41882.2005	1	ecog_138	conn 3	ecog_gamma_M
+797	41881.2005	41882.2005	1	ecog_139	conn 3	ecog_gamma_M
+798	41881.2005	41882.2005	1	ecog_140	conn 3	ecog_gamma_M
+799	41881.2005	41882.2005	1	ecog_141	conn 3	ecog_gamma_M
+800	41881.2005	41882.2005	1	ecog_142	conn 3	ecog_gamma_M
+801	41881.2005	41882.2005	1	ecog_143	conn 3	ecog_gamma_M
+802	41881.2005	41882.2005	1	ecog_144	conn 3	ecog_gamma_M
+803	41881.2005	41882.2005	1	ecog_145	conn 3	ecog_gamma_M
+804	41881.2005	41882.2005	1	ecog_146	conn 3	ecog_gamma_M
+805	41881.2005	41882.2005	1	ecog_147	conn 3	ecog_gamma_M
+806	41881.2005	41882.2005	1	ecog_148	conn 3	ecog_gamma_M
+807	41881.2005	41882.2005	1	ecog_157	conn 4	ecog_gamma_M
+808	41881.2005	41882.2005	1	ecog_159	conn 4	ecog_gamma_M
+809	41881.2005	41882.2005	1	ecog_160	conn 4	ecog_gamma_M
+810	41881.2005	41882.2005	1	ecog_202	conn 5	ecog_gamma_M
+811	41881.2005	41882.2005	1	ecog_203	conn 5	ecog_gamma_M
+812	41881.2005	41882.2005	1	ecog_204	conn 5	ecog_gamma_M
+813	41881.2005	41882.2005	1	ecog_205	conn 5	ecog_gamma_M
+814	41881.2005	41882.2005	1	ecog_206	conn 5	ecog_gamma_M
+815	41881.2005	41882.2005	1	ecog_208	conn 5	ecog_gamma_M
+816	41881.2005	41882.2005	1	ecog_210	conn 5	ecog_gamma_M
+817	41881.2005	41882.2005	1	ecog_211	conn 5	ecog_gamma_M
+818	41881.2005	41882.2005	1	ecog_213	conn 5	ecog_gamma_M
+819	41881.2005	41882.2005	1	ecog_217	conn 6	ecog_gamma_M
+820	41881.2005	41882.2005	1	ecog_218	conn 6	ecog_gamma_M
+821	41881.2005	41882.2005	1	ecog_219	conn 6	ecog_gamma_M
+822	41881.2005	41882.2005	1	ecog_222	conn 6	ecog_gamma_M
+823	41881.2005	41882.2005	1	ecog_223	conn 6	ecog_gamma_M
+824	41881.2005	41882.2005	1	ecog_224	conn 6	ecog_gamma_M
+825	41881.2005	41882.2005	1	ecog_225	conn 6	ecog_gamma_M
+826	41881.2005	41882.2005	1	ecog_228	conn 6	ecog_gamma_M
+827	41881.2005	41882.2005	1	ecog_229	conn 6	ecog_gamma_M
+828	41881.2005	41882.2005	1	ecog_231	conn 6	ecog_gamma_M
+829	41881.2005	41882.2005	1	ecog_232	conn 6	ecog_gamma_M
+830	41881.2005	41882.2005	1	ecog_233	conn 7	ecog_gamma_M
+831	41881.2005	41882.2005	1	ecog_234	conn 7	ecog_gamma_M
+832	41881.2005	41882.2005	1	ecog_240	conn 7	ecog_gamma_M
+833	41881.2005	41882.2005	1	ecog_250	conn 8	ecog_gamma_M
+834	41881.2005	41882.2005	1	ecog_251	conn 8	ecog_gamma_M
+835	41881.2005	41882.2005	1	ecog_252	conn 8	ecog_gamma_M
+836	41881.2005	41882.2005	1	ecog_253	conn 8	ecog_gamma_M
+837	41881.2005	41882.2005	1	ecog_254	conn 8	ecog_gamma_M
+838	41881.2005	41882.2005	1	ecog_255	conn 8	ecog_gamma_M
+839	41881.2005	41882.2005	1	ecog_256	conn 8	ecog_gamma_M
+840	41881.2005	41882.2005	1	ecog_257	conn 8	ecog_gamma_M
+841	41881.2005	41882.2005	1	ecog_258	conn 8	ecog_gamma_M
+842	41881.2005	41882.2005	1	ecog_259	conn 8	ecog_gamma_M
+843	41881.2005	41882.2005	1	ecog_260	conn 8	ecog_gamma_M
+844	41881.2005	41882.2005	1	ecog_261	conn 8	ecog_gamma_M
+845	41881.2005	41882.2005	1	ecog_262	conn 8	ecog_gamma_M
+846	41881.2005	41882.2005	1	ecog_263	conn 8	ecog_gamma_M
+847	41881.2005	41882.2005	1	dbs_R3C	conn 9	dbs_gamma_M
+848	41889.2005	41892.2005	3	ecog_102	conn 1	ecog_gamma_M
+849	41889.2005	41892.2005	3	ecog_118	conn 2	ecog_gamma_M
+850	41889.2005	41892.2005	3	ecog_126	conn 2	ecog_gamma_M
+851	41889.2005	41892.2005	3	ecog_129	conn 2	ecog_gamma_M
+852	41889.2005	41895.2005	6	ecog_133	conn 3	ecog_gamma_M
+853	41889.2005	41892.2005	3	ecog_134	conn 3	ecog_gamma_M
+854	41889.2005	41892.2005	3	ecog_137	conn 3	ecog_gamma_M
+855	41889.2005	41892.2005	3	ecog_138	conn 3	ecog_gamma_M
+856	41889.2005	41892.2005	3	ecog_140	conn 3	ecog_gamma_M
+857	41889.2005	41892.2005	3	ecog_141	conn 3	ecog_gamma_M
+858	41889.2005	41892.2005	3	ecog_142	conn 3	ecog_gamma_M
+859	41889.2005	41892.2005	3	ecog_143	conn 3	ecog_gamma_M
+860	41889.2005	41892.2005	3	ecog_144	conn 3	ecog_gamma_M
+861	41889.2005	41892.2005	3	ecog_145	conn 3	ecog_gamma_M
+862	41889.2005	41892.2005	3	ecog_146	conn 3	ecog_gamma_M
+863	41889.2005	41892.2005	3	ecog_147	conn 3	ecog_gamma_M
+864	41889.2005	41892.2005	3	ecog_148	conn 3	ecog_gamma_M
+865	41889.2005	41892.2005	3	ecog_155	conn 4	ecog_gamma_M
+866	41889.2005	41892.2005	3	ecog_158	conn 4	ecog_gamma_M
+867	41889.2005	41892.2005	3	ecog_161	conn 4	ecog_gamma_M
+868	41889.2005	41892.2005	3	ecog_202	conn 5	ecog_gamma_M
+869	41889.2005	41892.2005	3	ecog_206	conn 5	ecog_gamma_M
+870	41889.2005	41892.2005	3	ecog_207	conn 5	ecog_gamma_M
+871	41889.2005	41892.2005	3	ecog_208	conn 5	ecog_gamma_M
+872	41889.2005	41892.2005	3	ecog_210	conn 5	ecog_gamma_M
+873	41889.2005	41892.2005	3	ecog_211	conn 5	ecog_gamma_M
+874	41889.2005	41892.2005	3	ecog_212	conn 5	ecog_gamma_M
+875	41889.2005	41892.2005	3	ecog_215	conn 5	ecog_gamma_M
+876	41889.2005	41892.2005	3	ecog_216	conn 5	ecog_gamma_M
+877	41889.2005	41892.2005	3	ecog_219	conn 6	ecog_gamma_M
+878	41889.2005	41897.2005	8	ecog_222	conn 6	ecog_gamma_M
+879	41889.2005	41897.2005	8	ecog_223	conn 6	ecog_gamma_M
+880	41889.2005	41897.2005	8	ecog_224	conn 6	ecog_gamma_M
+881	41889.2005	41892.2005	3	ecog_225	conn 6	ecog_gamma_M
+882	41889.2005	41892.2005	3	ecog_229	conn 6	ecog_gamma_M
+883	41889.2005	41892.2005	3	ecog_230	conn 6	ecog_gamma_M
+884	41889.2005	41893.2005	4	ecog_240	conn 7	ecog_gamma_M
+885	41889.2005	41892.2005	3	ecog_248	conn 7	ecog_gamma_M
+886	41889.2005	41892.2005	3	ecog_254	conn 8	ecog_gamma_M
+887	41889.2005	41892.2005	3	ecog_262	conn 8	ecog_gamma_M
+888	41889.2005	41892.2005	3	ecog_263	conn 8	ecog_gamma_M
+889	41889.2005	42659.2005	770	dbs_R3C	conn 9	dbs_gamma_M
+890	41890.2005	42659.2005	769	ecog_157	conn 4	ecog_gamma_M
+891	41891.202	41891.7005	0.498500000001513	ecog_135	conn 3	ecog_gamma_M
+892	41891.202	41891.7005	0.498500000001513	ecog_136	conn 3	ecog_gamma_M
+893	41891.202	41891.7005	0.498500000001513	ecog_139	conn 3	ecog_gamma_M
+894	41891.202	41891.7005	0.498500000001513	ecog_201	conn 5	ecog_gamma_M
+895	41891.202	41891.7005	0.498500000001513	ecog_203	conn 5	ecog_gamma_M
+896	41891.202	41891.7005	0.498500000001513	ecog_204	conn 5	ecog_gamma_M
+897	41891.202	41891.7005	0.498500000001513	ecog_205	conn 5	ecog_gamma_M
+898	41891.202	41891.7005	0.498500000001513	ecog_209	conn 5	ecog_gamma_M
+899	41891.202	41891.7005	0.498500000001513	ecog_213	conn 5	ecog_gamma_M
+900	41891.202	41891.7005	0.498500000001513	ecog_214	conn 5	ecog_gamma_M
+901	41895.2005	41899.2005	4	ecog_238	conn 7	ecog_gamma_M
+902	41897.2005	41899.2005	2	ecog_229	conn 6	ecog_gamma_M
+903	41898.2005	41902.2005	4	ecog_122	conn 2	ecog_gamma_M
+904	41898.2005	41906.2005	8	ecog_123	conn 2	ecog_gamma_M
+905	41898.2005	41900.2005	2	ecog_127	conn 2	ecog_gamma_M
+906	41898.2005	41901.2005	3	ecog_128	conn 2	ecog_gamma_M
+907	41899.2005	41901.2005	2	ecog_257	conn 8	ecog_gamma_M
+908	41900.7005	41904.2005	3.5	dbs_L1	conn10	dbs_gamma_M
+909	41900.7005	41903.7005	3	dbs_L2A	conn10	dbs_gamma_M
+910	41900.7005	41904.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+911	41900.7005	41904.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+912	41900.7005	41904.2005	3.5	dbs_L3A	conn10	dbs_gamma_M
+913	41900.7005	41904.2005	3.5	dbs_L3B	conn10	dbs_gamma_M
+914	41900.7005	41904.2005	3.5	dbs_L3C	conn10	dbs_gamma_M
+915	41900.7005	41904.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+916	41900.7005	41904.2005	3.5	dbs_R1	conn 9	dbs_gamma_M
+917	41900.7005	41904.2005	3.5	dbs_R2A	conn 9	dbs_gamma_M
+918	41900.7005	41904.2005	3.5	dbs_R2B	conn 9	dbs_gamma_M
+919	41900.7005	41904.2005	3.5	dbs_R2C	conn 9	dbs_gamma_M
+920	41900.7005	41904.2005	3.5	dbs_R3A	conn 9	dbs_gamma_M
+921	41900.7005	41904.2005	3.5	dbs_R3B	conn 9	dbs_gamma_M
+922	41900.7005	41904.2005	3.5	dbs_R4	conn 9	dbs_gamma_M
+923	41901.2005	41904.2005	3	ecog_222	conn 6	ecog_gamma_M
+924	41904.2005	41906.2005	2	ecog_124	conn 2	ecog_gamma_M
+925	41904.2005	41906.2005	2	ecog_125	conn 2	ecog_gamma_M
+926	41904.2005	41906.2005	2	ecog_126	conn 2	ecog_gamma_M
+927	41906.2005	41910.2005	4	ecog_156	conn 4	ecog_gamma_M
+928	41906.2005	41910.2005	4	ecog_158	conn 4	ecog_gamma_M
+929	41906.2005	41909.2005	3	ecog_159	conn 4	ecog_gamma_M
+930	41906.2005	41908.2005	2	ecog_230	conn 6	ecog_gamma_M
+931	41908.2005	41910.2005	2	dbs_L2A	conn10	dbs_gamma_M
+932	41908.2005	41910.2005	2	dbs_L2B	conn10	dbs_gamma_M
+933	41909.2005	41914.2005	5	ecog_223	conn 6	ecog_gamma_M
+934	41910.2005	41912.2005	2	ecog_222	conn 6	ecog_gamma_M
+935	41916.2005	41918.2005	2	ecog_126	conn 2	ecog_gamma_M
+936	41920.2005	41925.2005	5	ecog_223	conn 6	ecog_gamma_M
+937	41923.2005	41925.2005	2	ecog_222	conn 6	ecog_gamma_M
+938	41923.2005	41930.2005	7	ecog_224	conn 6	ecog_gamma_M
+939	41925.2005	41928.2005	3	ecog_254	conn 8	ecog_gamma_M
+940	41925.2005	41928.2005	3	ecog_255	conn 8	ecog_gamma_M
+941	41927.2005	41931.2005	4	ecog_156	conn 4	ecog_gamma_M
+942	41927.7005	41933.2005	5.5	dbs_L1	conn10	dbs_gamma_M
+943	41927.7005	41933.2005	5.5	dbs_L2A	conn10	dbs_gamma_M
+944	41927.7005	41933.2005	5.5	dbs_L2B	conn10	dbs_gamma_M
+945	41927.7005	41933.2005	5.5	dbs_L2C	conn10	dbs_gamma_M
+946	41927.7005	41933.2005	5.5	dbs_L3A	conn10	dbs_gamma_M
+947	41927.7005	41933.2005	5.5	dbs_L3B	conn10	dbs_gamma_M
+948	41927.7005	41933.2005	5.5	dbs_L3C	conn10	dbs_gamma_M
+949	41927.7005	41933.2005	5.5	dbs_L4	conn10	dbs_gamma_M
+950	41927.7005	41933.2005	5.5	dbs_R1	conn 9	dbs_gamma_M
+951	41927.7005	41933.2005	5.5	dbs_R2A	conn 9	dbs_gamma_M
+952	41927.7005	41933.2005	5.5	dbs_R2B	conn 9	dbs_gamma_M
+953	41927.7005	41933.2005	5.5	dbs_R2C	conn 9	dbs_gamma_M
+954	41927.7005	41933.2005	5.5	dbs_R3A	conn 9	dbs_gamma_M
+955	41927.7005	41933.2005	5.5	dbs_R3B	conn 9	dbs_gamma_M
+956	41927.7005	41933.2005	5.5	dbs_R4	conn 9	dbs_gamma_M
+957	41928.2005	41930.2005	2	ecog_222	conn 6	ecog_gamma_M
+958	41931.2005	41936.2005	5	ecog_125	conn 2	ecog_gamma_M
+959	41931.2005	41933.2005	2	ecog_213	conn 5	ecog_gamma_M
+960	41931.2005	41933.2005	2	ecog_214	conn 5	ecog_gamma_M
+961	41931.7005	41935.7005	4	ecog_117	conn 2	ecog_gamma_M
+962	41931.7005	41935.7005	4	ecog_118	conn 2	ecog_gamma_M
+963	41931.7005	41935.7005	4	ecog_119	conn 2	ecog_gamma_M
+964	41931.7005	41935.7005	4	ecog_120	conn 2	ecog_gamma_M
+965	41931.7005	41936.2005	4.5	ecog_121	conn 2	ecog_gamma_M
+966	41931.7005	41936.2005	4.5	ecog_122	conn 2	ecog_gamma_M
+967	41931.7005	41936.2005	4.5	ecog_123	conn 2	ecog_gamma_M
+968	41931.7005	41936.2005	4.5	ecog_124	conn 2	ecog_gamma_M
+969	41931.7005	41936.2005	4.5	ecog_126	conn 2	ecog_gamma_M
+970	41931.7005	41936.2005	4.5	ecog_127	conn 2	ecog_gamma_M
+971	41931.7005	41936.2005	4.5	ecog_128	conn 2	ecog_gamma_M
+972	41931.7005	41936.2005	4.5	ecog_129	conn 2	ecog_gamma_M
+973	41931.7005	41935.7005	4	ecog_130	conn 2	ecog_gamma_M
+974	41931.7005	41935.7005	4	ecog_131	conn 2	ecog_gamma_M
+975	41931.7005	41935.7005	4	ecog_132	conn 2	ecog_gamma_M
+976	41932.2005	41935.2005	3	ecog_244	conn 7	ecog_gamma_M
+977	41932.2005	41934.2005	2	ecog_263	conn 8	ecog_gamma_M
+978	41937.2005	41939.2005	2	ecog_104	conn 1	ecog_gamma_M
+979	41938.2005	41940.2005	2	ecog_239	conn 7	ecog_gamma_M
+980	41941.2005	41943.2005	2	ecog_230	conn 6	ecog_gamma_M
+981	41943.2005	41945.2005	2	ecog_101	conn 1	ecog_gamma_M
+982	41943.2005	41945.2005	2	ecog_102	conn 1	ecog_gamma_M
+983	41943.2005	41945.2005	2	ecog_122	conn 2	ecog_gamma_M
+984	41943.2005	41945.2005	2	ecog_123	conn 2	ecog_gamma_M
+985	41943.2005	41945.2005	2	ecog_124	conn 2	ecog_gamma_M
+986	41944.2005	41947.2005	3	ecog_153	conn 4	ecog_gamma_M
+987	41947.2005	41951.2005	4	ecog_239	conn 7	ecog_gamma_M
+988	41948.2005	41951.2005	3	ecog_135	conn 3	ecog_gamma_M
+989	41949.2005	41952.2005	3	ecog_252	conn 8	ecog_gamma_M
+990	41949.2005	41951.2005	2	dbs_R2A	conn 9	dbs_gamma_M
+991	41949.2005	41952.2005	3	dbs_R2B	conn 9	dbs_gamma_M
+992	41951.2005	41953.2005	2	ecog_240	conn 7	ecog_gamma_M
+993	41952.2005	41955.2005	3	ecog_224	conn 6	ecog_gamma_M
+994	41955.7005	41960.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+995	41955.7005	41960.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+996	41955.7005	41960.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+997	41955.7005	41960.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+998	41955.7005	41960.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+999	41955.7005	41960.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1000	41955.7005	41960.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1001	41955.7005	41960.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1002	41955.7005	41959.7005	4	dbs_R1	conn 9	dbs_gamma_M
+1003	41955.7005	41960.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1004	41955.7005	41959.7005	4	dbs_R2B	conn 9	dbs_gamma_M
+1005	41955.7005	41959.7005	4	dbs_R2C	conn 9	dbs_gamma_M
+1006	41955.7005	41960.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1007	41955.7005	41960.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1008	41955.7005	41960.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1009	41961.2005	41964.2005	3	ecog_223	conn 6	ecog_gamma_M
+1010	41962.2005	41966.2005	4	ecog_135	conn 3	ecog_gamma_M
+1011	41964.2005	41966.2005	2	ecog_258	conn 8	ecog_gamma_M
+1012	41968.2005	41971.2005	3	ecog_223	conn 6	ecog_gamma_M
+1013	41968.7005	41972.2005	3.5	dbs_L1	conn10	dbs_gamma_M
+1014	41968.7005	41972.2005	3.5	dbs_L2A	conn10	dbs_gamma_M
+1015	41968.7005	41972.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+1016	41968.7005	41972.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+1017	41968.7005	41972.2005	3.5	dbs_L3A	conn10	dbs_gamma_M
+1018	41968.7005	41972.2005	3.5	dbs_L3B	conn10	dbs_gamma_M
+1019	41968.7005	41972.2005	3.5	dbs_L3C	conn10	dbs_gamma_M
+1020	41968.7005	41972.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+1021	41968.7005	41972.2005	3.5	dbs_R1	conn 9	dbs_gamma_M
+1022	41968.7005	41972.2005	3.5	dbs_R2A	conn 9	dbs_gamma_M
+1023	41968.7005	41972.2005	3.5	dbs_R2B	conn 9	dbs_gamma_M
+1024	41968.7005	41972.2005	3.5	dbs_R2C	conn 9	dbs_gamma_M
+1025	41968.7005	41972.2005	3.5	dbs_R3A	conn 9	dbs_gamma_M
+1026	41968.7005	41972.2005	3.5	dbs_R3B	conn 9	dbs_gamma_M
+1027	41968.7005	41972.2005	3.5	dbs_R4	conn 9	dbs_gamma_M
+1028	41969.2005	41972.2005	3	ecog_222	conn 6	ecog_gamma_M
+1029	41971.2005	41973.2005	2	ecog_213	conn 5	ecog_gamma_M
+1030	41977.2005	41979.2005	2	ecog_146	conn 3	ecog_gamma_M
+1031	41977.2005	41979.2005	2	ecog_147	conn 3	ecog_gamma_M
+1032	41977.2005	41979.2005	2	ecog_148	conn 3	ecog_gamma_M
+1033	41977.2005	41979.2005	2	ecog_238	conn 7	ecog_gamma_M
+1034	41977.2005	41980.2005	3	ecog_239	conn 7	ecog_gamma_M
+1035	41980.2005	41982.2005	2	ecog_222	conn 6	ecog_gamma_M
+1036	41980.7005	41986.2005	5.5	dbs_L1	conn10	dbs_gamma_M
+1037	41980.7005	41986.2005	5.5	dbs_L2A	conn10	dbs_gamma_M
+1038	41980.7005	41986.2005	5.5	dbs_L2B	conn10	dbs_gamma_M
+1039	41980.7005	41986.2005	5.5	dbs_L2C	conn10	dbs_gamma_M
+1040	41980.7005	41986.2005	5.5	dbs_L3A	conn10	dbs_gamma_M
+1041	41980.7005	41986.2005	5.5	dbs_L3B	conn10	dbs_gamma_M
+1042	41980.7005	41986.2005	5.5	dbs_L3C	conn10	dbs_gamma_M
+1043	41980.7005	41986.2005	5.5	dbs_L4	conn10	dbs_gamma_M
+1044	41980.7005	41986.2005	5.5	dbs_R1	conn 9	dbs_gamma_M
+1045	41980.7005	41986.2005	5.5	dbs_R2A	conn 9	dbs_gamma_M
+1046	41980.7005	41986.2005	5.5	dbs_R2B	conn 9	dbs_gamma_M
+1047	41980.7005	41986.2005	5.5	dbs_R2C	conn 9	dbs_gamma_M
+1048	41980.7005	41986.2005	5.5	dbs_R3A	conn 9	dbs_gamma_M
+1049	41980.7005	41986.2005	5.5	dbs_R3B	conn 9	dbs_gamma_M
+1050	41980.7005	41986.2005	5.5	dbs_R4	conn 9	dbs_gamma_M
+1051	41982.2005	41993.2005	11	ecog_126	conn 2	ecog_gamma_M
+1052	41987.7005	41994.2005	6.5	dbs_L1	conn10	dbs_gamma_M
+1053	41987.7005	41994.2005	6.5	dbs_L2A	conn10	dbs_gamma_M
+1054	41987.7005	41994.2005	6.5	dbs_L2B	conn10	dbs_gamma_M
+1055	41987.7005	41994.2005	6.5	dbs_L2C	conn10	dbs_gamma_M
+1056	41987.7005	41994.2005	6.5	dbs_L3A	conn10	dbs_gamma_M
+1057	41987.7005	41993.7005	6	dbs_L3B	conn10	dbs_gamma_M
+1058	41987.7005	41993.7005	6	dbs_L3C	conn10	dbs_gamma_M
+1059	41987.7005	41994.2005	6.5	dbs_L4	conn10	dbs_gamma_M
+1060	41987.7005	41994.2005	6.5	dbs_R1	conn 9	dbs_gamma_M
+1061	41987.7005	41994.2005	6.5	dbs_R2A	conn 9	dbs_gamma_M
+1062	41987.7005	41993.7005	6	dbs_R2B	conn 9	dbs_gamma_M
+1063	41987.7005	41994.2005	6.5	dbs_R2C	conn 9	dbs_gamma_M
+1064	41987.7005	41994.2005	6.5	dbs_R3A	conn 9	dbs_gamma_M
+1065	41987.7005	41994.2005	6.5	dbs_R3B	conn 9	dbs_gamma_M
+1066	41987.7005	41994.2005	6.5	dbs_R4	conn 9	dbs_gamma_M
+1067	41988.2005	41999.2005	11	ecog_240	conn 7	ecog_gamma_M
+1068	41993.2005	41995.2005	2	ecog_239	conn 7	ecog_gamma_M
+1069	41995.2005	41997.2005	2	ecog_223	conn 6	ecog_gamma_M
+1070	42002.2005	42004.2005	2	ecog_222	conn 6	ecog_gamma_M
+1071	42003.2005	42007.2005	4	ecog_103	conn 1	ecog_gamma_M
+1072	42004.2005	42008.2005	4	ecog_104	conn 1	ecog_gamma_M
+1073	42004.2005	42008.2005	4	ecog_105	conn 1	ecog_gamma_M
+1074	42004.2005	42008.2005	4	ecog_106	conn 1	ecog_gamma_M
+1075	42004.2005	42008.2005	4	ecog_107	conn 1	ecog_gamma_M
+1076	42004.2005	42008.2005	4	ecog_108	conn 1	ecog_gamma_M
+1077	42004.2005	42008.2005	4	ecog_109	conn 1	ecog_gamma_M
+1078	42005.2005	42007.2005	2	ecog_230	conn 6	ecog_gamma_M
+1079	42007.2005	42010.2005	3	ecog_238	conn 7	ecog_gamma_M
+1080	42009.2005	42012.2005	3	ecog_222	conn 6	ecog_gamma_M
+1081	42009.2005	42011.2005	2	ecog_223	conn 6	ecog_gamma_M
+1082	42010.2005	42013.2005	3	ecog_213	conn 5	ecog_gamma_M
+1083	42011.2005	42013.2005	2	ecog_214	conn 5	ecog_gamma_M
+1084	42016.2005	42021.2005	5	ecog_122	conn 2	ecog_gamma_M
+1085	42018.2005	42021.2005	3	ecog_121	conn 2	ecog_gamma_M
+1086	42019.2005	42021.2005	2	ecog_118	conn 2	ecog_gamma_M
+1087	42019.2005	42021.2005	2	ecog_119	conn 2	ecog_gamma_M
+1088	42019.2005	42021.2005	2	ecog_120	conn 2	ecog_gamma_M
+1089	42019.2005	42021.2005	2	ecog_123	conn 2	ecog_gamma_M
+1090	42019.2005	42021.2005	2	ecog_124	conn 2	ecog_gamma_M
+1091	42024.2005	42026.2005	2	ecog_223	conn 6	ecog_gamma_M
+1092	42026.2005	42028.2005	2	ecog_225	conn 6	ecog_gamma_M
+1093	42029.2005	42032.2005	3	ecog_133	conn 3	ecog_gamma_M
+1094	42029.2005	42033.2005	4	ecog_135	conn 3	ecog_gamma_M
+1095	42029.2005	42031.2005	2	ecog_223	conn 6	ecog_gamma_M
+1096	42030.2005	42033.2005	3	ecog_134	conn 3	ecog_gamma_M
+1097	42032.2005	42034.2005	2	ecog_112	conn 1	ecog_gamma_M
+1098	42032.2005	42034.2005	2	ecog_113	conn 1	ecog_gamma_M
+1099	42032.2005	42034.2005	2	ecog_114	conn 1	ecog_gamma_M
+1100	42034.2005	42037.2005	3	ecog_103	conn 1	ecog_gamma_M
+1101	42034.2005	42037.2005	3	ecog_104	conn 1	ecog_gamma_M
+1102	42045.7005	42049.2005	3.5	dbs_L1	conn10	dbs_gamma_M
+1103	42045.7005	42049.2005	3.5	dbs_L2A	conn10	dbs_gamma_M
+1104	42045.7005	42049.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+1105	42045.7005	42049.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+1106	42045.7005	42049.2005	3.5	dbs_L3A	conn10	dbs_gamma_M
+1107	42045.7005	42049.2005	3.5	dbs_L3B	conn10	dbs_gamma_M
+1108	42045.7005	42049.2005	3.5	dbs_L3C	conn10	dbs_gamma_M
+1109	42045.7005	42049.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+1110	42045.7005	42049.7005	4	dbs_R1	conn 9	dbs_gamma_M
+1111	42045.7005	42050.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1112	42045.7005	42050.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1113	42045.7005	42049.7005	4	dbs_R2C	conn 9	dbs_gamma_M
+1114	42045.7005	42050.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1115	42045.7005	42049.7005	4	dbs_R3B	conn 9	dbs_gamma_M
+1116	42045.7005	42049.7005	4	dbs_R4	conn 9	dbs_gamma_M
+1117	42047.2005	42049.2005	2	ecog_212	conn 5	ecog_gamma_M
+1118	42049.2005	42052.2005	3	ecog_222	conn 6	ecog_gamma_M
+1119	42049.2005	42052.2005	3	ecog_223	conn 6	ecog_gamma_M
+1120	42049.2005	42051.2005	2	ecog_224	conn 6	ecog_gamma_M
+1121	42057.2005	42059.2005	2	ecog_213	conn 5	ecog_gamma_M
+1122	42060.2005	42065.2005	5	ecog_117	conn 2	ecog_gamma_M
+1123	42060.2005	42069.2005	9	ecog_118	conn 2	ecog_gamma_M
+1124	42060.2005	42065.2005	5	ecog_119	conn 2	ecog_gamma_M
+1125	42060.2005	42065.2005	5	ecog_120	conn 2	ecog_gamma_M
+1126	42060.7005	42064.7005	4	V0_con4a	conn 4	ecog_gamma_M
+1127	42060.7005	42064.7005	4	V0_con8a	conn 8	ecog_gamma_M
+1128	42060.7005	42065.2005	4.5	ecog_101	conn 1	ecog_gamma_M
+1129	42060.7005	42065.2005	4.5	ecog_102	conn 1	ecog_gamma_M
+1130	42060.7005	42065.2005	4.5	ecog_103	conn 1	ecog_gamma_M
+1131	42060.7005	42065.2005	4.5	ecog_104	conn 1	ecog_gamma_M
+1132	42060.7005	42065.2005	4.5	ecog_105	conn 1	ecog_gamma_M
+1133	42060.7005	42065.2005	4.5	ecog_106	conn 1	ecog_gamma_M
+1134	42060.7005	42065.2005	4.5	ecog_107	conn 1	ecog_gamma_M
+1135	42060.7005	42065.2005	4.5	ecog_108	conn 1	ecog_gamma_M
+1136	42060.7005	42065.2005	4.5	ecog_109	conn 1	ecog_gamma_M
+1137	42060.7005	42065.2005	4.5	ecog_110	conn 1	ecog_gamma_M
+1138	42060.7005	42065.2005	4.5	ecog_111	conn 1	ecog_gamma_M
+1139	42060.7005	42065.2005	4.5	ecog_112	conn 1	ecog_gamma_M
+1140	42060.7005	42065.2005	4.5	ecog_113	conn 1	ecog_gamma_M
+1141	42060.7005	42065.2005	4.5	ecog_114	conn 1	ecog_gamma_M
+1142	42060.7005	42065.2005	4.5	ecog_115	conn 1	ecog_gamma_M
+1143	42060.7005	42065.2005	4.5	ecog_116	conn 1	ecog_gamma_M
+1144	42060.7005	42065.2005	4.5	ecog_121	conn 2	ecog_gamma_M
+1145	42060.7005	42065.2005	4.5	ecog_122	conn 2	ecog_gamma_M
+1146	42060.7005	42065.2005	4.5	ecog_123	conn 2	ecog_gamma_M
+1147	42060.7005	42065.2005	4.5	ecog_124	conn 2	ecog_gamma_M
+1148	42060.7005	42065.2005	4.5	ecog_125	conn 2	ecog_gamma_M
+1149	42060.7005	42065.2005	4.5	ecog_126	conn 2	ecog_gamma_M
+1150	42060.7005	42065.2005	4.5	ecog_127	conn 2	ecog_gamma_M
+1151	42060.7005	42065.2005	4.5	ecog_128	conn 2	ecog_gamma_M
+1152	42060.7005	42065.2005	4.5	ecog_129	conn 2	ecog_gamma_M
+1153	42060.7005	42065.2005	4.5	ecog_130	conn 2	ecog_gamma_M
+1154	42060.7005	42065.2005	4.5	ecog_131	conn 2	ecog_gamma_M
+1155	42060.7005	42065.2005	4.5	ecog_132	conn 2	ecog_gamma_M
+1156	42060.7005	42065.2005	4.5	ecog_133	conn 3	ecog_gamma_M
+1157	42060.7005	42065.2005	4.5	ecog_134	conn 3	ecog_gamma_M
+1158	42060.7005	42065.2005	4.5	ecog_135	conn 3	ecog_gamma_M
+1159	42060.7005	42065.2005	4.5	ecog_136	conn 3	ecog_gamma_M
+1160	42060.7005	42065.2005	4.5	ecog_137	conn 3	ecog_gamma_M
+1161	42060.7005	42065.2005	4.5	ecog_138	conn 3	ecog_gamma_M
+1162	42060.7005	42065.2005	4.5	ecog_139	conn 3	ecog_gamma_M
+1163	42060.7005	42065.2005	4.5	ecog_140	conn 3	ecog_gamma_M
+1164	42060.7005	42065.2005	4.5	ecog_141	conn 3	ecog_gamma_M
+1165	42060.7005	42065.2005	4.5	ecog_142	conn 3	ecog_gamma_M
+1166	42060.7005	42065.2005	4.5	ecog_143	conn 3	ecog_gamma_M
+1167	42060.7005	42065.2005	4.5	ecog_144	conn 3	ecog_gamma_M
+1168	42060.7005	42065.2005	4.5	ecog_145	conn 3	ecog_gamma_M
+1169	42060.7005	42065.2005	4.5	ecog_146	conn 3	ecog_gamma_M
+1170	42060.7005	42065.2005	4.5	ecog_147	conn 3	ecog_gamma_M
+1171	42060.7005	42065.2005	4.5	ecog_148	conn 3	ecog_gamma_M
+1172	42060.7005	42065.2005	4.5	ecog_149	conn 4	ecog_gamma_M
+1173	42060.7005	42065.2005	4.5	ecog_150	conn 4	ecog_gamma_M
+1174	42060.7005	42065.2005	4.5	ecog_151	conn 4	ecog_gamma_M
+1175	42060.7005	42065.2005	4.5	ecog_152	conn 4	ecog_gamma_M
+1176	42060.7005	42065.2005	4.5	ecog_153	conn 4	ecog_gamma_M
+1177	42060.7005	42065.2005	4.5	ecog_154	conn 4	ecog_gamma_M
+1178	42060.7005	42065.2005	4.5	ecog_155	conn 4	ecog_gamma_M
+1179	42060.7005	42065.2005	4.5	ecog_156	conn 4	ecog_gamma_M
+1180	42060.7005	42065.2005	4.5	ecog_158	conn 4	ecog_gamma_M
+1181	42060.7005	42065.2005	4.5	ecog_159	conn 4	ecog_gamma_M
+1182	42060.7005	42065.2005	4.5	ecog_160	conn 4	ecog_gamma_M
+1183	42060.7005	42065.2005	4.5	ecog_161	conn 4	ecog_gamma_M
+1184	42060.7005	42065.2005	4.5	ecog_162	conn 4	ecog_gamma_M
+1185	42060.7005	42065.2005	4.5	ecog_163	conn 4	ecog_gamma_M
+1186	42060.7005	42065.2005	4.5	ecog_201	conn 5	ecog_gamma_M
+1187	42060.7005	42065.2005	4.5	ecog_202	conn 5	ecog_gamma_M
+1188	42060.7005	42065.2005	4.5	ecog_203	conn 5	ecog_gamma_M
+1189	42060.7005	42065.2005	4.5	ecog_204	conn 5	ecog_gamma_M
+1190	42060.7005	42065.2005	4.5	ecog_205	conn 5	ecog_gamma_M
+1191	42060.7005	42065.2005	4.5	ecog_206	conn 5	ecog_gamma_M
+1192	42060.7005	42065.2005	4.5	ecog_207	conn 5	ecog_gamma_M
+1193	42060.7005	42065.2005	4.5	ecog_208	conn 5	ecog_gamma_M
+1194	42060.7005	42065.2005	4.5	ecog_209	conn 5	ecog_gamma_M
+1195	42060.7005	42065.2005	4.5	ecog_210	conn 5	ecog_gamma_M
+1196	42060.7005	42065.2005	4.5	ecog_211	conn 5	ecog_gamma_M
+1197	42060.7005	42065.2005	4.5	ecog_212	conn 5	ecog_gamma_M
+1198	42060.7005	42065.2005	4.5	ecog_213	conn 5	ecog_gamma_M
+1199	42060.7005	42065.2005	4.5	ecog_214	conn 5	ecog_gamma_M
+1200	42060.7005	42065.2005	4.5	ecog_215	conn 5	ecog_gamma_M
+1201	42060.7005	42065.2005	4.5	ecog_216	conn 5	ecog_gamma_M
+1202	42060.7005	42065.2005	4.5	ecog_217	conn 6	ecog_gamma_M
+1203	42060.7005	42065.2005	4.5	ecog_218	conn 6	ecog_gamma_M
+1204	42060.7005	42065.2005	4.5	ecog_219	conn 6	ecog_gamma_M
+1205	42060.7005	42065.2005	4.5	ecog_220	conn 6	ecog_gamma_M
+1206	42060.7005	42065.2005	4.5	ecog_221	conn 6	ecog_gamma_M
+1207	42060.7005	42065.2005	4.5	ecog_222	conn 6	ecog_gamma_M
+1208	42060.7005	42068.2005	7.5	ecog_223	conn 6	ecog_gamma_M
+1209	42060.7005	42065.2005	4.5	ecog_224	conn 6	ecog_gamma_M
+1210	42060.7005	42065.2005	4.5	ecog_225	conn 6	ecog_gamma_M
+1211	42060.7005	42065.2005	4.5	ecog_226	conn 6	ecog_gamma_M
+1212	42060.7005	42065.2005	4.5	ecog_227	conn 6	ecog_gamma_M
+1213	42060.7005	42065.2005	4.5	ecog_228	conn 6	ecog_gamma_M
+1214	42060.7005	42065.2005	4.5	ecog_229	conn 6	ecog_gamma_M
+1215	42060.7005	42065.2005	4.5	ecog_230	conn 6	ecog_gamma_M
+1216	42060.7005	42065.2005	4.5	ecog_231	conn 6	ecog_gamma_M
+1217	42060.7005	42065.2005	4.5	ecog_232	conn 6	ecog_gamma_M
+1218	42060.7005	42065.2005	4.5	ecog_233	conn 7	ecog_gamma_M
+1219	42060.7005	42065.2005	4.5	ecog_234	conn 7	ecog_gamma_M
+1220	42060.7005	42065.2005	4.5	ecog_235	conn 7	ecog_gamma_M
+1221	42060.7005	42065.2005	4.5	ecog_236	conn 7	ecog_gamma_M
+1222	42060.7005	42065.2005	4.5	ecog_237	conn 7	ecog_gamma_M
+1223	42060.7005	42065.2005	4.5	ecog_238	conn 7	ecog_gamma_M
+1224	42060.7005	42065.2005	4.5	ecog_239	conn 7	ecog_gamma_M
+1225	42060.7005	42065.2005	4.5	ecog_240	conn 7	ecog_gamma_M
+1226	42060.7005	42065.2005	4.5	ecog_241	conn 7	ecog_gamma_M
+1227	42060.7005	42065.2005	4.5	ecog_242	conn 7	ecog_gamma_M
+1228	42060.7005	42066.2005	5.5	ecog_243	conn 7	ecog_gamma_M
+1229	42060.7005	42065.2005	4.5	ecog_244	conn 7	ecog_gamma_M
+1230	42060.7005	42065.2005	4.5	ecog_245	conn 7	ecog_gamma_M
+1231	42060.7005	42065.2005	4.5	ecog_246	conn 7	ecog_gamma_M
+1232	42060.7005	42065.2005	4.5	ecog_247	conn 7	ecog_gamma_M
+1233	42060.7005	42065.2005	4.5	ecog_248	conn 7	ecog_gamma_M
+1234	42060.7005	42065.2005	4.5	ecog_249	conn 8	ecog_gamma_M
+1235	42060.7005	42065.2005	4.5	ecog_250	conn 8	ecog_gamma_M
+1236	42060.7005	42065.2005	4.5	ecog_251	conn 8	ecog_gamma_M
+1237	42060.7005	42065.2005	4.5	ecog_252	conn 8	ecog_gamma_M
+1238	42060.7005	42065.2005	4.5	ecog_253	conn 8	ecog_gamma_M
+1239	42060.7005	42065.2005	4.5	ecog_254	conn 8	ecog_gamma_M
+1240	42060.7005	42065.2005	4.5	ecog_255	conn 8	ecog_gamma_M
+1241	42060.7005	42065.2005	4.5	ecog_256	conn 8	ecog_gamma_M
+1242	42060.7005	42065.2005	4.5	ecog_257	conn 8	ecog_gamma_M
+1243	42060.7005	42065.2005	4.5	ecog_258	conn 8	ecog_gamma_M
+1244	42060.7005	42065.2005	4.5	ecog_259	conn 8	ecog_gamma_M
+1245	42060.7005	42065.2005	4.5	ecog_260	conn 8	ecog_gamma_M
+1246	42060.7005	42065.2005	4.5	ecog_261	conn 8	ecog_gamma_M
+1247	42060.7005	42065.2005	4.5	ecog_262	conn 8	ecog_gamma_M
+1248	42060.7005	42065.2005	4.5	ecog_263	conn 8	ecog_gamma_M
+1249	42060.7005	42065.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1250	42060.7005	42065.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1251	42060.7005	42065.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1252	42060.7005	42065.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1253	42060.7005	42065.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1254	42060.7005	42065.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1255	42060.7005	42065.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1256	42060.7005	42065.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1257	42060.7005	42065.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1258	42060.7005	42065.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1259	42060.7005	42065.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1260	42060.7005	42065.2005	4.5	dbs_R2C	conn 9	dbs_gamma_M
+1261	42060.7005	42065.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1262	42060.7005	42065.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1263	42060.7005	42065.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1264	42067.7005	42071.7005	4	ecog_133	conn 3	ecog_gamma_M
+1265	42067.7005	42071.7005	4	ecog_134	conn 3	ecog_gamma_M
+1266	42067.7005	42071.7005	4	ecog_135	conn 3	ecog_gamma_M
+1267	42067.7005	42071.7005	4	ecog_136	conn 3	ecog_gamma_M
+1268	42067.7005	42072.2005	4.5	ecog_137	conn 3	ecog_gamma_M
+1269	42067.7005	42072.2005	4.5	ecog_138	conn 3	ecog_gamma_M
+1270	42067.7005	42072.2005	4.5	ecog_139	conn 3	ecog_gamma_M
+1271	42067.7005	42072.2005	4.5	ecog_140	conn 3	ecog_gamma_M
+1272	42067.7005	42072.2005	4.5	ecog_141	conn 3	ecog_gamma_M
+1273	42067.7005	42072.2005	4.5	ecog_142	conn 3	ecog_gamma_M
+1274	42067.7005	42072.2005	4.5	ecog_143	conn 3	ecog_gamma_M
+1275	42067.7005	42072.2005	4.5	ecog_144	conn 3	ecog_gamma_M
+1276	42067.7005	42072.2005	4.5	ecog_145	conn 3	ecog_gamma_M
+1277	42067.7005	42071.7005	4	ecog_146	conn 3	ecog_gamma_M
+1278	42067.7005	42071.7005	4	ecog_147	conn 3	ecog_gamma_M
+1279	42067.7005	42071.7005	4	ecog_148	conn 3	ecog_gamma_M
+1280	42069.2005	42075.2005	6	ecog_239	conn 7	ecog_gamma_M
+1281	42070.2005	42073.2005	3	ecog_122	conn 2	ecog_gamma_M
+1282	42070.7005	42078.2005	7.5	dbs_L1	conn10	dbs_gamma_M
+1283	42070.7005	42078.2005	7.5	dbs_L2A	conn10	dbs_gamma_M
+1284	42070.7005	42078.2005	7.5	dbs_L2B	conn10	dbs_gamma_M
+1285	42070.7005	42078.2005	7.5	dbs_L2C	conn10	dbs_gamma_M
+1286	42070.7005	42078.2005	7.5	dbs_L3A	conn10	dbs_gamma_M
+1287	42070.7005	42078.2005	7.5	dbs_L3B	conn10	dbs_gamma_M
+1288	42070.7005	42078.2005	7.5	dbs_L3C	conn10	dbs_gamma_M
+1289	42070.7005	42078.2005	7.5	dbs_L4	conn10	dbs_gamma_M
+1290	42070.7005	42078.2005	7.5	dbs_R1	conn 9	dbs_gamma_M
+1291	42070.7005	42078.2005	7.5	dbs_R2A	conn 9	dbs_gamma_M
+1292	42070.7005	42078.2005	7.5	dbs_R2B	conn 9	dbs_gamma_M
+1293	42070.7005	42078.2005	7.5	dbs_R2C	conn 9	dbs_gamma_M
+1294	42070.7005	42078.2005	7.5	dbs_R3A	conn 9	dbs_gamma_M
+1295	42070.7005	42078.2005	7.5	dbs_R3B	conn 9	dbs_gamma_M
+1296	42070.7005	42078.2005	7.5	dbs_R4	conn 9	dbs_gamma_M
+1297	42071.2005	42074.2005	3	ecog_123	conn 2	ecog_gamma_M
+1298	42074.2005	42076.2005	2	ecog_230	conn 6	ecog_gamma_M
+1299	42076.2005	42078.2005	2	ecog_228	conn 6	ecog_gamma_M
+1300	42079.2005	42083.2005	4	ecog_128	conn 2	ecog_gamma_M
+1301	42080.2005	42082.2005	2	ecog_127	conn 2	ecog_gamma_M
+1302	42083.7005	42088.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1303	42083.7005	42088.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1304	42083.7005	42088.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1305	42083.7005	42088.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1306	42083.7005	42088.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1307	42083.7005	42088.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1308	42083.7005	42088.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1309	42083.7005	42088.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1310	42083.7005	42088.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1311	42083.7005	42088.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1312	42083.7005	42088.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1313	42083.7005	42088.2005	4.5	dbs_R2C	conn 9	dbs_gamma_M
+1314	42083.7005	42088.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1315	42083.7005	42088.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1316	42083.7005	42088.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1317	42089.2005	42096.2005	7	ecog_223	conn 6	ecog_gamma_M
+1318	42089.2005	42096.2005	7	ecog_224	conn 6	ecog_gamma_M
+1319	42094.2005	42096.2005	2	ecog_222	conn 6	ecog_gamma_M
+1320	42100.2005	42105.2005	5	ecog_117	conn 2	ecog_gamma_M
+1321	42100.2005	42105.2005	5	ecog_118	conn 2	ecog_gamma_M
+1322	42102.2005	42111.2005	9	ecog_137	conn 3	ecog_gamma_M
+1323	42104.2005	42106.2005	2	dbs_L1	conn10	dbs_gamma_M
+1324	42104.2005	42106.2005	2	dbs_L2B	conn10	dbs_gamma_M
+1325	42104.2005	42106.2005	2	dbs_L2C	conn10	dbs_gamma_M
+1326	42104.2005	42106.2005	2	dbs_R2A	conn 9	dbs_gamma_M
+1327	42104.2005	42106.2005	2	dbs_R2B	conn 9	dbs_gamma_M
+1328	42104.2005	42106.2005	2	dbs_R4	conn 9	dbs_gamma_M
+1329	42108.2005	42110.2005	2	ecog_208	conn 5	ecog_gamma_M
+1330	42108.2005	42110.2005	2	ecog_209	conn 5	ecog_gamma_M
+1331	42108.2005	42110.2005	2	ecog_210	conn 5	ecog_gamma_M
+1332	42114.7005	42118.2005	3.5	ecog_101	conn 1	ecog_gamma_M
+1333	42114.7005	42118.2005	3.5	ecog_102	conn 1	ecog_gamma_M
+1334	42114.7005	42118.2005	3.5	ecog_103	conn 1	ecog_gamma_M
+1335	42114.7005	42118.2005	3.5	ecog_104	conn 1	ecog_gamma_M
+1336	42114.7005	42118.2005	3.5	ecog_105	conn 1	ecog_gamma_M
+1337	42114.7005	42118.2005	3.5	ecog_106	conn 1	ecog_gamma_M
+1338	42114.7005	42118.2005	3.5	ecog_107	conn 1	ecog_gamma_M
+1339	42114.7005	42118.2005	3.5	ecog_108	conn 1	ecog_gamma_M
+1340	42114.7005	42118.2005	3.5	ecog_109	conn 1	ecog_gamma_M
+1341	42114.7005	42118.2005	3.5	ecog_110	conn 1	ecog_gamma_M
+1342	42114.7005	42118.2005	3.5	ecog_111	conn 1	ecog_gamma_M
+1343	42114.7005	42118.2005	3.5	ecog_112	conn 1	ecog_gamma_M
+1344	42114.7005	42118.2005	3.5	ecog_113	conn 1	ecog_gamma_M
+1345	42114.7005	42118.2005	3.5	ecog_114	conn 1	ecog_gamma_M
+1346	42114.7005	42118.2005	3.5	ecog_115	conn 1	ecog_gamma_M
+1347	42114.7005	42118.2005	3.5	ecog_116	conn 1	ecog_gamma_M
+1348	42114.7005	42118.2005	3.5	ecog_117	conn 2	ecog_gamma_M
+1349	42114.7005	42117.7005	3	ecog_118	conn 2	ecog_gamma_M
+1350	42114.7005	42117.7005	3	ecog_119	conn 2	ecog_gamma_M
+1351	42114.7005	42117.7005	3	ecog_120	conn 2	ecog_gamma_M
+1352	42114.7005	42117.7005	3	ecog_121	conn 2	ecog_gamma_M
+1353	42114.7005	42118.2005	3.5	ecog_122	conn 2	ecog_gamma_M
+1354	42114.7005	42118.2005	3.5	ecog_123	conn 2	ecog_gamma_M
+1355	42114.7005	42118.2005	3.5	ecog_124	conn 2	ecog_gamma_M
+1356	42114.7005	42118.2005	3.5	ecog_125	conn 2	ecog_gamma_M
+1357	42114.7005	42118.2005	3.5	ecog_126	conn 2	ecog_gamma_M
+1358	42114.7005	42118.2005	3.5	ecog_127	conn 2	ecog_gamma_M
+1359	42114.7005	42118.2005	3.5	ecog_128	conn 2	ecog_gamma_M
+1360	42114.7005	42118.2005	3.5	ecog_129	conn 2	ecog_gamma_M
+1361	42114.7005	42118.2005	3.5	ecog_130	conn 2	ecog_gamma_M
+1362	42114.7005	42118.2005	3.5	ecog_131	conn 2	ecog_gamma_M
+1363	42114.7005	42118.2005	3.5	ecog_132	conn 2	ecog_gamma_M
+1364	42114.7005	42120.2005	5.5	dbs_L1	conn10	dbs_gamma_M
+1365	42114.7005	42120.2005	5.5	dbs_L2A	conn10	dbs_gamma_M
+1366	42114.7005	42120.2005	5.5	dbs_L2B	conn10	dbs_gamma_M
+1367	42114.7005	42120.2005	5.5	dbs_L2C	conn10	dbs_gamma_M
+1368	42114.7005	42120.2005	5.5	dbs_L3A	conn10	dbs_gamma_M
+1369	42114.7005	42120.2005	5.5	dbs_L3B	conn10	dbs_gamma_M
+1370	42114.7005	42120.2005	5.5	dbs_L3C	conn10	dbs_gamma_M
+1371	42114.7005	42120.2005	5.5	dbs_L4	conn10	dbs_gamma_M
+1372	42114.7005	42120.2005	5.5	dbs_R1	conn 9	dbs_gamma_M
+1373	42114.7005	42119.7005	5	dbs_R2A	conn 9	dbs_gamma_M
+1374	42114.7005	42119.7005	5	dbs_R2B	conn 9	dbs_gamma_M
+1375	42114.7005	42120.2005	5.5	dbs_R2C	conn 9	dbs_gamma_M
+1376	42114.7005	42119.7005	5	dbs_R3A	conn 9	dbs_gamma_M
+1377	42114.7005	42120.2005	5.5	dbs_R3B	conn 9	dbs_gamma_M
+1378	42114.7005	42119.7005	5	dbs_R4	conn 9	dbs_gamma_M
+1379	42115.2005	42118.2005	3	ecog_228	conn 6	ecog_gamma_M
+1380	42116.2005	42118.2005	2	ecog_144	conn 3	ecog_gamma_M
+1381	42116.2005	42118.2005	2	ecog_145	conn 3	ecog_gamma_M
+1382	42116.2005	42118.2005	2	ecog_146	conn 3	ecog_gamma_M
+1383	42116.2005	42118.2005	2	ecog_147	conn 3	ecog_gamma_M
+1384	42116.2005	42118.2005	2	ecog_148	conn 3	ecog_gamma_M
+1385	42116.2005	42118.2005	2	ecog_149	conn 4	ecog_gamma_M
+1386	42116.2005	42118.2005	2	ecog_150	conn 4	ecog_gamma_M
+1387	42116.2005	42118.2005	2	ecog_153	conn 4	ecog_gamma_M
+1388	42116.2005	42118.2005	2	ecog_154	conn 4	ecog_gamma_M
+1389	42116.2005	42118.2005	2	ecog_155	conn 4	ecog_gamma_M
+1390	42116.2005	42118.2005	2	ecog_201	conn 5	ecog_gamma_M
+1391	42116.2005	42118.2005	2	ecog_202	conn 5	ecog_gamma_M
+1392	42116.2005	42118.2005	2	ecog_203	conn 5	ecog_gamma_M
+1393	42116.2005	42118.2005	2	ecog_204	conn 5	ecog_gamma_M
+1394	42116.2005	42118.2005	2	ecog_205	conn 5	ecog_gamma_M
+1395	42116.2005	42118.2005	2	ecog_206	conn 5	ecog_gamma_M
+1396	42116.2005	42118.2005	2	ecog_207	conn 5	ecog_gamma_M
+1397	42116.2005	42118.2005	2	ecog_222	conn 6	ecog_gamma_M
+1398	42116.2005	42123.2005	7	ecog_223	conn 6	ecog_gamma_M
+1399	42116.2005	42118.2005	2	ecog_224	conn 6	ecog_gamma_M
+1400	42116.2005	42118.2005	2	ecog_225	conn 6	ecog_gamma_M
+1401	42116.2005	42118.2005	2	ecog_226	conn 6	ecog_gamma_M
+1402	42116.2005	42118.2005	2	ecog_227	conn 6	ecog_gamma_M
+1403	42116.2005	42118.2005	2	ecog_243	conn 7	ecog_gamma_M
+1404	42122.2005	42124.2005	2	ecog_140	conn 3	ecog_gamma_M
+1405	42126.2005	42130.2005	4	ecog_254	conn 8	ecog_gamma_M
+1406	42126.2005	42130.2005	4	ecog_255	conn 8	ecog_gamma_M
+1407	42127.2005	42130.2005	3	ecog_252	conn 8	ecog_gamma_M
+1408	42127.2005	42130.2005	3	ecog_253	conn 8	ecog_gamma_M
+1409	42127.2005	42129.2005	2	ecog_256	conn 8	ecog_gamma_M
+1410	42128.7005	42136.7005	8	ecog_133	conn 3	ecog_gamma_M
+1411	42128.7005	42136.7005	8	ecog_134	conn 3	ecog_gamma_M
+1412	42128.7005	42136.7005	8	ecog_135	conn 3	ecog_gamma_M
+1413	42128.7005	42136.7005	8	ecog_136	conn 3	ecog_gamma_M
+1414	42128.7005	42136.7005	8	ecog_137	conn 3	ecog_gamma_M
+1415	42128.7005	42137.2005	8.5	ecog_138	conn 3	ecog_gamma_M
+1416	42128.7005	42137.2005	8.5	ecog_139	conn 3	ecog_gamma_M
+1417	42128.7005	42137.2005	8.5	ecog_140	conn 3	ecog_gamma_M
+1418	42128.7005	42137.2005	8.5	ecog_141	conn 3	ecog_gamma_M
+1419	42128.7005	42137.2005	8.5	ecog_142	conn 3	ecog_gamma_M
+1420	42128.7005	42137.2005	8.5	ecog_143	conn 3	ecog_gamma_M
+1421	42128.7005	42137.2005	8.5	ecog_144	conn 3	ecog_gamma_M
+1422	42128.7005	42137.2005	8.5	ecog_145	conn 3	ecog_gamma_M
+1423	42128.7005	42137.2005	8.5	ecog_146	conn 3	ecog_gamma_M
+1424	42128.7005	42137.2005	8.5	ecog_147	conn 3	ecog_gamma_M
+1425	42128.7005	42137.2005	8.5	ecog_148	conn 3	ecog_gamma_M
+1426	42130.2005	42133.2005	3	ecog_117	conn 2	ecog_gamma_M
+1427	42130.2005	42133.2005	3	ecog_118	conn 2	ecog_gamma_M
+1428	42130.2005	42132.2005	2	dbs_L2B	conn10	dbs_gamma_M
+1429	42132.2005	42135.2005	3	ecog_156	conn 4	ecog_gamma_M
+1430	42135.2005	42137.2005	2	ecog_222	conn 6	ecog_gamma_M
+1431	42135.2005	42140.2005	5	ecog_223	conn 6	ecog_gamma_M
+1432	42135.2005	42137.2005	2	ecog_224	conn 6	ecog_gamma_M
+1433	42138.2005	42141.2005	3	ecog_252	conn 8	ecog_gamma_M
+1434	42140.2005	42142.2005	2	ecog_138	conn 3	ecog_gamma_M
+1435	42147.2005	42150.2005	3	ecog_140	conn 3	ecog_gamma_M
+1436	42147.7005	42151.2005	3.5	dbs_L1	conn10	dbs_gamma_M
+1437	42147.7005	42151.2005	3.5	dbs_L2A	conn10	dbs_gamma_M
+1438	42147.7005	42151.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+1439	42147.7005	42151.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+1440	42147.7005	42151.2005	3.5	dbs_L3A	conn10	dbs_gamma_M
+1441	42147.7005	42151.2005	3.5	dbs_L3B	conn10	dbs_gamma_M
+1442	42147.7005	42151.2005	3.5	dbs_L3C	conn10	dbs_gamma_M
+1443	42147.7005	42151.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+1444	42147.7005	42151.2005	3.5	dbs_R1	conn 9	dbs_gamma_M
+1445	42147.7005	42151.2005	3.5	dbs_R2A	conn 9	dbs_gamma_M
+1446	42147.7005	42151.2005	3.5	dbs_R2B	conn 9	dbs_gamma_M
+1447	42147.7005	42151.2005	3.5	dbs_R2C	conn 9	dbs_gamma_M
+1448	42147.7005	42151.2005	3.5	dbs_R3A	conn 9	dbs_gamma_M
+1449	42147.7005	42151.2005	3.5	dbs_R3B	conn 9	dbs_gamma_M
+1450	42147.7005	42151.2005	3.5	dbs_R4	conn 9	dbs_gamma_M
+1451	42153.2005	42156.2005	3	ecog_252	conn 8	ecog_gamma_M
+1452	42153.7005	42158.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1453	42153.7005	42157.7005	4	dbs_L2A	conn10	dbs_gamma_M
+1454	42153.7005	42158.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1455	42153.7005	42158.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1456	42153.7005	42157.7005	4	dbs_L3A	conn10	dbs_gamma_M
+1457	42153.7005	42158.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1458	42153.7005	42158.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1459	42153.7005	42157.7005	4	dbs_L4	conn10	dbs_gamma_M
+1460	42155.2005	42158.2005	3	dbs_R2C	conn 9	dbs_gamma_M
+1461	42156.2005	42159.2005	3	ecog_222	conn 6	ecog_gamma_M
+1462	42156.2005	42159.2005	3	ecog_224	conn 6	ecog_gamma_M
+1463	42157.2005	42159.2005	2	ecog_223	conn 6	ecog_gamma_M
+1464	42159.7005	42163.2005	3.5	dbs_L1	conn10	dbs_gamma_M
+1465	42159.7005	42163.2005	3.5	dbs_L2A	conn10	dbs_gamma_M
+1466	42159.7005	42163.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+1467	42159.7005	42163.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+1468	42159.7005	42163.2005	3.5	dbs_L3A	conn10	dbs_gamma_M
+1469	42159.7005	42163.2005	3.5	dbs_L3B	conn10	dbs_gamma_M
+1470	42159.7005	42163.2005	3.5	dbs_L3C	conn10	dbs_gamma_M
+1471	42159.7005	42163.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+1472	42159.7005	42163.2005	3.5	dbs_R1	conn 9	dbs_gamma_M
+1473	42159.7005	42163.2005	3.5	dbs_R2A	conn 9	dbs_gamma_M
+1474	42159.7005	42163.2005	3.5	dbs_R2B	conn 9	dbs_gamma_M
+1475	42159.7005	42163.2005	3.5	dbs_R2C	conn 9	dbs_gamma_M
+1476	42159.7005	42163.2005	3.5	dbs_R3A	conn 9	dbs_gamma_M
+1477	42159.7005	42163.2005	3.5	dbs_R3B	conn 9	dbs_gamma_M
+1478	42159.7005	42163.2005	3.5	dbs_R4	conn 9	dbs_gamma_M
+1479	42161.2005	42176.2005	15	ecog_144	conn 3	ecog_gamma_M
+1480	42165.2005	42175.2005	10	ecog_141	conn 3	ecog_gamma_M
+1481	42165.2005	42185.2005	20	ecog_142	conn 3	ecog_gamma_M
+1482	42165.2005	42185.2005	20	ecog_143	conn 3	ecog_gamma_M
+1483	42165.2005	42176.2005	11	ecog_145	conn 3	ecog_gamma_M
+1484	42166.2005	42168.2005	2	ecog_120	conn 2	ecog_gamma_M
+1485	42168.2005	42170.2005	2	ecog_229	conn 6	ecog_gamma_M
+1486	42168.2005	42175.2005	7	ecog_239	conn 7	ecog_gamma_M
+1487	42171.2005	42173.2005	2	ecog_228	conn 6	ecog_gamma_M
+1488	42171.7005	42176.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1489	42171.7005	42176.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1490	42171.7005	42176.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1491	42171.7005	42176.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1492	42171.7005	42176.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1493	42171.7005	42176.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1494	42171.7005	42176.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1495	42171.7005	42176.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1496	42171.7005	42176.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1497	42171.7005	42176.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1498	42171.7005	42176.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1499	42171.7005	42176.2005	4.5	dbs_R2C	conn 9	dbs_gamma_M
+1500	42171.7005	42176.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1501	42171.7005	42176.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1502	42171.7005	42176.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1503	42172.2005	42174.2005	2	ecog_118	conn 2	ecog_gamma_M
+1504	42181.2005	42185.2005	4	ecog_141	conn 3	ecog_gamma_M
+1505	42181.2005	42185.2005	4	ecog_144	conn 3	ecog_gamma_M
+1506	42181.2005	42185.2005	4	ecog_145	conn 3	ecog_gamma_M
+1507	42182.2005	42185.2005	3	ecog_124	conn 2	ecog_gamma_M
+1508	42182.2005	42185.2005	3	ecog_125	conn 2	ecog_gamma_M
+1509	42183.2005	42186.2005	3	ecog_122	conn 2	ecog_gamma_M
+1510	42183.2005	42186.2005	3	ecog_123	conn 2	ecog_gamma_M
+1511	42183.2005	42185.2005	2	ecog_126	conn 2	ecog_gamma_M
+1512	42183.2005	42185.2005	2	ecog_127	conn 2	ecog_gamma_M
+1513	42185.2005	42188.2005	3	dbs_L2B	conn10	dbs_gamma_M
+1514	42185.2005	42188.2005	3	dbs_L2C	conn10	dbs_gamma_M
+1515	42185.2005	42188.2005	3	dbs_L3A	conn10	dbs_gamma_M
+1516	42187.2005	42189.2005	2	ecog_139	conn 3	ecog_gamma_M
+1517	42189.2005	42192.2005	3	ecog_122	conn 2	ecog_gamma_M
+1518	42189.2005	42192.2005	3	ecog_123	conn 2	ecog_gamma_M
+1519	42189.2005	42191.2005	2	ecog_124	conn 2	ecog_gamma_M
+1520	42192.7005	42197.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1521	42192.7005	42197.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1522	42192.7005	42197.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1523	42192.7005	42197.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1524	42192.7005	42197.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1525	42192.7005	42197.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1526	42192.7005	42197.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1527	42192.7005	42197.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1528	42192.7005	42197.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1529	42192.7005	42197.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1530	42192.7005	42197.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1531	42192.7005	42200.2005	7.5	dbs_R2C	conn 9	dbs_gamma_M
+1532	42192.7005	42197.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1533	42192.7005	42197.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1534	42192.7005	42197.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1535	42204.2005	42206.2005	2	ecog_238	conn 7	ecog_gamma_M
+1536	42207.2005	42212.2005	5	ecog_223	conn 6	ecog_gamma_M
+1537	42210.2005	42213.2005	3	ecog_222	conn 6	ecog_gamma_M
+1538	42214.2005	42217.2005	3	ecog_135	conn 3	ecog_gamma_M
+1539	42215.2005	42221.2005	6	ecog_250	conn 8	ecog_gamma_M
+1540	42216.2005	42218.2005	2	ecog_159	conn 4	ecog_gamma_M
+1541	42217.2005	42220.2005	3	ecog_123	conn 2	ecog_gamma_M
+1542	42217.2005	42220.2005	3	ecog_124	conn 2	ecog_gamma_M
+1543	42217.2005	42220.2005	3	ecog_125	conn 2	ecog_gamma_M
+1544	42217.2005	42220.2005	3	ecog_126	conn 2	ecog_gamma_M
+1545	42218.7005	42225.2005	6.5	dbs_L1	conn10	dbs_gamma_M
+1546	42218.7005	42225.2005	6.5	dbs_L2A	conn10	dbs_gamma_M
+1547	42218.7005	42225.2005	6.5	dbs_L2B	conn10	dbs_gamma_M
+1548	42218.7005	42225.2005	6.5	dbs_L2C	conn10	dbs_gamma_M
+1549	42218.7005	42227.2005	8.5	dbs_L3A	conn10	dbs_gamma_M
+1550	42218.7005	42225.2005	6.5	dbs_L3B	conn10	dbs_gamma_M
+1551	42218.7005	42225.2005	6.5	dbs_L3C	conn10	dbs_gamma_M
+1552	42218.7005	42225.2005	6.5	dbs_L4	conn10	dbs_gamma_M
+1553	42219.2005	42221.2005	2	ecog_222	conn 6	ecog_gamma_M
+1554	42219.2005	42221.2005	2	ecog_223	conn 6	ecog_gamma_M
+1555	42220.2005	42225.2005	5	dbs_R1	conn 9	dbs_gamma_M
+1556	42220.2005	42227.2005	7	dbs_R2C	conn 9	dbs_gamma_M
+1557	42226.2005	42228.2005	2	ecog_126	conn 2	ecog_gamma_M
+1558	42233.2005	42235.2005	2	ecog_122	conn 2	ecog_gamma_M
+1559	42233.2005	42235.2005	2	ecog_123	conn 2	ecog_gamma_M
+1560	42233.7005	42250.2005	16.5	dbs_L1	conn10	dbs_gamma_M
+1561	42233.7005	42250.2005	16.5	dbs_L2A	conn10	dbs_gamma_M
+1562	42233.7005	42249.2005	15.5	dbs_L2B	conn10	dbs_gamma_M
+1563	42233.7005	42249.2005	15.5	dbs_L2C	conn10	dbs_gamma_M
+1564	42233.7005	42250.2005	16.5	dbs_L3A	conn10	dbs_gamma_M
+1565	42233.7005	42249.2005	15.5	dbs_L3B	conn10	dbs_gamma_M
+1566	42233.7005	42249.2005	15.5	dbs_L3C	conn10	dbs_gamma_M
+1567	42233.7005	42249.2005	15.5	dbs_L4	conn10	dbs_gamma_M
+1568	42233.7005	42249.7005	16	dbs_R1	conn 9	dbs_gamma_M
+1569	42233.7005	42250.2005	16.5	dbs_R2A	conn 9	dbs_gamma_M
+1570	42233.7005	42250.2005	16.5	dbs_R2B	conn 9	dbs_gamma_M
+1571	42233.7005	42250.2005	16.5	dbs_R2C	conn 9	dbs_gamma_M
+1572	42233.7005	42250.2005	16.5	dbs_R3A	conn 9	dbs_gamma_M
+1573	42233.7005	42250.2005	16.5	dbs_R3B	conn 9	dbs_gamma_M
+1574	42233.7005	42249.7005	16	dbs_R4	conn 9	dbs_gamma_M
+1575	42236.2005	42240.2005	4	ecog_159	conn 4	ecog_gamma_M
+1576	42241.2005	42248.2005	7	ecog_230	conn 6	ecog_gamma_M
+1577	42242.2005	42244.2005	2	ecog_229	conn 6	ecog_gamma_M
+1578	42244.2005	42249.2005	5	ecog_104	conn 1	ecog_gamma_M
+1579	42245.2005	42249.2005	4	ecog_222	conn 6	ecog_gamma_M
+1580	42246.2005	42250.2005	4	ecog_103	conn 1	ecog_gamma_M
+1581	42246.2005	42249.2005	3	ecog_111	conn 1	ecog_gamma_M
+1582	42246.2005	42249.2005	3	ecog_137	conn 3	ecog_gamma_M
+1583	42246.2005	42249.2005	3	ecog_154	conn 4	ecog_gamma_M
+1584	42246.2005	42248.2005	2	ecog_231	conn 6	ecog_gamma_M
+1585	42252.2005	42257.2005	5	ecog_126	conn 2	ecog_gamma_M
+1586	42253.7005	42258.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1587	42253.7005	42256.7005	3	dbs_R2A	conn 9	dbs_gamma_M
+1588	42253.7005	42258.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1589	42253.7005	42257.2005	3.5	dbs_R2C	conn 9	dbs_gamma_M
+1590	42253.7005	42257.2005	3.5	dbs_R3A	conn 9	dbs_gamma_M
+1591	42253.7005	42257.2005	3.5	dbs_R3B	conn 9	dbs_gamma_M
+1592	42253.7005	42257.2005	3.5	dbs_R4	conn 9	dbs_gamma_M
+1593	42255.2005	42258.2005	3	dbs_L1	conn10	dbs_gamma_M
+1594	42255.2005	42258.2005	3	dbs_L2A	conn10	dbs_gamma_M
+1595	42255.2005	42258.2005	3	dbs_L2B	conn10	dbs_gamma_M
+1596	42255.2005	42258.2005	3	dbs_L2C	conn10	dbs_gamma_M
+1597	42259.2005	42262.2005	3	ecog_134	conn 3	ecog_gamma_M
+1598	42260.2005	42265.2005	5	ecog_240	conn 7	ecog_gamma_M
+1599	42267.2005	42277.2005	10	ecog_117	conn 2	ecog_gamma_M
+1600	42267.2005	42272.2005	5	ecog_118	conn 2	ecog_gamma_M
+1601	42271.2005	42274.2005	3	ecog_126	conn 2	ecog_gamma_M
+1602	42278.7005	42284.2005	5.5	dbs_L1	conn10	dbs_gamma_M
+1603	42278.7005	42284.2005	5.5	dbs_L2A	conn10	dbs_gamma_M
+1604	42278.7005	42286.2005	7.5	dbs_L2B	conn10	dbs_gamma_M
+1605	42278.7005	42284.2005	5.5	dbs_L2C	conn10	dbs_gamma_M
+1606	42278.7005	42284.2005	5.5	dbs_L3A	conn10	dbs_gamma_M
+1607	42278.7005	42284.2005	5.5	dbs_L3B	conn10	dbs_gamma_M
+1608	42278.7005	42284.2005	5.5	dbs_L3C	conn10	dbs_gamma_M
+1609	42278.7005	42284.2005	5.5	dbs_L4	conn10	dbs_gamma_M
+1610	42278.7005	42284.2005	5.5	dbs_R1	conn 9	dbs_gamma_M
+1611	42278.7005	42284.2005	5.5	dbs_R2A	conn 9	dbs_gamma_M
+1612	42278.7005	42284.2005	5.5	dbs_R2B	conn 9	dbs_gamma_M
+1613	42278.7005	42283.7005	5	dbs_R2C	conn 9	dbs_gamma_M
+1614	42278.7005	42283.7005	5	dbs_R3A	conn 9	dbs_gamma_M
+1615	42278.7005	42283.7005	5	dbs_R3B	conn 9	dbs_gamma_M
+1616	42278.7005	42284.2005	5.5	dbs_R4	conn 9	dbs_gamma_M
+1617	42279.2005	42281.2005	2	ecog_118	conn 2	ecog_gamma_M
+1618	42280.2005	42282.2005	2	ecog_222	conn 6	ecog_gamma_M
+1619	42281.2005	42283.2005	2	ecog_254	conn 8	ecog_gamma_M
+1620	42284.2005	42286.2005	2	ecog_139	conn 3	ecog_gamma_M
+1621	42285.2005	42287.2005	2	ecog_209	conn 5	ecog_gamma_M
+1622	42288.2005	42290.2005	2	ecog_254	conn 8	ecog_gamma_M
+1623	42289.2005	42291.2005	2	ecog_122	conn 2	ecog_gamma_M
+1624	42289.2005	42291.2005	2	ecog_123	conn 2	ecog_gamma_M
+1625	42292.2005	42294.2005	2	dbs_R1	conn 9	dbs_gamma_M
+1626	42295.2005	42297.2005	2	ecog_118	conn 2	ecog_gamma_M
+1627	42295.2005	42297.2005	2	ecog_121	conn 2	ecog_gamma_M
+1628	42295.2005	42297.2005	2	ecog_122	conn 2	ecog_gamma_M
+1629	42298.2005	42300.2005	2	ecog_146	conn 3	ecog_gamma_M
+1630	42298.2005	42300.2005	2	dbs_R2C	conn 9	dbs_gamma_M
+1631	42299.2005	42301.2005	2	ecog_222	conn 6	ecog_gamma_M
+1632	42299.2005	42301.2005	2	ecog_223	conn 6	ecog_gamma_M
+1633	42300.2005	42306.2005	6	ecog_239	conn 7	ecog_gamma_M
+1634	42301.7005	42306.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1635	42301.7005	42306.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1636	42301.7005	42305.7005	4	dbs_L2B	conn10	dbs_gamma_M
+1637	42301.7005	42305.7005	4	dbs_L2C	conn10	dbs_gamma_M
+1638	42301.7005	42306.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1639	42301.7005	42306.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1640	42301.7005	42305.7005	4	dbs_L3C	conn10	dbs_gamma_M
+1641	42301.7005	42305.7005	4	dbs_L4	conn10	dbs_gamma_M
+1642	42303.2005	42305.2005	2	dbs_R3A	conn 9	dbs_gamma_M
+1643	42303.2005	42306.2005	3	dbs_R3B	conn 9	dbs_gamma_M
+1644	42311.7005	42316.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1645	42311.7005	42316.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1646	42311.7005	42319.2005	7.5	dbs_L2B	conn10	dbs_gamma_M
+1647	42311.7005	42316.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1648	42311.7005	42316.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1649	42311.7005	42316.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1650	42311.7005	42316.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1651	42311.7005	42316.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1652	42311.7005	42316.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1653	42311.7005	42316.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1654	42311.7005	42316.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1655	42311.7005	42316.2005	4.5	dbs_R2C	conn 9	dbs_gamma_M
+1656	42311.7005	42316.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1657	42311.7005	42316.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1658	42311.7005	42316.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1659	42313.2005	42316.2005	3	ecog_222	conn 6	ecog_gamma_M
+1660	42313.2005	42316.2005	3	ecog_239	conn 7	ecog_gamma_M
+1661	42314.2005	42316.2005	2	ecog_118	conn 2	ecog_gamma_M
+1662	42317.2005	42319.2005	2	ecog_224	conn 6	ecog_gamma_M
+1663	42321.2005	42324.2005	3	ecog_254	conn 8	ecog_gamma_M
+1664	42323.2005	42328.2005	5	ecog_118	conn 2	ecog_gamma_M
+1665	42330.2005	42343.2005	13	dbs_R1	conn 9	dbs_gamma_M
+1666	42331.7005	42343.2005	11.5	dbs_L1	conn10	dbs_gamma_M
+1667	42331.7005	42343.2005	11.5	dbs_L2A	conn10	dbs_gamma_M
+1668	42331.7005	42343.2005	11.5	dbs_L2B	conn10	dbs_gamma_M
+1669	42331.7005	42343.2005	11.5	dbs_L2C	conn10	dbs_gamma_M
+1670	42331.7005	42343.2005	11.5	dbs_L3A	conn10	dbs_gamma_M
+1671	42331.7005	42343.2005	11.5	dbs_L3B	conn10	dbs_gamma_M
+1672	42331.7005	42343.2005	11.5	dbs_L3C	conn10	dbs_gamma_M
+1673	42331.7005	42343.2005	11.5	dbs_L4	conn10	dbs_gamma_M
+1674	42331.7005	42343.2005	11.5	dbs_R2A	conn 9	dbs_gamma_M
+1675	42331.7005	42343.2005	11.5	dbs_R2B	conn 9	dbs_gamma_M
+1676	42331.7005	42343.2005	11.5	dbs_R2C	conn 9	dbs_gamma_M
+1677	42331.7005	42343.2005	11.5	dbs_R3A	conn 9	dbs_gamma_M
+1678	42331.7005	42343.2005	11.5	dbs_R3B	conn 9	dbs_gamma_M
+1679	42331.7005	42343.2005	11.5	dbs_R4	conn 9	dbs_gamma_M
+1680	42335.2005	42337.2005	2	ecog_117	conn 2	ecog_gamma_M
+1681	42335.2005	42337.2005	2	ecog_118	conn 2	ecog_gamma_M
+1682	42339.2005	42342.2005	3	ecog_120	conn 2	ecog_gamma_M
+1683	42345.2005	42348.2005	3	ecog_222	conn 6	ecog_gamma_M
+1684	42345.2005	42347.2005	2	ecog_223	conn 6	ecog_gamma_M
+1685	42345.2005	42347.2005	2	ecog_230	conn 6	ecog_gamma_M
+1686	42347.2005	42349.2005	2	ecog_117	conn 2	ecog_gamma_M
+1687	42347.2005	42349.2005	2	ecog_118	conn 2	ecog_gamma_M
+1688	42348.2005	42350.2005	2	ecog_249	conn 8	ecog_gamma_M
+1689	42348.2005	42350.2005	2	ecog_250	conn 8	ecog_gamma_M
+1690	42348.2005	42353.2005	5	dbs_L3B	conn10	dbs_gamma_M
+1691	42348.7005	42353.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1692	42348.7005	42353.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1693	42348.7005	42353.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1694	42348.7005	42353.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1695	42348.7005	42353.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1696	42348.7005	42353.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1697	42348.7005	42353.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1698	42348.7005	42353.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1699	42348.7005	42353.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1700	42348.7005	42353.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1701	42348.7005	42353.2005	4.5	dbs_R2C	conn 9	dbs_gamma_M
+1702	42348.7005	42353.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1703	42348.7005	42353.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1704	42348.7005	42353.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1705	42349.2005	42352.2005	3	ecog_261	conn 8	ecog_gamma_M
+1706	42349.2005	42352.2005	3	ecog_262	conn 8	ecog_gamma_M
+1707	42349.2005	42352.2005	3	ecog_263	conn 8	ecog_gamma_M
+1708	42352.2005	42354.2005	2	ecog_230	conn 6	ecog_gamma_M
+1709	42353.2005	42356.2005	3	ecog_238	conn 7	ecog_gamma_M
+1710	42354.2005	42359.2005	5	ecog_124	conn 2	ecog_gamma_M
+1711	42354.2005	42359.2005	5	ecog_125	conn 2	ecog_gamma_M
+1712	42359.2005	42363.2005	4	ecog_121	conn 2	ecog_gamma_M
+1713	42359.2005	42363.2005	4	ecog_122	conn 2	ecog_gamma_M
+1714	42359.2005	42362.2005	3	ecog_123	conn 2	ecog_gamma_M
+1715	42359.2005	42363.2005	4	ecog_231	conn 6	ecog_gamma_M
+1716	42360.2005	42367.2005	7	ecog_230	conn 6	ecog_gamma_M
+1717	42360.2005	42362.2005	2	ecog_232	conn 6	ecog_gamma_M
+1718	42360.2005	42362.2005	2	dbs_L1	conn10	dbs_gamma_M
+1719	42360.2005	42362.2005	2	dbs_L2C	conn10	dbs_gamma_M
+1720	42360.2005	42362.2005	2	dbs_L3C	conn10	dbs_gamma_M
+1721	42363.7005	42368.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1722	42363.7005	42368.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1723	42363.7005	42368.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1724	42363.7005	42368.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1725	42363.7005	42368.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1726	42363.7005	42368.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1727	42363.7005	42368.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1728	42363.7005	42368.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1729	42363.7005	42368.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1730	42363.7005	42368.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1731	42363.7005	42368.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1732	42363.7005	42368.2005	4.5	dbs_R2C	conn 9	dbs_gamma_M
+1733	42363.7005	42368.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1734	42363.7005	42368.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1735	42363.7005	42368.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1736	42365.2005	42368.2005	3	ecog_222	conn 6	ecog_gamma_M
+1737	42367.2005	42371.2005	4	ecog_261	conn 8	ecog_gamma_M
+1738	42370.2005	42372.2005	2	ecog_101	conn 1	ecog_gamma_M
+1739	42370.2005	42372.2005	2	ecog_102	conn 1	ecog_gamma_M
+1740	42371.2005	42373.2005	2	ecog_126	conn 2	ecog_gamma_M
+1741	42371.2005	42373.2005	2	ecog_127	conn 2	ecog_gamma_M
+1742	42371.2005	42373.2005	2	ecog_128	conn 2	ecog_gamma_M
+1743	42375.2005	42379.2005	4	ecog_222	conn 6	ecog_gamma_M
+1744	42375.2005	42379.2005	4	ecog_223	conn 6	ecog_gamma_M
+1745	42375.2005	42380.2005	5	ecog_224	conn 6	ecog_gamma_M
+1746	42381.2005	42383.2005	2	ecog_118	conn 2	ecog_gamma_M
+1747	42383.2005	42385.2005	2	ecog_234	conn 7	ecog_gamma_M
+1748	42384.2005	42386.2005	2	ecog_159	conn 4	ecog_gamma_M
+1749	42384.2005	42386.2005	2	ecog_160	conn 4	ecog_gamma_M
+1750	42384.2005	42386.2005	2	ecog_161	conn 4	ecog_gamma_M
+1751	42386.2005	42388.2005	2	ecog_117	conn 2	ecog_gamma_M
+1752	42386.2005	42388.2005	2	ecog_118	conn 2	ecog_gamma_M
+1753	42391.2005	42397.2005	6	ecog_126	conn 2	ecog_gamma_M
+1754	42392.2005	42394.2005	2	ecog_125	conn 2	ecog_gamma_M
+1755	42397.2005	42402.2005	5	ecog_144	conn 3	ecog_gamma_M
+1756	42398.2005	42402.2005	4	ecog_143	conn 3	ecog_gamma_M
+1757	42403.2005	42405.2005	2	ecog_225	conn 6	ecog_gamma_M
+1758	42410.2005	42413.2005	3	ecog_122	conn 2	ecog_gamma_M
+1759	42410.2005	42413.2005	3	ecog_123	conn 2	ecog_gamma_M
+1760	42410.2005	42412.2005	2	ecog_124	conn 2	ecog_gamma_M
+1761	42411.2005	42414.2005	3	ecog_103	conn 1	ecog_gamma_M
+1762	42411.2005	42420.2005	9	ecog_160	conn 4	ecog_gamma_M
+1763	42414.7005	42422.2005	7.5	dbs_L1	conn10	dbs_gamma_M
+1764	42414.7005	42422.2005	7.5	dbs_L2A	conn10	dbs_gamma_M
+1765	42414.7005	42421.7005	7	dbs_L2B	conn10	dbs_gamma_M
+1766	42414.7005	42422.2005	7.5	dbs_L2C	conn10	dbs_gamma_M
+1767	42414.7005	42422.2005	7.5	dbs_L3A	conn10	dbs_gamma_M
+1768	42414.7005	42422.2005	7.5	dbs_L3B	conn10	dbs_gamma_M
+1769	42414.7005	42421.7005	7	dbs_L3C	conn10	dbs_gamma_M
+1770	42414.7005	42421.7005	7	dbs_L4	conn10	dbs_gamma_M
+1771	42414.7005	42422.2005	7.5	dbs_R1	conn 9	dbs_gamma_M
+1772	42414.7005	42421.7005	7	dbs_R2A	conn 9	dbs_gamma_M
+1773	42414.7005	42421.7005	7	dbs_R2B	conn 9	dbs_gamma_M
+1774	42414.7005	42421.7005	7	dbs_R2C	conn 9	dbs_gamma_M
+1775	42414.7005	42422.2005	7.5	dbs_R3A	conn 9	dbs_gamma_M
+1776	42414.7005	42422.2005	7.5	dbs_R3B	conn 9	dbs_gamma_M
+1777	42414.7005	42422.2005	7.5	dbs_R4	conn 9	dbs_gamma_M
+1778	42415.2005	42421.2005	6	ecog_243	conn 7	ecog_gamma_M
+1779	42421.2005	42424.2005	3	ecog_122	conn 2	ecog_gamma_M
+1780	42421.2005	42424.2005	3	ecog_123	conn 2	ecog_gamma_M
+1781	42421.2005	42424.2005	3	ecog_137	conn 3	ecog_gamma_M
+1782	42425.2005	42427.2005	2	ecog_160	conn 4	ecog_gamma_M
+1783	42428.2005	42432.2005	4	ecog_240	conn 7	ecog_gamma_M
+1784	42430.7005	42447.2005	16.5	dbs_L1	conn10	dbs_gamma_M
+1785	42430.7005	42447.2005	16.5	dbs_L2A	conn10	dbs_gamma_M
+1786	42430.7005	42447.2005	16.5	dbs_L2B	conn10	dbs_gamma_M
+1787	42430.7005	42447.2005	16.5	dbs_L2C	conn10	dbs_gamma_M
+1788	42430.7005	42447.2005	16.5	dbs_L3A	conn10	dbs_gamma_M
+1789	42430.7005	42447.2005	16.5	dbs_L3B	conn10	dbs_gamma_M
+1790	42430.7005	42447.2005	16.5	dbs_L3C	conn10	dbs_gamma_M
+1791	42430.7005	42447.2005	16.5	dbs_L4	conn10	dbs_gamma_M
+1792	42430.7005	42447.2005	16.5	dbs_R1	conn 9	dbs_gamma_M
+1793	42430.7005	42447.2005	16.5	dbs_R2A	conn 9	dbs_gamma_M
+1794	42430.7005	42447.2005	16.5	dbs_R2B	conn 9	dbs_gamma_M
+1795	42430.7005	42447.2005	16.5	dbs_R2C	conn 9	dbs_gamma_M
+1796	42430.7005	42447.2005	16.5	dbs_R3A	conn 9	dbs_gamma_M
+1797	42430.7005	42447.2005	16.5	dbs_R3B	conn 9	dbs_gamma_M
+1798	42430.7005	42447.2005	16.5	dbs_R4	conn 9	dbs_gamma_M
+1799	42436.2005	42442.2005	6	ecog_122	conn 2	ecog_gamma_M
+1800	42436.2005	42439.2005	3	ecog_146	conn 3	ecog_gamma_M
+1801	42438.2005	42441.2005	3	ecog_121	conn 2	ecog_gamma_M
+1802	42440.2005	42444.2005	4	ecog_239	conn 7	ecog_gamma_M
+1803	42440.2005	42443.2005	3	ecog_240	conn 7	ecog_gamma_M
+1804	42443.2005	42449.2005	6	ecog_244	conn 7	ecog_gamma_M
+1805	42443.2005	42447.2005	4	ecog_250	conn 8	ecog_gamma_M
+1806	42444.2005	42452.2005	8	ecog_143	conn 3	ecog_gamma_M
+1807	42444.2005	42449.2005	5	ecog_222	conn 6	ecog_gamma_M
+1808	42444.2005	42449.2005	5	ecog_223	conn 6	ecog_gamma_M
+1809	42444.2005	42447.2005	3	ecog_249	conn 8	ecog_gamma_M
+1810	42444.2005	42447.2005	3	ecog_251	conn 8	ecog_gamma_M
+1811	42445.2005	42449.2005	4	ecog_224	conn 6	ecog_gamma_M
+1812	42445.2005	42449.2005	4	ecog_225	conn 6	ecog_gamma_M
+1813	42459.2005	42466.2005	7	ecog_137	conn 3	ecog_gamma_M
+1814	42464.2005	42466.2005	2	ecog_117	conn 2	ecog_gamma_M
+1815	42464.2005	42466.2005	2	ecog_118	conn 2	ecog_gamma_M
+1816	42464.2005	42467.2005	3	ecog_140	conn 3	ecog_gamma_M
+1817	42466.2005	42470.2005	4	ecog_240	conn 7	ecog_gamma_M
+1818	42470.2005	42472.2005	2	ecog_124	conn 2	ecog_gamma_M
+1819	42470.2005	42472.2005	2	ecog_125	conn 2	ecog_gamma_M
+1820	42476.2005	42478.2005	2	ecog_126	conn 2	ecog_gamma_M
+1821	42476.2005	42478.2005	2	ecog_127	conn 2	ecog_gamma_M
+1822	42476.2005	42478.2005	2	ecog_128	conn 2	ecog_gamma_M
+1823	42480.2005	42483.2005	3	ecog_138	conn 3	ecog_gamma_M
+1824	42480.7005	42487.2005	6.5	dbs_L1	conn10	dbs_gamma_M
+1825	42480.7005	42487.2005	6.5	dbs_L2A	conn10	dbs_gamma_M
+1826	42480.7005	42487.2005	6.5	dbs_L2B	conn10	dbs_gamma_M
+1827	42480.7005	42487.2005	6.5	dbs_L2C	conn10	dbs_gamma_M
+1828	42480.7005	42487.2005	6.5	dbs_L3A	conn10	dbs_gamma_M
+1829	42480.7005	42487.2005	6.5	dbs_L3B	conn10	dbs_gamma_M
+1830	42480.7005	42487.2005	6.5	dbs_L3C	conn10	dbs_gamma_M
+1831	42480.7005	42487.2005	6.5	dbs_L4	conn10	dbs_gamma_M
+1832	42480.7005	42487.2005	6.5	dbs_R1	conn 9	dbs_gamma_M
+1833	42480.7005	42487.2005	6.5	dbs_R2A	conn 9	dbs_gamma_M
+1834	42480.7005	42487.2005	6.5	dbs_R2B	conn 9	dbs_gamma_M
+1835	42480.7005	42486.7005	6	dbs_R2C	conn 9	dbs_gamma_M
+1836	42480.7005	42487.2005	6.5	dbs_R3A	conn 9	dbs_gamma_M
+1837	42480.7005	42487.2005	6.5	dbs_R3B	conn 9	dbs_gamma_M
+1838	42480.7005	42487.2005	6.5	dbs_R4	conn 9	dbs_gamma_M
+1839	42481.2005	42484.2005	3	ecog_239	conn 7	ecog_gamma_M
+1840	42481.2005	42483.2005	2	ecog_252	conn 8	ecog_gamma_M
+1841	42489.2005	42495.2005	6	ecog_250	conn 8	ecog_gamma_M
+1842	42492.2005	42494.2005	2	ecog_249	conn 8	ecog_gamma_M
+1843	42493.2005	42495.2005	2	ecog_135	conn 3	ecog_gamma_M
+1844	42493.2005	42498.2005	5	dbs_R2C	conn 9	dbs_gamma_M
+1845	42493.7005	42498.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1846	42493.7005	42498.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1847	42493.7005	42498.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1848	42493.7005	42498.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1849	42493.7005	42498.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1850	42493.7005	42498.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1851	42493.7005	42498.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1852	42493.7005	42498.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1853	42493.7005	42498.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1854	42493.7005	42498.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1855	42493.7005	42498.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1856	42493.7005	42498.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1857	42493.7005	42498.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1858	42493.7005	42498.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1859	42497.2005	42500.2005	3	ecog_105	conn 1	ecog_gamma_M
+1860	42498.2005	42500.2005	2	ecog_106	conn 1	ecog_gamma_M
+1861	42500.2005	42502.2005	2	ecog_160	conn 4	ecog_gamma_M
+1862	42503.2005	42505.2005	2	ecog_122	conn 2	ecog_gamma_M
+1863	42504.2005	42510.2005	6	ecog_117	conn 2	ecog_gamma_M
+1864	42504.2005	42514.2005	10	ecog_118	conn 2	ecog_gamma_M
+1865	42512.2005	42514.2005	2	ecog_252	conn 8	ecog_gamma_M
+1866	42512.2005	42514.2005	2	ecog_253	conn 8	ecog_gamma_M
+1867	42512.2005	42520.2005	8	ecog_254	conn 8	ecog_gamma_M
+1868	42512.2005	42517.2005	5	ecog_255	conn 8	ecog_gamma_M
+1869	42513.2005	42515.2005	2	ecog_125	conn 2	ecog_gamma_M
+1870	42514.2005	42516.2005	2	ecog_129	conn 2	ecog_gamma_M
+1871	42514.2005	42516.2005	2	ecog_130	conn 2	ecog_gamma_M
+1872	42514.2005	42517.2005	3	ecog_245	conn 7	ecog_gamma_M
+1873	42517.2005	42520.2005	3	ecog_229	conn 6	ecog_gamma_M
+1874	42518.2005	42520.2005	2	ecog_124	conn 2	ecog_gamma_M
+1875	42518.2005	42520.2005	2	ecog_125	conn 2	ecog_gamma_M
+1876	42520.2005	42524.2005	4	ecog_245	conn 7	ecog_gamma_M
+1877	42520.7005	42525.2005	4.5	dbs_L1	conn10	dbs_gamma_M
+1878	42520.7005	42525.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1879	42520.7005	42525.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1880	42520.7005	42525.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1881	42520.7005	42525.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1882	42520.7005	42525.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1883	42520.7005	42525.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1884	42520.7005	42525.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1885	42520.7005	42525.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1886	42520.7005	42525.2005	4.5	dbs_R2A	conn 9	dbs_gamma_M
+1887	42520.7005	42526.2005	5.5	dbs_R2B	conn 9	dbs_gamma_M
+1888	42520.7005	42526.2005	5.5	dbs_R2C	conn 9	dbs_gamma_M
+1889	42520.7005	42525.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1890	42520.7005	42525.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1891	42520.7005	42525.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1892	42528.2005	42536.2005	8	dbs_L1	conn10	dbs_gamma_M
+1893	42528.2005	42536.2005	8	dbs_L2A	conn10	dbs_gamma_M
+1894	42530.7005	42536.2005	5.5	dbs_L2B	conn10	dbs_gamma_M
+1895	42530.7005	42536.2005	5.5	dbs_L2C	conn10	dbs_gamma_M
+1896	42530.7005	42536.2005	5.5	dbs_L3A	conn10	dbs_gamma_M
+1897	42530.7005	42536.2005	5.5	dbs_L3B	conn10	dbs_gamma_M
+1898	42530.7005	42536.2005	5.5	dbs_L3C	conn10	dbs_gamma_M
+1899	42530.7005	42536.2005	5.5	dbs_L4	conn10	dbs_gamma_M
+1900	42530.7005	42536.2005	5.5	dbs_R1	conn 9	dbs_gamma_M
+1901	42530.7005	42536.2005	5.5	dbs_R2A	conn 9	dbs_gamma_M
+1902	42530.7005	42536.2005	5.5	dbs_R2B	conn 9	dbs_gamma_M
+1903	42530.7005	42536.2005	5.5	dbs_R2C	conn 9	dbs_gamma_M
+1904	42530.7005	42536.2005	5.5	dbs_R3A	conn 9	dbs_gamma_M
+1905	42530.7005	42536.2005	5.5	dbs_R3B	conn 9	dbs_gamma_M
+1906	42530.7005	42536.2005	5.5	dbs_R4	conn 9	dbs_gamma_M
+1907	42532.2005	42536.2005	4	ecog_123	conn 2	ecog_gamma_M
+1908	42532.2005	42536.2005	4	ecog_124	conn 2	ecog_gamma_M
+1909	42538.2005	42541.2005	3	ecog_105	conn 1	ecog_gamma_M
+1910	42538.2005	42541.2005	3	ecog_106	conn 1	ecog_gamma_M
+1911	42539.2005	42542.2005	3	ecog_213	conn 5	ecog_gamma_M
+1912	42540.2005	42544.2005	4	ecog_102	conn 1	ecog_gamma_M
+1913	42541.2005	42548.2005	7	ecog_124	conn 2	ecog_gamma_M
+1914	42541.2005	42548.2005	7	ecog_125	conn 2	ecog_gamma_M
+1915	42542.2005	42544.2005	2	ecog_101	conn 1	ecog_gamma_M
+1916	42545.2005	42547.2005	2	ecog_123	conn 2	ecog_gamma_M
+1917	42545.2005	42547.2005	2	ecog_126	conn 2	ecog_gamma_M
+1918	42545.2005	42547.2005	2	ecog_127	conn 2	ecog_gamma_M
+1919	42551.2005	42554.2005	3	ecog_254	conn 8	ecog_gamma_M
+1920	42554.2005	42556.2005	2	ecog_127	conn 2	ecog_gamma_M
+1921	42554.2005	42556.2005	2	ecog_128	conn 2	ecog_gamma_M
+1922	42554.2005	42559.2005	5	ecog_239	conn 7	ecog_gamma_M
+1923	42563.7005	42567.2005	3.5	dbs_L1	conn10	dbs_gamma_M
+1924	42563.7005	42567.2005	3.5	dbs_L2A	conn10	dbs_gamma_M
+1925	42563.7005	42567.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+1926	42563.7005	42567.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+1927	42563.7005	42567.2005	3.5	dbs_L3A	conn10	dbs_gamma_M
+1928	42563.7005	42567.2005	3.5	dbs_L3B	conn10	dbs_gamma_M
+1929	42563.7005	42567.2005	3.5	dbs_L3C	conn10	dbs_gamma_M
+1930	42563.7005	42567.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+1931	42565.2005	42567.2005	2	ecog_137	conn 3	ecog_gamma_M
+1932	42565.2005	42567.2005	2	ecog_222	conn 6	ecog_gamma_M
+1933	42565.2005	42567.2005	2	dbs_R1	conn 9	dbs_gamma_M
+1934	42565.2005	42567.2005	2	dbs_R2B	conn 9	dbs_gamma_M
+1935	42578.2005	42580.2005	2	ecog_118	conn 2	ecog_gamma_M
+1936	42578.2005	42581.2005	3	ecog_126	conn 2	ecog_gamma_M
+1937	42578.2005	42581.2005	3	ecog_127	conn 2	ecog_gamma_M
+1938	42578.2005	42581.2005	3	ecog_128	conn 2	ecog_gamma_M
+1939	42579.2005	42581.2005	2	ecog_129	conn 2	ecog_gamma_M
+1940	42579.2005	42582.2005	3	ecog_230	conn 6	ecog_gamma_M
+1941	42580.2005	42582.2005	2	ecog_229	conn 6	ecog_gamma_M
+1942	42580.2005	42582.2005	2	ecog_231	conn 6	ecog_gamma_M
+1943	42580.2005	42582.2005	2	ecog_232	conn 6	ecog_gamma_M
+1944	42581.2005	42584.2005	3	ecog_124	conn 2	ecog_gamma_M
+1945	42581.2005	42584.2005	3	ecog_125	conn 2	ecog_gamma_M
+1946	42582.7005	42590.2005	7.5	dbs_L1	conn10	dbs_gamma_M
+1947	42582.7005	42587.2005	4.5	dbs_L2A	conn10	dbs_gamma_M
+1948	42582.7005	42587.2005	4.5	dbs_L2B	conn10	dbs_gamma_M
+1949	42582.7005	42587.2005	4.5	dbs_L2C	conn10	dbs_gamma_M
+1950	42582.7005	42587.2005	4.5	dbs_L3A	conn10	dbs_gamma_M
+1951	42582.7005	42587.2005	4.5	dbs_L3B	conn10	dbs_gamma_M
+1952	42582.7005	42587.2005	4.5	dbs_L3C	conn10	dbs_gamma_M
+1953	42582.7005	42587.2005	4.5	dbs_L4	conn10	dbs_gamma_M
+1954	42582.7005	42587.2005	4.5	dbs_R1	conn 9	dbs_gamma_M
+1955	42582.7005	42592.2005	9.5	dbs_R2A	conn 9	dbs_gamma_M
+1956	42582.7005	42587.2005	4.5	dbs_R2B	conn 9	dbs_gamma_M
+1957	42582.7005	42587.2005	4.5	dbs_R2C	conn 9	dbs_gamma_M
+1958	42582.7005	42587.2005	4.5	dbs_R3A	conn 9	dbs_gamma_M
+1959	42582.7005	42587.2005	4.5	dbs_R3B	conn 9	dbs_gamma_M
+1960	42582.7005	42587.2005	4.5	dbs_R4	conn 9	dbs_gamma_M
+1961	42588.2005	42590.2005	2	ecog_224	conn 6	ecog_gamma_M
+1962	42588.2005	42591.2005	3	ecog_254	conn 8	ecog_gamma_M
+1963	42595.2005	42597.2005	2	ecog_118	conn 2	ecog_gamma_M
+1964	42598.7005	42607.2005	8.5	dbs_L1	conn10	dbs_gamma_M
+1965	42598.7005	42602.2005	3.5	dbs_L2A	conn10	dbs_gamma_M
+1966	42598.7005	42602.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+1967	42598.7005	42602.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+1968	42598.7005	42602.2005	3.5	dbs_L3A	conn10	dbs_gamma_M
+1969	42598.7005	42607.2005	8.5	dbs_L3B	conn10	dbs_gamma_M
+1970	42598.7005	42607.2005	8.5	dbs_L3C	conn10	dbs_gamma_M
+1971	42598.7005	42602.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+1972	42598.7005	42602.2005	3.5	dbs_R1	conn 9	dbs_gamma_M
+1973	42598.7005	42602.2005	3.5	dbs_R2A	conn 9	dbs_gamma_M
+1974	42598.7005	42602.2005	3.5	dbs_R2B	conn 9	dbs_gamma_M
+1975	42598.7005	42602.2005	3.5	dbs_R2C	conn 9	dbs_gamma_M
+1976	42598.7005	42602.2005	3.5	dbs_R3A	conn 9	dbs_gamma_M
+1977	42598.7005	42607.2005	8.5	dbs_R3B	conn 9	dbs_gamma_M
+1978	42598.7005	42602.2005	3.5	dbs_R4	conn 9	dbs_gamma_M
+1979	42600.2005	42603.2005	3	ecog_118	conn 2	ecog_gamma_M
+1980	42601.2005	42603.2005	2	ecog_139	conn 3	ecog_gamma_M
+1981	42601.2005	42604.2005	3	ecog_140	conn 3	ecog_gamma_M
+1982	42602.2005	42605.2005	3	ecog_137	conn 3	ecog_gamma_M
+1983	42603.7005	42607.2005	3.5	dbs_L2A	conn10	dbs_gamma_M
+1984	42603.7005	42607.2005	3.5	dbs_L2B	conn10	dbs_gamma_M
+1985	42603.7005	42607.2005	3.5	dbs_L2C	conn10	dbs_gamma_M
+1986	42603.7005	42606.7005	3	dbs_L3A	conn10	dbs_gamma_M
+1987	42603.7005	42607.2005	3.5	dbs_L4	conn10	dbs_gamma_M
+1988	42605.2005	42607.2005	2	dbs_R3A	conn 9	dbs_gamma_M
+1989	42605.2005	42607.2005	2	dbs_R4	conn 9	dbs_gamma_M
+1990	42610.2005	42613.2005	3	ecog_154	conn 4	ecog_gamma_M
+1991	42613.2005	42615.2005	2	ecog_118	conn 2	ecog_gamma_M
+1992	42613.7005	42626.2005	12.5	dbs_R1	conn 9	dbs_gamma_M
+1993	42613.7005	42626.2005	12.5	dbs_R2A	conn 9	dbs_gamma_M
+1994	42613.7005	42626.2005	12.5	dbs_R2B	conn 9	dbs_gamma_M
+1995	42613.7005	42626.2005	12.5	dbs_R2C	conn 9	dbs_gamma_M
+1996	42613.7005	42626.2005	12.5	dbs_R3A	conn 9	dbs_gamma_M
+1997	42613.7005	42626.2005	12.5	dbs_R3B	conn 9	dbs_gamma_M
+1998	42613.7005	42626.2005	12.5	dbs_R4	conn 9	dbs_gamma_M
+1999	42614.2005	42616.2005	2	ecog_222	conn 6	ecog_gamma_M
+2000	42615.2005	42618.2005	3	ecog_263	conn 8	ecog_gamma_M
+2001	42615.2005	42626.2005	11	dbs_L3B	conn10	dbs_gamma_M
+2002	42615.7005	42626.2005	10.5	dbs_L1	conn10	dbs_gamma_M
+2003	42615.7005	42626.2005	10.5	dbs_L2A	conn10	dbs_gamma_M
+2004	42615.7005	42626.2005	10.5	dbs_L2B	conn10	dbs_gamma_M
+2005	42615.7005	42626.2005	10.5	dbs_L2C	conn10	dbs_gamma_M
+2006	42615.7005	42626.2005	10.5	dbs_L3A	conn10	dbs_gamma_M
+2007	42615.7005	42626.2005	10.5	dbs_L3C	conn10	dbs_gamma_M
+2008	42615.7005	42626.2005	10.5	dbs_L4	conn10	dbs_gamma_M
+2009	42620.2005	42624.2005	4	ecog_122	conn 2	ecog_gamma_M
+2010	42620.2005	42624.2005	4	ecog_123	conn 2	ecog_gamma_M
+2011	42626.2005	42628.2005	2	ecog_125	conn 2	ecog_gamma_M
+2012	42626.2005	42629.2005	3	ecog_126	conn 2	ecog_gamma_M
+2013	42626.2005	42628.2005	2	ecog_127	conn 2	ecog_gamma_M
+2014	42626.2005	42630.2005	4	ecog_235	conn 7	ecog_gamma_M
+2015	42628.2005	42631.2005	3	ecog_222	conn 6	ecog_gamma_M
+2016	42633.2005	42635.2005	2	ecog_154	conn 4	ecog_gamma_M
+2017	42635.2005	42637.2005	2	ecog_222	conn 6	ecog_gamma_M
+2018	42642.2005	42645.2005	3	ecog_243	conn 7	ecog_gamma_M
+2019	42645.2005	42647.2005	2	ecog_238	conn 7	ecog_gamma_M
+2020	42645.2005	42649.2005	4	ecog_239	conn 7	ecog_gamma_M
+2021	42645.2005	42650.2005	5	ecog_249	conn 8	ecog_gamma_M
+2022	42645.2005	42650.2005	5	ecog_250	conn 8	ecog_gamma_M
+2023	42647.2005	42650.2005	3	ecog_124	conn 2	ecog_gamma_M
+2024	42647.2005	42650.2005	3	ecog_125	conn 2	ecog_gamma_M
+2025	42647.2005	42649.2005	2	ecog_222	conn 6	ecog_gamma_M
+2026	42655.2005	42657.2005	2	ecog_128	conn 2	ecog_gamma_M
+2027	42657.2005	42659.2005	2	ecog_254	conn 8	ecog_gamma_M
