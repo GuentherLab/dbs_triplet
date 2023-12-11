@@ -25,7 +25,13 @@ cd(PATH_SYNC)
 
 session= bml_annot_read(['annot/' SUBJECT '_session.txt']);
 electrode = bml_annot_read(['annot/' SUBJECT '_electrode.txt']);
-trial_epoch = readtable([PATH_ANNOT filesep SUBJECT '_trial_epoch.txt']);
+
+% DBS3031 is missing DBS3031_trial_epoch.txt in annot folder; instead only has DBS3031_trial_epoch_criteria_D.txt
+if ~strcmp(SUBJECT, 'DBS3031') 
+    trial_epoch = readtable([PATH_ANNOT filesep SUBJECT '_trial_epoch.txt']);
+elseif strcmp(SUBJECT, 'DBS3031') 
+    trial_epoch = readtable([PATH_ANNOT filesep SUBJECT '_trial_epoch_criteria_D.txt']);
+end
 
 %% Loading FieldTrip data 
 load([PATH_SUBJECT filesep 'Preprocessed Data' filesep 'FieldTrip' filesep SUBJECT '_ft_hg_trial_denoised.mat'],'D_hg_trial');
@@ -34,8 +40,7 @@ load([PATH_SUBJECT filesep 'Preprocessed Data' filesep 'FieldTrip' filesep SUBJE
 cfg = []; 
 cfg.plot_times = 0; 
 cfg.trials = trial_epoch; 
-[trials, trials_ft] = remove_trialrows_missing_from_fieldtrip(cfg,D_hg_trial); 
-trials_ft.session_id(trials.ft_idx) = trials.session_id; % copy session id from the epoch trialtable to the fieldtrip trialtable
+[trials, trials_ft] = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg_trial); 
 
 %% concatenate non-overlaping parts of trials, sorting by run
 session_ids = unique(trials_ft.session_id);

@@ -19,14 +19,11 @@ y_ax_hardlims = [-1 10]; % cut off y axis if it's lesser/greater than this value
 
 plotops.linewidth = 2; 
 
-
-groupval_inds_to_plot = [1 4 7 10]; 
-groupval_inds_to_plot = [2 5 8 11]; 
-groupval_inds_to_plot = [3 6 9 12]; 
-% groupval_inds_to_plot = [1:3]; 
+% groupval_inds_to_plot = [1 4 7 10]; 
+% groupval_inds_to_plot = [2 5 8 11]; 
+% groupval_inds_to_plot = [3 6 9 12]; 
 % groupval_inds_to_plot = [1:6];
-% groupval_inds_to_plot = [7:12]; 
-% groupval_inds_to_plot = [1:12]; 
+groupval_inds_to_plot = [7:12]; 
 
 
 
@@ -157,7 +154,7 @@ xtime = samp_period * xtime;
 
 if plot_mean_timecourse 
 
-    hfig = figure; 
+    %     fig = figure; 
     
     hold off
 

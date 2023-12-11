@@ -23,10 +23,8 @@ fprintf('=== Running protocol %s ===\n',PROTOCOL_FUNCTION)
 if FORCE; fprintf('Forced run, overwritting any manual change.\n'); end
 if SKIP_OK; fprintf('Skipping previously successfully executed protocols.\n'); end
 
-% sub_inds_to_run = 1:height(subject_table);
-% sub_inds_to_run = [5];
-sub_inds_to_run = [1:14, 16:29];
-
+sub_inds_to_run = 28:height(subject_table);
+% sub_inds_to_run = [4];
 
 %% subject loop
 for isub = sub_inds_to_run
@@ -100,8 +98,10 @@ for isub = sub_inds_to_run
             prodtrip.onset = prodtrip.starts;
         end
 
-        if ~any(isnan(prodtrip.onset))
+%         if ~any(isnan(prodtrip.onset))
             SUBJECT
+
+            close all force
             
             P08_highgamma_from_denoised(SUBJECT,timetol); 
     
@@ -111,7 +111,7 @@ for isub = sub_inds_to_run
     
             P09_highgamma_from_denoised_rereferenced(SUBJECT,rereferenced_ft_file,ARTIFACT_CRIT,rereferenced_highgamma_savename);
 
-        end
+%         end
 
 % % % % % % % % % % % % % % % % % % % %   end
 end

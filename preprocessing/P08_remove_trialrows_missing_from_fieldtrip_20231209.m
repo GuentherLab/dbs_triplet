@@ -40,8 +40,9 @@ if cfg.plot_times
     hold on
 
     plot_trialtable(trials_ft, 0, [1 0 0])
-    plot_trialtable(trials_in, 0.2, [0 1 0])
-    plot_trialtable(trialtable_out, 0.4, [0 0 1])
+    plot_trialtable(trials_in, 0.2, [0 0 1])
+    plot_trialtable(trialtable_out, 0.4, [0 0.6 0])
+    xlabel('seconds GTC')
 
     hold off
 end

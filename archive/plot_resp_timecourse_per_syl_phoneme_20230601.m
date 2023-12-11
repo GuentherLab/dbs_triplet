@@ -5,8 +5,6 @@
  %
  % % % updated by AM 2022/8/21
  
-% close all
-
 %% params
 
 srt_row = 1;
@@ -14,25 +12,21 @@ channame = srt.chan{srt_row};
 thissub = srt.sub(srt_row,:);
 
 
-% y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
-y_ax_hardlims = [-1 10]; % cut off y axis if it's lesser/greater than this value
+y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
 
 plotops.linewidth = 2; 
 
-
-groupval_inds_to_plot = [1 4 7 10]; 
-groupval_inds_to_plot = [2 5 8 11]; 
-groupval_inds_to_plot = [3 6 9 12]; 
-% groupval_inds_to_plot = [1:3]; 
+% groupval_inds_to_plot = [1 4 7 10]; 
+% groupval_inds_to_plot = [2 5 8 11]; 
+% groupval_inds_to_plot = [3 6 9 12]; 
 % groupval_inds_to_plot = [1:6];
-% groupval_inds_to_plot = [7:12]; 
-% groupval_inds_to_plot = [1:12]; 
+groupval_inds_to_plot = [7:12]; 
 
 
 
 %%% choose the stimulus variable which will be used to sort trials
-trial_grouping_var = 'stim1'; 
-% trial_grouping_var = 'stim2'; 
+% trial_grouping_var = 'stim1'; 
+trial_grouping_var = 'stim2'; 
 % trial_grouping_var = 'stim3'; 
 
  
@@ -58,15 +52,14 @@ yline_zero_color = [0.8 0.8 0.8];
 yline_zero_style = '-';
 
 %%%% how to find the time length that trials will be cut/padded to be
-% trial_time_adj_method = 'median_plus_sd'; % median plus stdev
+trial_time_adj_method = 'median_plus_sd'; % median plus stdev
 % trial_time_adj_method = 'median';
-trial_time_adj_method = 'max';
+% trial_time_adj_method = 'max';
 
 
 
 %% align responses
-subrow = find(subs.subject == string(thissub));
-trials = subs.trials{subrow}; 
+
 
 
 ntrials = height(trials);
@@ -137,8 +130,8 @@ trials_tmp.prod_syl_off_adj = trials_tmp.prod_syl_off - trials_tmp.prod_syl_on(:
 
 %% organize responses by grouping var
 % find trial details for the appropriate subject
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % sub_index = find(strcmp(subs.sub,thissub));
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % trials = subs.trials{sub_index};
+sub_index = find(strcmp(subs.sub,thissub));
+trials = subs.trials{sub_index};
 
 [unq_grouping_vals, ~, grouping_var_ind] = unique(trials{:,trial_grouping_var});
 ngroupvals = length(unq_grouping_vals);
@@ -156,8 +149,9 @@ xtime = samp_period * xtime;
 
 
 if plot_mean_timecourse 
+% close all
 
-    hfig = figure; 
+    %     fig = figure; 
     
     hold off
 

@@ -1,7 +1,11 @@
+%%%% brainplot the top electrodes for a particular parameter 
+
 %% Loading paths
 ft_defaults
 bml_defaults
 format long
+
+% close all
 
 % clear
 % set(0,'DefaultFigureWindowStyle','docked')
@@ -10,8 +14,8 @@ set(0,'DefaultFigureWindowStyle','normal')
 %% load electrode responses and mni coords
 PATH_DATASET = 'Z:\DBS';
 PATH_TRIPLET_ANALYSIS = [PATH_DATASET '\Analysis\triplet_results_am']; 
-load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
-
+% load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
+% 
 n_elc = height(resp);
 
 %% Configuration Variables and Paths
@@ -54,7 +58,7 @@ color_ep_cm = '#9EB859';% #EP CM
 
 
 
-%% ecog
+%% set params, make brainplot
 
 % inclusion_mode = 'thresh';
 inclusion_mode = 'proportion';
@@ -62,7 +66,7 @@ inclusion_mode = 'proportion';
 % p_thresh = 0.001; 
 p_thresh = 0.05 / 3; 
 
-p_proportion = 0.05; 
+p_proportion = 0.01; 
 
 resp.p_prod_syl_best_anypos = min(resp.p_prod_syl_position,[],2);
 resp.p_prod_cons_best_anypos  = min(resp.p_prod_cons_position,[],2);
@@ -71,21 +75,32 @@ resp.p_prep_syl_best_anypos  = min([resp.p_prep_syl1, resp.p_prep_syl2, resp.p_p
 
 
 % inclusion_var = 'p_prod_cons_best_anypos';
-inclusion_var = 'p_prod_vow_best_anypos';
+% inclusion_var = 'p_prod_vow_best_anypos';
 % inclusion_var = 'p_prod_syl_best_anypos';
 % inclusion_var = 'p_rank';
 % inclusion_var = 'p_prep';
 % inclusion_var = 'p_prep_syl_best_anypos';
-% inclusion_var = 'p_prep_syl1';
+inclusion_var = 'p_prep_syl1';
 % inclusion_var = 'p_prep_syl2';
 % inclusion_var = 'p_prep_syl3';
 
+exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
+
+
+
+if exclude_if_p_zero
+    excluded_rows = resp{:,param} == 0; 
+elseif ~exclude_if_p_zero
+    excluded_rows = false(n_elc,1);
+end
 
 switch inclusion_mode
     case 'thresh'
-        rows_to_plot = resp{:,inclusion_var} < p_thresh;
+        rows_to_plot = resp{:,inclusion_var} < p_thresh & ~excluded_rows;
     case 'proportion'
-        [~, rows_ranked] = sort(resp{:,inclusion_var});
+        varvals = resp{:,inclusion_var};
+        varvals(excluded_rows) = nan; 
+        [~, rows_ranked] = sort(varvals);
         rows_to_plot = rows_ranked( 1:round(p_proportion * n_elc) ); 
 end
 
@@ -102,7 +117,7 @@ x_offset = -1;
 
 elc_to_plot = resp(rows_to_plot,{'mni_nonlinear_x','mni_nonlinear_y','mni_nonlinear_z'}); 
 
-close all
+
 figure;
 patch('vertices', average_mni.Vertices, 'faces', average_mni.Faces,...
 'FaceColor', [.9 .9 .9], 'EdgeColor', 'none', 'FaceAlpha',1, ...

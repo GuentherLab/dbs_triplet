@@ -1,0 +1,9 @@
+ %%%% check whether there is a nonrandom distribution of significantly tuned electrodes across areas
+
+
+
+regionlist = {  'ifg',  {'parsopercularis', 'parsorbitalis',  'parstriangularis'};... % inferior frontal gyrus
+                'smc',  {'postcentral', 'precentral'};...                   % sensorimotor cortex
+                '
+
+% [chi_significant, chi_p, chi_stats] = chi2gof([1:nclusts]', 'Frequency',left_n_per_clust, 'Expected',proportion_left_overall*n_per_clust, 'Emin',0)

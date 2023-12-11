@@ -1,4 +1,4 @@
-function P09_highgamma_from_denoised(SUBJECT, param)
+function P08_highgamma_from_denoised(SUBJECT, param)
 % AM 2022/11/2
 
 % compute high gamma (averaged across 70-150hz) from vibration-denoised trialwise data....
@@ -159,6 +159,7 @@ for idx = 1:height(param)
 end
 
 non_empty_elc_types = ~cellfun(@isempty,D_hg_eltype); 
+cfg = [];
 D_hg_trial = ft_appenddata(cfg, D_hg_eltype{non_empty_elc_types});
 
 save([PATH_SAVE_PREPROCESSED filesep SUBJECT '_ft_hg_trial_denoised.mat'],'D_hg_trial','-v7.3');

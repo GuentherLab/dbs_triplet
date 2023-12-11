@@ -1,23 +1,43 @@
-% ? redundant with plot_top_electrodes_mni_on_ctx.m ? 
+% plot electrodes labeled as being in certain areas
 
 %% Loading paths
 ft_defaults
 bml_defaults
 format long
 
+close all
+
 % clear
-set(0,'DefaultFigureWindowStyle','docked')
-% set(0,'DefaultFigureWindowStyle','normal')
+% set(0,'DefaultFigureWindowStyle','docked')
+set(0,'DefaultFigureWindowStyle','normal')
 
 markersize = 50; 
 
-% srt_row = 19;
+% srt_row = srt.fs_anatomy == "parstriangularis";
+% srt_row = srt.fs_anatomy == "Left-Cerebral-White-Matter";
+% srt_row = srt.fs_anatomy == "Left-Thalamus-Proper";
+srt_row = srt.fs_anatomy == "Left-VentralDC";
+% srt_row = srt.fs_anatomy == "NaN";
+% srt_row = srt.fs_anatomy == "Right-Cerebral-White-Matter";
+% srt_row = srt.fs_anatomy == "Right-VentralDC";
+% srt_row = srt.fs_anatomy == "bankssts";
+% srt_row = srt.fs_anatomy == "caudalmiddlefrontal";
+% srt_row = srt.fs_anatomy == "middletemporal";
+% srt_row = srt.fs_anatomy == "parsopercularis";
+% srt_row = srt.fs_anatomy == "parsorbitalis";
+% srt_row = srt.fs_anatomy == "parstriangularis";
+% srt_row = srt.fs_anatomy == "postcentral";
+% srt_row = srt.fs_anatomy == "precentral";
+% srt_row = srt.fs_anatomy == "rostralmiddlefrontal";
+% srt_row = srt.fs_anatomy == "superiorfrontal";
+% srt_row = srt.fs_anatomy == "superiortemporal";
+% srt_row = srt.fs_anatomy == "supramarginal";
 
 
 %% load electrode responses and mni coords
 PATH_DATASET = 'Z:\DBS';
 PATH_TRIPLET_ANALYSIS = [PATH_DATASET '\Analysis\triplet_analysis_am']; 
-load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
+% load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
 
 % % % % % % % % n_elc = height(resp);
 
@@ -62,7 +82,9 @@ color_ep_cm = '#9EB859';% #EP CM
 %% ecog
 plotcolor = 'r';
 
-snap_to_surf = 1; % if true, project eletrodes to nearest point on ctx surface
+snap_to_surf = 0; % if true, project eletrodes to nearest point on ctx surface
+
+surf_alpha = 0.7; 
 
 % shift electrodes so that they aren't covered by the brain surface
 %%% gets applied after snapping to surface
@@ -74,7 +96,7 @@ elc_to_plot = srt(srt_row,{'mni_nonlinear_x','mni_nonlinear_y','mni_nonlinear_z'
 % close all
 % figure;
 hpatch = patch('vertices', average_mni.Vertices, 'faces', average_mni.Faces,...
-'FaceColor', [.9 .9 .9], 'EdgeColor', 'none', 'FaceAlpha',1, ...
+'FaceColor', [.9 .9 .9], 'EdgeColor', 'none', 'FaceAlpha',surf_alpha, ...
 'facelighting', 'gouraud', 'specularstrength', 0, 'ambientstrength', 0.5, 'diffusestrength', 0.5); 
 hold on
 

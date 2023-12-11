@@ -1,3 +1,5 @@
+%%%% brainplot the top electrodes for a particular parameter 
+
 %% Loading paths
 ft_defaults
 bml_defaults
@@ -54,7 +56,7 @@ color_ep_cm = '#9EB859';% #EP CM
 
 
 
-%% ecog
+%% set params, make brainplot
 
 % inclusion_mode = 'thresh';
 inclusion_mode = 'proportion';
@@ -62,7 +64,7 @@ inclusion_mode = 'proportion';
 % p_thresh = 0.001; 
 p_thresh = 0.05 / 3; 
 
-p_proportion = 0.00; 
+p_proportion = 0.05; 
 
 resp.p_prod_syl_best_anypos = min(resp.p_prod_syl_position,[],2);
 resp.p_prod_cons_best_anypos  = min(resp.p_prod_cons_position,[],2);
@@ -71,15 +73,21 @@ resp.p_prep_syl_best_anypos  = min([resp.p_prep_syl1, resp.p_prep_syl2, resp.p_p
 
 
 % inclusion_var = 'p_prod_cons_best_anypos';
-inclusion_var = 'p_prod_vow_best_anypos';
+% inclusion_var = 'p_prod_vow_best_anypos';
 % inclusion_var = 'p_prod_syl_best_anypos';
 % inclusion_var = 'p_rank';
 % inclusion_var = 'p_prep';
 % inclusion_var = 'p_prep_syl_best_anypos';
 % inclusion_var = 'p_prep_syl1';
-% inclusion_var = 'p_prep_syl2';
+inclusion_var = 'p_prep_syl2';
 % inclusion_var = 'p_prep_syl3';
 
+exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
+
+if exclude_if_p_zero
+    pzero_rows = srt{:,param} == 0; 
+    srt = srt(~pzero_rows,:); 
+end
 
 switch inclusion_mode
     case 'thresh'
@@ -117,8 +125,9 @@ elseif ~snap_to_surf
     xyz_to_plot = xyz_to_plot_nonsnapped;
 end
 
-scatter3(xyz_to_plot(:,1) + x_offset, xyz_to_plot(:,2), xyz_to_plot(:,3), 'filled',...
-  'MarkerFaceAlpha',1,'MarkerFaceColor',plotcolor,'MarkerEdgeColor','k','LineWidth',0.01)
+hscat = scatter3(xyz_to_plot(:,1) + x_offset, xyz_to_plot(:,2), xyz_to_plot(:,3), 'filled',...
+  'MarkerFaceAlpha',1,'MarkerFaceColor',plotcolor,'MarkerEdgeColor','k','LineWidth',0.01);
+hscat.SizeData = 40;
 set(gcf, 'Color', [1 1 1]); % white backgroud
 view(-90,0)
 axis off; axis equal

@@ -32,7 +32,6 @@ electrode = bml_annot_read(['annot/' SUBJECT '_electrode.txt']);
 art_param = readtable([PATH_ART_PROTOCOL filesep 'artifact_' ARTIFACT_CRIT '_params.txt']);
 empty_electrode = bml_annot_read(['annot/' SUBJECT '_empty_electrode.txt']);
 % % % cue_presentation = bml_annot_read(['annot/' SUBJECT '_cue_presentation.txt']);
-cue = bml_annot_read(['annot/' SUBJECT '_cue_precise.txt']);
 trials = bml_annot_read(['annot/' SUBJECT '_coding.txt']);
 
 

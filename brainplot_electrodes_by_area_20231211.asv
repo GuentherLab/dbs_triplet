@@ -1,4 +1,4 @@
-% ? redundant with plot_top_electrodes_mni_on_ctx.m ? 
+% plot electrodes labeled as being in certain areas
 
 %% Loading paths
 ft_defaults
@@ -6,18 +6,36 @@ bml_defaults
 format long
 
 % clear
-set(0,'DefaultFigureWindowStyle','docked')
-% set(0,'DefaultFigureWindowStyle','normal')
+% set(0,'DefaultFigureWindowStyle','docked')
+set(0,'DefaultFigureWindowStyle','normal')
 
 markersize = 50; 
 
-% srt_row = 19;
+srt_row = srt.fs_anatomy == "parstriangularis";
+    {'Left-Cerebral-White-Matter' }
+    {'Left-Thalamus-Proper'       }
+    {'Left-VentralDC'             }
+    {'NaN'                        }
+    {'Right-Cerebral-White-Matter'}
+    {'Right-VentralDC'            }
+    {'bankssts'                   }
+    {'caudalmiddlefrontal'        }
+    {'middletemporal'             }
+    {'parsopercularis'            }
+    {'parsorbitalis'              }
+    {'parstriangularis'           }
+    {'postcentral'                }
+    {'precentral'                 }
+    {'rostralmiddlefrontal'       }
+    {'superiorfrontal'            }
+    {'superiortemporal'           }
+    {'supramarginal'              }
 
 
 %% load electrode responses and mni coords
 PATH_DATASET = 'Z:\DBS';
 PATH_TRIPLET_ANALYSIS = [PATH_DATASET '\Analysis\triplet_analysis_am']; 
-load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
+% load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
 
 % % % % % % % % n_elc = height(resp);
 
@@ -69,7 +87,7 @@ snap_to_surf = 1; % if true, project eletrodes to nearest point on ctx surface
 %%% .... if snapping, offset of -1 should be enough to have points entirely above ctx surface (in L hem)
 x_offset = -1;
 
-elc_to_plot = srt(srt_row,{'mni_nonlinear_x','mni_nonlinear_y','mni_nonlinear_z'}); 
+elc_to_plot = srt(srt_row,{'qqqqmni_nonlinear_x','mni_nonlinear_y','mni_nonlinear_z'}); 
 
 % close all
 % figure;

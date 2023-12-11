@@ -2,6 +2,7 @@
  %%%%% .... matches that in the vibration-denoised fieldtrip file
 
  PATH_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
+ PROTOCOL_TABLE = [PATH_PROTOCOL filesep 'P08_Subjects_3000.txt']; 
 PATH_DATA = 'Z:\DBS';
 save_filepath = 'Z:\DBS\Analysis\triplet_results_am\archive\trialnumber_mismatches_in_denoised.txt';
 
@@ -34,4 +35,4 @@ end
 subject_table.ntrials_missing_in_fieldtrip = subject_table.ntrials_epoch_table - subject_table.ntrials_fieldtrip_denoised;
 subject_table.trialnumber_mismatch = subject_table.ntrials_missing_in_fieldtrip ~= 0; 
 
-writeable(subject_table, save_filepath)
+writetable(subject_table, save_filepath, 'delimiter', '\t')

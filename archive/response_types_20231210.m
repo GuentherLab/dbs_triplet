@@ -10,7 +10,7 @@ bml_defaults
 format long
 
 % % % % % Loading parameters
-% SUBJECT='DBS3005';
+% SUBJECT='DBS3012';
 DATE=datestr(now,'yyyymmdd');
 PATH_DATA='Z:\DBS';
 PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
@@ -27,7 +27,6 @@ SAMPLE_RATE = 100; % downsample rate in hz for high gamma traces
 %%% nb: in Triplet task, time between voice offset and the subsequent trial's stim onset is likely ~2.2sec, so baseline must be shorter than this duration
 base_win_sec = [1, 0.3]; 
 post_speech_win_sec = 0.5; % time to include after 3rd-syllable voice offset in HG timecourse
-min_trials_for_good_channel = 4; 
 
 % add the following variables to the electrodes response table... use 'electrode'/'chan' as key variable
 info_vars_to_copy = {'chan','type','connector','port','strip','comment','target','side','nat_x','nat_y','nat_z',...
@@ -54,7 +53,7 @@ trials_phon = readtable([PATH_ANNOT filesep SUBJECT '_produced_phoneme.txt';]); 
 
 elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt';]); 
 
-% some subjects don't have _stimulus_syllable.txt (3001 and 3002)- for these, maybe try to derive it from _stimulus_triplet.txt and expected durations? 
+% some subjects don't have _stimulus_syllable.txt - for these, maybe try to derive it from _stimulus_triplet.txt and expected durations? 
 
 
 % account for some tables using onset/duration convention vs. starts/ends convention
@@ -65,80 +64,60 @@ if ~any(contains(trials_trip.Properties.VariableNames,'ends'))
     trials_trip.ends = trials_trip.starts + trials_trip.duration; 
 end
 
-% remove trials from stim trials table that do not have a corresponding fieldtrip event
-cfg = [];
-cfg.trials = trials_stim_trip;
-cfg.plot_times = 0;
-[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
-
 %% get responses in predefined epochs
 % 'base' = average during pre-stim baseline
 % all response values except 'base' are baseline-normalized by dividing by that trial's baseline average
-ntrials_stim = height(trials); 
+ntrials = height(trials_trip);
 nchans = length(D_hg.label);
 nans_ch = nan(nchans,1); 
-logch = false(nchans,1);
-nans_tr = nan(ntrials_stim,1); 
-nans_tr2 = nan(ntrials_stim,2); 
-nans_tr3 = nan(ntrials_stim,3); 
-cel_tr = cell(ntrials_stim,1); 
+nans_tr = nan(ntrials,1); 
+nans_tr2 = nan(ntrials,2); 
+nans_tr3 = nan(ntrials,3); 
+cel_tr = cell(ntrials,1); 
 
 % info about our trial timing analysis window
-
-
-trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,         nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr,...
-     'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off',  'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx' })];
-
-% stim timing does not mark our trial boundaries, so give more precise names
-%%% 'id' needs to be changed it specifically refers to row of the trialtable that has data for stim timing; not the same row numbers as other trial tables
-trials = renamevars(trials,{'starts','ends','duration','id'}, {'t_stim_on','t_stim_off','dur_stim','stimtrial_id'}); 
+trials = trials_stim_trip; 
+trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,         nans_tr2, nans_tr2,...
+     'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off',  'trans_on', 'trans_off' })];
+trials = renamevars(trials,{'starts','ends','duration'}, {'t_stim_on','t_stim_off','dur_stim'}); % stim timing does not mark our trial boundaries
 trials.starts = trials.t_stim_on - base_win_sec(1); % trial starts at beginning of baseline window
+trials.ends = trials_trip.ends + post_speech_win_sec; % trial ends at fixed time after voice offset
+trials.duration = trials.ends - trials.starts; 
 
 unqsyl = unique([trials.stim1(:); trials.stim2(:); trials.stim3(:)]);
 n_unqsyl = length(unqsyl);
-trials.prod_syl_present = false(ntrials_stim, n_unqsyl);
+trials.prod_syl_present = false(ntrials, n_unqsyl);
 
 % table containing responses during epochs for each chan
 cel = repmat({nans_tr},nchans,1); % 1 value per trial per chan
 cel2 = repmat({nans_tr2},nchans,1); % 2 values per trial per chan
 cel3 = repmat({nans_tr3},nchans,1); % 3 values per trial per chan
 nansyl = nan(nchans, n_unqsyl); 
-resp = table(   D_hg.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch, nans_ch,  nansyl,        nansyl,    nans_ch,         logch, ...
-  'VariableNames', {'chan', 'base', 'timecourse',             'stim', 'prep', 'prod', 'trans', 'p_prep', 'p_rank','p_prep_syl', 'p_prod_syl','n_usable_trials', 'usable_chan'}); 
+resp = table(   D_hg.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch, nans_ch,  nansyl,        nansyl, ....
+  'VariableNames', {'chan', 'base', 'timecourse',             'stim', 'prep', 'prod', 'trans', 'p_prep', 'p_rank','p_prep_syl', 'p_prod_syl'}); 
+
+%% PROBABLY NEED TO REWRITE THE TIME-MATCHING LINES TO LOOK FOR MATCHING TIMES ACROSS ALL TRIALS.....
+%%% .... due to missing trials in the fieldtrip structures, trialtable indices may not match to fieldtrip trial indices
 
 % extract epoch-related responses
 %%%% trials.times{itrial} use global time coordinates
 %%%% ....... start at a fixed baseline window before stim onset
 %%%% ....... end at a fixed time buffer after speech offset
-for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not equal "trial_id" from loaded tables
+for itrial = 1:ntrials % itrial is absolute index across sessions; does not equal "trial_id" from loaded tables
     isess = trials.session_id(itrial); 
     trial_id_in_sess = trials.trial_id(itrial); % session-relative trial number
-
-    % check whether there is speech production timing data for this trial
-    %%%...... if so, add speech timing data; if not, mark it for removal
-    speechtrial_match = trials_trip.session_id == isess & trials_trip.trial_id == trial_id_in_sess;
-    if any(speechtrial_match)
-        trials.has_speech_timing(itrial) = true; 
-        trials.ends(itrial) = trials_trip.ends(speechtrial_match) + post_speech_win_sec;
-        trials.duration(itrial) = trials.ends(itrial) - trials.starts(itrial); 
-    elseif ~any(speechtrial_match)
-        trials.has_speech_timing(itrial) = false; 
-        continue
-    end
-
-    % get indices within the trial-specific set of timepoints of D_hg.time{ft_idx} that match our specified trial window
-    ft_idx = trials.ft_idx(itrial); % get the trial in fieldtrip struct that corresponds to the curret trial
-    match_time_inds = D_hg.time{ft_idx} > trials.starts(itrial) & D_hg.time{ft_idx} < trials.ends(itrial); 
-    trials.times{itrial} = D_hg.time{ft_idx}(match_time_inds); % times in this redefined trial window... still using global time coordinates
+    % get indices within the trial-specific set of timepoints of D_hg.time{itrial} that match our specified trial window
+    match_time_inds = D_hg.time{itrial} > trials.starts(itrial) & D_hg.time{itrial} < trials.ends(itrial); 
+    trials.times{itrial} = D_hg.time{itrial}(match_time_inds); % times in this redefined trial window... still using global time coordinates
     % get trial-relative baseline time indices; window time-locked to first stim onset
-    base_inds = D_hg.time{ft_idx} > trials.starts(itrial) & D_hg.time{ft_idx} < [trials.t_stim_on(itrial) - base_win_sec(2)]; 
+    base_inds = D_hg.time{itrial} > trials.starts(itrial) & D_hg.time{itrial} < [trials.t_stim_on(itrial) - base_win_sec(2)]; 
 
     % baseline activity and timecourse
     for ichan = 1:nchans
         % use mean rather than nanmean, so that trials which had artifacts marked with NaNs will be excluded
-        resp.base{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, base_inds), 'includenan' ); % mean HG during baseline
+        resp.base{ichan}(itrial) = mean( D_hg.trial{itrial}(ichan, base_inds), 'includenan' ); % mean HG during baseline
         % get baseline-normalized trial timecourse
-       resp.timecourse{ichan}{itrial} =  D_hg.trial{ft_idx}(ichan, match_time_inds) - resp.base{ichan}(itrial); 
+       resp.timecourse{ichan}{itrial} =  D_hg.trial{itrial}(ichan, match_time_inds) - resp.base{ichan}(itrial); 
     end
     
     % syllable-specific responses and timing
@@ -146,20 +125,19 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
                            trials_phon.session_id == trials.session_id(itrial); 
     for isyl = 1:3
             % prod timing
-        trials_prod_syl_row = find(trials_syl.trial_id == trial_id_in_sess  &  trials_syl.syl_id == isyl & trials_syl.session_id == isess); 
-        trials.prod_syl_on(itrial,isyl) = trials_syl.starts(trials_prod_syl_row);  % syllable start time
-        trials.prod_syl_off(itrial,isyl) = trials_syl.ends(trials_prod_syl_row); % syllable end time
+        trials_syl_row = find(trials_syl.trial_id == trial_id_in_sess  &  trials_syl.syl_id == isyl & trials_syl.session_id == isess); 
+        trials.prod_syl_on(itrial,isyl) = trials_syl.starts(trials_syl_row);  % syllable start time
+        trials.prod_syl_off(itrial,isyl) = trials_syl.ends(trials_syl_row); % syllable end time
                 % stim timing
-        trials_stim_syl_row = find(trials_stim_syl.trial_id == trial_id_in_sess  &  trials_stim_syl.syl_id == isyl & trials_stim_syl.session_id == isess); 
-        trials.stim_syl_on(itrial,isyl) = trials_stim_syl.starts(trials_stim_syl_row);  % syllable start time
-        trials.stim_syl_off(itrial,isyl) = trials_stim_syl.ends(trials_stim_syl_row); % syllable end time   
+        trials.stim_syl_on(itrial,isyl) = trials_stim_syl.starts(trials_syl_row);  % syllable start time
+        trials.stim_syl_off(itrial,isyl) = trials_stim_syl.ends(trials_syl_row); % syllable end time   
             % time indices of epochs
-        stim_syl_inds = D_hg.time{ft_idx} > trials.stim_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.stim_syl_off(itrial,isyl); 
-        prod_syl_inds = D_hg.time{ft_idx} > trials.prod_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); 
+        stim_syl_inds = D_hg.time{itrial} > trials.stim_syl_on(itrial,isyl) & D_hg.time{itrial} < trials.stim_syl_off(itrial,isyl); 
+        prod_syl_inds = D_hg.time{itrial} > trials.prod_syl_on(itrial,isyl) & D_hg.time{itrial} < trials.prod_syl_off(itrial,isyl); 
         for ichan = 1:nchans
-            resp.stim{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, stim_syl_inds) ) ; % times when syl 1 2 3 were played
-            %             resp.prod{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, syl_inds) ) / resp.base{ichan}(itrial);
-            resp.prod{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, prod_syl_inds) ) ; % times when syl 1 2 3 were spoken
+            resp.stim{ichan}(itrial,isyl) = mean( D_hg.trial{itrial}(ichan, stim_syl_inds) ) ; % times when syl 1 2 3 were played
+            %             resp.prod{ichan}(itrial,isyl) = mean( D_hg.trial{itrial}(ichan, syl_inds) ) / resp.base{ichan}(itrial);
+            resp.prod{ichan}(itrial,isyl) = mean( D_hg.trial{itrial}(ichan, prod_syl_inds) ) ; % times when syl 1 2 3 were spoken
 
         end
 
@@ -174,9 +152,9 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     
     % preparatory responses........  make sure to tabulate syllable timing first
     %%%% prep period inds: after stim ends and before first syllable prod onset
-    prep_inds = D_hg.time{ft_idx} > trials.t_stim_off(itrial) & D_hg.time{ft_idx} < trials.prod_syl_on(itrial,1); 
+    prep_inds = D_hg.time{itrial} > trials.t_stim_off(itrial) & D_hg.time{itrial} < trials.prod_syl_on(itrial,1); 
     for ichan = 1:nchans
-        resp.prep{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, prep_inds) ) / resp.base{ichan}(itrial);
+        resp.prep{ichan}(itrial) = mean( D_hg.trial{itrial}(ichan, prep_inds) ) / resp.base{ichan}(itrial);
     end
     
     % transition responses
@@ -184,17 +162,14 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         % 'transition' periods start/end halfway through the syllable
         trials.trans_on(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,1:2) + trials.prod_syl_off(itrial,1:2)]; % avg start/end
         trials.trans_off(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,2:3) + trials.prod_syl_off(itrial,2:3)]; % avg start/end
-        trans_inds = D_hg.time{ft_idx} > trials.trans_on(itrial,itrans) & D_hg.time{ft_idx} < trials.trans_off(itrial,itrans); 
+        trans_inds = D_hg.time{itrial} > trials.trans_on(itrial,itrans) & D_hg.time{itrial} < trials.trans_off(itrial,itrans); 
        for ichan = 1:nchans
-           resp.trans{ichan}(itrial,itrans) = mean( D_hg.trial{ft_idx}(ichan, trans_inds) ) / resp.base{ichan}(itrial);
+           resp.trans{ichan}(itrial,itrans) = mean( D_hg.trial{itrial}(ichan, trans_inds) ) / resp.base{ichan}(itrial);
        end
     end
 end
-% trials = trials(trials.has_speech_timing, :); % remove trials that we don't have speech timing info for
-trials(:,{'t_stim_off','t_stim_on','has_speech_timing'}) = [];
-ntrials = height(trials); 
+trials(:,{'t_stim_off','t_stim_on'}) = [];
 
-% mark with logicals which syllables occur on which trials
 for itrial = 1:ntrials
     for isyl = 1:n_unqsyl
         this_syl = unqsyl{isyl};
@@ -207,14 +182,12 @@ end
 
 %% test for response types 
 resp.elc_info_row = nan(nchans,1); 
+resp.nodata = false(nchans,1); 
 for ichan = 1:nchans
     good_trials = ~isnan(resp.base{ichan}); % non-artifactual trials for this channel
-    resp.n_usable_trials(ichan) = nnz(good_trials); 
-    if resp.n_usable_trials(ichan) < min_trials_for_good_channel
-        resp.usable_chan(ichan) = false; 
+    if nnz(good_trials) == 0
+       resp.nodata(ichan) = 1; % if no data in this channel, remove it later
         continue; 
-    else
-        resp.usable_chan(ichan) = true; 
     end % skip stats analysis if channel had no good trials
     
     % preparatory activity............................ need to not use absolute value so that we can have negative values
@@ -290,8 +263,8 @@ for ichan = 1:nchans
 
 end
     
-resp = resp(resp.usable_chan,:); % remove channels with few/no usuable trials
+resp = resp(~resp.nodata,:); % remove empty channels
 elc_info_copy = renamevars(elc_info(resp.elc_info_row,:),'electrode','chan');
 resp = join(resp, elc_info_copy(:,info_vars_to_copy)); % add elc_info to resp
-resp = removevars(resp,{'elc_info_row','usable_chan'}); 
+resp = removevars(resp,{'elc_info_row','nodata'}); 
 resp.sub = repmat(SUBJECT, height(resp), 1);
