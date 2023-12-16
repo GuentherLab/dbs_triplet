@@ -60,8 +60,8 @@ color_ep_cm = '#9EB859';% #EP CM
 
 %% set params, make brainplot
 
-% inclusion_mode = 'thresh';
-inclusion_mode = 'proportion';
+inclusion_mode = 'thresh';
+% inclusion_mode = 'proportion';
 
 % p_thresh = 0.001; 
 p_thresh = 0.05 / 3; 
@@ -71,7 +71,7 @@ p_proportion = 0.01;
 resp.p_prod_syl_best_anypos = min(resp.p_prod_syl_position,[],2);
 resp.p_prod_cons_best_anypos  = min(resp.p_prod_cons_position,[],2);
 resp.p_prod_vow_best_anypos  = min(resp.p_prod_vow_position,[],2);
-resp.p_prep_syl_best_anypos  = min([resp.p_prep_syl1, resp.p_prep_syl2, resp.p_prep_syl3] ,[],2);
+resp.p_prep_syl_best_anypos  = min([resp.p_prep_syl] ,[],2);
 
 
 % inclusion_var = 'p_prod_cons_best_anypos';
@@ -80,9 +80,15 @@ resp.p_prep_syl_best_anypos  = min([resp.p_prep_syl1, resp.p_prep_syl2, resp.p_p
 % inclusion_var = 'p_rank';
 % inclusion_var = 'p_prep';
 % inclusion_var = 'p_prep_syl_best_anypos';
-inclusion_var = 'p_prep_syl1';
-% inclusion_var = 'p_prep_syl2';
-% inclusion_var = 'p_prep_syl3';
+% inclusion_var = {'p_prep_syl',1};
+% inclusion_var = {'p_prep_syl',2};
+% inclusion_var = {'p_prep_syl',3};
+% inclusion_var = {'p_prep_cons',1};
+% inclusion_var = {'p_prep_cons',2};
+% inclusion_var = {'p_prep_cons',3};
+% inclusion_var = {'p_prep_vow',1};
+% inclusion_var = {'p_prep_vow',2};
+inclusion_var = {'p_prep_vow',3};
 
 exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
 
@@ -96,9 +102,9 @@ end
 
 switch inclusion_mode
     case 'thresh'
-        rows_to_plot = resp{:,inclusion_var} < p_thresh & ~excluded_rows;
+        rows_to_plot = triplet_tablevar(resp, inclusion_var) < p_thresh & ~excluded_rows;
     case 'proportion'
-        varvals = resp{:,inclusion_var};
+        varvals = triplet_tablevar(resp, inclusion_var);
         varvals(excluded_rows) = nan; 
         [~, rows_ranked] = sort(varvals);
         rows_to_plot = rows_ranked( 1:round(p_proportion * n_elc) ); 

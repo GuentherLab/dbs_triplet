@@ -5,8 +5,7 @@ PATH_RESULTS = 'Z:\DBS\Analysis\triplet_results_am';
 subject_list = readtable('Z:\DBS\Batch\P08_artifact_criteria_E\P08_Subjects_3000.txt');
 nsubs = height(subject_list);
 
-% subinds_to_run = [3:19];
-subinds_to_run = [23:nsubs];
+subinds_to_run = [3:21, 23:nsubs];
 
 for isub = subinds_to_run
     SUBJECT = subject_list.subject{isub}

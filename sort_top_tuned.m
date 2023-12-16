@@ -1,4 +1,5 @@
  %%%% find and plot the electrodes which are best tuned for a given parameter
+ .... might need to run plot_top_electrodes_mni_on_ctx.m first
 
 
 % param = 'p_prod_cons_best_anypos';

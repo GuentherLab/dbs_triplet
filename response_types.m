@@ -9,8 +9,9 @@ ft_defaults
 bml_defaults
 format long
 
-% % % % % Loading parameters
-% SUBJECT='DBS3005';
+% % % % % data-loading parameters
+vardefault('SUBJECT','DBS3005');
+
 DATE=datestr(now,'yyyymmdd');
 PATH_DATA='Z:\DBS';
 PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
@@ -71,6 +72,10 @@ cfg.trials = trials_stim_trip;
 cfg.plot_times = 0;
 [trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
 
+% rename vars
+trials.syl = [trials.stim1, trials.stim2, trials.stim3]; 
+trials = removevars(trials,{'stim1','stim2','stim3'});
+
 %% get responses in predefined epochs
 % 'base' = average during pre-stim baseline
 % all response values except 'base' are baseline-normalized by dividing by that trial's baseline average
@@ -86,15 +91,15 @@ cel_tr = cell(ntrials_stim,1);
 % info about our trial timing analysis window
 
 
-trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,         nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr,...
-     'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off',  'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx' })];
+trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,      nans_tr3,      nans_tr3,     nans_tr3,      nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr,...
+     'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off', 'p_prep_cons','p_prep_vow', 'p_prep_syl',  'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx' })];
 
 % stim timing does not mark our trial boundaries, so give more precise names
 %%% 'id' needs to be changed it specifically refers to row of the trialtable that has data for stim timing; not the same row numbers as other trial tables
 trials = renamevars(trials,{'starts','ends','duration','id'}, {'t_stim_on','t_stim_off','dur_stim','stimtrial_id'}); 
 trials.starts = trials.t_stim_on - base_win_sec(1); % trial starts at beginning of baseline window
 
-unqsyl = unique([trials.stim1(:); trials.stim2(:); trials.stim3(:)]);
+unqsyl = unique(trials.syl(:));
 n_unqsyl = length(unqsyl);
 trials.prod_syl_present = false(ntrials_stim, n_unqsyl);
 
@@ -123,6 +128,12 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         trials.duration(itrial) = trials.ends(itrial) - trials.starts(itrial); 
     elseif ~any(speechtrial_match)
         trials.has_speech_timing(itrial) = false; 
+        
+        % fill in blanks to maintain variable class consistency in cells
+        trials.cons(itrial,1:3) = {'','',''};
+        trials.vow(itrial,1:3) = {'','',''};
+        trials.syl(itrial,1:3) = {'','',''};
+
         continue
     end
 
@@ -165,9 +176,9 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
 
         % phoneme info
         phon_row_cons = trials_phon_rowmatch & strcmp(trials_phon.type,'consonant') & trials_phon.syl_id==isyl;
-        trials.cons{itrial,isyl} = trials_phon.stim{phon_row_cons};
+            trials.cons{itrial,isyl} = trials_phon.stim{phon_row_cons};
         phon_row_vow = trials_phon_rowmatch & strcmp(trials_phon.type,'vowel') & trials_phon.syl_id==isyl;
-        trials.vow{itrial,isyl} = trials_phon.stim{phon_row_vow};
+            trials.vow{itrial,isyl} = trials_phon.stim{phon_row_vow};
 
      
     end
@@ -198,7 +209,7 @@ ntrials = height(trials);
 for itrial = 1:ntrials
     for isyl = 1:n_unqsyl
         this_syl = unqsyl{isyl};
-        if any(strcmp(this_syl, {trials.stim1{itrial}, trials.stim2{itrial}, trials.stim3{itrial}}))
+        if any(strcmp(this_syl, trials.syl(itrial,:)))
             trials.prod_syl_present(itrial,isyl) = true;
         end
     end
@@ -223,61 +234,57 @@ for ichan = 1:nchans
     % rank-order selectivity
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');
     
+    for isyl = 1:n_unqsyl
+
     % syllable prep selectivity
-    for isyl = 1:n_unqsyl
         resp.p_prep_syl(ichan,isyl) = anova1(resp.prep{ichan}(good_trials), trials.prod_syl_present(good_trials,isyl), "off"); 
-    end
 
-    % syllable prod selectivity - full production period
-    for isyl = 1:n_unqsyl
+
+        % syllable prod selectivity - full production period
         resp.p_prod_syl(ichan,isyl) = anova1(mean(resp.prod{ichan}(good_trials), 2), trials.prod_syl_present(good_trials,isyl), "off"); 
-    end
 
-    % prep-syl with position
-    [p_prep_syl1, p_prep_anovatab] = anova1(resp.prep{ichan}(good_trials),trials.stim1(good_trials),'off');
-    resp.p_prep_syl1(ichan) = p_prep_syl1;
 
-    [p_prep_syl2, p_prep_anovatab2] = anova1(resp.prep{ichan}(good_trials),trials.stim2(good_trials),'off');
-    resp.p_prep_syl2(ichan) = p_prep_syl2;
-
-    [p_prep_syl3, p_prep_anovatab3] = anova1(resp.prep{ichan}(good_trials),trials.stim3(good_trials),'off');
-    resp.p_prep_syl3(ichan) = p_prep_syl3;
-
-     % prod-syl using the response from only when the syllable in question is being produced
-     for ipos = 1:3
-         resp.p_prod_syl_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), trials{good_trials,['stim',num2str(ipos)]},'off');
-     end
-
-       % stim-syl using the response from only when the syllable in question is being played
-     for ipos = 1:3
-         resp.p_stim_syl_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), trials{good_trials,['stim',num2str(ipos)]},'off');
-     end
-
-     % prod-consonant using the response from only when the syllable in question is being produced
-     for ipos = 1:3
-         resp.p_prod_cons_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), trials.cons(good_trials, ipos),'off');
-     end
-
-      % prod-vowel using the response from only when the syllable in question is being produced
-     for ipos = 1:3
-         resp.p_prod_vow_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), trials.vow(good_trials, ipos),'off');
-     end
-
-          % stim-consonant using the response from only when the syllable in question is being produced
-     for ipos = 1:3
-         resp.p_stim_cons_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), trials.cons(good_trials, ipos),'off');
-     end
-
-      % stim-vowel using the response from only when the syllable in question is being produced
-     for ipos = 1:3
-         resp.p_stim_vow_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), trials.vow(good_trials, ipos),'off');
-     end
-
-    % prep-syl - syllable-selective activity during prep period
-    for isyl = 1:n_unqsyl
+         % prep-syl - syllable-selective activity during prep period
         this_syl_trials = good_trials & trials.prod_syl_present(:,isyl);
         p_prep_syl(ichan, isyl) = ttest2(resp.prep{ichan}(this_syl_trials), resp.prep{ichan}(~this_syl_trials));
+
     end
+
+
+    % tuning to rank-specific stim features
+     for ipos = 1:3
+        syl_in_this_pos = triplet_tablevar(trials,{'syl',ipos},good_trials);
+        cons_in_this_pos = triplet_tablevar(trials,{'cons',ipos},good_trials);
+        vow_in_this_pos = triplet_tablevar(trials,{'vow',ipos},good_trials);
+
+          % stim-consonant using the response from only when the syllable in question is being heard
+         resp.p_stim_cons_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), cons_in_this_pos,'off');
+
+         % stim-vowel using the response from only when the syllable in question is being produced
+         resp.p_stim_vow_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), vow_in_this_pos,'off');
+        
+        % stim-syl using the response from only when the syllable in question is being played
+         resp.p_stim_syl_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos),syl_in_this_pos,'off');
+
+        % prep-consonant with position
+        resp.p_prep_cons(ichan, ipos) = anova1(resp.prep{ichan}(good_trials), cons_in_this_pos,'off');
+
+        % prep-vowel with position
+        resp.p_prep_vow(ichan, ipos) = anova1(resp.prep{ichan}(good_trials), vow_in_this_pos,'off');
+
+        % prep-syl with position
+        resp.p_prep_syl(ichan, ipos) = anova1(resp.prep{ichan}(good_trials), syl_in_this_pos,'off');
+
+        % prod-consonant using the response from only when the syllable in question is being produced
+         resp.p_prod_cons_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), cons_in_this_pos,'off');
+
+        % prod-vowel using the response from only when the syllable in question is being produced
+         resp.p_prod_vow_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), vow_in_this_pos,'off');
+
+         % prod-syl using the response from only when the syllable in question is being produced
+         resp.p_prod_syl_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos),syl_in_this_pos,'off');
+
+     end
 
     % transition selectivity
     

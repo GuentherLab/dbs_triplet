@@ -1,4 +1,5 @@
 % plot electrodes labeled as being in certain areas
+ % load resp_all_subjects first..... run sort_top_tuned_first
 
 %% Loading paths
 ft_defaults
@@ -82,7 +83,7 @@ color_ep_cm = '#9EB859';% #EP CM
 %% ecog
 plotcolor = 'r';
 
-snap_to_surf = 0; % if true, project eletrodes to nearest point on ctx surface
+snap_to_surf = 1; % if true, project eletrodes to nearest point on ctx surface
 
 surf_alpha = 0.7; 
 

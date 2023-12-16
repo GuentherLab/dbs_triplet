@@ -1,43 +1,22 @@
-% plot electrodes labeled as being in certain areas
+%%%% brainplot the top electrodes for a particular parameter 
 
 %% Loading paths
 ft_defaults
 bml_defaults
 format long
 
+% close all
+
 % clear
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
 
-markersize = 50; 
-
-srt_row = srt.fs_anatomy == "parstriangularis";
-    {'Left-Cerebral-White-Matter' }
-    {'Left-Thalamus-Proper'       }
-    {'Left-VentralDC'             }
-    {'NaN'                        }
-    {'Right-Cerebral-White-Matter'}
-    {'Right-VentralDC'            }
-    {'bankssts'                   }
-    {'caudalmiddlefrontal'        }
-    {'middletemporal'             }
-    {'parsopercularis'            }
-    {'parsorbitalis'              }
-    {'parstriangularis'           }
-    {'postcentral'                }
-    {'precentral'                 }
-    {'rostralmiddlefrontal'       }
-    {'superiorfrontal'            }
-    {'superiortemporal'           }
-    {'supramarginal'              }
-
-
 %% load electrode responses and mni coords
 PATH_DATASET = 'Z:\DBS';
-PATH_TRIPLET_ANALYSIS = [PATH_DATASET '\Analysis\triplet_analysis_am']; 
+PATH_TRIPLET_ANALYSIS = [PATH_DATASET '\Analysis\triplet_results_am']; 
 % load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
-
-% % % % % % % % n_elc = height(resp);
+% 
+n_elc = height(resp);
 
 %% Configuration Variables and Paths
 % PATH_ANALYSIS = '/Users/ao622/Dropbox (Personal)/Lab-BML/Expan/2021-11-16-FOOOF-figures';
@@ -77,8 +56,57 @@ color_pd_gpi = '#F9BD00';% #PD GPi
 color_et_vim = '#36A5D1';% #ET VIM
 color_ep_cm = '#9EB859';% #EP CM
 
-%% ecog
+
+
+%% set params, make brainplot
+
+% inclusion_mode = 'thresh';
+inclusion_mode = 'proportion';
+
+% p_thresh = 0.001; 
+p_thresh = 0.05 / 3; 
+
+p_proportion = 0.01; 
+
+resp.p_prod_syl_best_anypos = min(resp.p_prod_syl_position,[],2);
+resp.p_prod_cons_best_anypos  = min(resp.p_prod_cons_position,[],2);
+resp.p_prod_vow_best_anypos  = min(resp.p_prod_vow_position,[],2);
+resp.p_prep_syl_best_anypos  = min([resp.p_prep_syl1, resp.p_prep_syl2, resp.p_prep_syl3] ,[],2);
+
+
+% inclusion_var = 'p_prod_cons_best_anypos';
+% inclusion_var = 'p_prod_vow_best_anypos';
+% inclusion_var = 'p_prod_syl_best_anypos';
+% inclusion_var = 'p_rank';
+% inclusion_var = 'p_prep';
+% inclusion_var = 'p_prep_syl_best_anypos';
+inclusion_var = 'p_prep_syl1';
+% inclusion_var = 'p_prep_syl2';
+% inclusion_var = 'p_prep_syl3';
+
+exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
+
+
+
+if exclude_if_p_zero
+    excluded_rows = resp{:,param} == 0; 
+elseif ~exclude_if_p_zero
+    excluded_rows = false(n_elc,1);
+end
+
+switch inclusion_mode
+    case 'thresh'
+        rows_to_plot = resp{:,inclusion_var} < p_thresh & ~excluded_rows;
+    case 'proportion'
+        varvals = resp{:,inclusion_var};
+        varvals(excluded_rows) = nan; 
+        [~, rows_ranked] = sort(varvals);
+        rows_to_plot = rows_ranked( 1:round(p_proportion * n_elc) ); 
+end
+
+
 plotcolor = 'r';
+
 
 snap_to_surf = 1; % if true, project eletrodes to nearest point on ctx surface
 
@@ -87,13 +115,13 @@ snap_to_surf = 1; % if true, project eletrodes to nearest point on ctx surface
 %%% .... if snapping, offset of -1 should be enough to have points entirely above ctx surface (in L hem)
 x_offset = -1;
 
-elc_to_plot = srt(srt_row,{'qqqqmni_nonlinear_x','mni_nonlinear_y','mni_nonlinear_z'}); 
+elc_to_plot = resp(rows_to_plot,{'mni_nonlinear_x','mni_nonlinear_y','mni_nonlinear_z'}); 
 
-% close all
-% figure;
-hpatch = patch('vertices', average_mni.Vertices, 'faces', average_mni.Faces,...
+
+figure;
+patch('vertices', average_mni.Vertices, 'faces', average_mni.Faces,...
 'FaceColor', [.9 .9 .9], 'EdgeColor', 'none', 'FaceAlpha',1, ...
-'facelighting', 'gouraud', 'specularstrength', 0, 'ambientstrength', 0.5, 'diffusestrength', 0.5); 
+'facelighting', 'gouraud', 'specularstrength', 0, 'ambientstrength', 0.5, 'diffusestrength', 0.5)
 hold on
 
 xyz_to_plot_nonsnapped = [elc_to_plot.mni_nonlinear_x, elc_to_plot.mni_nonlinear_y, elc_to_plot.mni_nonlinear_z];
@@ -106,15 +134,15 @@ end
 
 hscat = scatter3(xyz_to_plot(:,1) + x_offset, xyz_to_plot(:,2), xyz_to_plot(:,3), 'filled',...
   'MarkerFaceAlpha',1,'MarkerFaceColor',plotcolor,'MarkerEdgeColor','k','LineWidth',0.01);
-hscat.SizeData = 100;
+hscat.SizeData = 40;
+set(gcf, 'Color', [1 1 1]); % white backgroud
 view(-90,0)
 axis off; axis equal
 camlight('headlight','infinite');
-hold off
 % % % % % % % % % % % scalebar(0,70,-50, 10, 'mm')
 
-
-% title(titlestr,'interpreter', 'none')
+titlestr = inclusion_var; 
+title(titlestr,'interpreter', 'none')
 
 % print(gcf,[PATH_ANALYSIS 'qqq.png'],'-dpng','-r300')
 

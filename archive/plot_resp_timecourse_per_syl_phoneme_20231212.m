@@ -7,9 +7,13 @@
  
 % close all
 
+
+%% add option to plot by vowel, consonant
+
 %% params
 
 srt_row = 1;
+show_error_bars = 0; 
 channame = srt.chan{srt_row};
 thissub = srt.sub(srt_row,:);
 
@@ -19,11 +23,14 @@ y_ax_hardlims = [-1 10]; % cut off y axis if it's lesser/greater than this value
 
 plotops.linewidth = 2; 
 
-% groupval_inds_to_plot = [1 4 7 10]; 
-% groupval_inds_to_plot = [2 5 8 11]; 
-% groupval_inds_to_plot = [3 6 9 12]; 
+
+groupval_inds_to_plot = [1 4 7 10]; 
+groupval_inds_to_plot = [2 5 8 11]; 
+groupval_inds_to_plot = [3 6 9 12]; 
+% groupval_inds_to_plot = [1:3]; 
 % groupval_inds_to_plot = [1:6];
-groupval_inds_to_plot = [7:12]; 
+% groupval_inds_to_plot = [7:12]; 
+% groupval_inds_to_plot = [1:12]; 
 
 
 
@@ -31,12 +38,14 @@ groupval_inds_to_plot = [7:12];
 trial_grouping_var = 'stim1'; 
 % trial_grouping_var = 'stim2'; 
 % trial_grouping_var = 'stim3'; 
+% % % % % % trial_grouping_var = {'cons',1};
+% % % % % % trial_grouping_var = {'cons',1};
 
  
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
 
-plot_mean_timecourse = 1; 
+plot_timecourses = 1; 
 plot_raster = 0; 
 
 xline_color_stim_syl_on = [0.3 0.3 0.8];
@@ -152,18 +161,21 @@ xtime = 0.5 + [linspace(-n_tpoints_pre_fixed, -1, n_tpoints_pre_fixed), linspace
 xtime = samp_period * xtime; 
 
 
-if plot_mean_timecourse 
+if plot_timecourses 
 
-    %     fig = figure; 
+    hfig = figure; 
     
     hold off
 
     nvals_to_plot = length(groupval_inds_to_plot); 
 
     % error bars
-% % % %     hfill = fill([xtime, fliplr(xtime)], [resp_align.sem_lims(1,:), fliplr(resp_align.sem_lims(2,:))], [0.8 0.8 0.8]); % standard error
-% % % %         hfill.LineStyle = 'none'; % no border
-% % % %     hold on 
+    if show_error_bars
+        hfill = fill([xtime, fliplr(xtime)], [resp_align.sem_lims(1,:), fliplr(resp_align.sem_lims(2,:))], [0.8 0.8 0.8]); % standard error
+            hfill.LineStyle = 'none'; % no border
+        hold on 
+    end
+
     hplot = plot(xtime,cell2mat(resp_grpd.resp_mean(groupval_inds_to_plot,:))'); 
 %         hplot.LineWidth = 1;
     hax = gca;
@@ -185,24 +197,24 @@ if plot_mean_timecourse
 %     hold off
 
     % stim syllable onsets
-    hstim_syl(1) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style);
-    hstim_syl(2) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style);
-    hstim_syl(3) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style);
+    hstim_syl(1) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off');
+    hstim_syl(2) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off');
+    hstim_syl(3) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off');
     
     % stim offset
-    hstim_syl(3) = xline(mean(trials_tmp.stim_syl_off_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_off, 'LineStyle',xline_style);
+    hstim_syl(3) = xline(mean(trials_tmp.stim_syl_off_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_off, 'LineStyle',xline_style, 'HandleVisibility','off');
     
     % produced syllable onsets
-    hprod_syl(1) = xline(0, 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style); 
-    hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_on_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style);
-    hprod_syl(3) = xline(xline_fn(trials_tmp.prod_syl_on_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style);
+    hprod_syl(1) = xline(0, 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off'); 
+    hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_on_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off');
+    hprod_syl(3) = xline(xline_fn(trials_tmp.prod_syl_on_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off');
     
     % produced syllable offsets
-    hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style);
-    hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style);
-    hprod_syl(3) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style);
+    hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style, 'HandleVisibility','off');
+    hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style, 'HandleVisibility','off');
+    hprod_syl(3) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style, 'HandleVisibility','off');
     
-    hyline = yline(0, 'LineWidth',yline_zero_width, 'Color',yline_zero_color, 'LineStyle',yline_zero_style);
+    hyline = yline(0, 'LineWidth',yline_zero_width, 'Color',yline_zero_color, 'LineStyle',yline_zero_style, 'HandleVisibility','off');
     
     xlabel('Time (sec)')
     ylabel('HG power (normed)')
