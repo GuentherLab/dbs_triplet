@@ -16,13 +16,13 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
                  'thal', {'VApc_L','VLa_L' , 'VLpv_L', 'VM_L' 'VM_R', 'VPM_L'};...
                 };
 
-% param = 'p_prod_cons_best_anypos';
-% param = 'p_prod_vow_best_anypos'; ;
-% param = 'p_prod_syl_best_anypos';;
+% param = 'p_prod_cons_mean';
+% param = 'p_prod_vow_mean'; ;
+% param = 'p_prod_syl_mean';;
 % param = 'p_rank'; ;
 % param = 'p_prep';
-% param = 'p_prep_syl_best_anypos';
-param = {'p_prep_syl',1};
+% param = 'p_prep_syl_mean';
+% param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
 % param = {'p_prep_cons',1};
@@ -35,7 +35,7 @@ param = {'p_prep_syl',1};
 pthresh = 0.05; 
 
 %% analysis
-paramvals = triplet_tablevar(resp, inclusion_var); 
+paramvals = triplet_tablevar(resp, param); 
 paramvalid = ~isnan(paramvals) & paramvals ~= 0; % electrodes with usable p values
 paramsgn = paramvals < pthresh & paramvalid; % analyzable electrodes significantly tuned for param of interest
 

@@ -1,8 +1,4 @@
 % look for elcs with particualr response profiles
-%
-% updated by AM 2022/9/23
-
-
 
 % Loading packages
 ft_defaults
@@ -38,12 +34,13 @@ info_vars_to_copy = {'chan','type','connector','port','strip','comment','target'
     'MOREL_label_1','MOREL_weight_1','MOREL_label_2','MOREL_weight_2','MOREL_label_3','MOREL_weight_3',...
     'HCPMMP1_label_1','HCPMMP1_weight_1','HCPMMP1_label_2','HCPMMP1_weight_2'};
 
+% specify phonemic features so that they appear in the same order across all subjects
+unqcons = {'gh','s','t','v'};
+unqvow = {'ah','ee','oo'};
+unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','voo'};
+
 %% load data 
 cd(PATH_SYNC)
-
-% if ~exist('D_hg','var')
-%     load([PATH_FIELDTRIP, filesep, SUBJECT, '_ft_hg_trial_ref_criteria_E_denoised.mat'])
-% end
 
 load([PATH_FIELDTRIP filesep SUBJECT '_ft_hg_trial_ref_criteria_' ARTIFACT_CRIT '_denoised.mat']);
 
@@ -82,6 +79,8 @@ trials = removevars(trials,{'stim1','stim2','stim3'});
 ntrials_stim = height(trials); 
 nchans = length(D_hg.label);
 nans_ch = nan(nchans,1); 
+nans_ch2 = nan(nchans,2); 
+nans_ch3 = nan(nchans,3); 
 logch = false(nchans,1);
 nans_tr = nan(ntrials_stim,1); 
 nans_tr2 = nan(ntrials_stim,2); 
@@ -91,25 +90,30 @@ cel_tr = cell(ntrials_stim,1);
 % info about our trial timing analysis window
 
 
-trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,      nans_tr3,      nans_tr3,     nans_tr3,      nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr,...
-     'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off', 'p_prep_cons','p_prep_vow', 'p_prep_syl',  'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx' })];
+trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,       nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr,...
+     'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off', 'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx' })];
 
 % stim timing does not mark our trial boundaries, so give more precise names
 %%% 'id' needs to be changed it specifically refers to row of the trialtable that has data for stim timing; not the same row numbers as other trial tables
 trials = renamevars(trials,{'starts','ends','duration','id'}, {'t_stim_on','t_stim_off','dur_stim','stimtrial_id'}); 
 trials.starts = trials.t_stim_on - base_win_sec(1); % trial starts at beginning of baseline window
 
-unqsyl = unique(trials.syl(:));
+n_unqcons = length(unqcons);
+    trials.cons_present = false(ntrials_stim, n_unqcons);
+n_unqvow = length(unqvow);
+    trials.vow_present = false(ntrials_stim, n_unqvow);
 n_unqsyl = length(unqsyl);
-trials.prod_syl_present = false(ntrials_stim, n_unqsyl);
+    trials.syl_present = false(ntrials_stim, n_unqsyl);
 
 % table containing responses during epochs for each chan
 cel = repmat({nans_tr},nchans,1); % 1 value per trial per chan
 cel2 = repmat({nans_tr2},nchans,1); % 2 values per trial per chan
 cel3 = repmat({nans_tr3},nchans,1); % 3 values per trial per chan
+nancons = nan(nchans, n_unqcons); 
+nanvow = nan(nchans, n_unqvow); 
 nansyl = nan(nchans, n_unqsyl); 
-resp = table(   D_hg.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch, nans_ch,  nansyl,        nansyl,    nans_ch,         logch, ...
-  'VariableNames', {'chan', 'base', 'timecourse',             'stim', 'prep', 'prod', 'trans', 'p_prep', 'p_rank','p_prep_syl', 'p_prod_syl','n_usable_trials', 'usable_chan'}); 
+resp = table(   D_hg.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch,  nans_ch,  nans_ch3,    nans_ch3,    nans_ch3,     nans_ch3,    nans_ch3,    nans_ch3,     nancons,          nanvow,            nansyl,           nans_ch3,      nans_ch3,    nans_ch3,    nans_ch,           logch, ...
+  'VariableNames', {'chan', 'base', 'timecourse',             'stim', 'prep', 'prod', 'trans', 'p_prep', 'p_rank','p_stim_cons','p_stim_vow','p_stim_syl','p_prep_cons','p_prep_vow','p_prep_syl','p_prep_cons_pref','p_prep_vow_pref','p_prep_syl_pref', 'p_prod_cons','p_prod_vow','p_prod_syl','n_usable_trials', 'usable_chan'}); 
 
 % extract epoch-related responses
 %%%% trials.times{itrial} use global time coordinates
@@ -205,12 +209,24 @@ end
 trials(:,{'t_stim_off','t_stim_on','has_speech_timing'}) = [];
 ntrials = height(trials); 
 
-% mark with logicals which syllables occur on which trials
+% mark with logicals which consonants/vowels/syllables occur on which trials
 for itrial = 1:ntrials
+    for icons = 1:n_unqcons
+        this_cons = unqcons{icons};
+        if any(strcmp(this_cons, trials.cons(itrial,:)))
+            trials.cons_present(itrial,icons) = true;
+        end
+    end
+    for ivow = 1:n_unqvow
+        this_vow = unqvow{ivow};
+        if any(strcmp(this_vow, trials.vow(itrial,:)))
+            trials.vow_present(itrial,ivow) = true;
+        end
+    end
     for isyl = 1:n_unqsyl
         this_syl = unqsyl{isyl};
         if any(strcmp(this_syl, trials.syl(itrial,:)))
-            trials.prod_syl_present(itrial,isyl) = true;
+            trials.syl_present(itrial,isyl) = true;
         end
     end
 end
@@ -234,37 +250,40 @@ for ichan = 1:nchans
     % rank-order selectivity
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');
     
-    for isyl = 1:n_unqsyl
 
-    % syllable prep selectivity
-        resp.p_prep_syl(ichan,isyl) = anova1(resp.prep{ichan}(good_trials), trials.prod_syl_present(good_trials,isyl), "off"); 
-
-
-        % syllable prod selectivity - full production period
-        resp.p_prod_syl(ichan,isyl) = anova1(mean(resp.prod{ichan}(good_trials), 2), trials.prod_syl_present(good_trials,isyl), "off"); 
-
-
-         % prep-syl - syllable-selective activity during prep period
-        this_syl_trials = good_trials & trials.prod_syl_present(:,isyl);
-        p_prep_syl(ichan, isyl) = ttest2(resp.prep{ichan}(this_syl_trials), resp.prep{ichan}(~this_syl_trials));
-
+%%%%%% selectivity in prep epoch for each specific phonemic feature in any of the 3 upcoming positions
+     % compare trials in which this consonant was present to those in which it wasn't present
+    for icons = 1:n_unqcons
+        this_cons_trials = good_trials & trials.cons_present(:,icons);
+        [~, resp.p_prep_cons_pref(ichan, icons)] = ttest2(resp.prep{ichan}(this_cons_trials), resp.prep{ichan}(~this_cons_trials));
     end
 
+% compare trials in which this vowel was present to those in which it wasn't present
+    for ivow = 1:n_unqvow
+        this_vow_trials = good_trials & trials.vow_present(:,ivow);
+        [~, resp.p_prep_vow_pref(ichan, ivow)] = ttest2(resp.prep{ichan}(this_vow_trials), resp.prep{ichan}(~this_vow_trials));
+    end
 
-    % tuning to rank-specific stim features
+% compare trials in which this syl was present to those in which it wasn't present
+    for isyl = 1:n_unqsyl
+        this_syl_trials = good_trials & trials.syl_present(:,isyl);
+        [~, resp.p_prep_syl_pref(ichan, isyl)] = ttest2(resp.prep{ichan}(this_syl_trials), resp.prep{ichan}(~this_syl_trials));
+    end
+
+%%%%%%%%%%%%%%%%%% tuning to phonemic features in only one of the three positions
      for ipos = 1:3
         syl_in_this_pos = triplet_tablevar(trials,{'syl',ipos},good_trials);
         cons_in_this_pos = triplet_tablevar(trials,{'cons',ipos},good_trials);
         vow_in_this_pos = triplet_tablevar(trials,{'vow',ipos},good_trials);
 
           % stim-consonant using the response from only when the syllable in question is being heard
-         resp.p_stim_cons_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), cons_in_this_pos,'off');
+         resp.p_stim_cons(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), cons_in_this_pos,'off');
 
          % stim-vowel using the response from only when the syllable in question is being produced
-         resp.p_stim_vow_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), vow_in_this_pos,'off');
+         resp.p_stim_vow(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), vow_in_this_pos,'off');
         
         % stim-syl using the response from only when the syllable in question is being played
-         resp.p_stim_syl_position(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos),syl_in_this_pos,'off');
+         resp.p_stim_syl(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos),syl_in_this_pos,'off');
 
         % prep-consonant with position
         resp.p_prep_cons(ichan, ipos) = anova1(resp.prep{ichan}(good_trials), cons_in_this_pos,'off');
@@ -276,13 +295,13 @@ for ichan = 1:nchans
         resp.p_prep_syl(ichan, ipos) = anova1(resp.prep{ichan}(good_trials), syl_in_this_pos,'off');
 
         % prod-consonant using the response from only when the syllable in question is being produced
-         resp.p_prod_cons_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), cons_in_this_pos,'off');
+         resp.p_prod_cons(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), cons_in_this_pos,'off');
 
         % prod-vowel using the response from only when the syllable in question is being produced
-         resp.p_prod_vow_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), vow_in_this_pos,'off');
+         resp.p_prod_vow(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos), vow_in_this_pos,'off');
 
          % prod-syl using the response from only when the syllable in question is being produced
-         resp.p_prod_syl_position(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos),syl_in_this_pos,'off');
+         resp.p_prod_syl(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos),syl_in_this_pos,'off');
 
      end
 
@@ -296,6 +315,14 @@ for ichan = 1:nchans
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
 
 end
+
+%%%% next step - instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
+resp.p_prod_cons_mean  = geomean(resp.p_prod_cons,2);
+resp.p_prod_vow_mean  = geomean(resp.p_prod_vow,2);
+resp.p_prod_syl_mean = geomean(resp.p_prod_syl,2);
+resp.p_prep_cons_mean  = geomean([resp.p_prep_cons],2);
+resp.p_prep_vow_mean  = geomean([resp.p_prep_vow],2);
+resp.p_prep_syl_mean  = geomean([resp.p_prep_syl],2);
     
 resp = resp(resp.usable_chan,:); % remove channels with few/no usuable trials
 elc_info_copy = renamevars(elc_info(resp.elc_info_row,:),'electrode','chan');

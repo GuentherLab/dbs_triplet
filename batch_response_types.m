@@ -16,3 +16,5 @@ for isub = subinds_to_run
         save(savefile, 'trials', 'resp')
 %     end
 end
+
+compile_resp_subjects()

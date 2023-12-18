@@ -14,7 +14,7 @@ function vals_out = triplet_tablevar(tab, varname_and_subcol, rows)
 if iscell(varname_and_subcol)
     varname = varname_and_subcol{1};
     subcolidx = varname_and_subcol{2};
-elseif isstring(varname_and_subcol)
+elseif isstring(varname_and_subcol) || ischar(varname_and_subcol)
     varname = varname_and_subcol;
     subcolidx = 1:size(tab{:,varname},2); % use all columns if not specified
 else

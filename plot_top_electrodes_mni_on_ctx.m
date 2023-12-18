@@ -19,14 +19,14 @@ PATH_TRIPLET_ANALYSIS = [PATH_DATASET '\Analysis\triplet_results_am'];
 n_elc = height(resp);
 
 %% Configuration Variables and Paths
-% PATH_ANALYSIS = '/Users/ao622/Dropbox (Personal)/Lab-BML/Expan/2021-11-16-FOOOF-figures';
+% PATH_FOOOF = '/Users/ao622/Dropbox (Personal)/Lab-BML/Expan/2021-11-16-FOOOF-figures';
 % % % % % % % % % PATH_DATA='/Users/ao622/Dropbox (Personal)/Lab-BML/Expan/2021-11-16-FOOOF-figures/data';
 PATH_AVERAGE_MNI = 'Z:\DBS\DBS_subject_lists/MNI_ICBM_2009b_NLIN_ASYM/cortex/CortexLowRes_15000V.mat';
 PATH_SUBCORT_ATLAS = '/Volumes/Nexus/Resources/STN-Atlas/atlas_index.mat';
 PATH_SUBCORT_ATLAS_VIM = '/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/atlas_index.mat';
 
 
-% cd(PATH_ANALYSIS)
+cd(PATH_TRIPLET_ANALYSIS)
 % electrode = readtable('data/A01_DBS_aper_coord_dx.tsv','Delimiter', '\t', 'TreatAsEmpty', 'NA','FileType','text');
 
 %loading cortical reconstructions
@@ -68,12 +68,6 @@ p_thresh = 0.05 / 3;
 
 p_proportion = 0.01; 
 
-resp.p_prod_syl_best_anypos = min(resp.p_prod_syl_position,[],2);
-resp.p_prod_cons_best_anypos  = min(resp.p_prod_cons_position,[],2);
-resp.p_prod_vow_best_anypos  = min(resp.p_prod_vow_position,[],2);
-resp.p_prep_syl_best_anypos  = min([resp.p_prep_syl] ,[],2);
-
-
 % inclusion_var = 'p_prod_cons_best_anypos';
 % inclusion_var = 'p_prod_vow_best_anypos';
 % inclusion_var = 'p_prod_syl_best_anypos';
@@ -95,7 +89,7 @@ exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
 
 
 if exclude_if_p_zero
-    excluded_rows = resp{:,param} == 0; 
+    excluded_rows = triplet_tablevar(resp, inclusion_var) == 0; 
 elseif ~exclude_if_p_zero
     excluded_rows = false(n_elc,1);
 end
