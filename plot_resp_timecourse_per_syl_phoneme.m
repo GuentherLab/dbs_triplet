@@ -7,19 +7,12 @@
  
 % close all
 
-
-%% add option to plot by vowel, consonant
-
 %% params
-
-srt_row = 1;
+srt_row = 13;
 show_error_bars = 0; 
-channame = srt.chan{srt_row};
-thissub = srt.sub(srt_row,:);
-
 
 % y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
-y_ax_hardlims = [-1 10]; % cut off y axis if it's lesser/greater than this value
+y_ax_hardlims = [-4 10]; % cut off y axis if it's lesser/greater than this value
 
 plotops.linewidth = 2; 
 
@@ -32,13 +25,11 @@ groupval_inds_to_plot = []; % plot all vals
 % groupval_inds_to_plot = [7:12]; 
 % groupval_inds_to_plot = [1:12]; 
 
-
-
 %%% choose the stimulus variable which will be used to sort trials
 trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
-% trial_grouping_var = {'vpw',1};
+% trial_grouping_var = {'vow',1};
 % trial_grouping_var = {'vow',2};
 % trial_grouping_var = {'vow',3};
 % trial_grouping_var = {'syl',1}; 
@@ -60,21 +51,24 @@ xline_style = '--';
 xline_width = 0.25; 
 
 %%%%% method for finding time landmarks from trial times
-xline_fn = @mean; 
-% xline_fn = @median;
+% xline_fn = @mean; 
+xline_fn = @median;
 
 yline_zero_width = 0.25; 
 yline_zero_color = [0.8 0.8 0.8]; 
 yline_zero_style = '-';
 
 %%%% how to find the time length that trials will be cut/padded to be
-% trial_time_adj_method = 'median_plus_sd'; % median plus stdev
 % trial_time_adj_method = 'median';
+% trial_time_adj_method = 'median_plus_sd'; % median plus stdev
 trial_time_adj_method = 'max';
 
 
 
 %% align responses
+channame = srt.chan{srt_row};
+thissub = srt.sub(srt_row,:);
+
 subrow = find(subs.subject == string(thissub));
 trials = subs.trials{subrow}; 
 
@@ -167,12 +161,12 @@ xtime = samp_period * xtime;
 
 if plot_timecourses 
 
-hfig = figure; 
+hfig = figure('Color',[1 1 1]); 
 hold off
 
 % if grouping val indices not specified, plot them all
 if isempty (groupval_inds_to_plot)
-    groupval_inds_to_plot = 1:groupval_inds_to_plot;
+    groupval_inds_to_plot = 1:ngroupvals;
 end
 nvals_to_plot = length(groupval_inds_to_plot); 
 

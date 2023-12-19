@@ -2,15 +2,28 @@
  .... might need to run plot_top_electrodes_mni_on_ctx.m first
 
 
-% param = 'p_prod_cons_mean';
-% param = 'p_prod_vow_mean';
-% param = 'p_prod_syl_mean';
+% param = 'p_prod_cons_best_anypos';
+% param = 'p_prod_vow_best_anypos';
+% param = 'p_prod_syl_best_anypos';
 % param = 'p_rank';
 % param = 'p_prep';
-param = 'p_prep_syl_mean';
-% param = 'p_prep_syl1';
-% param = 'p_prep_syl2';
-% param = 'p_prep_syl3';
+% param = 'p_prep_syl_best_anypos';
+% param = {'p_prep_cons',1};
+% param = {'p_prep_cons',2};
+% param = {'p_prep_cons',3};
+% param = {'p_prep_vow',1};
+% param = {'p_prep_vow',2};
+% param = {'p_prep_vow',3};
+param = {'p_prep_syl',1};
+% param = {'p_prep_syl',2};
+% param = {'p_prep_syl',3};
+
+% param = {'p_prod_cons',1};
+% param = {'p_prod_cons',2};
+% param = {'p_prod_cons',3};
+% param = {'p_prod_syl',1};
+% param = {'p_prod_syl',2};
+% param = {'p_prod_syl',3};
 
 % % % % % % % % % % % % % % delete channels if they have nan for the following parameter
 % % % % % % % % % % % % % exclude_if_nan_param = 'p_prep';
@@ -19,12 +32,15 @@ exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
 
 %%
 %  load('resp_all_subjects.mat'); 
-resp = movevars(resp,{'sub','chan'},'Before',1);
+resp = movevars(resp,{'sub','chan','fs_anatomy','MOREL_label_1'},'Before',1);
 
-srt = sortrows(resp,param); 
-srt = movevars(srt,{param},'After','chan');
+[srtvals, idxorder] = sort(triplet_tablevar(resp, param));
+
+srt = resp(idxorder,:); 
+srt = movevars(srt,{param{1}},'After','MOREL_label_1');
 
 if exclude_if_p_zero
-    pzero_rows = srt{:,param} == 0; 
-    srt = srt(~pzero_rows,:); 
+    pzero_rows = srtvals == 0; 
+    srt = srt(~pzero_rows,:);    
+        clear srtvals idxorder
 end
