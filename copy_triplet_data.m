@@ -1,5 +1,10 @@
 % copy data from the triplet server to new drive location
 
+% to do:
+%%% make option for use in copying files back from external drive to the server; if files already exist on the server, only replace them if I am the owner of the versions on the server and they were created after ~2021
+%%% also copy group analysis folder
+%%% add option for copying only small files (sort by filesize or filetype), to copy updates that matteo and others are adding to phon coding, speech error coding, artifact marking, etc
+
 dbpath = 'Z:\DBS'; 
 
 topdir_to_copy_to = '\\tsclient\D\triplet'; 
