@@ -1,20 +1,16 @@
 % look for elcs with particualr response profiles
 
-% Loading packages
-ft_defaults
-bml_defaults
-format long
-
 % % % % % data-loading parameters
 vardefault('SUBJECT','DBS3005');
 
 DATE=datestr(now,'yyyymmdd');
-PATH_DATA='Z:\DBS';
+
+setpaths_dbs_triplet()
 PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
 PATH_PREPROCESSED = [PATH_SUBJECT filesep 'Preprocessed Data'];
+PATH_FIELDTRIP = [PATH_PREPROCESSED filesep 'FieldTrip']; 
 PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
 PATH_ANNOT = [PATH_SYNC filesep 'annot'];
-PATH_FIELDTRIP = [PATH_SUBJECT '/Preprocessed Data/FieldTrip'];
 ARTIFACT_CRIT = 'E'; 
 SAMPLE_RATE = 100; % downsample rate in hz for high gamma traces
 

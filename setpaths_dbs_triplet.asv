@@ -1,0 +1,36 @@
+%%%% set paths for AM triplet analysis depending on computer
+
+[~,compname] = system('hostname'); compname = string(deblank(compname));
+
+
+ switch compname
+     case 'MSI' % AM personal computer
+         PATH_DATA='D:\triplet'; 
+         PATH_RESULTS = [PATH DATA filesep 'triplet_results_am']; 
+         PATH_CODE = 'C:\docs\code'; % AM laptop top directory for all code repos
+         PATH_TRIPLET_CODE = [PATH_CODE filesep 'dbs_triplet']; 
+         PATH_BML = [PATH CODE filesep 'bml']; 
+         PATH_FIELDTRIP = [PATH_CODE filesep 'fieldtrip-20210616']; 
+     case 'NSSBML01' % TURBO - BML server computer
+         PATH_DATA='Z:\DBS';
+         PATH_RESULTS = [PATH DATA filesep '\Analysis\triplet_results_am'];
+         PATH_TRIPLET_CODE = 'C:\Users\amsmeier\dbs_triplet'; 
+         PATH_BML = 'C:\Program Files\Brain-Modulation-Lab\bml'; 
+         PATH_FIELDTRIP = 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip'; 
+     otherwise 
+         error('computer name not recognized; please add computer to setpaths_dbs_triplet.m')
+ end
+
+paths_to_add = { PATH DATA;... % derivatives and (if on server) sourcedata
+    PATH_RESULTS;... % outputs of post-derivatives analyses by AM
+    PATH_TRIPLET_CODE; % code by AM for triplet analysis
+                    }
+
+ft_defaults()
+bml_defaults()
+
+set(0, 'DefaultTextInterpreter', 'none')
+set(0, 'DefaultLegendInterpreter', 'none')
+% set(0, 'DefaultAxesTickLabelInterpreter', 'none')
+
+ clearvars compname paths_to_add PATH_CODE PATH_FIELDTRIP PATH_BML
