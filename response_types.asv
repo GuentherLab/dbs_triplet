@@ -248,7 +248,7 @@ for ichan = 1:nchans
     end % skip stats analysis if channel had no good trials
     
     % preparatory activity............................ need to not use absolute value so that we can have negative values
-    [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), resp.base{ichan}(good_trials)); 
+    [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), resp.base{ichan}(good_trials)))); 
     
     % rank-order selectivity
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');
@@ -274,9 +274,8 @@ for ichan = 1:nchans
     end
 
 %%%%% prep tuning for the unique, unordered constituent cons/vow/syl.... use unique combos of phonemic elements, lumping together repeated elements within a trial
-    resp.p_prep_cons_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.cons_constit(good_trials),'off');
-    resp.p_prep_vow_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.vow_constit(good_trials),'off');
-    resp.p_prep_syl_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.syl_constit(good_trials),'off');
+    resp.p_prep_cons_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.cons_constit,'off');
+    
 
 %%%%%%%%%%%%%%%%%% tuning to phonemic features in only one of the three positions
      for ipos = 1:3

@@ -5,9 +5,9 @@
 
  switch compname
      case 'MSI' % AM personal computer
-         PATH_DATA='D:\triplet'; 
-         PATH_RESULTS = [PATH_DATA filesep 'triplet_results_am']; 
+         PATH_DATA='D:\triplet'; %%% use HDD because SSD doesn't have enough space
          PATH_ARTIFACT = [PATH_DATA filesep 'P08_artifact_criteria_E']; 
+         PATH_RESULTS = ['C:\triplet_results_am']; %%% use the SSD for faster load times
          PATH_CODE = 'C:\docs\code'; % AM laptop top directory for all code repos
          PATH_TRIPLET_CODE = [PATH_CODE filesep 'dbs_triplet']; 
          PATH_BML = [PATH_CODE filesep 'bml']; 
