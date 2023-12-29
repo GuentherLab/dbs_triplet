@@ -242,10 +242,10 @@ for ichan = 1:nchans
     resp.n_usable_trials(ichan) = nnz(good_trials); 
     if resp.n_usable_trials(ichan) < min_trials_for_good_channel
         resp.usable_chan(ichan) = false; 
-        continue; 
+        continue; % skip stats analysis if channel had too few good trials
     else
         resp.usable_chan(ichan) = true; 
-    end % skip stats analysis if channel had no good trials
+    end 
     
     % preparatory activity............................ need to not use absolute value so that we can have negative values
     [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), resp.base{ichan}(good_trials)); 

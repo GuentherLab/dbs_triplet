@@ -1,32 +1,19 @@
 %%%% brainplot the top electrodes for a particular parameter 
 
-%% Loading paths
-ft_defaults
-bml_defaults
-format long
-
 % close all
-
 % clear
+
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
 
 %% load electrode responses and mni coords
-PATH_DATASET = 'Z:\DBS';
-PATH_TRIPLET_ANALYSIS = [PATH_DATASET '\Analysis\triplet_results_am']; 
-% load([PATH_TRIPLET_ANALYSIS filesep 'resp_all_subjects'])
+
+% load([PATH_RESULTS filesep 'resp_all_subjects'])
 % 
 n_elc = height(resp);
 
 %% Configuration Variables and Paths
-% PATH_FOOOF = '/Users/ao622/Dropbox (Personal)/Lab-BML/Expan/2021-11-16-FOOOF-figures';
-% % % % % % % % % PATH_DATA='/Users/ao622/Dropbox (Personal)/Lab-BML/Expan/2021-11-16-FOOOF-figures/data';
-PATH_AVERAGE_MNI = 'Z:\DBS\DBS_subject_lists/MNI_ICBM_2009b_NLIN_ASYM/cortex/CortexLowRes_15000V.mat';
-PATH_SUBCORT_ATLAS = '/Volumes/Nexus/Resources/STN-Atlas/atlas_index.mat';
-PATH_SUBCORT_ATLAS_VIM = '/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/atlas_index.mat';
-
-
-cd(PATH_TRIPLET_ANALYSIS)
+% cd(RESULTS)
 % electrode = readtable('data/A01_DBS_aper_coord_dx.tsv','Delimiter', '\t', 'TreatAsEmpty', 'NA','FileType','text');
 
 %loading cortical reconstructions
@@ -63,42 +50,46 @@ color_ep_cm = '#9EB859';% #EP CM
 inclusion_mode = 'thresh';
 % inclusion_mode = 'proportion';
 
-% p_thresh = 0.001; 
-p_thresh = 0.05 / 3; 
+% p_thresh = 0.01; 
+p_thresh = 0.00001; 
+% p_thresh = 0.05 / 3; % bonf corrected 0.05
 
 p_proportion = 0.01; 
 
-% inclusion_var = 'p_prod_cons_best_anypos';
-% inclusion_var = 'p_prod_vow_best_anypos';
-% inclusion_var = 'p_prod_syl_best_anypos';
-% inclusion_var = 'p_rank';
-% inclusion_var = 'p_prep';
-% inclusion_var = 'p_prep_syl_best_anypos';
-% inclusion_var = {'p_prep_syl',1};
-% inclusion_var = {'p_prep_syl',2};
-% inclusion_var = {'p_prep_syl',3};
-% inclusion_var = {'p_prep_cons',1};
-% inclusion_var = {'p_prep_cons',2};
-% inclusion_var = {'p_prep_cons',3};
-% inclusion_var = {'p_prep_vow',1};
-% inclusion_var = {'p_prep_vow',2};
-inclusion_var = {'p_prep_vow',3};
+% param = 'p_prod_cons_best_anypos';
+% param = 'p_prod_vow_best_anypos';
+% param = 'p_prod_syl_best_anypos';
+% param = 'p_rank';
+% param = 'p_prep';
+% param = 'p_prep_syl_best_anypos';
+% param = {'p_prep_syl',1};
+% param = {'p_prep_syl',2};
+% param = {'p_prep_syl',3};
+% param = {'p_prep_cons',1};
+% param = {'p_prep_cons',2};
+% param = {'p_prep_cons',3};
+% param = {'p_prep_vow',1};
+% param = {'p_prep_vow',2};
+% param = {'p_prep_vow',3};
+% param = 'p_prep_cons_constit';
+% param = 'p_prep_vow_constit'; 
+param = 'p_prep_syl_constit';
 
 exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
 
 
 
 if exclude_if_p_zero
-    excluded_rows = triplet_tablevar(resp, inclusion_var) == 0; 
+    excluded_rows = triplet_tablevar(resp, param) == 0; 
 elseif ~exclude_if_p_zero
     excluded_rows = false(n_elc,1);
 end
 
 switch inclusion_mode
     case 'thresh'
-        rows_to_plot = triplet_tablevar(resp, inclusion_var) < p_thresh & ~excluded_rows;
+        rows_to_plot = triplet_tablevar(resp, param) < p_thresh & ~excluded_rows;
     case 'proportion'
-        varvals = triplet_tablevar(resp, inclusion_var);
+        varvals = triplet_tablevar(resp, param);
         varvals(excluded_rows) = nan; 
         [~, rows_ranked] = sort(varvals);
         rows_to_plot = rows_ranked( 1:round(p_proportion * n_elc) ); 
@@ -141,7 +132,7 @@ axis off; axis equal
 camlight('headlight','infinite');
 % % % % % % % % % % % scalebar(0,70,-50, 10, 'mm')
 
-titlestr = inclusion_var; 
+titlestr = param; 
 title(titlestr,'interpreter', 'none')
 
 % print(gcf,[PATH_ANALYSIS 'qqq.png'],'-dpng','-r300')

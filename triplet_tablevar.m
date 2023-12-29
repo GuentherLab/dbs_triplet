@@ -9,7 +9,7 @@
 %           if 2nd value is not supplied, all subcolumns will be outputted
 %   rows = table rows to output - defaults to all rows of the table
 
-function vals_out = triplet_tablevar(tab, varname_and_subcol, rows)
+function [vals_out, varname] = triplet_tablevar(tab, varname_and_subcol, rows)
 
 if iscell(varname_and_subcol)
     varname = varname_and_subcol{1};

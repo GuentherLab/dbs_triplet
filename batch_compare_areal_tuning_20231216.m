@@ -33,7 +33,7 @@ for iparam = 1:nparams
         ylim(ylimits)
     end
 
-    ylabel('')
+    % ylabel('')
 
 %     annostr = ['p = ' num2str(chi_p)];
 %     hannot = annotation("textbox",'String',annostr,'Position',[.8 .1 .1 .1], 'Color', [0 0 0], 'FontWeight','bold');

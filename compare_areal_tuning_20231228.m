@@ -2,12 +2,13 @@
   % load resp_all_subjects first
 
  %% params
+vardefault('show_barplot',1);
 
 %%% define anatomical regions composed of smaller areas
 regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... middle frontal gyrus... maybe also inf front sulcus
                 'ifg',  {'parsopercularis', 'parsorbitalis',  'parstriangularis'};... % inferior frontal gyrus
                 'smc',  {'postcentral', 'precentral'};...                   % sensorimotor cortex
-%                 'suptemp', {'superiortemporal', 'bankssts' }; ... % superior temporal
+                'suptemp', {'superiortemporal', 'bankssts' }; ... % superior temporal
                 % 'thal', {'Left-Thalamus-Proper' , 'Right-Thalamus-Proper' };... % thalamus.... use MOREL labels instead
                 % 'wm',   {'Left-Cerebral-White-Matter', 'Right-Cerebral-White-Matter'}; ... % white matter.... use MOREL labels instead
                 % 'ventdc', {'Left-VentralDC', 'Right-VentralDC'}... %% ? not sure what VentralDC is.... use MOREL labels instead
@@ -31,6 +32,9 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
+param = 'p_prep_cons_constit';
+% param = 'p_prep_vow_constit'; ;
+% param = 'p_prep_syl_constit';;
 
 pthresh = 0.05; 
 
@@ -69,6 +73,18 @@ expected_sgn_per_region_random = proportion_signficant_overall * areastats.nelc_
 [chi_significant, chi_p, chi_stats] = chi2gof([1:nregions]', 'Frequency',areastats.nelc_sgn, 'Expected',expected_sgn_per_region_random, 'Emin',0);
 % chi_p
 
+%% plotting
+if show_barplot
+
+    hfig = figure('color','w');
+    hbar = bar(areastats.prop_sgn);
+    hax = gca;
+    hax.XTickLabels = areastats.region;
+    hyline = yline(pthresh);
+    titlestr = {[param, '..... p = ' num2str(chi_p)] };
+    title(titlestr); 
+
+end
 
 
 
