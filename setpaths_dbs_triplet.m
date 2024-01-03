@@ -17,7 +17,7 @@
          PATH_STN_ATLAS = [PATH_RESULTS filesep 'atlases' filesep 'atlas_index_subcort_Ewert_v2.1.7.mat']; 
      case 'NSSBML01' % TURBO - BML server computer
          PATH_DATA='Z:\DBS';
-         PATH_RESULTS = [PATH DATA filesep '\Analysis\triplet_results_am'];
+         PATH_RESULTS = [PATH_DATA filesep '\Analysis\triplet_results_am'];
          PATH_TRIPLET_CODE = 'C:\Users\amsmeier\dbs_triplet'; 
               PATH_ARTIFACT = [PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_E']; % keep in repo to sync across devices
              % PATH_ARTIFACT = [PATH_DATA filesep 'Batch\P08_artifact_criteria_E']; %%%% periodically should copy from triplet repo to this folder
