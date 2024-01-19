@@ -337,3 +337,5 @@ elc_info_copy = renamevars(elc_info(resp.elc_info_row,:),'electrode','chan');
 resp = join(resp, elc_info_copy(:,info_vars_to_copy)); % add elc_info to resp
 resp = removevars(resp,{'elc_info_row','usable_chan'}); 
 resp.sub = repmat(SUBJECT, height(resp), 1);
+
+%%DT attempt at permutation test
