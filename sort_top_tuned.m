@@ -25,9 +25,9 @@
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
 
-% param = 'p_prep_cons_constit';
+param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-param = 'p_prep_syl_constit';
+% param = 'p_prep_syl_constit';
 
 exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
 

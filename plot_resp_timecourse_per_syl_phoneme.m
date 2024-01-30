@@ -5,10 +5,10 @@
  %
  % % % updated by AM 2022/8/21
  
-% close all
+close all
 
 %% params
-srt_row = 19;
+srt_row = 40;
 show_error_bars = 0; 
 
 % y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
@@ -16,17 +16,17 @@ y_ax_hardlims = [-4 10]; % cut off y axis if it's lesser/greater than this value
 
 plotops.linewidth = 2; 
 
-groupval_inds_to_plot = []; % plot all vals
+% groupval_inds_to_plot = []; % plot all vals
 % groupval_inds_to_plot = [1 4 7 10]; 
 % groupval_inds_to_plot = [2 5 8 11]; 
 % groupval_inds_to_plot = [3 6 9 12]; 
 % groupval_inds_to_plot = [1:3]; 
 % groupval_inds_to_plot = [1:6];
-% groupval_inds_to_plot = [7:12]; 
+groupval_inds_to_plot = [7:12]; 
 % groupval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-trial_grouping_var = {'cons',1};
+% trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
 % trial_grouping_var = {'vow',1};
@@ -35,7 +35,9 @@ trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'syl',1}; 
 % trial_grouping_var = {'syl',2}; 
 % trial_grouping_var = {'syl',3}; 
-
+trial_grouping_var = 'cons_constit';
+% trial_grouping_var = 'vow_constit'; 
+% trial_grouping_var = 'syl_constit';
  
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
