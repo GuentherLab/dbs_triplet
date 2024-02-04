@@ -39,7 +39,6 @@ unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','
 cd(PATH_SYNC)
 
 load([PATH_FIELDTRIP filesep SUBJECT '_ft_hg_trial_ref_criteria_' ARTIFACT_CRIT '_denoised.mat']);
-
 trials_stim_trip = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_triplet.txt';]); % stim timing info
 trials_stim_syl = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_syllable.txt';]); % stim timing info
 trials_trip = readtable([PATH_ANNOT filesep SUBJECT '_produced_triplet.txt';]); % speech timing info
@@ -47,6 +46,10 @@ trials_syl = readtable([PATH_ANNOT filesep SUBJECT '_produced_syllable.txt';]); 
 trials_phon = readtable([PATH_ANNOT filesep SUBJECT '_produced_phoneme.txt';]); % speech timing info
 
 elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt';]); 
+
+
+
+%% Now 'trials_syl' has two new columns: 'prob1' and 'prob2' with the phonotactic probabilities
 
 % some subjects don't have _stimulus_syllable.txt (3001 and 3002)- for these, maybe try to derive it from _stimulus_triplet.txt and expected durations? 
 
@@ -284,7 +287,7 @@ for ichan = 1:nchans
         cons_in_this_pos = triplet_tablevar(trials,{'cons',ipos},good_trials);
         vow_in_this_pos = triplet_tablevar(trials,{'vow',ipos},good_trials);
 
-          % stim-consonant using the response from only when the syllable in question is being heard
+         % stim-consonant using the response from only when the syllable in question is being heard
          resp.p_stim_cons(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), cons_in_this_pos,'off');
 
          % stim-vowel using the response from only when the syllable in question is being produced

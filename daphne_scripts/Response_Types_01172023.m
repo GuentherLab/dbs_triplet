@@ -50,7 +50,93 @@ elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt';]);
 
 % some subjects don't have _stimulus_syllable.txt (3001 and 3002)- for these, maybe try to derive it from _stimulus_triplet.txt and expected durations? 
 
+%%
+%Part 1
+% Define your CVC combinations array
+cvc_combinations = ["vahtoosee", "veetahsoo", "sooveetah", "tooveeghah", "gheeghahvah", ...
+    "soovahghee", "seetahvoo", "seegheetoo", "tahsooghee", "tahseeghoo"];
 
+% Initialize cell arrays for transitions
+transitions1 = cell(size(cvc_combinations));
+transitions2 = cell(size(cvc_combinations));
+
+% Loop through each CVC combination
+for i = 1:length(cvc_combinations)
+    cvc = char(cvc_combinations(i)); % Convert to character array
+
+    % Split the CVC combination into syllables
+    syllable1 = cvc(1:3); % First 3 characters
+    syllable2 = cvc(4:6); % Middle 3 characters
+    syllable3 = cvc(7:end); % Last 3 characters
+
+    % Extract transitions considering 'gh' cases
+    if contains(syllable1, "gh")
+        transition1 = strcat(syllable1(end-2:end), syllable2(1:2)); % Adjusted for 'gh'
+    else
+        transition1 = strcat(syllable1(end-1:end), syllable2(1:2)); % Standard transition
+    end
+
+    if contains(syllable2, "gh")
+        transition2 = strcat(syllable2(end-2:end), syllable3(1:2)); % Adjusted for 'gh'
+    else
+        transition2 = strcat(syllable2(end-1:end), syllable3(1:2)); % Standard transition
+    end
+
+    % Store the transitions
+    transitions1{i} = transition1;
+    transitions2{i} = transition2;
+end
+
+% Remove duplicates from transitions1
+uniqueTransitions1 = unique(transitions1);
+
+% Display the results
+disp('Unique Transitions 1:');
+disp(uniqueTransitions1);
+
+disp('Transitions 2:');
+disp(transitions2);
+
+%%
+%still working on this 
+% Define the calculated phonotactic probabilities 
+phonotacticProbabilities = {
+    'ahse', 0.041, 0.0008;
+    'ahso', 0.0369, 0.0008;
+    'ahto', 0.0542, 0.001;
+    'eeghah', 0.0291, 0.0006;
+    'eeta', 0.0512, 0.0019;
+    'gheeg', 0.0757, 0.0007;
+    'oova', 0.0279, 1E-04;
+    'oove', 0.0263, 0.0003;
+    'ahgh', 0.0174, 0;
+    'ahvo', 0.0341, 1E-04;
+    'gheet', 0.1238, 0.0024;
+    'oogh', 0.0055, 0;
+    'oose', 0.0291, 1E-04
+};
+
+% Create a table from the data
+phonotacticTable = cell2table(phonotacticProbabilities, ...
+    'VariableNames', {'Transition', 'PhonotacticProb1', 'PhonotacticProb2'});
+
+% Find common transitions between 'uniqueTransition1' and 'transition2'
+commonTransitions = intersect(uniqueTransitions1, transitions2);
+resultTable = table();
+
+for i = 1:length(commonTransitions)
+    transition = commonTransitions{i};
+    probRow = phonotacticTable(strcmp(phonotacticTable.Transition, transition), :);
+    if ~isempty(probRow)
+        resultTable = [resultTable; probRow]; % Append the matching row to the result table
+    end
+end
+
+% Display the result table
+display(resultTable);
+
+
+%%
 % account for some tables using onset/duration convention vs. starts/ends convention
 if ~any(contains(trials_trip.Properties.VariableNames,'starts'))
     trials_trip.starts = trials_trip.onset;
