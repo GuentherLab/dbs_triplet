@@ -103,9 +103,9 @@ for isub = sub_inds_to_run
 
             close all force
             
-            P08_highgamma_from_denoised(SUBJECT,timetol); 
+            P08A09_highgamma_from_denoised(SUBJECT,timetol); 
     
-            P08_detect_artifact_criteria_E(SUBJECT);
+            P08A09_detect_artifact_criteria_E(SUBJECT);
     
             P09_redefine_trial_common_average_reference_denoised(SUBJECT);
     

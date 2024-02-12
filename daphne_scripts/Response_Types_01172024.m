@@ -50,6 +50,97 @@ elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt';]);
 
 % some subjects don't have _stimulus_syllable.txt (3001 and 3002)- for these, maybe try to derive it from _stimulus_triplet.txt and expected durations? 
 
+%%
+% Part 1
+
+% Define your CVC combinations array
+vc_combinations = ["vahtoosee", "veetahsoo", "sooveetah", "tooveeghah", "gheeghahvah", ...
+    "soovahghee", "seetahvoo", "seegheetoo", "tahsooghee", "tahseeghoo"];
+
+% Loop through each CVC combination
+for i = 1:length(vc_combinations)
+    vc = char(vc_combinations(i)); % Convert to character array
+
+    % Split the CVC combination into syllables
+    syllable1 = vc(1:3); % First 3 characters
+    syllable2 = vc(4:6); % Middle 3 characters
+    syllable3 = vc(7:end); % Last 3 characters
+
+    % Handle the 'gh' case by including three letters if present in the first syllable
+    if contains(syllable1, "gh")
+        transition1 = strcat(syllable1(end-2:end), syllable2(1)); % Adjusted for 'gh'
+    else
+        transition1 = strcat(syllable1(end-1:end), syllable2(1)); % Standard transition
+    end
+
+    % Handle the 'gh' case by including three letters if present in the second syllable
+    if contains(syllable2, "gh")
+        transition2 = strcat(syllable2(end-2:end), syllable3(1)); % Adjusted for 'gh'
+    else
+        transition2 = strcat(syllable2(end-1:end), syllable3(1)); % Standard transition
+    end
+
+    % Store the transitions
+    transitions1{i} = transition1;
+    transitions2{i} = transition2;
+end
+
+% Filtering out the same transitions before part 2
+uniqueTransitions1 = unique(transitions1);
+uniqueTransitions2 = unique(transitions2);
+
+%Combining the transitions into one variable, filtering repeated transitions
+CombinedTransitions = union(uniqueTransitions1,uniqueTransitions2)
+
+%Display combined transitions
+disp(CombinedTransitions)
+
+%Modifying variables before part 2, removing 'egha' since it is not needed
+% Check if the 7th element exists
+if numel(CombinedTransitions) >= 7
+    % Create a logical index for all elements except the 7th
+    indexToRemove = true(1, numel(CombinedTransitions)); % Initialize all as true
+    indexToRemove(7) = false; % Set the 7th element to false (to be removed)
+
+    % Use the logical index to keep all elements except the 7th
+    ActualTransitions = CombinedTransitions(indexToRemove);
+
+    % Display ActualTransitions
+    disp('Actual Transitions:');
+    disp(ActualTransitions);
+else
+    % If the 7th element does not exist, copy the original array
+    ActualTransitions = CombinedTransitions;
+    disp('CombinedTransitions does not have a 7th element. No changes made.');
+end
+
+%More filtering before part 2, removing 'ghee' now, since it is a cv and not a vc.
+
+% Find the index of 'ghee' in the ActualTransitions array
+indexGhee = find(strcmp(ActualTransitions, 'ghee'));
+
+% If 'ghee' is found, create a logical index to exclude it
+if ~isempty(indexGhee)
+    indexToKeep = true(1, numel(ActualTransitions)); % Initialize all as true
+    indexToKeep(indexGhee) = false; % Set the index of 'ghee' to false (to be removed)
+
+    % Use the logical index to keep all elements except 'ghee'
+    FinalTransitions = ActualTransitions(indexToKeep);
+
+    % Display FinalTransitions
+    disp('Final Transitions after removing ''ghee'':');
+    disp(FinalTransitions);
+else
+    % If 'ghee' is not found, no changes are made
+    FinalTransitions = ActualTransitions;
+    disp('''ghee'' not found in ActualTransitions. No changes made.');
+end
+
+
+%%
+%Part 2: Assinging Phonotactic Probabilities
+
+
 
 
 %% get responses in predefined epochs
@@ -67,6 +158,7 @@ nans_tr3 = nan(ntrials_stim,3);
 cel_tr = cell(ntrials_stim,1); 
 
 % info about our trial timing analysis window
+
 
 trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,       nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr, cel_tr, cel_tr, cel_tr,...
      'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off', 'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx','cons_constit', 'vow_constit','syl_constit' })];
@@ -294,128 +386,7 @@ for ichan = 1:nchans
          resp.p_prod_syl(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos),syl_in_this_pos,'off');
 
      end
-   %%
-% Part 1
 
-% Define your CVC combinations array
-vc_combinations = ["vahtoosee", "veetahsoo", "sooveetah", "tooveeghah", "gheeghahvah", ...
-    "soovahghee", "seetahvoo", "seegheetoo", "tahsooghee", "tahseeghoo"];
-
-% Loop through each CVC combination
-for i = 1:length(vc_combinations)
-    vc = char(vc_combinations(i)); % Convert to character array
-
-    % Split the CVC combination into syllables
-    syllable1 = vc(1:3); % First 3 characters
-    syllable2 = vc(4:6); % Middle 3 characters
-    syllable3 = vc(7:end); % Last 3 characters
-
-    % Handle the 'gh' case by including three letters if present in the first syllable
-    if contains(syllable1, "gh")
-        transition1 = strcat(syllable1(end-2:end), syllable2(1)); % Adjusted for 'gh'
-    else
-        transition1 = strcat(syllable1(end-1:end), syllable2(1)); % Standard transition
-    end
-
-    % Handle the 'gh' case by including three letters if present in the second syllable
-    if contains(syllable2, "gh")
-        transition2 = strcat(syllable2(end-2:end), syllable3(1)); % Adjusted for 'gh'
-    else
-        transition2 = strcat(syllable2(end-1:end), syllable3(1)); % Standard transition
-    end
-
-    % Store the transitions
-    transitions1{i} = transition1;
-    transitions2{i} = transition2;
-end
-
-% Filtering out the same transitions before part 2
-uniqueTransitions1 = unique(transitions1);
-uniqueTransitions2 = unique(transitions2);
-
-%Combining the transitions into one variable, filtering repeated transitions
-CombinedTransitions = union(uniqueTransitions1,uniqueTransitions2)
-
-%Display combined transitions
-disp(CombinedTransitions)
-
-%Modifying variables before part 2, removing 'egha' since it is not needed
-% Check if the 7th element exists
-if numel(CombinedTransitions) >= 7
-    % Create a logical index for all elements except the 7th
-    indexToRemove = true(1, numel(CombinedTransitions)); % Initialize all as true
-    indexToRemove(7) = false; % Set the 7th element to false (to be removed)
-
-    % Use the logical index to keep all elements except the 7th
-    ActualTransitions = CombinedTransitions(indexToRemove);
-
-    % Display ActualTransitions
-    disp('Actual Transitions:');
-    disp(ActualTransitions);
-else
-    % If the 7th element does not exist, copy the original array
-    ActualTransitions = CombinedTransitions;
-    disp('CombinedTransitions does not have a 7th element. No changes made.');
-end
-
-%More filtering before part 2, removing 'ghee' now, since it is a cv and not a vc.
-
-% Find the index of 'ghee' in the ActualTransitions array
-indexGhee = find(strcmp(ActualTransitions, 'ghee'));
-
-% If 'ghee' is found, create a logical index to exclude it
-if ~isempty(indexGhee)
-    indexToKeep = true(1, numel(ActualTransitions)); % Initialize all as true
-    indexToKeep(indexGhee) = false; % Set the index of 'ghee' to false (to be removed)
-
-    % Use the logical index to keep all elements except 'ghee'
-    FinalTransitions = ActualTransitions(indexToKeep);
-
-    % Display FinalTransitions
-    disp('Final Transitions after removing ''ghee'':');
-    disp(FinalTransitions);
-else
-    % If 'ghee' is not found, no changes are made
-    FinalTransitions = ActualTransitions;
-    disp('''ghee'' not found in ActualTransitions. No changes made.');
-end
-
-
-%%
-%Part 2: Assigning Phonotactic Probabilities
-
-% Define the phonotactic probabilities as a structure
-phonotacticProbabilities = struct(...
-    'agh', 0, ...
-    'ahs', 0.0007, ...
-    'aht', 1E-04, ...
-    'ahv', 1E-04, ...
-    'eeg', 0.0005, ...
-    'eet', 0.0002, ...
-    'oog', 0, ...
-    'oos', 0, ...
-    'oov', 0 ...
-);
-
-% Initialize an array to store the probabilities for each transition in FinalTransitions
-probabilities = zeros(size(FinalTransitions));
-
-% Loop through FinalTransitions to assign probabilities
-for i = 1:numel(FinalTransitions)
-    transition = FinalTransitions{i};
-    if isfield(phonotacticProbabilities, transition)
-        probabilities(i) = phonotacticProbabilities.(transition);
-    else
-        disp(['No probability found for transition: ', transition]);
-    end
-end
-
-% Combine transitions and their probabilities into a table for easy viewing
-resultsTable = table(FinalTransitions', probabilities', 'VariableNames', {'Transition', 'Probability'});
-
-% Display the table
-disp(resultsTable);
-%%
     % transition selectivity
     
     

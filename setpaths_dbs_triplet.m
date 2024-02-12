@@ -10,6 +10,7 @@
          PATH_CODE = 'C:\docs\code'; % AM laptop top directory for all code repos
          PATH_TRIPLET_CODE = [PATH_CODE filesep 'dbs_triplet']; 
             PATH_ARTIFACT = [PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_E']; % keep in repo to sync across devices
+         PATH_IEEG_FT_FUNCS_AM = [PATH_CODE filesep 'ieeg_ft_funcs_am']; % ieeg processing code shared across AM projects
          PATH_BML = [PATH_CODE filesep 'bml']; 
          PATH_FIELDTRIP_CODE = [PATH_CODE filesep 'fieldtrip-20210616']; 
          PATH_AVERAGE_MNI = [PATH_RESULTS filesep 'atlases' filesep 'CortexLowRes_15000V_MNI_ICBM_2009b_NLIN_ASYM.mat']; 
@@ -21,6 +22,7 @@
          PATH_TRIPLET_CODE = 'C:\Users\amsmeier\dbs_triplet'; 
               PATH_ARTIFACT = [PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_E']; % keep in repo to sync across devices
              % PATH_ARTIFACT = [PATH_DATA filesep 'Batch\P08_artifact_criteria_E']; %%%% periodically should copy from triplet repo to this folder
+         PATH_IEEG_FT_FUNCS_AM = 'C:\Users\amsmeier\ieeg_ft_funcs_am'; % ieeg processing code shared across AM projects
          PATH_BML = 'C:\Program Files\Brain-Modulation-Lab\bml'; 
          PATH_FIELDTRIP_CODE = 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip'; 
          PATH_AVERAGE_MNI = 'Z:/DBS/DBS_subject_lists/MNI_ICBM_2009b_NLIN_ASYM/cortex/CortexLowRes_15000V.mat';
@@ -35,8 +37,10 @@ paths_to_add = {PATH_DATA;... % derivatives and (if on server) sourcedata
                 PATH_ARTIFACT;... % artifact param definition; also may contain subject artifact tables, though these are also stored in sub annot folders
                 PATH_TRIPLET_CODE;... % code by AM for triplet analysis
                     [PATH_TRIPLET_CODE filesep 'preprocessing'];...
-                    [PATH_TRIPLET_CODE filesep 'util'];  ...
-                    [PATH_TRIPLET_CODE filesep 'daphne_scripts'];  ...
+                    [PATH_TRIPLET_CODE filesep 'util_triplet'];  ...
+                    [PATH_TRIPLET_CODE filesep 'daphne_scripts'];  ... % 2024 rotation project code
+                PATH_IEEG_FT_FUNCS_AM;.... 
+                    [PATH_IEEG_FT_FUNCS_AM, filesep, 'util'];...
                 PATH_BML;... % Brain Modulation Lab repo
                 PATH_FIELDTRIP_CODE;...
     };

@@ -1,119 +1,49 @@
-function P08_detect_artifact_criteria_E(SUBJECT, param)
+function P08_detect_artifact_criteria_E_not_denoised(SUBJECT, param)
 
-%%% Detect artifacts.... for use with vibration-denoised data
-% AM 2022/8/16
-
+%% Detect artifacts
 % creates an artifact annotation table
 
-% % % % CRITERIA E paramaters valus
+% CRITERIA E paramaters valus
 CRITERIA = 'E'; %identifier for the criteria implemented in this script
 
-% % % % % load packages
+HIGH_PASS_FILTER = 'yes'; %should a high pass filter be applied
+HIGH_PASS_FILTER_FREQ = 1; %cutoff frequency of high pass filter
+
+do_bsfilter = 'yes'; 
+line_noise_harm_freqs=[60 120 180 240]; % for notch filters for 60hz harmonics
+
+%% load packages
 ft_defaults
 bml_defaults
 format long
 
-% % % % % % Defining paths
+%% Definig paths
+SUBJECT='DBS3022';
 DATE=datestr(now,'yyyymmdd');
 PATH_DATA='Z:\DBS';
 PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
 PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
-PATH_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
-PATH_ANNOT = [PATH_SYNC '/annot']; 
+PATH_PROTOCOL = 'C:\Users\amsmeier\Documents\MATLAB\P09_artifact_criteria_C2';
 
 cd(PATH_SYNC)
 
 session= bml_annot_read(['annot/' SUBJECT '_session.txt']);
 electrode = bml_annot_read(['annot/' SUBJECT '_electrode.txt']);
 
-% DBS3031 is missing DBS3031_trial_epoch.txt in annot folder; instead only has DBS3031_trial_epoch_criteria_D.txt
-if ~strcmp(SUBJECT, 'DBS3031') 
-    trial_epoch = readtable([PATH_ANNOT filesep SUBJECT '_trial_epoch.txt']);
-elseif strcmp(SUBJECT, 'DBS3031') 
-    trial_epoch = readtable([PATH_ANNOT filesep SUBJECT '_trial_epoch_criteria_D.txt']);
-end
-
 %% Loading FieldTrip data 
-load([PATH_SUBJECT filesep 'Preprocessed Data' filesep 'FieldTrip' filesep SUBJECT '_ft_hg_trial_denoised.mat'],'D_hg_trial');
+load([PATH_SUBJECT filesep 'Preprocessed Data' filesep 'FieldTrip' filesep SUBJECT '_ft_raw_session.mat'],'D','loaded_epoch');
+nTrials = numel(D.trial);
 
-%   cut out of trialtable all rows for which the vibration-denoised trial is missing
-cfg = []; 
-cfg.plot_times = 0; 
-cfg.trials = trial_epoch; 
-[trials, trials_ft] = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg_trial); 
+%remasking nans with zeros
+cfg=[];
+cfg.value=0;
+cfg.remask_nan=true;
+D=bml_mask(cfg,D);
 
-%% concatenate non-overlaping parts of trials, sorting by run
-session_ids = unique(trials_ft.session_id);
-nses = length(session_ids); 
-ntrials = length(D_hg_trial.trial);
-nchans = length(D_hg_trial.label); 
-tt_overlapping = D_hg_trial.time;
-sampint = 1/D_hg_trial.fsample;
-
-    %%%%%% get new trial times that will not overlap with each other
-trialtimes_no_overlap = table(nan(ntrials,1),nan(ntrials,1),'VariableNames',{'starts','ends'}); 
-interp_times = [];
-for itrial = 1:ntrials-1
-    % trial onsets stay the same
-    trialtimes_no_overlap.starts(itrial) = tt_overlapping{itrial}(1); 
-    % for trial offsets, take the latest timepoint of this trial which is....
-    % ... before the first timepoint of the subsequent trial
-    next_trial_start = tt_overlapping{itrial+1}(1);
-    nonoverlap_timepoints = tt_overlapping{itrial}(tt_overlapping{itrial} < next_trial_start); 
-    trialtimes_no_overlap.ends(itrial) = max(nonoverlap_timepoints); 
-    
-    % look for time discontinuities between trials within a session
-    if trials_ft.session_id(itrial) == trials_ft.session_id(itrial+1) && ... % if trials are in the same session
-            next_trial_start - trialtimes_no_overlap.ends(itrial) > 2*sampint % ...and intertrial gap exceeds 2 timesteps
-        interp_times_this_trial = trialtimes_no_overlap.ends(itrial) + sampint : sampint : next_trial_start;
-        interp_times = [interp_times, interp_times_this_trial]; 
-    end
-    
-end
-trialtimes_no_overlap.starts(ntrials) = tt_overlapping{end}(1); % last trial times are unchanged
-trialtimes_no_overlap.ends(ntrials) = tt_overlapping{end}(end); % last trial times are unchanged
-trialtimes_no_overlap.duration = trialtimes_no_overlap.ends - trialtimes_no_overlap.starts;
-
-% re-cut HG trialwise data with non-overlapping trial times
-%%% there should not be gaps more than 1 timestep between redefinied trials....
-%%%     ... (except possibly if there was a long pause betwteen trials within a session)
-cfg = [];
-cfg.epoch = trialtimes_no_overlap;
-D_hg_trial_no_overlap = bml_redefinetrial(cfg,D_hg_trial);
-
-
-%%%%% concatenate trials within each session to recreate continuous session-wise data
-D_hg = struct;
-D_hg.label = D_hg_trial.label;
-D_hg.trial = cell(1,nses);
-D_hg.time = cell(1,nses); 
-D_hg.fsample = D_hg_trial.fsample;
-
-%%% get session start/end times from trial times
-sestab = table(session_ids, nan(nses,1), nan(nses,1), nan(nses,1), 'VariableNames', {'session_id', 'starts', 'ends', 'duration'}); 
-for ises = 1:nses
-    trialmatch = find(trials_ft.session_id == session_ids(ises)); % row indices
-    sestab.starts(ises) = D_hg_trial_no_overlap.time{trialmatch(1)}(1); % start of the first trial of this session
-    sestab.ends(ises) = D_hg_trial_no_overlap.time{trialmatch(end)}(end); % end of the last trial of this session
-    times_pre_interp  = cell2mat(D_hg_trial_no_overlap.time(trialmatch));
-    % times to interpolate this session
-    times_interp_session = interp_times( interp_times > sestab.starts(ises) & interp_times < sestab.ends(ises));
-    times_with_interp = [times_pre_interp, times_interp_session]; 
-    [D_hg.time{ises}, timeorder] = sort(times_with_interp); % sort timepoints
-    ephys_pre_interp = cell2mat(D_hg_trial_no_overlap.trial(trialmatch)); 
-    ephys_interp_session = nan(nchans, length(times_interp_session)); 
-    ephys_with_interp = [ephys_pre_interp, ephys_interp_session]; % add interpolated points as NaNs
-    D_hg.trial{ises} = ephys_with_interp(:,timeorder); % reorder ephys data according to time
-end
-sestab.duration = sestab.ends - sestab.starts; 
-
-
-
-%% loading electrode type band table
-
-% working in protocol folder
+%% working in protocol folder
 cd(PATH_PROTOCOL)
 
+%% loading electrode type band table
 if ~exist('el_band','var')
   param = readtable('artifact_E_params.txt');
   param_default = param(param.subject == "default",:);
@@ -123,17 +53,28 @@ if ~exist('el_band','var')
   end
 end
 
-%%%% we are working with high-gamma power data (not raw), so don't do highpass or line noise filters
+%% Applying High Pass Filter
+cfg=[];
+cfg.hpfilter=HIGH_PASS_FILTER;
+cfg.hpfreq=HIGH_PASS_FILTER_FREQ;
+cfg.hpfilttype='but';
+cfg.hpfiltord=5;
+cfg.hpfiltdir='twopass';
+cfg.bsfilter=do_bsfilter;
+cfg.bsfreq= [line_noise_harm_freqs-1; line_noise_harm_freqs+1]'; % notch filters for 60hz harmonics
+cfg.channel={'ecog_*','macro_*','micro_*','dbs_*'};
+D_hpf = ft_preprocessing(cfg,D);
 
-%% Artifact rejection
+%% Artifact rejection - ECoG channels 
 % iterating over bands and electrode types
 artifact = table();
-f = figure();
+hfig = figure();
 for idx = 1:height(param)
   
   fprintf('doing %s %s \n',SUBJECT,param.name{idx});
   
   el_type = strip(param.electrode_type{idx});
+    wav_width = param.wav_width(idx);
   env_mult_factor =  param.env_mult_factor(idx);
   pname = strip(param.name{idx});
   
@@ -147,14 +88,14 @@ for idx = 1:height(param)
   %selecting ECoG channels for artifact rejection
   cfg=[];
   cfg.channel = [el_type,'_*'];
-  D_hg_eltype = ft_selectdata(cfg,D_hg);
+  D_hpf_eltype = ft_selectdata(cfg,D_hpf);
 
-  if isempty(D_hg_eltype.label)
+  if isempty(D_hpf_eltype.label)
     %channel type not available
     continue
   end
   
-%   % visually inspect signal
+%   %viasually inspect signal
 %   cfg=[];
 %   cfg.viewmode = 'vertical';
 %   cfg.blocksize = 30;
@@ -163,12 +104,51 @@ for idx = 1:height(param)
 %   cfg.channel = {'ecog_11*', 'audio_*'};
 %   ft_databrowser(cfg,D);
 
+
+% compute log-spaced frequencies between wav_freq_min and wav_freq_max
+    nfreqs = param.n_wav_freqs(idx); 
+    wav_freqs = round(logspace(log10(param.wav_freq_min(idx)),log10(param.wav_freq_max(idx)),nfreqs));
+    D_multifreq_eltype = cell(nfreqs,1);
+    
+    normed_pow = cell(1,nTrials); 
+    for ifreq = 1:nfreqs
+      %calculating absolute value envelope at 1Hz (1s chunks)
+      cfg=[];
+      cfg.out_freq = 100;
+      cfg.wav_freq = wav_freqs(ifreq);
+      cfg.wav_width = wav_width;
+      D_multifreq_eltype{ifreq} = bml_envelope_wavpow(cfg,D_hpf_eltype);
+      
+      nchannels = length(D_multifreq_eltype{ifreq}.label);
+      D_multifreq_eltype{ifreq}.med_pow_per_block = NaN(nchannels, nTrials); % initialize
+      for iblock = 1:nTrials % for each block, normalize by median power
+        % rows are channels, so take the median across columns (power at timepoints for each channel)
+          D_multifreq_eltype{ifreq}.med_pow_per_block(:,iblock) = median(D_multifreq_eltype{ifreq}.trial{iblock},2);
+          % normalize power by median values within each channel for this block
+          %%% normed_pow will be filled with all normed powers across blocks and frequencies; we will average across the 3rd dimension (frequency)
+          normed_pow{iblock}(:,:,ifreq) = D_multifreq_eltype{ifreq}.trial{iblock} ./ D_multifreq_eltype{ifreq}.med_pow_per_block(:,iblock);
+      end
+    end
+    
+    D_hg_eltype = struct; % averaged high gamma
+        D_hg_eltype.hdr = D_multifreq_eltype{1}.hdr;
+        D_hg_eltype.trial = D_multifreq_eltype{1}.trial;
+        D_hg_eltype.sampleinfo = D_multifreq_eltype{1}.sampleinfo;
+        D_hg_eltype.trial = cell(1,nTrials); % to be filled
+        D_hg_eltype.time = D_multifreq_eltype{1}.time;
+        D_hg_eltype.label = D_multifreq_eltype{1}.label;
+    % get averaged high gamma
+    for iblock = 1:nTrials
+        D_hg_eltype.trial{iblock} = mean(normed_pow{iblock},3);
+    end
+    clear D_multifreq_eltype normed_pow
+
 %   cfg=[];
 %   cfg.viewmode = 'vertical';
 %   cfg.blocksize = 30;
 %   cfg.ylim = 'maxmin';
 %   cfg.continuous = 'yes';
-%   ft_databrowser(cfg,D_hg_ecog_env);
+%   ft_databrowser(cfg,D_hpf_ecog_env);
 
   cfg=[];
   cfg.freq = 1/ENVELOPE_BIN_SIZE_SECONDS;
@@ -183,10 +163,10 @@ for idx = 1:height(param)
   D_hg_eltype_env_log10 = bml_mask(cfg,D_hg_eltype_env_log10);
   
   %calculating distribution robust statistics. 
-  THRESHOLD = nan(nses,2);
-  max_v=nan(1,nses);
-  min_v=nan(1,nses);
-  for i=1:nses
+  THRESHOLD = nan(nTrials,2);
+  max_v=nan(1,nTrials);
+  min_v=nan(1,nTrials);
+  for i=1:nTrials
     v = reshape(D_hg_eltype_env_log10.trial{i},1,[]);
     v1 = v((v>THRESHOLD_FIX(1)) & (v<THRESHOLD_FIX(2)));
     m = median(v1);
@@ -199,9 +179,9 @@ for idx = 1:height(param)
   end
 
   %plotting histogram to asses threshold levels
-  clf(f); set(f,'Position',[0 0 600 600]);
-  for i=1:nses
-    subplot(ceil(nses/2),2,i)
+  clf(hfig); set(hfig,'Position',[0 0 600 600]);
+  for i=1:nTrials
+    subplot(ceil(nTrials/2),2,i)
     hold on;
     h=histogram(D_hg_eltype_env_log10.trial{i},linspace(min(min_v),max(max_v),61),...
       'FaceAlpha',0.1,'EdgeAlpha',1);
@@ -211,14 +191,14 @@ for idx = 1:height(param)
     %set(gca,'YScale','log')
     title(['session ' num2str(i)]);
   end
-  saveas(f,['figures/' SUBJECT '_' pname '_artifact_env_log10_hist.png'])
+  saveas(hfig,['figures/' SUBJECT '_' pname '_artifact_env_log10_hist.png'])
 
   %detecting segments of time for each channel above threshold
   artifact_eltype_1 = table();
-  for ises=1:nses
+  for i=1:nTrials
     cfg=[];
-    cfg.threshold = THRESHOLD(ises,:);
-    cfg.trials = ises;
+    cfg.threshold = THRESHOLD(i,:);
+    cfg.trials = i;
     artifact_eltype_1 = bml_annot_rowbind(artifact_eltype_1, bml_annot_detect(cfg,D_hg_eltype_env_log10));
   end
 
@@ -239,15 +219,15 @@ for idx = 1:height(param)
   
   cfg=[];
   cfg.epoch = artifact_eltype_1_sample;
-  [D_hg_eltype_sample, epoch_hg_eltype_sample] = bml_redefinetrial(cfg,D_hg_eltype);
+  [D_hpf_eltype_sample, epoch_hpf_eltype_sample] = bml_redefinetrial(cfg,D_hpf_eltype);
  
-  D_p = D_hg_eltype_sample;
-  E_p = epoch_hg_eltype_sample;
+  D_p = D_hpf_eltype_sample;
+  E_p = epoch_hpf_eltype_sample;
   nx=10; ny=floor(numel(D_p.trial)/nx);
   if ny==0
     ny=1; nx=numel(D_p.trial);
   end
-  clf(f); set(f,'Position',[0 0 nx*200 ny*200]);
+  clf(hfig); set(hfig,'Position',[0 0 nx*200 ny*200]);
   for i=1:ny
       for j=1:nx
           pidx = (i-1)*nx+j;
@@ -258,7 +238,7 @@ for idx = 1:height(param)
           title(E_p.label(pidx));
       end
   end
-  saveas(f,['figures/' SUBJECT '_' pname '_artifact_snippets.png'])
+  saveas(hfig,['figures/' SUBJECT '_' pname '_artifact_snippets.png'])
 
   
   %consolidating annotations with CONSOLIDATION_TIME_TOLERANCE margin of overlap
@@ -269,7 +249,7 @@ for idx = 1:height(param)
 
 %   %creating ft_raw from annotations for visualization
 %   cfg=[];
-%   cfg.template = D_hg_eltype_env_log10;
+%   cfg.template = D_hpf_eltype_env_log10;
 %   cfg.annot_label_colname='label';
 %   artifact_eltype_3_raw = bml_annot2raw(cfg,artifact_eltype_2);
 % 
@@ -282,14 +262,14 @@ for idx = 1:height(param)
 %   cfg.label_colname = 'label';
 %   cfg.annot = artifact_eltype_2;
 %   cfg.value = NaN;
-%   D_hg_eltype_mask = bml_mask(cfg, D_hg_eltype);
+%   D_hpf_eltype_mask = bml_mask(cfg, D_hpf_eltype);
 % 
 %   cfg=[];
 %   cfg.viewmode = 'vertical';
 %   cfg.blocksize = 30;
 %   cfg.ylim = 'maxmin';
 %   cfg.continuous = 'yes';
-%   ft_databrowser(cfg,D_hg_eltype_mask);
+%   ft_databrowser(cfg,D_hpf_eltype_mask);
 
   %% rejecting faulty channels 
 
@@ -315,7 +295,7 @@ for idx = 1:height(param)
 
 %   %creating ft_raw from annotations for visualization
 %   cfg=[];
-%   cfg.template = D_hg_env;
+%   cfg.template = D_hpf_env;
 %   cfg.annot_label_colname='label';
 %   artifact2_raw = bml_annot2raw(cfg,artifact_2);
 % 
@@ -323,7 +303,7 @@ for idx = 1:height(param)
 %   f=figure();
 %   bml_plot_raster(artifact2_raw)
 
-  %% cheking coverage per connector group
+  %% checking coverage per connector group
   %if several channels of the same connector group have an artifact, reject
   %the entire connector group
 
@@ -334,7 +314,7 @@ for idx = 1:height(param)
 % 	%calculating absolute value envelope at 1Hz (1s chunks)
 %   cfg=[];
 %   cfg.freq=ENVELOPE_BIN_SIZE_SECONDS;
-%   D_hg_env = bml_envelope_binabs(cfg,D_hg);
+%   D_hpf_env = bml_envelope_binabs(cfg,D_hpf);
 
   %for each connector and bin, count number of faulty channels
   cfg=[];
@@ -379,10 +359,10 @@ for idx = 1:height(param)
   cfg.annot_label_colname = 'label';
   artifact_5_raw = bml_annot2raw(cfg,artifact_5);
 
-  clf(f); set(f,'Position',[0 0 600 600]);
+  clf(hfig); set(hfig,'Position',[0 0 600 600]);
   cfg.trial_name='session';
   bml_plot_raster(cfg,artifact_5_raw)
-  saveas(f,['figures/' SUBJECT '_' pname '_artifact_mask.png'])
+  saveas(hfig,['figures/' SUBJECT '_' pname '_artifact_mask.png'])
 
   artifact_5.pname = repmat({pname},height(artifact_5),1);
   
@@ -395,21 +375,12 @@ end
 cd(PATH_SYNC)
 artifact_annot_path = ['annot/' SUBJECT '_artifact_criteria_' CRITERIA '.txt'];
 
+%archiving 
+if isfile(artifact_annot_path)
+  copyfile(artifact_annot_path,...
+        [PATH_SYNC filesep 'archive' filesep SUBJECT '_artifact_criteria_' CRITERIA '_' datestr(now,'yyyymmdd_HHMM') '.txt'])
+end
 
-% AM commented out archiving because permissions for sync and annot folders are not available
-
-% % % % %archiving 
-% % % % if isfile(artifact_annot_path)
-% % % %   copyfile(artifact_annot_path,...
-% % % %         [PATH_SYNC filesep 'archive' filesep SUBJECT '_artifact_criteria_' CRITERIA '_' datestr(now,'yyyymmdd_HHMM') '.txt'])
-% % % % end
-
-
-
-
-
-% AM changed write-to folder because permissions for sync and annot folders are not available
-
-bml_annot_write(artifact,['annot/' SUBJECT '_artifact_criteria_' CRITERIA '_denoised.txt']);
-bml_annot_write(artifact,[PATH_PROTOCOL, filesep, 'annot', filesep, SUBJECT '_artifact_criteria_' CRITERIA '_denoised.txt']);
+bml_annot_write(artifact,['annot/' SUBJECT '_artifact_criteria_' CRITERIA '.txt']);
+% bml_annot_write(artifact,[PATH_PROTOCOL, filesep, 'annot', filesep, SUBJECT '_artifact_criteria_' CRITERIA '.txt']);
 

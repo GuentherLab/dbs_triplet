@@ -39,7 +39,6 @@ unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','
 cd(PATH_SYNC)
 
 load([PATH_FIELDTRIP filesep SUBJECT '_ft_hg_trial_ref_criteria_' ARTIFACT_CRIT '_denoised.mat']);
-
 trials_stim_trip = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_triplet.txt';]); % stim timing info
 trials_stim_syl = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_syllable.txt';]); % stim timing info
 trials_trip = readtable([PATH_ANNOT filesep SUBJECT '_produced_triplet.txt';]); % speech timing info
@@ -48,9 +47,30 @@ trials_phon = readtable([PATH_ANNOT filesep SUBJECT '_produced_phoneme.txt';]); 
 
 elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt';]); 
 
+
+
+%% Now 'trials_syl' has two new columns: 'prob1' and 'prob2' with the phonotactic probabilities
+
 % some subjects don't have _stimulus_syllable.txt (3001 and 3002)- for these, maybe try to derive it from _stimulus_triplet.txt and expected durations? 
 
 
+% account for some tables using onset/duration convention vs. starts/ends convention
+if ~any(contains(trials_trip.Properties.VariableNames,'starts'))
+    trials_trip.starts = trials_trip.onset;
+end
+if ~any(contains(trials_trip.Properties.VariableNames,'ends'))
+    trials_trip.ends = trials_trip.starts + trials_trip.duration; 
+end
+
+% remove trials from stim trials table that do not have a corresponding fieldtrip event
+cfg = [];
+cfg.trials = trials_stim_trip;
+cfg.plot_times = 0;
+[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
+
+% rename vars
+trials.syl = [trials.stim1, trials.stim2, trials.stim3]; 
+trials = removevars(trials,{'stim1','stim2','stim3'});
 
 %% get responses in predefined epochs
 % 'base' = average during pre-stim baseline
@@ -67,6 +87,7 @@ nans_tr3 = nan(ntrials_stim,3);
 cel_tr = cell(ntrials_stim,1); 
 
 % info about our trial timing analysis window
+
 
 trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,       nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr, cel_tr, cel_tr, cel_tr,...
      'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off', 'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx','cons_constit', 'vow_constit','syl_constit' })];
@@ -216,8 +237,93 @@ for itrial = 1:ntrials
     trials.syl_constit{itrial} = get_unq_trialstim('syl',trials,itrial);
 end
 
+%% Part 1 DT: Transition Tuning Analysis
+% This code will first break down the transitions between syl 1 + syl 2, then syl 2 + syl 3. 
 
-%% test for response types 
+% Add new columns for transitions
+trans1 = cell(height(trials), 1);
+trans2 = cell(height(trials), 1);
+
+% Loop through each row of the table
+for i = 1:height(trials)
+    % Extract the last two characters of syl1 and the first character of syl2
+    syl1 = trials.syl{i,1};
+    syl2 = trials.syl{i,2};
+    syl3 = trials.syl{i,3};
+
+    % Handle the transition from syl1 to syl2
+    trans1{i} = strcat(syl1(end-1:end), syl2(1));
+
+    % Now handle the transition from syl2 to syl3
+    trans2{i} =strcat(syl2(end-1:end),syl3(1));
+
+end
+
+% Add new columns to the table
+trials.trans1 = trans1;
+trials.trans2 = trans2;
+
+% Display the updated table
+disp(trials);
+
+%% Part 2 DT: Transition Tuning Analysis
+
+% Define the phonotactic probabilities mapping
+phonotacticProbabilities = struct(...
+    'oot', 0, ...
+    'oov', 0, ...
+    'oog', 0, ...
+    'oos', 0, ...
+    'aht', 1E-04, ...
+    'ahv', 1E-04, ...
+    'ahg', 0, ...
+    'ahs', 0.0007, ...
+    'eet', 0.0002, ...
+    'eev', 0.0007, ...
+    'eeg', 0.0005, ...
+    'ees', 0.0003 ...
+);
+
+% Initialize columns for the probabilities in the trials table
+probTrans1 = zeros(height(trials), 1);
+probTrans2 = zeros(height(trials), 1);
+
+% Loop through each transition and assign probabilities
+for i = 1:height(trials)
+    trans1 = strrep(trials.trans1{i}, '''', ''); % Remove the single quote
+    trans2 = strrep(trials.trans2{i}, '''', ''); % Remove the single quote
+
+    % Check if the transition exists in the mapping, and if so, assign its probability
+    if isfield(phonotacticProbabilities, trans1)
+        probTrans1(i) = phonotacticProbabilities.(trans1);
+    else
+        warning('No probability found for transition: %s', trans1);
+    end
+
+    if isfield(phonotacticProbabilities, trans2)
+        probTrans2(i) = phonotacticProbabilities.(trans2);
+    else
+        warning('No probability found for transition: %s', trans2);
+    end
+end
+
+% Set the format to short g for displaying fewer digits after the decimal point
+format short g;
+
+% Add the probability columns to the trials table
+trials.probTrans1 = probTrans1;
+trials.probTrans2 = probTrans2;
+
+%Combine rows of trans 1 & trans 2, into one single row
+trials.transitions = [trials.trans1, trials.trans2]; trials = removevars(trials,{'trans1','trans2'})
+
+%Combine rows for 2 set of probabilities for 2 transitions into one single row
+trials.PhonotacticProbabilities = [trials.probTrans1, trials.probTrans2]; 
+trials = removevars(trials, {'probTrans1', 'probTrans2'}); 
+% Display the updated trials table
+disp(trials);
+%%
+%test for response types 
 resp.elc_info_row = nan(nchans,1); 
 for ichan = 1:nchans
     good_trials = ~isnan(resp.base{ichan}); % non-artifactual trials for this channel
@@ -260,13 +366,32 @@ for ichan = 1:nchans
     resp.p_prep_vow_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.vow_constit(good_trials),'off');
     resp.p_prep_syl_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.syl_constit(good_trials),'off');
 
-%%%%%%%%%%%%%%%%%% tuning to phonemic features in only one of the three positions
+%%%%%%%%%%%%%%%%%% tuning to phonemic features in only one of the three positions %DT
      for ipos = 1:3
         syl_in_this_pos = triplet_tablevar(trials,{'syl',ipos},good_trials);
         cons_in_this_pos = triplet_tablevar(trials,{'cons',ipos},good_trials);
         vow_in_this_pos = triplet_tablevar(trials,{'vow',ipos},good_trials);
+% Additional analysis for transitions and phonotactic probabilities
+for itrans = 1:2
+    % Extracting responses for the current channel and transition
+    current_trans_responses = resp.trans{ichan,1}(:, itrans);
 
-          % stim-consonant using the response from only when the syllable in question is being heard
+    % Trials where specific transition identity is present
+    trans_identity_trials = good_trials & trials.transitions(:, itrans);
+
+    % ANOVA for sensitivity to the identity of transition itrans
+    resp.p_trans_identity(ichan, itrans) = anova1(current_trans_responses(trans_identity_trials), trials.transitions(trans_identity_trials, itrans), 'off');
+
+    % Trials based on phonotactic probability for transition itrans
+    phonotactic_trials = good_trials & ~isnan(trials.PhonotacticProbabilities(:, itrans));
+
+    % ANOVA for sensitivity to the phonotactic probability of transition itrans
+    resp.p_phonotactic_prob(ichan, itrans) = anova1(current_trans_responses(phonotactic_trials), trials.PhonotacticProbabilities(phonotactic_trials, itrans), 'off');
+end
+     end 
+end
+  
+         % stim-consonant using the response from only when the syllable in question is being heard
          resp.p_stim_cons(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), cons_in_this_pos,'off');
 
          % stim-vowel using the response from only when the syllable in question is being produced
@@ -294,138 +419,21 @@ for ichan = 1:nchans
          resp.p_prod_syl(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos),syl_in_this_pos,'off');
 
      end
-   %%
-% Part 1
 
-% Define your CVC combinations array
-vc_combinations = ["vahtoosee", "veetahsoo", "sooveetah", "tooveeghah", "gheeghahvah", ...
-    "soovahghee", "seetahvoo", "seegheetoo", "tahsooghee", "tahseeghoo"];
-
-% Loop through each CVC combination
-for i = 1:length(vc_combinations)
-    vc = char(vc_combinations(i)); % Convert to character array
-
-    % Split the CVC combination into syllables
-    syllable1 = vc(1:3); % First 3 characters
-    syllable2 = vc(4:6); % Middle 3 characters
-    syllable3 = vc(7:end); % Last 3 characters
-
-    % Handle the 'gh' case by including three letters if present in the first syllable
-    if contains(syllable1, "gh")
-        transition1 = strcat(syllable1(end-2:end), syllable2(1)); % Adjusted for 'gh'
-    else
-        transition1 = strcat(syllable1(end-1:end), syllable2(1)); % Standard transition
-    end
-
-    % Handle the 'gh' case by including three letters if present in the second syllable
-    if contains(syllable2, "gh")
-        transition2 = strcat(syllable2(end-2:end), syllable3(1)); % Adjusted for 'gh'
-    else
-        transition2 = strcat(syllable2(end-1:end), syllable3(1)); % Standard transition
-    end
-
-    % Store the transitions
-    transitions1{i} = transition1;
-    transitions2{i} = transition2;
-end
-
-% Filtering out the same transitions before part 2
-uniqueTransitions1 = unique(transitions1);
-uniqueTransitions2 = unique(transitions2);
-
-%Combining the transitions into one variable, filtering repeated transitions
-CombinedTransitions = union(uniqueTransitions1,uniqueTransitions2)
-
-%Display combined transitions
-disp(CombinedTransitions)
-
-%Modifying variables before part 2, removing 'egha' since it is not needed
-% Check if the 7th element exists
-if numel(CombinedTransitions) >= 7
-    % Create a logical index for all elements except the 7th
-    indexToRemove = true(1, numel(CombinedTransitions)); % Initialize all as true
-    indexToRemove(7) = false; % Set the 7th element to false (to be removed)
-
-    % Use the logical index to keep all elements except the 7th
-    ActualTransitions = CombinedTransitions(indexToRemove);
-
-    % Display ActualTransitions
-    disp('Actual Transitions:');
-    disp(ActualTransitions);
-else
-    % If the 7th element does not exist, copy the original array
-    ActualTransitions = CombinedTransitions;
-    disp('CombinedTransitions does not have a 7th element. No changes made.');
-end
-
-%More filtering before part 2, removing 'ghee' now, since it is a cv and not a vc.
-
-% Find the index of 'ghee' in the ActualTransitions array
-indexGhee = find(strcmp(ActualTransitions, 'ghee'));
-
-% If 'ghee' is found, create a logical index to exclude it
-if ~isempty(indexGhee)
-    indexToKeep = true(1, numel(ActualTransitions)); % Initialize all as true
-    indexToKeep(indexGhee) = false; % Set the index of 'ghee' to false (to be removed)
-
-    % Use the logical index to keep all elements except 'ghee'
-    FinalTransitions = ActualTransitions(indexToKeep);
-
-    % Display FinalTransitions
-    disp('Final Transitions after removing ''ghee'':');
-    disp(FinalTransitions);
-else
-    % If 'ghee' is not found, no changes are made
-    FinalTransitions = ActualTransitions;
-    disp('''ghee'' not found in ActualTransitions. No changes made.');
-end
-
-
-%%
-%Part 2: Assigning Phonotactic Probabilities
-
-% Define the phonotactic probabilities as a structure
-phonotacticProbabilities = struct(...
-    'agh', 0, ...
-    'ahs', 0.0007, ...
-    'aht', 1E-04, ...
-    'ahv', 1E-04, ...
-    'eeg', 0.0005, ...
-    'eet', 0.0002, ...
-    'oog', 0, ...
-    'oos', 0, ...
-    'oov', 0 ...
-);
-
-% Initialize an array to store the probabilities for each transition in FinalTransitions
-probabilities = zeros(size(FinalTransitions));
-
-% Loop through FinalTransitions to assign probabilities
-for i = 1:numel(FinalTransitions)
-    transition = FinalTransitions{i};
-    if isfield(phonotacticProbabilities, transition)
-        probabilities(i) = phonotacticProbabilities.(transition);
-    else
-        disp(['No probability found for transition: ', transition]);
-    end
-end
-
-% Combine transitions and their probabilities into a table for easy viewing
-resultsTable = table(FinalTransitions', probabilities', 'VariableNames', {'Transition', 'Probability'});
-
-% Display the table
-disp(resultsTable);
-%%
     % transition selectivity
     
-    
+    %add 2 more things - is the electrode sensitive to the identify of trans 1 and trans 2
+    % same thing but instead of identity, is it phontactic probability of trans 1 + trans 2
+    % the specific aspect of the response from the electrode, will be stored in the trial table variable 'resp' within row 'trans' avg high gamma response of ecog in each of the trials resp.trans(1,1) - trans 1 between syl 1 and syl 2, trans 2 between syllable 2 + 3
+    %recommendation: using basic anova, can c+p from some of the lines above, will be changing the variable names that correspond to the electrode response and trialwise (trans 1 + 2) phonotactic probability for each trial
+    %
 
     %%% electrode info - first matching electrode table channel
     %  for macro electrode locations, only copied their first listed location from the electrodes table into response table...
     %  ..... they generally move to deep structures over the course of trials, so this location will become less accurate for later trials
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
 
-end
+
 
 %%%% next step to implement should be: instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
 resp.p_prod_cons_mean  = geomean(resp.p_prod_cons,2);
@@ -440,5 +448,3 @@ elc_info_copy = renamevars(elc_info(resp.elc_info_row,:),'electrode','chan');
 resp = join(resp, elc_info_copy(:,info_vars_to_copy)); % add elc_info to resp
 resp = removevars(resp,{'elc_info_row','usable_chan'}); 
 resp.sub = repmat(SUBJECT, height(resp), 1);
-
-%%DT attempt at permutation test
