@@ -12,7 +12,7 @@
             PATH_ARTIFACT = [PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_E']; % keep in repo to sync across devices
          PATH_IEEG_FT_FUNCS_AM = [PATH_CODE filesep 'ieeg_ft_funcs_am']; % ieeg processing code shared across AM projects
          PATH_BML = [PATH_CODE filesep 'bml']; 
-         PATH_FIELDTRIP_CODE = [PATH_CODE filesep 'fieldtrip-20210616']; 
+         PATH_FIELDTRIP_CODE = [PATH_CODE filesep 'fieldtrip']; 
          PATH_AVERAGE_MNI = [PATH_RESULTS filesep 'atlases' filesep 'CortexLowRes_15000V_MNI_ICBM_2009b_NLIN_ASYM.mat']; 
          PATH_SUBCORT_ATLAS_VIM = [PATH_RESULTS filesep 'atlases' filesep 'atlas_index_DISTAL_Ewert2017.mat']; % too large to keep in github; put atlases in Results
          PATH_STN_ATLAS = [PATH_RESULTS filesep 'atlases' filesep 'atlas_index_subcort_Ewert_v2.1.7.mat']; 

@@ -63,12 +63,13 @@ if ~any(contains(trials_prod_trip.Properties.VariableNames,'ends'))
 end
 
 % remove trials from stim trials table that do not have a corresponding fieldtrip event
-%%% for the purposes of finding a fully overlapping ft trial, set trialtable's trial start as beginning of baseline and trial end as end of production plus buffer
+%%% for the purposes of finding maximally overlapping ft trials, set trialtable start as beginning of stim, trial end as end of production plus 1sec
 cfg = [];
 cfg.trials = trials_stim_trip; 
-    cfg.trials.starts = cfg.trials.starts - base_win_sec(1); % adjust to be beginning of baseline period
-    cfg.trials.ends = trials_prod_trip.ends + post_speech_win_sec; 
+    cfg.trials.starts = cfg.trials.starts - 
+    cfg.trials.ends = trials_prod_trip.ends + 1; 
 cfg.plot_times = 0;
+cfg.match_trials_by_max_overlap = 1; % get the most-overlapping ft trial for each behavioral trial... not the first overlapping ft trial
 [trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
 
 % rename vars
