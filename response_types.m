@@ -1,7 +1,7 @@
 % look for elcs with particualr response profiles
 
 % % % % % data-loading parameters
-vardefault('SUBJECT','DBS3012');
+vardefault('SUBJECT','DBS3005');
 
 DATE=datestr(now,'yyyymmdd');
 
@@ -67,7 +67,14 @@ end
 cfg = [];
 cfg.trials = trials_stim_trip; 
     cfg.trials.starts = cfg.trials.starts - base_win_sec(1); % adjust to be beginning of baseline period
-    cfg.trials.ends = trials_prod_trip.ends + post_speech_win_sec; 
+    for itrial = 1:height(trials_stim_trip)
+        matchrow = trials_prod_trip.session_id==trials_stim_trip.session_id(itrial) & trials_prod_trip.trial_id==trials_stim_trip.trial_id(itrial);
+        if any(matchrow) % if this trial has stim timing and prod timing, end trial at prod end plus buffer
+            cfg.trials.ends(itrial) = trials_prod_trip.ends(matchrow) + post_speech_win_sec; 
+        elseif ~any(matchrow) % if this trial has stim timing but no prod timing, add buffer to end of stim timing
+            cfg.trials.ends(itrial) = cfg.trials.ends(itrial) + 1 + post_speech_win_sec; 
+        end
+    end
 cfg.plot_times = 0;
 [trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
 
