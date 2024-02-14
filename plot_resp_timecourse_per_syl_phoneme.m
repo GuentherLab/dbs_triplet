@@ -5,28 +5,31 @@
  %
  % % % updated by AM 2022/8/21
  
-close all
+% close all
 
 %% params
-srt_row = 40;
+srt_row = 5;
 show_error_bars = 0; 
 
+y_ax_hardlims = []; % cut off y axis if it's lesser/greater than this value
 % y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
-y_ax_hardlims = [-4 10]; % cut off y axis if it's lesser/greater than this value
+% y_ax_hardlims = [-4 10]; % cut off y axis if it's lesser/greater than this value
+
+xlimits = [-3 2]; 
 
 plotops.linewidth = 2; 
 
-% groupval_inds_to_plot = []; % plot all vals
+groupval_inds_to_plot = []; % plot all vals
 % groupval_inds_to_plot = [1 4 7 10]; 
 % groupval_inds_to_plot = [2 5 8 11]; 
 % groupval_inds_to_plot = [3 6 9 12]; 
 % groupval_inds_to_plot = [1:3]; 
 % groupval_inds_to_plot = [1:6];
-groupval_inds_to_plot = [7:12]; 
+% groupval_inds_to_plot = [7:12]; 
 % groupval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-% trial_grouping_var = {'cons',1};
+trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
 % trial_grouping_var = {'vow',1};
@@ -35,7 +38,7 @@ groupval_inds_to_plot = [7:12];
 % trial_grouping_var = {'syl',1}; 
 % trial_grouping_var = {'syl',2}; 
 % trial_grouping_var = {'syl',3}; 
-trial_grouping_var = 'cons_constit';
+% trial_grouping_var = 'cons_constit';
 % trial_grouping_var = 'vow_constit'; 
 % trial_grouping_var = 'syl_constit';
  
@@ -143,10 +146,8 @@ trials_tmp.prod_syl_off_adj = trials_tmp.prod_syl_off - trials_tmp.prod_syl_on(:
 
 %% organize responses by grouping var
 % find trial details for the appropriate subject
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % sub_index = find(strcmp(subs.sub,thissub));
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % trials = subs.trials{sub_index};
-
-[unq_grouping_vals, ~, grouping_var_ind] = unique( triplet_tablevar(trials,trial_grouping_var) );
+[triptabvals, ~, full_var_string] = triplet_tablevar(trials,trial_grouping_var); 
+[unq_grouping_vals, ~, grouping_var_ind] = unique( triptabvals );
 ngroupvals = length(unq_grouping_vals);
 celcol = cell(ngroupvals,1);
 resp_grpd = table(unq_grouping_vals,celcol,celcol,'VariableNames',{'groupval','resp','resp_mean'}); 
@@ -186,18 +187,18 @@ for ival = 1:nvals_to_plot
     hplot(ival).LineWidth = plotops.linewidth;
 end
 
-ylimdefault = ylim;
-ylim([max(y_ax_hardlims(1),ylimdefault(1)), min(y_ax_hardlims(2),ylimdefault(2))])
+xlim(xlimits)
 
-htitle = title([thissub, '___', channame], 'Interpreter','none');
+ylimdefault = ylim;
+if ~isempty(y_ax_hardlims)
+    ylim([max(y_ax_hardlims(1),ylimdefault(1)), min(y_ax_hardlims(2),ylimdefault(2))])
+end
+
+htitle = title([thissub, '___', channame, '... ', full_var_string], 'Interpreter','none');
 %     hleg = legend(resp_grpd.groupval{groupval_inds_to_plot});
 
 f=get(gca,'Children');
 hleg = legend(flipud(f(end-nvals_to_plot+1:end)),resp_grpd.groupval{groupval_inds_to_plot});
-
-%     hold on
-%     textscatter(
-%     hold off
 
 % stim syllable onsets
 hstim_syl(1) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off');
