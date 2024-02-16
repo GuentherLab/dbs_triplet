@@ -204,17 +204,6 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         resp.prep{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
     end
     
-    % transition responses
-    for itrans = 1:2
-        % 'transition' periods start/end halfway through the syllable
-        trials.trans_on(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,1:2) + trials.prod_syl_off(itrial,1:2)]; % avg start/end
-        trials.trans_off(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,2:3) + trials.prod_syl_off(itrial,2:3)]; % avg start/end
-        trans_inds = D_hg.time{ft_idx} > trials.trans_on(itrial,itrans) & D_hg.time{ft_idx} < trials.trans_off(itrial,itrans); 
-       for ichan = 1:nchans
-           resp.trans{ichan}(itrial,itrans) = mean( D_hg.trial{ft_idx}(ichan, trans_inds) ) - resp.base{ichan}(itrial);
-       end
-    end
-end
 
 %% extract additional trial-specific stim information 
 trials(:,{'has_speech_timing'}) = [];
