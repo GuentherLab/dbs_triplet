@@ -1,7 +1,7 @@
 % look for elcs with particualr response profiles
 
 % % % % % data-loading parameters
-vardefault('SUBJECT','DBS3012');
+vardefault('SUBJECT','DBS3005');
 
 DATE=datestr(now,'yyyymmdd');
 
@@ -223,17 +223,19 @@ trans1 = cell(height(trials), 1);
 trans2 = cell(height(trials), 1);
 
 % Loop through each row of the table
-for i = 1:height(trials)
+for itrial = 1:height(trials)
     % Extract the last two characters of syl1 and the first character of syl2
-    syl1 = trials.syl{i,1};
-    syl2 = trials.syl{i,2};
-    syl3 = trials.syl{i,3};
+    syl1 = trials.syl{itrial,1};
+    syl2 = trials.syl{itrial,2};
+    syl3 = trials.syl{itrial,3};
 
-    % Handle the transition from syl1 to syl2
-    trans1{i} = strcat(syl1(end-1:end), syl2(1));
-
-    % Now handle the transition from syl2 to syl3
-    trans2{i} =strcat(syl2(end-1:end),syl3(1));
+    if ~isempty(syl1) % if there is phonemeic data for this trial
+        % Handle the transition from syl1 to syl2
+        trans1{itrial} = strcat(syl1(end-1:end), syl2(1));
+    
+        % Now handle the transition from syl2 to syl3
+        trans2{itrial} =strcat(syl2(end-1:end),syl3(1));
+    end
 
 end
 
