@@ -238,7 +238,7 @@ for i = 1:height(trials)
 end
 
 % Add new columns to the table
-trials.transition_id = [trans1, trans2];
+trials.trans = [trans1, trans2];
 
 % % Display the updated table
 % disp(trials);
@@ -305,20 +305,20 @@ probTrans2 = zeros(height(trials), 1);
 
 % Loop through each transition and assign probabilities
 for i = 1:height(trials)
-    this_trans1 = strrep(trials.transition_id{i,1}, '''', ''); % Remove the single quote
-    this_trans2 = strrep(trials.transition_id{i,2}, '''', ''); % Remove the single quote
+    trans1 = strrep(trials.trans1{i}, '''', ''); % Remove the single quote
+    trans2 = strrep(trials.trans2{i}, '''', ''); % Remove the single quote
 
     % Check if the transition exists in the mapping, and if so, assign its probability
-    if isfield(phonotacticProbabilities, this_trans1)
-        probTrans1(i) = phonotacticProbabilities.(this_trans1);
+    if isfield(phonotacticProbabilities, trans1)
+        probTrans1(i) = phonotacticProbabilities.(trans1);
     else
-        warning('No probability found for transition: %s', this_trans1);
+        warning('No probability found for transition: %s', trans1);
     end
 
-    if isfield(phonotacticProbabilities, this_trans2)
-        probTrans2(i) = phonotacticProbabilities.(this_trans2);
+    if isfield(phonotacticProbabilities, trans2)
+        probTrans2(i) = phonotacticProbabilities.(trans2);
     else
-        warning('No probability found for transition: %s', this_trans2);
+        warning('No probability found for transition: %s', trans2);
     end
 end
 
@@ -326,10 +326,17 @@ end
 format short g;
 
 % Add the probability columns to the trials table
-trials.PhonotacticProbabilities  = [probTrans1, probTrans2];
+trials.probTrans  = [probTrans1;
+trials.probTrans2 = probTrans2;
 
-% % % Display the updated trials table
-% disp(trials);
+%Combine rows of trans 1 & trans 2, into one single row
+trials.transitions = [trials.trans1, trials.trans2]; trials = removevars(trials,{'trans1','trans2'})
+
+%Combine rows for 2 set of probabilities for 2 transitions into one single row
+trials.PhonotacticProbabilities = [trials.probTrans1, trials.probTrans2]; 
+trials = removevars(trials, {'probTrans1', 'probTrans2'}); 
+% Display the updated trials table
+disp(trials);
 
 %% test for response types 
 resp.elc_info_row = nan(nchans,1); 
@@ -380,6 +387,27 @@ for ichan = 1:nchans
         cons_in_this_pos = triplet_tablevar(trials,{'cons',ipos},good_trials);
         vow_in_this_pos = triplet_tablevar(trials,{'vow',ipos},good_trials);
 
+        for itrans = 1:2
+        % Ensure valid_trials indices are within bounds for both responses and probabilities
+        valid_trials_for_trans = valid_trials & ~isnan(trials.PhonotacticProbabilities(:, itrans));
+
+        % Display the number of valid trials for this channel and transition
+        disp(['Channel ', num2str(ichan), ', Transition ', num2str(itrans), ...
+              ' - Number of valid trials: ', num2str(sum(valid_trials_for_trans))]);
+
+        % Extract valid responses and phonotactic probabilities for the current transition
+        valid_responses = resp.trans{ichan}(valid_trials_for_trans, itrans);
+        valid_probabilities = trials.PhonotacticProbabilities(valid_trials_for_trans, itrans);
+
+        % Perform ANOVA to analyze the effect of phonotactic probabilities on the responses
+        if ~isempty(valid_responses) && ~isempty(valid_probabilities)
+            resp.p_trans_prob(ichan, itrans) = anova1(valid_responses, valid_probabilities, 'off');
+        else
+            disp(['Insufficient valid data for ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
+        end
+    end
+end
+
          % stim-consonant using the response from only when the syllable in question is being heard
          resp.p_stim_cons(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), cons_in_this_pos,'off');
 
@@ -407,36 +435,17 @@ for ichan = 1:nchans
          % prod-syl using the response from only when the syllable in question is being produced
          resp.p_prod_syl(ichan,ipos) = anova1(resp.prod{ichan}(good_trials,ipos),syl_in_this_pos,'off');
 
-    end
+     end
 
     % transition selectivity
-    valid_trials = good_trials(:); % Ensure valid_trials is a column vector
-    for itrans = 1:2
-        % Ensure valid_trials indices are within bounds for both responses and probabilities
-        valid_trials_for_trans = valid_trials & ~isnan(trials.PhonotacticProbabilities(:, itrans));
     
-        % % % Display the number of valid trials for this channel and transition
-        % disp(['Channel ', num2str(ichan), ', Transition ', num2str(itrans), ...
-        %       ' - Number of valid trials: ', num2str(sum(valid_trials_for_trans))]);
-    
-        % Extract valid responses and phonotactic probabilities for the current transition
-        valid_responses = resp.trans{ichan}(valid_trials_for_trans, itrans);
-        valid_probabilities = trials.PhonotacticProbabilities(valid_trials_for_trans, itrans);
-    
-        % Perform ANOVA to analyze the effect of phonotactic probabilities on the responses
-        if ~isempty(valid_responses) && ~isempty(valid_probabilities)
-            resp.p_trans_prob(ichan, itrans) = anova1(valid_responses, valid_probabilities, 'off');
-        else
-            disp(['Insufficient valid data for ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
-        end
-    end
     
 
     %%% electrode info - first matching electrode table channel
     %  for macro electrode locations, only copied their first listed location from the electrodes table into response table...
     %  ..... they generally move to deep structures over the course of trials, so this location will become less accurate for later trials
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
-end
+
    
 
 %%%% next step to implement should be: instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
