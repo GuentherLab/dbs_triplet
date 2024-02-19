@@ -443,7 +443,7 @@ end
     %  ..... they generally move to deep structures over the course of trials, so this location will become less accurate for later trials
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
 
-end
+   
 
 %%%% next step to implement should be: instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
 resp.p_prod_cons_mean  = geomean(resp.p_prod_cons,2);
