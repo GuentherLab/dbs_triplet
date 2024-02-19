@@ -203,7 +203,7 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     for ichan = 1:nchans
         resp.prep{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
     end
-    
+end
 
 %% extract additional trial-specific stim information 
 trials(:,{'has_speech_timing'}) = [];
