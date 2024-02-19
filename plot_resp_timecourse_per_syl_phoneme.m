@@ -29,7 +29,7 @@ groupval_inds_to_plot = []; % plot all vals
 % groupval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-trial_grouping_var = {'cons',1};
+% trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
 % trial_grouping_var = {'vow',1};
@@ -41,7 +41,9 @@ trial_grouping_var = {'cons',1};
 % trial_grouping_var = 'cons_constit';
 % trial_grouping_var = 'vow_constit'; 
 % trial_grouping_var = 'syl_constit';
- 
+trial_grouping_var = {'transition_id',1};  
+% trial_grouping_var = {'transition_id',2};  
+
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
 
