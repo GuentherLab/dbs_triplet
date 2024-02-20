@@ -411,36 +411,39 @@ for ichan = 1:nchans
 
     end
 
-    % transition selectivity
-    valid_trials = good_trials(:); % Ensure valid_trials is a column vector
-    for itrans = 1:2
-        % Ensure valid_trials indices are within bounds for both responses and probabilities
-        valid_trials_for_trans = valid_trials & ~isnan(trials.PhonotacticProbabilities(:, itrans));
-    
-        % % % Display the number of valid trials for this channel and transition
-        % disp(['Channel ', num2str(ichan), ', Transition ', num2str(itrans), ...
-        %       ' - Number of valid trials: ', num2str(sum(valid_trials_for_trans))]);
-    
-        % Extract valid responses and phonotactic probabilities for the current transition
-        valid_responses = resp.trans{ichan}(valid_trials_for_trans, itrans);
-        valid_probabilities = trials.PhonotacticProbabilities(valid_trials_for_trans, itrans);
-    
-        % Perform ANOVA to analyze the effect of phonotactic probabilities on the responses
-        if ~isempty(valid_responses) && ~isempty(valid_probabilities)
-            resp.p_trans_prob(ichan, itrans) = anova1(valid_responses, valid_probabilities, 'off');
-        else
-            disp(['Insufficient valid data for ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
-        end
-    end
-    
-
+   
     %%% electrode info - first matching electrode table channel
     %  for macro electrode locations, only copied their first listed location from the electrodes table into response table...
     %  ..... they generally move to deep structures over the course of trials, so this location will become less accurate for later trials
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
 end
-   
 
+%% Convert trials.transition_id to numeric values
+numeric_transition_id = str2double(trials.transition_id);
+
+%% Analysis
+resp.elc_info_row = nan(nchans, 1);
+resp.p_trans_id = nan(nchans, 2);  % Renamed from resp.p_trans_prob for clarity
+for ichan = 1:nchans
+    good_trials = ~isnan(resp.base{ichan});
+    % Loop for the two transitions
+    for itrans = 1:2  % itrans is 1 for the first column, 2 for the second
+        % Select valid trials for this transition
+        valid_trials_for_trans = good_trials & ~isnan(numeric_transition_id(:, itrans));
+        % Extract valid responses for these trials
+        valid_responses = resp.trans{ichan}(valid_trials_for_trans);
+        % Extract valid transition IDs for these trials from the numeric array
+        valid_transition_IDs = numeric_transition_id(valid_trials_for_trans, itrans);  % Renamed from valid_probabilities for clarity
+        % Perform ANOVA if there are valid data
+        if ~isempty(valid_responses) && ~isempty(valid_transition_IDs)
+            resp.p_trans_id(ichan, itrans) = anova1(valid_responses, valid_transition_IDs, 'off');  % Using the renamed variable resp.p_trans_id
+        else
+            disp(['Insufficient valid data for ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
+        end
+    end
+end
+
+    
 %%%% next step to implement should be: instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
 resp.p_prod_cons_mean  = geomean(resp.p_prod_cons,2);
 resp.p_prod_vow_mean  = geomean(resp.p_prod_vow,2);
