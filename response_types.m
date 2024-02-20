@@ -422,7 +422,6 @@ end
 numeric_transition_id = str2double(trials.transition_id);
 
 %% Analysis
-resp.elc_info_row = nan(nchans, 1);
 resp.p_trans_id = nan(nchans, 2);  % Renamed from resp.p_trans_prob for clarity
 for ichan = 1:nchans
     good_trials = ~isnan(resp.base{ichan});
