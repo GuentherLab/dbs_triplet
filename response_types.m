@@ -1,6 +1,6 @@
 % look for elcs with particualr response profiles
 
-% % % % % data-loading parameters
+%% data-loading parameters
 vardefault('SUBJECT','DBS3005');
 
 DATE=datestr(now,'yyyymmdd');
