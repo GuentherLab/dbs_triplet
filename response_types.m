@@ -418,31 +418,57 @@ for ichan = 1:nchans
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
 end
 
-%% Convert trials.transition_id to numeric values
-numeric_transition_id = str2double(trials.transition_id);
-
 %% Analysis
-resp.p_trans_id = nan(nchans, 2);  % Renamed from resp.p_trans_prob for clarity
+resp.elc_info_row = nan(nchans, 1);
+resp.p_phonotactic_prob = nan(nchans, 2);  % For phonotactic probability tuning
+resp.p_trans_id = nan(nchans, 2);  % For transition ID tuning
+
 for ichan = 1:nchans
     good_trials = ~isnan(resp.base{ichan});
-    % Loop for the two transitions
-    for itrans = 1:2  % itrans is 1 for the first column, 2 for the second
-        % Select valid trials for this transition
-        valid_trials_for_trans = good_trials & ~isnan(numeric_transition_id(:, itrans));
-        % Extract valid responses for these trials
-        valid_responses = resp.trans{ichan}(valid_trials_for_trans);
-        % Extract valid transition IDs for these trials from the numeric array
-        valid_transition_IDs = numeric_transition_id(valid_trials_for_trans, itrans);  % Renamed from valid_probabilities for clarity
-        % Perform ANOVA if there are valid data
-        if ~isempty(valid_responses) && ~isempty(valid_transition_IDs)
-            resp.p_trans_id(ichan, itrans) = anova1(valid_responses, valid_transition_IDs, 'off');  % Using the renamed variable resp.p_trans_id
+    
+    % Phonotactic Probability Tuning
+    for itrans = 1:2
+        valid_trials_for_phonotactic = good_trials & ~isnan(trials.PhonotacticProbabilities(:, itrans));
+        valid_responses_phonotactic = resp.trans{ichan}(valid_trials_for_phonotactic);
+        valid_phonotactic_probabilities = trials.PhonotacticProbabilities(valid_trials_for_phonotactic, itrans);
+
+        % Perform ANOVA if there are valid data for phonotactic probabilities
+        if ~isempty(valid_responses_phonotactic) && ~isempty(valid_phonotactic_probabilities)
+            resp.p_phonotactic_prob(ichan, itrans) = anova1(valid_responses_phonotactic, valid_phonotactic_probabilities, 'off');
         else
-            disp(['Insufficient valid data for ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
+            disp(['Insufficient data for phonotactic probability ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
         end
+    end
+
+    % Transition ID Tuning
+    for itrans = 1:2
+        % Check if transition_id is a table variable and access it correctly
+        if istable(trials) && any(strcmp(trials.Properties.VariableNames, 'transition_id'))
+            valid_trials_for_transition = good_trials & ~cellfun(@isempty, trials.transition_id(:, itrans));
+            valid_responses_transition = resp.trans{ichan}(valid_trials_for_transition);
+            valid_transition_IDs = trials.transition_id(valid_trials_for_transition, itrans);
+
+            % Perform ANOVA if there are valid data for transition IDs, treating them as categorical
+            if ~isempty(valid_responses_transition) && ~isempty(valid_transition_IDs)
+                resp.p_trans_id(ichan, itrans) = anova1(valid_responses_transition, valid_transition_IDs, 'off');
+            else
+                disp(['Insufficient data for transition ID ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
+            end
+        else
+            error('The "transition_id" variable is not found in the "trials" table.');
+
+        end 
     end
 end
 
-    
+
+%% Output the results
+disp('ANOVA results for phonotactic probability effects on responses:');
+disp(resp.p_phonotactic_prob);
+disp('ANOVA results for transition ID effects on responses:');
+disp(resp.p_trans_id);
+
+%%
 %%%% next step to implement should be: instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
 resp.p_prod_cons_mean  = geomean(resp.p_prod_cons,2);
 resp.p_prod_vow_mean  = geomean(resp.p_prod_vow,2);
