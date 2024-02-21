@@ -419,7 +419,6 @@ for ichan = 1:nchans
 end
 
 %% Analysis
-resp.elc_info_row = nan(nchans, 1);
 resp.p_phonotactic_prob = nan(nchans, 2);  % For phonotactic probability tuning
 resp.p_trans_id = nan(nchans, 2);  % For transition ID tuning
 
