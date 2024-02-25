@@ -32,11 +32,23 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
-param = 'p_prep_cons_constit';
+% param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; ;
 % param = 'p_prep_syl_constit';;
+%param = {'p_prod_cons',1};
+% param = {'p_prod_cons',2}; 
+% param = {'p_prod_cons',3};
+%  param = {'p_prod_syl',1};
+% param = {'p_prod_syl',2};
+% param = {'p_prod_syl',3};
+% param = {'p_phonotactic_prob',1}; %srt version of response
+% param ={'p_phonotactic_prob',2}; %dt
+% param = {'p_trans_id', 1}; %confirmed
+% param = {'p_trans_id', 2};
+param = {'p_prod_vow', 1};
 
-pthresh = 0.05; 
+
+pthresh = 0.01; 
 
 %% analysis
 paramvals = triplet_tablevar(resp, param); 

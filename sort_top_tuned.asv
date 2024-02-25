@@ -25,11 +25,9 @@
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
 
-% param = {'p_phonotactic_prob',1}; %srt version of response
-% param ={'p_phonotactic_prob',2}; %dt
-param = {'p_trans_id', 1}; %confirmed
-%param = {'p_prod_vow',1};
-%param = {'p_trans_id', 2};
+param = {'p_trans_prob',1};
+%param ={'p_trans_prob',2}; %dt
+%param = p_trans_ID,1'}
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
 % param = 'p_prep_syl_constit';
