@@ -1,12 +1,8 @@
  %%%% check whether there is a nonrandom distribution of significantly tuned electrodes across areas
   % load resp_all_subjects first
 
-% close all
-
  %% params
 vardefault('show_barplot',1);
-
-newfig = 0; 
 
 %%% define anatomical regions composed of smaller areas
 regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... middle frontal gyrus... maybe also inf front sulcus
@@ -37,24 +33,34 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
 % param = 'p_prep_cons_constit';
-% param = 'p_prep_vow_constit'; 
+% param = 'p_prep_vow_constit'; ;
 % param = 'p_prep_syl_constit';;
+%param = {'p_prod_cons',1};
+% param = {'p_prod_cons',2}; 
+% param = {'p_prod_cons',3};
+%  param = {'p_prod_syl',1};
+% param = {'p_prod_syl',2};
+% param = {'p_prod_syl',3};
+% param = {'p_phonotactic_prob',1}; %srt version of response
+% param ={'p_phonotactic_prob',2}; %dt
+% param = {'p_trans_id', 1}; %confirmed
+% param = {'p_trans_id', 2};
+param = {'p_prod_vow', 1};
 
-pthresh = 0.05; 
 
-bar_face_color = [0.5 0.5 0.5]; 
+pthresh = 0.01; 
 
 %% analysis
-[paramvals, param_name, full_param_string] = triplet_tablevar(resp, param); 
+paramvals = triplet_tablevar(resp, param); 
 paramvalid = ~isnan(paramvals) & paramvals ~= 0; % electrodes with usable p values
 paramsgn = paramvals < pthresh & paramvalid; % analyzable electrodes significantly tuned for param of interest
 
 nelc = height(resp);
 resp.region = cell(nelc,1); 
 
-nregions = size(regiondef,1);
-areastats = table(regiondef(:,1), regiondef(:,2), nan(nregions,2), 'VariableNames', {'region','subareas','ebar_lims'});
+areastats = table(regiondef(:,1), regiondef(:,2), 'VariableNames', {'region','subareas'});
 
+nregions = height(areastats);
 for iregion = 1:nregions
     thisregion = areastats.region{iregion};
     regionmatch1 = rowfun(@(x)strcmp(x,areastats.subareas{iregion}),resp,'InputVariables','fs_anatomy');
@@ -66,13 +72,6 @@ for iregion = 1:nregions
     areastats.nelc_valid(iregion) = nnz(regionmatch & paramvalid); % number of analyzable electrodes in this region for the param of interest 
     areastats.nelc_sgn(iregion) = nnz(regionmatch & paramsgn); % number of analyzable electrodes significantly tuned for param of interest in this region
     areastats.prop_sgn(iregion) = areastats.nelc_sgn(iregion) / areastats.nelc_valid(iregion); % proportion of tuned electrodes in this region
-
-    %%%% compute error bar values - 95% confidence intervals using binomial test on each area independently
-    % move fieldtrip version of binocdf to bottom of path so that we use matlab inbuilt version
-    oldpath = path; path(oldpath, [PATH_FIELDTRIP_CODE filesep '\external\stats']); clear oldpath 
-    alpha=.0001:.0001:.9999; 
-    p = binocdf(areastats.nelc_sgn(iregion), areastats.nelc_valid(iregion), alpha);
-    areastats.ebar_lims(iregion,1:2) = alpha([find(p>.975,1,'last'),find(p<.025,1,'first')]);
 end
 
 
@@ -86,33 +85,16 @@ expected_sgn_per_region_random = proportion_signficant_overall * areastats.nelc_
 [chi_significant, chi_p, chi_stats] = chi2gof([1:nregions]', 'Frequency',areastats.nelc_sgn, 'Expected',expected_sgn_per_region_random, 'Emin',0);
 % chi_p
 
-
-
 %% plotting
 if show_barplot
 
-    if newfig 
-        hfig = figure('color','w');
-    end
+    hfig = figure('color','w');
     hbar = bar(areastats.prop_sgn);
-
-    hold on
-
-    ebar_neg =  areastats.prop_sgn - areastats.ebar_lims(:,1); 
-    ebar_pos =  -areastats.prop_sgn + areastats.ebar_lims(:,2); 
-    h_ebar = errorbar([1:nregions]', areastats.prop_sgn, ebar_neg, ebar_pos,'--');
-    h_ebar.LineWidth = 0.8;
-    h_ebar.LineStyle = 'none';
-    h_ebar.Color = [0 0 0];
-
     hax = gca;
     hax.XTickLabels = areastats.region;
     hyline = yline(pthresh);
-    set(0, 'DefaultTextInterpreter', 'none')
-    titlestr = [full_param_string, '..... p = ' num2str(chi_p)] ;
-    htitle = title(titlestr); 
-
-    hbar.FaceColor = bar_face_color; 
+    titlestr = {[param, '..... p = ' num2str(chi_p)] };
+    title(titlestr); 
 
 end
 
