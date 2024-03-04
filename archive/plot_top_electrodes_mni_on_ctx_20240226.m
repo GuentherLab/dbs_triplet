@@ -12,36 +12,42 @@ set(0,'DefaultFigureWindowStyle','normal')
 % 
 n_elc = height(resp);
 
+struct_to_plot = 'ctx';
+% struct_to_plot = 'stn';
+% struct_to_plot = 'thal';
+
 %% Configuration Variables and Paths
-% cd(RESULTS)
-% electrode = readtable('data/A01_DBS_aper_coord_dx.tsv','Delimiter', '\t', 'TreatAsEmpty', 'NA','FileType','text');
+switch struct_to_plot
+    case 'ctx'
+        %loading cortical reconstructions
+        average_mni = load(PATH_AVERAGE_MNI);
+    case 'stn'
 
-%loading cortical reconstructions
-average_mni = load(PATH_AVERAGE_MNI);
+    case 'thal'
+        % subcort = load(PATH_SUBCORT_ATLAS);
+        % subcort_vim = load(PATH_SUBCORT_ATLAS_VIM);
+        % nii_vimi = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/91.nii.gz');
+        % nii_vime = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/94.nii.gz');
+        % nii_vimip = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/104.nii.gz');
+        % nii_vimep = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/122.nii.gz');
+        
+        % 
+        % subcort_vimi_lh_fv = ea_nii2fv(nii_vimi);
+        % subcort_vime_lh_fv = ea_nii2fv(nii_vime);
+        % subcort_vimip_lh_fv = ea_nii2fv(nii_vimip);
+        % subcort_vimep_lh_fv = ea_nii2fv(nii_vimep);
+        
+        % % % %loading VL posterior ventral from Morel atlas
+        % nii_vlpv = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/MorelAtlasICBM2009b (Jakab 2008)/lh/VLpv.nii.gz');
+        % subcort_vlpv_lh_fv = ea_nii2fv(nii_vlpv);
 
-% subcort = load(PATH_SUBCORT_ATLAS);
-% subcort_vim = load(PATH_SUBCORT_ATLAS_VIM);
-% nii_vimi = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/91.nii.gz');
-% nii_vime = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/94.nii.gz');
-% nii_vimip = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/104.nii.gz');
-% nii_vimep = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/DISTAL (Ewert 2017)/lh/122.nii.gz');
-% 
-% subcort_vimi_lh_fv = ea_nii2fv(nii_vimi);
-% subcort_vime_lh_fv = ea_nii2fv(nii_vime);
-% subcort_vimip_lh_fv = ea_nii2fv(nii_vimip);
-% subcort_vimep_lh_fv = ea_nii2fv(nii_vimep);
 
-% % % %loading VL posterior ventral from Morel atlas
-% nii_vlpv = ea_load_nii('/Users/ao622/git/leaddbs/templates/space/MNI_ICBM_2009b_NLIN_ASYM/atlases/MorelAtlasICBM2009b (Jakab 2008)/lh/VLpv.nii.gz');
-% subcort_vlpv_lh_fv = ea_nii2fv(nii_vlpv);
+end
 
-color_et_ecog = '#C4604F';% #ET ECoG
-color_pd_ecog = '#6F67A6';% #PD ECoG
-color_ep_seeg = '#8A4F80';% #EP sEEG
-color_pd_stn = '#F7924A';% #PD STN
-color_pd_gpi = '#F9BD00';% #PD GPi
-color_et_vim = '#36A5D1';% #ET VIM
-color_ep_cm = '#9EB859';% #EP CM
+
+
+
+
 
 
 

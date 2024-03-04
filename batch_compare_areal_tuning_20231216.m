@@ -3,7 +3,7 @@
 %  clear
 %  load('Z:\DBS\Analysis\triplet_results_am\resp_all_subjects.mat')
 
-[paramlist] = expandarray('params_to_plot_20231217.csv');
+[paramlist] = expandarray('params_to_plot_20231217.csv'); % file stored in dbs_triplet code folder
 
 ylimits = [0 0.25]; 
 
@@ -11,27 +11,29 @@ close all force
 
 %%
 
-hfig = figure;
+hfig = figure('color','w');;
 set(0, 'DefaultTextInterpreter', 'none')
-set(0,'DefaultFigureWindowStyle','docked')
+% set(0,'DefaultFigureWindowStyle','docked')
+    set(0,'DefaultFigureWindowStyle','normal')
+
 nparams = numel(paramlist);
 [figheight, figwidth] = size(paramlist); 
 pt = paramlist';  % select from transposed params so that it match subplot ordering
 for iparam = 1:nparams
     subplot(figheight, figwidth, iparam); 
     param = pt{iparam};
-    compare_areal_tuning_20231211()
+    compare_areal_tuning_20231228()
 
-    hbar = bar(areastats.prop_sgn);
-    hax = gca;
-    hax.XTickLabels = areastats.region;
-    hyline = yline(pthresh);
+    % % % % % % % % % % % % % % % % hbar = bar(areastats.prop_sgn);
+    % % % % % % % % % % % % % % % % hax = gca;
+    % % % % % % % % % % % % % % % % hax.XTickLabels = areastats.region;
+    % % % % % % % % % % % % % % % % hyline = yline(pthresh);
     titlestr = {[param{1,1} '_' num2str(param{1,2})], ['p = ' num2str(chi_p)] };
     title(titlestr); 
-    ylabel({'proportion', 'sgnf. electrodes'})
-    if exist('ylimits','var')
-        ylim(ylimits)
-    end
+    % % % % % % % % % % % % % % % % ylabel({'proportion', 'sgnf. electrodes'})
+    % % % % % % % % % % % % % % % % if exist('ylimits','var')
+    % % % % % % % % % % % % % % % %     ylim(ylimits)
+    % % % % % % % % % % % % % % % % end
 
     % ylabel('')
 

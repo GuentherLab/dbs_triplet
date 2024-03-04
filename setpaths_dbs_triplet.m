@@ -13,6 +13,7 @@
          PATH_IEEG_FT_FUNCS_AM = [PATH_CODE filesep 'ieeg_ft_funcs_am']; % ieeg processing code shared across AM projects
          PATH_BML = [PATH_CODE filesep 'bml']; 
          PATH_FIELDTRIP_CODE = [PATH_CODE filesep 'fieldtrip']; 
+         PATH_LEADDBS = [PATH_CODE filesep ]; 
          PATH_AVERAGE_MNI = [PATH_RESULTS filesep 'atlases' filesep 'CortexLowRes_15000V_MNI_ICBM_2009b_NLIN_ASYM.mat']; 
          PATH_SUBCORT_ATLAS_VIM = [PATH_RESULTS filesep 'atlases' filesep 'atlas_index_DISTAL_Ewert2017.mat']; % too large to keep in github; put atlases in Results
          PATH_STN_ATLAS = [PATH_RESULTS filesep 'atlases' filesep 'atlas_index_subcort_Ewert_v2.1.7.mat']; 
@@ -43,6 +44,7 @@ paths_to_add = {PATH_DATA;... % derivatives and (if on server) sourcedata
                     [PATH_IEEG_FT_FUNCS_AM, filesep, 'util'];...
                 PATH_BML;... % Brain Modulation Lab repo
                 PATH_FIELDTRIP_CODE;...
+                PATH_LEADDBS;...
     };
 addpath(paths_to_add{:});
 
@@ -55,4 +57,4 @@ set(0, 'DefaultLegendInterpreter', 'none')
 
 format long
 
- clearvars compname paths_to_add PATH_CODE PATH_FIELDTRIP_CODE PATH_BML
+ clearvars compname paths_to_add PATH_CODE PATH_BML
