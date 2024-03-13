@@ -329,26 +329,26 @@ for ichan = 1:nchans
     good_trials = ~isnan(resp.base{ichan}); % Identify good trials for this channel
     valid_trials = good_trials(:); % Ensure valid_trials is a column vector
 
-    for itrans = 1:2
-        % Ensure valid_trials indices are within bounds for both responses and probabilities
-        valid_trials_for_trans = valid_trials & ~isnan(trials.PhonotacticProbabilities(:, itrans));
+  for itrans = 1:2
+        %Adjusting valid_trials to account for non-NaN entries in trials.PhonotacticProbabilities
+        non_nan_indices = ~isnan(trials.PhonotacticProbabilities(:, itrans));
+        adjusted_valid_trials = valid_trials & non_nan_indices;
 
-        % Display the number of valid trials for this channel and transition
+        %Using adjusted_valid_trials for further operations
         disp(['Channel ', num2str(ichan), ', Transition ', num2str(itrans), ...
-              ' - Number of valid trials: ', num2str(sum(valid_trials_for_trans))]);
+              ' - Number of valid trials: ', num2str(sum(adjusted_valid_trials))]);
 
-        % Extract valid responses and phonotactic probabilities for the current transition
-        valid_responses = resp.trans{ichan}(valid_trials_for_trans, itrans);
-        valid_probabilities = trials.PhonotacticProbabilities(valid_trials_for_trans, itrans);
+        % Use adjusted_valid_trials for indexing
+        valid_responses = resp.trans{ichan}(adjusted_valid_trials, itrans);
+        valid_probabilities = trials.PhonotacticProbabilities(adjusted_valid_trials, itrans);
 
-        % Perform ANOVA to analyze the effect of phonotactic probabilities on the responses
+        %ANOVA code
         if ~isempty(valid_responses) && ~isempty(valid_probabilities)
             resp.p_trans_prob(ichan, itrans) = anova1(valid_responses, valid_probabilities, 'off');
         else
             disp(['Insufficient valid data for ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
         end
     end
-end
 
 %%
   
@@ -392,7 +392,7 @@ end
     %  ..... they generally move to deep structures over the course of trials, so this location will become less accurate for later trials
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
 
-
+end
 
 %%%% next step to implement should be: instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
 resp.p_prod_cons_mean  = geomean(resp.p_prod_cons,2);

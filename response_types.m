@@ -380,7 +380,37 @@ for ichan = 1:nchans
         syl_in_this_pos = triplet_tablevar(trials,{'syl',ipos},good_trials);
         cons_in_this_pos = triplet_tablevar(trials,{'cons',ipos},good_trials);
         vow_in_this_pos = triplet_tablevar(trials,{'vow',ipos},good_trials);
+for itrans = 1:2
+        % Ensure non-NaN indices are within bounds for PhonotacticProbabilities
+        non_nan_indices = ~isnan(trials.PhonotacticProbabilities(:, itrans));
 
+<<<<<<< Updated upstream
+=======
+        % Adjust the size of valid_trials to match non_nan_indices before combining
+        % Caution: This assumes that the corresponding elements directly match, which might not be the case.
+        valid_trials_adjusted_size = valid_trials(1:length(non_nan_indices));
+
+        % Combine adjusted valid_trials with non_nan_indices using element-wise AND
+        adjusted_valid_trials = valid_trials_adjusted_size & non_nan_indices;
+
+        % Now use adjusted_valid_trials for further operations
+        disp(['Channel ', num2str(ichan), ', Transition ', num2str(itrans), ...
+              ' - Number of valid trials: ', num2str(sum(adjusted_valid_trials))]);
+
+        % Use adjusted_valid_trials for indexing
+        valid_responses = resp.trans{ichan}(adjusted_valid_trials, itrans);
+        valid_probabilities = trials.PhonotacticProbabilities(adjusted_valid_trials, itrans);
+
+        % Your existing ANOVA code, unchanged
+        if ~isempty(valid_responses) && ~isempty(valid_probabilities)
+            resp.p_trans_prob(ichan, itrans) = anova1(valid_responses, valid_probabilities, 'off');
+        else
+            disp(['Insufficient valid data for ANOVA at ichan=', num2str(ichan), ', itrans=', num2str(itrans)]);
+        end
+    end
+end
+
+>>>>>>> Stashed changes
          % stim-consonant using the response from only when the syllable in question is being heard
          resp.p_stim_cons(ichan,ipos) = anova1(resp.stim{ichan}(good_trials,ipos), cons_in_this_pos,'off');
 
