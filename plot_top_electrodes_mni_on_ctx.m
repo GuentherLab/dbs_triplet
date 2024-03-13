@@ -54,7 +54,7 @@ color_ep_cm = '#9EB859';% #EP CM
 %p_thresh = 0.00001; 
 % p_thresh = 0.05 / 3; % bonf corrected 0.05
 
-p_proportion = 0.1; %can change this -dt
+p_proportion = 0.01; %can change this -dt
 
 % param = 'p_prod_cons_best_anypos';
 % param = 'p_prod_vow_best_anypos';
@@ -74,18 +74,18 @@ p_proportion = 0.1; %can change this -dt
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
 %param = 'p_prep_syl_constit';
-% param = {'p_prod_cons',1};
+%param = {'p_prod_cons',1};
 % param = {'p_prod_cons',2}; 
 % param = {'p_prod_cons',3};
 % param = {'p_prod_syl',1};
-% param = {'p_prod_syl',2};
+%param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
 %  param = {'p_prod_vow',1};
-%param = {'p_prod_vow', 2};
+param = {'p_prod_vow', 2};
 % param = {'p_phonotactic_prob',1}; %srt version of response
 % param ={'p_phonotactic_prob',2}; %dt
-param = {'p_trans_id', 1}; %confirmed that this is the right variable
-% param = {'p_trans_id', 2};
+%param = {'p_trans_id', 1}; %confirmed that this is the right variable
+%  param = {'p_trans_id', 2};
 
 exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
 
