@@ -1,4 +1,4 @@
-% look for elcs with particualr response profiles
+% look for electrodes with particular response profiles
 
 %% data-loading parameters
 vardefault('SUBJECT','DBS3005');
