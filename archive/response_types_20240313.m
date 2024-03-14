@@ -149,10 +149,24 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         continue
     end
 
-    % get indices within the trial-specific set of timepoints of D_hg.time{ft_idx} that match our specified trial window
+    % get syllable-specific timing
     ft_idx = trials.ft_idx(itrial); % get the trial in fieldtrip struct that corresponds to the current trial
+    for isyl = 1:3
+                % stim timing
+        trials_stim_syl_row = find(trials_stim_syl.trial_id == trial_id_in_sess  &  trials_stim_syl.syl_id == isyl & trials_stim_syl.session_id == isess); 
+        trials.stim_syl_on(itrial,isyl) = trials_stim_syl.starts(trials_stim_syl_row);  % stim syllable start time
+        trials.stim_syl_off(itrial,isyl) = trials_stim_syl.ends(trials_stim_syl_row); % stim syllable end time  
+        
+           % prod timing
+        trials_prod_syl_row = find(trials_prod_syl.trial_id == trial_id_in_sess  &  trials_prod_syl.syl_id == isyl & trials_prod_syl.session_id == isess); 
+        trials.prod_syl_on(itrial,isyl) = trials_prod_syl.starts(trials_prod_syl_row);  % prod syllable start time
+        trials.prod_syl_off(itrial,isyl) = trials_prod_syl.ends(trials_prod_syl_row); % prod syllable end time
+    end
+
+    % get indices within the trial-specific set of timepoints of D_hg.time{ft_idx} that match our specified trial window
     match_time_inds = D_hg.time{ft_idx} > trials.starts(itrial) & D_hg.time{ft_idx} < trials.ends(itrial); 
     trials.times{itrial} = D_hg.time{ft_idx}(match_time_inds); % times in this redefined trial window... still using global time coordinates
+
     % get trial-relative baseline time indices; window time-locked to first stim onset
     base_inds = D_hg.time{ft_idx} > [trials.stim_syl_on(itrial,1) - base_win_sec(1)] & D_hg.time{ft_idx} < [trials.stim_syl_on(itrial,1) - base_win_sec(2)]; 
 
@@ -164,23 +178,12 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
        resp.timecourse{ichan}{itrial} =  D_hg.trial{ft_idx}(ichan, match_time_inds) - resp.base{ichan}(itrial); 
     end
     
-    % syllable-specific responses and timing
+    % syllable-specific responses
     trials_phon_rowmatch = trials_phon.trial_id == trials.trial_id(itrial) & ...
                            trials_phon.session_id == trials.session_id(itrial); 
     for isyl = 1:3
-                % stim timing
-        trials_stim_syl_row = find(trials_stim_syl.trial_id == trial_id_in_sess  &  trials_stim_syl.syl_id == isyl & trials_stim_syl.session_id == isess); 
-        trials.stim_syl_on(itrial,isyl) = trials_stim_syl.starts(trials_stim_syl_row);  % stim syllable start time
-        trials.stim_syl_off(itrial,isyl) = trials_stim_syl.ends(trials_stim_syl_row); % stim syllable end time  
-        
-           % prod timing
-        trials_prod_syl_row = find(trials_prod_syl.trial_id == trial_id_in_sess  &  trials_prod_syl.syl_id == isyl & trials_prod_syl.session_id == isess); 
-        trials.prod_syl_on(itrial,isyl) = trials_prod_syl.starts(trials_prod_syl_row);  % prod syllable start time
-        trials.prod_syl_off(itrial,isyl) = trials_prod_syl.ends(trials_prod_syl_row); % prod syllable end time
- 
-            % time indices of epochs
-        stim_syl_inds = D_hg.time{ft_idx} > trials.stim_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.stim_syl_off(itrial,isyl); % times when syl 1 2 3 were played
-        prod_syl_inds = D_hg.time{ft_idx} > trials.prod_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % times when syl 1 2 3 were spoken
+        stim_syl_inds = D_hg.time{ft_idx} > trials.stim_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.stim_syl_off(itrial,isyl); % time idx when syl 1 2 3 were played
+        prod_syl_inds = D_hg.time{ft_idx} > trials.prod_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 1 2 3 were spoken
         for ichan = 1:nchans
             resp.stim{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, stim_syl_inds) ) - resp.base{ichan}(itrial); 
             resp.prod{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, prod_syl_inds) ) - resp.base{ichan}(itrial); 
@@ -200,21 +203,11 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     for ichan = 1:nchans
         resp.prep{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
     end
-    
-    % transition responses
-    for itrans = 1:2
-        % 'transition' periods start/end halfway through the syllable
-        trials.trans_on(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,1:2) + trials.prod_syl_off(itrial,1:2)]; % avg start/end
-        trials.trans_off(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,2:3) + trials.prod_syl_off(itrial,2:3)]; % avg start/end
-        trans_inds = D_hg.time{ft_idx} > trials.trans_on(itrial,itrans) & D_hg.time{ft_idx} < trials.trans_off(itrial,itrans); 
-       for ichan = 1:nchans
-           resp.trans{ichan}(itrial,itrans) = mean( D_hg.trial{ft_idx}(ichan, trans_inds) ) - resp.base{ichan}(itrial);
-       end
-    end
 end
 
 %% extract additional trial-specific stim information 
-trials(:,{'t_stim_off','t_stim_on','has_speech_timing'}) = [];
+trials(:,{'has_speech_timing'}) = [];
+% % % % % % % % % % % % % % % % % % % % % trials(:,{'t_stim_off','t_stim_on','has_speech_timing'}) = [];
 ntrials = height(trials); 
 get_unq_trialstim = @(x,trials,itrial) cell2mat(unique(trials{itrial,x}));
 
@@ -259,7 +252,7 @@ for ichan = 1:nchans
     end 
     
     % preparatory activity............................ need to not use absolute value so that we can have negative values
-    [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), resp.base{ichan}(good_trials)); 
+    [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), zeros(size(resp.prep{ichan}(good_trials))) ); 
     
     % rank-order selectivity
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');

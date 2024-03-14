@@ -1,6 +1,8 @@
  %%%% check whether there is a nonrandom distribution of significantly tuned electrodes across areas
   % load resp_all_subjects first
 
+close all
+
  %% params
 
 %%% define anatomical regions composed of smaller areas
@@ -22,7 +24,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 % param = 'p_rank'; ;
 % param = 'p_prep';
 % param = 'p_prep_syl_mean';
-param = {'p_prep_syl',1};
+% param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
 % param = {'p_prep_cons',1};
@@ -31,6 +33,10 @@ param = {'p_prep_syl',1};
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
+
+param = 'p_prod_cons_allpos';
+% param = 'p_prod_vow_allpos';
+% param = 'p_prod_syl_allpos';
 
 pthresh = 0.05; 
 

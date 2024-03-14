@@ -6,7 +6,7 @@
  %% params
 vardefault('show_barplot',1);
 
-newfig = 0; 
+newfig = 1; 
 
 %%% define anatomical regions composed of smaller areas
 regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... middle frontal gyrus... maybe also inf front sulcus
@@ -21,24 +21,40 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
                  'thal', {'VApc_L','VLa_L' , 'VLpv_L', 'VM_L' 'VM_R', 'VPM_L'};...
                 };
 
-% param = 'p_prod_cons_mean';
-% param = 'p_prod_vow_mean'; ;
-% param = 'p_prod_syl_mean';;
 % param = 'p_rank'; ;
 % param = 'p_prep';
-% param = 'p_prep_syl_mean';
-% param = {'p_prep_syl',1};
-% param = {'p_prep_syl',2};
-% param = {'p_prep_syl',3};
+
+% param = {'p_stim_cons',1};
+% param = {'p_stim_cons',2};
+% param = {'p_stim_cons',3};
+% param = {'p_stim_syl',1};
+% param = {'p_stim_syl',2};
+% param = {'p_stim_syl',3};
+% param = {'p_stim_vow',1};
+% param = {'p_stim_vow',2};
+% param = {'p_stim_vow',3};
+
 % param = {'p_prep_cons',1};
 % param = {'p_prep_cons',2};
-% param = {'p_prep_cons',3};
+param = {'p_prep_cons',3};
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
+% param = {'p_prep_syl',1};
+% param = {'p_prep_syl',2};
+% param = {'p_prep_syl',3};
+
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-% param = 'p_prep_syl_constit';;
+% param = 'p_prep_syl_constit';
+
+% param = 'p_stim_cons_allpos';
+% param = 'p_stim_vow_allpos';
+% param = 'p_stim_syl_allpos';
+% param = 'p_prod_cons_allpos';
+% param = 'p_prod_vow_allpos';
+% param = 'p_prod_syl_allpos';
+
 
 pthresh = 0.05; 
 
@@ -116,6 +132,6 @@ if show_barplot
 
 end
 
-
+hold off
 
 

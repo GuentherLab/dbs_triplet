@@ -31,6 +31,7 @@ info_vars_to_copy = {'chan','type','connector','port','strip','comment','target'
     'HCPMMP1_label_1','HCPMMP1_weight_1','HCPMMP1_label_2','HCPMMP1_weight_2'};
 
 % specify phonemic features so that they appear in the same order across all subjects
+phonunits = {'cons','vow', 'syl'}; nphonunits = length(phonunits); 
 unqcons = {'gh','s','t','v'};
 unqvow = {'ah','ee','oo'};
 unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','voo'};
@@ -243,6 +244,7 @@ end
 resp.elc_info_row = nan(nchans,1); 
 for ichan = 1:nchans
     good_trials = ~isnan(resp.base{ichan}); % non-artifactual trials for this channel
+    n_good_trials = nnz(good_trials); 
     resp.n_usable_trials(ichan) = nnz(good_trials); 
     if resp.n_usable_trials(ichan) < min_trials_for_good_channel
         resp.usable_chan(ichan) = false; 
@@ -258,31 +260,42 @@ for ichan = 1:nchans
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');
     
 
-%%%%%% selectivity in prep epoch for each specific phonemic feature in any of the 3 upcoming positions
+    %%%%%% selectivity in prep epoch for each specific phonemic feature in any of the 3 upcoming positions
      % compare trials in which this consonant was present to those in which it wasn't present
     for icons = 1:n_unqcons
         this_cons_trials = good_trials & trials.cons_present(:,icons);
         [~, resp.p_prep_cons_pref(ichan, icons)] = ttest2(resp.prep{ichan}(this_cons_trials), resp.prep{ichan}(~this_cons_trials));
     end
 
-% compare trials in which this vowel was present to those in which it wasn't present
+    % compare trials in which this vowel was present to those in which it wasn't present
     for ivow = 1:n_unqvow
         this_vow_trials = good_trials & trials.vow_present(:,ivow);
         [~, resp.p_prep_vow_pref(ichan, ivow)] = ttest2(resp.prep{ichan}(this_vow_trials), resp.prep{ichan}(~this_vow_trials));
     end
 
-% compare trials in which this syl was present to those in which it wasn't present
+    % compare trials in which this syl was present to those in which it wasn't present
     for isyl = 1:n_unqsyl
         this_syl_trials = good_trials & trials.syl_present(:,isyl);
         [~, resp.p_prep_syl_pref(ichan, isyl)] = ttest2(resp.prep{ichan}(this_syl_trials), resp.prep{ichan}(~this_syl_trials));
     end
 
-%%%%% prep tuning for the unique, unordered constituent cons/vow/syl.... use unique combos of phonemic elements, lumping together repeated elements within a trial
+    %%%%% prep tuning for the unique, unordered constituent cons/vow/syl.... use unique combos of phonemic elements, lumping together repeated elements within a trial
     resp.p_prep_cons_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.cons_constit(good_trials),'off');
     resp.p_prep_vow_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.vow_constit(good_trials),'off');
     resp.p_prep_syl_constit(ichan) = anova1(resp.prep{ichan}(good_trials), trials.syl_constit(good_trials),'off');
 
-%%%%%%%%%%%%%%%%%% tuning to phonemic features in only one of the three positions
+    %%%%%%%% prod tuning regardless of position - concatenate responses to all 3 positions
+    resp_stim_concat = reshape(resp.stim{ichan}(good_trials,:), 3*n_good_trials, 1); % stack stim responses
+    resp_prod_concat = reshape(resp.prod{ichan}(good_trials,:), 3*n_good_trials, 1); % stack prod responses
+    for thisphonunit = phonunits
+        thisphonunit = thisphonunit{:}
+        labels_concat = reshape(trials{good_trials,thisphonunit}, 3*n_good_trials, 1); % stack trial labels
+        resp{ichan, ['p_stim_',thisphonunit,'_allpos']} = anova1(resp_stim_concat, labels_concat,'off');
+        resp{ichan, ['p_prod_',thisphonunit,'_allpos']} = anova1(resp_prod_concat, labels_concat,'off');
+    end
+
+
+    %%%%%%%%%%%%%%% tuning to phonemic features in only one of the three positions
      for ipos = 1:3
         syl_in_this_pos = triplet_tablevar(trials,{'syl',ipos},good_trials);
         cons_in_this_pos = triplet_tablevar(trials,{'cons',ipos},good_trials);
@@ -327,14 +340,6 @@ for ichan = 1:nchans
     resp.elc_info_row(ichan) = find(strcmp(elc_info.electrode , resp.chan{ichan}), 1);
 
 end
-
-%%%% next step to implement should be: instead of averaging, use GLM [MANOVA?] or machine learning to predict presence of multiple phon features
-resp.p_prod_cons_mean  = geomean(resp.p_prod_cons,2);
-resp.p_prod_vow_mean  = geomean(resp.p_prod_vow,2);
-resp.p_prod_syl_mean = geomean(resp.p_prod_syl,2);
-resp.p_prep_cons_mean  = geomean([resp.p_prep_cons],2);
-resp.p_prep_vow_mean  = geomean([resp.p_prep_vow],2);
-resp.p_prep_syl_mean  = geomean([resp.p_prep_syl],2);
     
 resp = resp(resp.usable_chan,:); % remove channels with few/no usuable trials
 elc_info_copy = renamevars(elc_info(resp.elc_info_row,:),'electrode','chan');

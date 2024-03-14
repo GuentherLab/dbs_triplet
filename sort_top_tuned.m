@@ -9,7 +9,7 @@
 % param = 'p_prep';
 % param = 'p_prep_syl_best_anypos';
 % param = {'p_prep_cons',1};
-% param = {'p_prep_cons',2};
+param = {'p_prep_cons',2};
 % param = {'p_prep_cons',3};
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
@@ -26,8 +26,12 @@
 % param = {'p_prod_syl',3};
 
 % param = 'p_prep_cons_constit';
-param = 'p_prep_vow_constit'; 
+% param = 'p_prep_vow_constit'; 
 % param = 'p_prep_syl_constit';
+
+% param = 'p_prod_cons_allpos';
+% param = 'p_prod_vow_allpos';
+% param = 'p_prod_syl_allpos';
 
 exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
 

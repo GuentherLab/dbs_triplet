@@ -5,10 +5,10 @@
  %
  % % % updated by AM 2022/8/21
  
-close all
+% close all
 
 %% params
-srt_row = 13;
+srt_row = 8;
 show_error_bars = 0; 
 
 y_ax_hardlims = []; % cut off y axis if it's lesser/greater than this value
@@ -30,9 +30,9 @@ groupval_inds_to_plot = []; % plot all vals
 
 %%% choose the stimulus variable which will be used to sort trials
 % trial_grouping_var = {'cons',1};
-% trial_grouping_var = {'cons',2};
+trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
-trial_grouping_var = {'vow',1};
+% trial_grouping_var = {'vow',1};
 % trial_grouping_var = {'vow',2};
 % trial_grouping_var = {'vow',3};
 % trial_grouping_var = {'syl',1}; 
