@@ -26,6 +26,7 @@
          PATH_IEEG_FT_FUNCS_AM = 'C:\Users\amsmeier\ieeg_ft_funcs_am'; % ieeg processing code shared across AM projects
          PATH_BML = 'C:\Program Files\Brain-Modulation-Lab\bml'; 
          PATH_FIELDTRIP_CODE = 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip'; 
+         PATH_LEADDBS = 'C:\Program Files\LeadDBS';
          PATH_AVERAGE_MNI = 'Z:/DBS/DBS_subject_lists/MNI_ICBM_2009b_NLIN_ASYM/cortex/CortexLowRes_15000V.mat';
          PATH_SUBCORT_ATLAS_VIM = 'C:\Program Files\LeadDBS_Classic\leaddbs\templates\space\MNI_ICBM_2009b_NLIN_ASYM\atlases\DISTAL (Ewert 2017)/atlas_index.mat';
          PATH_STN_ATLAS = 'Z:\Resources\STN-Atlas\atlas_index.mat';
