@@ -28,7 +28,7 @@ fprintf('=== Running protocol %s ===\n',PROTOCOL_FUNCTION)
 if FORCE; fprintf('Forced run, overwritting any manual change.\n'); end
 if SKIP_OK; fprintf('Skipping previously successfully executed protocols.\n'); end
 
-sub_inds_to_run = 28:height(subject_table);
+sub_inds_to_run = 29:height(subject_table);
 % sub_inds_to_run = [4];
 
 %% subject loop
