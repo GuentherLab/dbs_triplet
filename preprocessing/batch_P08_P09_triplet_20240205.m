@@ -1,11 +1,16 @@
 
 % andrew meier
 
+%%% if we want to include ime tolerance data for each subject, it is available in : 
+%%% ...... Z:\DBS\DBS_subject_lists\time-tolerance.tsv
+
 clear
+setpaths_dbs_triplet()
 
 PATH_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
 PROTOCOL_FUNCTION = 'P08_detect_artifact_criteria_E';
-PROTOCOL_TABLE = 'P08_Subjects_3000.txt';
+% % % % PROTOCOL_TABLE = 'P08_Subjects_3000.txt';
+PROTOCOL_TABLE = 'Z:\DBS\Batch\P08_artifact_criteria_E\P08_Subjects_to_analyze.txt';  % created by generate_triplet_subject_list.m
 ARTIFACT_CRIT = 'E'; 
 exe_daytime = datestr(now,'yyyymmdd_HHMM');
 addpath(PATH_PROTOCOL);
@@ -29,7 +34,7 @@ sub_inds_to_run = 28:height(subject_table);
 %% subject loop
 for isub = sub_inds_to_run
   SUBJECT = subject_table.subject{isub};
-  timetol = subject_table.timetol(isub);
+% % % % % % % % % %   timetol = subject_table.timetol(isub); % 
   
   PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
   PATH_PREPROCESSED=[PATH_SUBJECT filesep 'Preprocessed Data'];
@@ -64,7 +69,7 @@ for isub = sub_inds_to_run
 
             close all force
             
-            P08A09_highgamma_from_denoised(SUBJECT,timetol); 
+            P08A09_highgamma_from_denoised(SUBJECT); 
     
             P08A09_detect_artifact_criteria_E(SUBJECT);
     

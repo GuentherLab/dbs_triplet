@@ -1,7 +1,7 @@
 %%%% generate and save list of subjects to run
 
 % location in which save the new subject list
-subj_list_savename = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt']; 
+subj_list_savename = 'Z:\DBS\Batch\P08_artifact_criteria_E\P08_Subjects_to_analyze.txt'; 
 
 pitt_subject_list_file = 'Z:\DBS\DBS_subject_lists\REDCap-20191112.xlsx';
 

@@ -2,8 +2,8 @@
 
 setpaths_dbs_triplet()
 
-% subject_list = readtable('C:\Users\amsmeier\Documents\MATLAB\P08_Subjects_to_analyze.txt'); % TURBO path
-subject_list = readtable([PATH_ARTIFACT filesep 'P08_Subjects_3000.txt']);
+subject_list = readtable('C:\Users\amsmeier\Documents\MATLAB\P08_Subjects_to_analyze.txt'); % TURBO path
+% % % % % subject_list = readtable([PATH_ARTIFACT filesep 'P08_Subjects_3000.txt']);
 nsubs = height(subject_list);
 
 subinds_to_run = [3:21, 23:nsubs];
