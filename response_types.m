@@ -198,12 +198,24 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
 
     end
     
-    % preparatory responses........  make sure to tabulate syllable timing first
+    % preparatory responses
     %%%% prep period inds: after stim ends and before first syllable prod onset
     prep_inds = D_hg.time{ft_idx} > trials.stim_syl_off(itrial,3) & D_hg.time{ft_idx} < trials.prod_syl_on(itrial,1); 
     for ichan = 1:nchans
         resp.prep{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
     end
+
+    % inter-syllable transition period responses
+    for itrans = 1:2
+        % 'transition' periods start/end halfway through the syllable
+        trials.trans_on(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,1:2) + trials.prod_syl_off(itrial,1:2)]; % avg start/end
+        trials.trans_off(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,2:3) + trials.prod_syl_off(itrial,2:3)]; % avg start/end
+        trans_inds = D_hg.time{ft_idx} > trials.trans_on(itrial,itrans) & D_hg.time{ft_idx} < trials.trans_off(itrial,itrans); 
+       for ichan = 1:nchans
+           resp.trans{ichan}(itrial,itrans) = mean( D_hg.trial{ft_idx}(ichan, trans_inds) ) - resp.base{ichan}(itrial);
+       end
+    end
+
 end
 
 %% this section determines phonemic transitions between syllables (and phonotactic probabilities) at each trial.... code by Daphne Toglia (DT)
