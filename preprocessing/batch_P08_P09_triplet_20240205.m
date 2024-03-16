@@ -7,28 +7,27 @@
 clear
 setpaths_dbs_triplet()
 
-PATH_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
 PROTOCOL_FUNCTION = 'P08_detect_artifact_criteria_E';
 % % % % PROTOCOL_TABLE = 'P08_Subjects_3000.txt';
-PROTOCOL_TABLE = 'Z:\DBS\Batch\P08_artifact_criteria_E\P08_Subjects_to_analyze.txt';  % created by generate_triplet_subject_list.m
+PROTOCOL_TABLE = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt'];  % created by generate_triplet_subject_list.m
 ARTIFACT_CRIT = 'E'; 
 exe_daytime = datestr(now,'yyyymmdd_HHMM');
-addpath(PATH_PROTOCOL);
-diary([PATH_PROTOCOL filesep 'batch_' PROTOCOL_FUNCTION '_' exe_daytime '.log'])
+addpath(PATH_ARTIFACT);
+diary([PATH_ARTIFACT filesep 'batch_' PROTOCOL_FUNCTION '_' exe_daytime '.log'])
 
 SKIP_OK = false; %Should previous protocols run by this script successfully be skipped
 FORCE = true; %Archive all previous versions of the script and run current 
               %overrides any manual modification
 
 PATH_DATA = 'Z:\DBS';
-cd(PATH_PROTOCOL)
+cd(PATH_ARTIFACT)
 
 subject_table = readtable(PROTOCOL_TABLE);         
 fprintf('=== Running protocol %s ===\n',PROTOCOL_FUNCTION)
 if FORCE; fprintf('Forced run, overwritting any manual change.\n'); end
 if SKIP_OK; fprintf('Skipping previously successfully executed protocols.\n'); end
 
-sub_inds_to_run = 29:height(subject_table);
+sub_inds_to_run = 45:height(subject_table); % SKIP 4071 AND 4079? got stuck during preprocessing, maybe artifact detection
 % sub_inds_to_run = [4];
 
 %% subject loop

@@ -2,11 +2,12 @@
 
 setpaths_dbs_triplet()
 
-subject_list = readtable('C:\Users\amsmeier\Documents\MATLAB\P08_Subjects_to_analyze.txt'); % TURBO path
+subject_list = readtable([PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt']); % TURBO path
 % % % % % subject_list = readtable([PATH_ARTIFACT filesep 'P08_Subjects_3000.txt']);
 nsubs = height(subject_list);
 
-subinds_to_run = [3:21, 23:nsubs];
+subinds_to_run = [3:21, 23:28]; % 3000-series; subs causing errors
+subinds_to_run = [29:nsubs]; % 4000-series subs
 
 for isub = subinds_to_run
     SUBJECT = subject_list.subject{isub}

@@ -1,0 +1,5 @@
+=== Running protocol P08_detect_artifact_criteria_E ===
+Forced run, overwritting any manual change.
+<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240205.m',34,1)">34  </a>for isub = sub_inds_to_run
+if system_dependent('IsDebugMode')==1, dbquit; end
+batch_P08_P09_triplet_20240205
