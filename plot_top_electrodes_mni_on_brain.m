@@ -11,13 +11,13 @@ setpaths_dbs_triplet()
 
 %% set params
 
-% struct_to_plot = 'ctx';
+struct_to_plot = 'ctx';
     snap_to_surf = 1; % cortex only - if true, project eletrodes to nearest point on ctx surface
     % shift electrodes so that they aren't covered by the brain surface
     %%% gets applied after snapping to surface
     %%% .... if snapping, offset of -1 should be enough to have points entirely above ctx surface (in L hem)
     x_offset = -1;
-struct_to_plot = 'stn';
+%struct_to_plot = 'stn';
 % struct_to_plot = 'thal';
 
 %%% pick hemisphere to plot - subcortical only
@@ -25,17 +25,18 @@ side = 'L';
 % side = 'R'; 
 
 inclusion_mode = 'thresh';
-    p_thresh = 0.05; 
-    % p_thresh = 0.00001; 
+%     p_thresh = 0.05; 
+%     p_thresh = 0.01; 
+    p_thresh = 0.000001; 
     % p_thresh = 0.05 / 3; % bonf corrected 0.05
 % inclusion_mode = 'proportion';
     p_proportion = 0.01; 
 
 % param = 'p_rank';
-% param = {'p_prod_syl',1};
+%  param = {'p_prod_syl',1};
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
-% param = {'p_prod_cons',1};
+param = {'p_prod_cons',1};
 % param = {'p_prod_cons',2};
 % param = {'p_prod_cons',3};
 % param = {'p_prod_vow',1};
@@ -57,17 +58,17 @@ inclusion_mode = 'thresh';
 % param = {'p_prep_vow',3};
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-param = 'p_prep_syl_constit';
-
+% param = 'p_prep_syl_constit';
+% param = {'p_trans_id',1};
 exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
 
 also_plot_nonsgnf_elcs = 1; % if true, plot non-significant electrodes alongside significant electrodes
 
 plotcolor = 'r';
-plotcolor_nonsgn = [0.6 0.6 0.6]; 
+plotcolor_nonsgn = [0.3 0.3 0.3]; 
 
 marker_size = 40; % size of electrode marker; scatter 'SizeData' parameter
-marker_size_nonsgn = 20; 
+marker_size_nonsgn = 5; 
 
 view_angle = [-90, 0]; % use [-90, 0] for straight-on lateral left hemisphere
 
