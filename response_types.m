@@ -524,3 +524,4 @@ elc_info_copy = renamevars(elc_info(resp.elc_info_row,:),'electrode','chan');
 resp = join(resp, elc_info_copy(:,info_vars_to_copy)); % add elc_info to resp
 resp = removevars(resp,{'elc_info_row','usable_chan'}); 
 resp.sub = repmat(SUBJECT, height(resp), 1);
+resp = movevars(resp,{'sub','chan','fs_anatomy','MOREL_label_1','DISTAL_label_1'},'Before',1);
