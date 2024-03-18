@@ -19,9 +19,10 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
                  % 'sfg'   {'superiorfrontal'};... % superior frontal gyrus..... should be excluded - only has 2 electrodes
                  'stn', {'STh_L', 'STh_L'};...
                  'thal', {'VApc_L','VLa_L' , 'VLpv_L', 'VM_L' 'VM_R', 'VPM_L'};...
+%                  'gp', {'GPe_L','GPi_sensorimotor_L'}; % <20 electrodes, so maybe not worth including
                 };
 
-% param = 'p_rank'; 
+param = 'p_rank'; 
 % param = 'p_prep';
 
 % param = {'p_stim_cons',1};
@@ -41,7 +42,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
 % param = {'p_prep_syl',1};
-param = {'p_prep_syl',2};
+% param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
 
 % param = 'p_stim_cons_allpos';
@@ -78,7 +79,9 @@ for iregion = 1:nregions
         regionmatch1 = any(regionmatch1{:,1},2);
     regionmatch2 = rowfun(@(x)strcmp(x,areastats.subareas{iregion}),resp,'InputVariables','MOREL_label_1');
         regionmatch2 = any(regionmatch2{:,1},2);
-    regionmatch = regionmatch1 | regionmatch2; 
+    regionmatch3 = rowfun(@(x)strcmp(x,areastats.subareas{iregion}),resp,'InputVariables','DISTAL_label_1');
+        regionmatch3 = any(regionmatch3{:,1},2);
+    regionmatch = regionmatch1 | regionmatch2 | regionmatch3; 
     resp.region(regionmatch) = repmat({thisregion},nnz(regionmatch),1);    areastats.nelc(iregion) = nnz(regionmatch); % total electrodes in this region
     areastats.nelc_valid(iregion) = nnz(regionmatch & paramvalid); % number of analyzable electrodes in this region for the param of interest 
     areastats.nelc_sgn(iregion) = nnz(regionmatch & paramsgn); % number of analyzable electrodes significantly tuned for param of interest in this region

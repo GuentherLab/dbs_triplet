@@ -1,5 +1,4 @@
  %%%% plot the timecourses of electrode's responses for different phonemes/syllables
- %looking at hg - splitting up trials - by some property of the trial
  % load resp_all_subjects first
  %
  % align all trialwise responses to speech onset of syllable #1
@@ -9,7 +8,7 @@
 % close all
 
 %% params
-srt_row = 1; %choose row of which electrode, changes when you run the sort_top_tuned.m file
+srt_row = 8;
 show_error_bars = 0; 
 
 y_ax_hardlims = []; % cut off y axis if it's lesser/greater than this value
@@ -20,34 +19,29 @@ xlimits = [-3 2];
 
 plotops.linewidth = 2; 
 
-% groupval_inds_to_plot = []; % plot all vals
-% groupval_inds_to_plot = [1 4 7 10]; %can figure out which indices make sense to look at
+groupval_inds_to_plot = []; % plot all vals
+% groupval_inds_to_plot = [1 4 7 10]; 
 % groupval_inds_to_plot = [2 5 8 11]; 
 % groupval_inds_to_plot = [3 6 9 12]; 
 % groupval_inds_to_plot = [1:3]; 
-% groupval_inds_to_plot = [1:6]; %might be better
+% groupval_inds_to_plot = [1:6];
 % groupval_inds_to_plot = [7:12]; 
 % groupval_inds_to_plot = [1:12]; 
-% groupval_inds_to_plot = [8 9 10 11];
-groupval_inds_to_plot = [9 10 11 12];
 
 %%% choose the stimulus variable which will be used to sort trials
 % trial_grouping_var = {'cons',1};
-% trial_grouping_var = {'cons',2};
+trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
 % trial_grouping_var = {'vow',1};
 % trial_grouping_var = {'vow',2};
 % trial_grouping_var = {'vow',3};
- trial_grouping_var = {'syl',1}; 
+% trial_grouping_var = {'syl',1}; 
 % trial_grouping_var = {'syl',2}; 
-% trial_grouping_var = {'syl',3}; %these too
+% trial_grouping_var = {'syl',3}; 
 % trial_grouping_var = 'cons_constit';
 % trial_grouping_var = 'vow_constit'; 
 % trial_grouping_var = 'syl_constit';
-%trial_grouping_var = {'transition_id',1}; %dt pick between those 
-% trial_grouping_var = {'transition_id',2};  
-
-
+ 
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
 

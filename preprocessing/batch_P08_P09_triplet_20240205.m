@@ -1,35 +1,39 @@
 
 % andrew meier
 
-clear
+%%% if we want to include ime tolerance data for each subject, it is available in : 
+%%% ...... Z:\DBS\DBS_subject_lists\time-tolerance.tsv
 
-PATH_PROTOCOL = 'Z:\DBS\Batch\P08_artifact_criteria_E';
+clear
+setpaths_dbs_triplet()
+
 PROTOCOL_FUNCTION = 'P08_detect_artifact_criteria_E';
-PROTOCOL_TABLE = 'P08_Subjects_3000.txt';
+% % % % PROTOCOL_TABLE = 'P08_Subjects_3000.txt';
+PROTOCOL_TABLE = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt'];  % created by generate_triplet_subject_list.m
 ARTIFACT_CRIT = 'E'; 
 exe_daytime = datestr(now,'yyyymmdd_HHMM');
-addpath(PATH_PROTOCOL);
-diary([PATH_PROTOCOL filesep 'batch_' PROTOCOL_FUNCTION '_' exe_daytime '.log'])
+addpath(PATH_ARTIFACT);
+diary([PATH_ARTIFACT filesep 'batch_' PROTOCOL_FUNCTION '_' exe_daytime '.log'])
 
 SKIP_OK = false; %Should previous protocols run by this script successfully be skipped
 FORCE = true; %Archive all previous versions of the script and run current 
               %overrides any manual modification
 
 PATH_DATA = 'Z:\DBS';
-cd(PATH_PROTOCOL)
+cd(PATH_ARTIFACT)
 
 subject_table = readtable(PROTOCOL_TABLE);         
 fprintf('=== Running protocol %s ===\n',PROTOCOL_FUNCTION)
 if FORCE; fprintf('Forced run, overwritting any manual change.\n'); end
 if SKIP_OK; fprintf('Skipping previously successfully executed protocols.\n'); end
 
-sub_inds_to_run = 28:height(subject_table);
-% sub_inds_to_run = [4];
+% sub_inds_to_run = 45:height(subject_table);
+sub_inds_to_run = [1 2];
 
 %% subject loop
 for isub = sub_inds_to_run
   SUBJECT = subject_table.subject{isub};
-  timetol = subject_table.timetol(isub);
+% % % % % % % % % %   timetol = subject_table.timetol(isub); % 
   
   PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
   PATH_PREPROCESSED=[PATH_SUBJECT filesep 'Preprocessed Data'];
@@ -64,7 +68,7 @@ for isub = sub_inds_to_run
 
             close all force
             
-            P08A09_highgamma_from_denoised(SUBJECT,timetol); 
+            P08A09_highgamma_from_denoised(SUBJECT); 
     
             P08A09_detect_artifact_criteria_E(SUBJECT);
     
