@@ -27,8 +27,8 @@ fprintf('=== Running protocol %s ===\n',PROTOCOL_FUNCTION)
 if FORCE; fprintf('Forced run, overwritting any manual change.\n'); end
 if SKIP_OK; fprintf('Skipping previously successfully executed protocols.\n'); end
 
-sub_inds_to_run = 45:height(subject_table); % SKIP 4071 AND 4079? got stuck during preprocessing, maybe artifact detection
-% sub_inds_to_run = [4];
+% sub_inds_to_run = 45:height(subject_table);
+sub_inds_to_run = [1 2];
 
 %% subject loop
 for isub = sub_inds_to_run

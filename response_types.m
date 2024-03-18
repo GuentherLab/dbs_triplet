@@ -1,5 +1,8 @@
 % look for elcs with particualr response profiles
 
+setpaths_dbs_triplet()
+
+%% parameters 
 % % % % % data-loading parameters
 vardefault('SUBJECT','DBS3012');
 
@@ -11,8 +14,14 @@ PATH_PREPROCESSED = [PATH_SUBJECT filesep 'Preprocessed Data'];
 PATH_FIELDTRIP = [PATH_PREPROCESSED filesep 'FieldTrip']; 
 PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
 PATH_ANNOT = [PATH_SYNC filesep 'annot'];
+    stimsylpath = [PATH_ANNOT filesep SUBJECT '_stimulus_syllable.txt']; 
 ARTIFACT_CRIT = 'E'; 
 SAMPLE_RATE = 100; % downsample rate in hz for high gamma traces
+
+% files with info to be used if stim syl timing info is missing for a subject
+%%% created by average_stim_syl_timing.m
+syl_onsets_filename = [PATH_STIM_INFO filesep 'stim_syl_onset_timing_stats']; 
+syl_dur_filename = [PATH_STIM_INFO filesep 'stim_syl_durations']; 
 
 % analysis parameters
 %%%% for baseline window, use the period from -base_win_sec(1) to -base_win_sec(2) before syl #1 stim onset
@@ -36,24 +45,25 @@ unqcons = {'gh','s','t','v'};
 unqvow = {'ah','ee','oo'};
 unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','voo'};
 
-%% load data 
-cd(PATH_SYNC)
 
+%% load and organize data
 load([PATH_FIELDTRIP filesep SUBJECT '_ft_hg_trial_ref_criteria_' ARTIFACT_CRIT '_denoised.mat']);
+
+% for some subjects (3030,4061,4072,4077,4078,4080,4084,4085), AM had to make an xlsx version of this table
+%%% for an unknown reason, distal and morel labels were being imported as nans....
+%%% ..... this was due to some unexpected cell data formatting (usually in the first 9 rows) of the table....
+%%% ..... fixed this problem by filling in one cell in these rows of distal/morel with a space...
+%%% ...... which made them import correctly as cells/strings
+if exist([PATH_ANNOT filesep SUBJECT '_electrode_fixed-distal-morel-labels.xlsx'], 'file')
+    elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode_fixed-distal-morel-labels.xlsx']); 
+else
+    elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt']); 
+end
+
+trials_prod_syl = readtable([PATH_ANNOT filesep SUBJECT '_produced_syllable.txt';]); % load syllable timing info
 trials_stim_trip = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_triplet.txt';]); % stim timing info
-trials_stim_syl = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_syllable.txt';]); % stim timing info
 trials_prod_trip = readtable([PATH_ANNOT filesep SUBJECT '_produced_triplet.txt';]); % speech timing info
-trials_prod_syl = readtable([PATH_ANNOT filesep SUBJECT '_produced_syllable.txt';]); % speech timing info
 trials_phon = readtable([PATH_ANNOT filesep SUBJECT '_produced_phoneme.txt';]); % speech timing info
-
-elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt';]); 
-
-
-
-%% Now 'trials_syl' has two new columns: 'prob1' and 'prob2' with the phonotactic probabilities
-
-% some subjects don't have _stimulus_syllable.txt (3001 and 3002)- for these, maybe try to derive it from _stimulus_triplet.txt and expected durations? 
-
 
 % account for some tables using onset/duration convention vs. starts/ends convention
 if ~any(contains(trials_prod_trip.Properties.VariableNames,'starts'))
@@ -83,23 +93,74 @@ cfg.plot_times = 0;
 trials.syl = [trials.stim1, trials.stim2, trials.stim3]; 
 trials = removevars(trials,{'stim1','stim2','stim3'});
 
+% vars for table construction
+%%% note that these variables are taken from stim trials table, which may be larger than 'trials' variable....
+%%% ... because some trials listed in trials_stim_trip may have been cut from 'trials' due to not matching up with fieldtrip data
+ntrials_stim = height(trials_stim_trip); 
+nans_tr_stim = nan(ntrials_stim,1); 
+cel_tr_stim = cell(ntrials_stim,1); 
+
+%%% check whether subject is missing _stimulus_syllable.txt
+%%% if it is missing, use stim timing estimates averaged from other subjects
+if exist(stimsylpath, 'file') % subject has stim syl timing
+    trials_stim_syl = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_syllable.txt';]); % stim timing info
+elseif ~exist(stimsylpath, 'file') % subject doesn't have stim syl timing
+    stim_syl_durations = readtable(syl_dur_filename, ReadRowNames=true); % fixed durations from other subjects
+    stats_stim_trip = readtable(syl_onsets_filename, ReadRowNames=true); % average syl onset times from other subjects
+
+    % construct an estimated stim syl timing table
+    
+    trials_stim_syl = table(nans_tr_stim, nans_tr_stim, nans_tr_stim,   nans_tr_stim,   nans_tr_stim,    nans_tr_stim, cel_tr_stim, 'VariableNames',...
+                           {'starts',     'ends',       'duration',     'session_id',   'trial_id',      'syl_id',     'stim'}); 
+        trials_stim_syl = repmat(trials_stim_syl,3,1); % triple in height because we have 3 syls per trial
+        trials_stim_syl.session_id = repelem(trials_stim_trip.session_id, 3, 1); 
+        trials_stim_syl.trial_id = repelem(trials_stim_trip.trial_id, 3, 1); 
+        trials_stim_syl.syl_id = repmat([1:3]', ntrials_stim, 1); 
+        sylcat = [trials_stim_trip.stim1, trials_stim_trip.stim2, trials_stim_trip.stim3;]';
+            trials_stim_syl.stim = sylcat(:);
+
+    for itrial_stim_trip = 1:ntrials_stim % this counter refers to full trials (triplets), not individual stim
+        triptabstats_row = string(trials_stim_trip.stim{itrial_stim_trip}) == string(stats_stim_trip.stim); 
+        isess = trials_stim_trip.session_id(itrial_stim_trip); 
+        trial_id_in_sess = trials_stim_trip.trial_id(itrial_stim_trip); % session-relative trial number
+        for isyl = 1:3
+            trials_stim_syl_row = find(trials_stim_syl.session_id == isess & trials_stim_syl.trial_id == trial_id_in_sess  &  trials_stim_syl.syl_id == isyl); 
+            syldurtab_row = string(trials_stim_syl.stim{itrial_stim_trip}) == string(stim_syl_durations.stim); 
+            this_syl_dur = stim_syl_durations.duration(syldurtab_row);
+            trials_stim_syl.duration(trials_stim_syl_row) = this_syl_dur;
+            switch isyl
+                case 1
+                    trials_stim_syl.starts(trials_stim_syl_row) = trials_stim_trip.starts(itrial_stim_trip); % syl 1 starts at beginning of triplet
+                    trials_stim_syl.ends(trials_stim_syl_row)   = trials_stim_trip.starts(itrial_stim_trip) + this_syl_dur; 
+                case 2              % find timepoints relative to triplet beginning
+                    ons1_to_ons2 = stats_stim_trip.mean_syl_ons2ons_1(triptabstats_row); % time between syl 1 onset and syl 2 onset (estimated)
+                    trials_stim_syl.starts(trials_stim_syl_row) = trials_stim_trip.starts(itrial_stim_trip) + ons1_to_ons2; 
+                    trials_stim_syl.ends(trials_stim_syl_row)   = trials_stim_trip.starts(itrial_stim_trip) + ons1_to_ons2 + this_syl_dur; 
+                case 3              % find timepoints relative to triplet ending
+                    trials_stim_syl.starts(trials_stim_syl_row) = trials_stim_trip.ends(itrial_stim_trip) - this_syl_dur;
+                    trials_stim_syl.ends(trials_stim_syl_row)   = trials_stim_trip.ends(itrial_stim_trip); % syl 3 ends at ending of triplet
+            end
+        end
+    end
+
+end
+
 %% get responses in predefined epochs
-% 'base' = average during pre-stim baseline
-% all response values except 'base' are baseline-normalized by dividing by that trial's baseline average
-ntrials_stim = height(trials); 
+%%% 'base' = average during pre-stim baseline
+
+% vars for table construction
 nchans = length(D_hg.label);
 nans_ch = nan(nchans,1); 
 nans_ch2 = nan(nchans,2); 
 nans_ch3 = nan(nchans,3); 
 logch = false(nchans,1);
+ntrials_stim = height(trials); 
 nans_tr = nan(ntrials_stim,1); 
 nans_tr2 = nan(ntrials_stim,2); 
 nans_tr3 = nan(ntrials_stim,3); 
 cel_tr = cell(ntrials_stim,1); 
 
 % info about our trial timing analysis window
-
-
 trials = [trials, table(cel_tr, nans_tr3,    nans_tr3,            nans_tr3,    nans_tr3,       nans_tr2, nans_tr2,     false(ntrials_stim,1),          nans_tr, cel_tr, cel_tr, cel_tr,...
      'VariableNames', {'times', 'stim_syl_on', 'stim_syl_off', 'prod_syl_on', 'prod_syl_off', 'trans_on', 'trans_off',     'has_speech_timing', 'ft_trial_idx','cons_constit', 'vow_constit','syl_constit' })];
 

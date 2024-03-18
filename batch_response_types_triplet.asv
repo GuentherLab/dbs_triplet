@@ -47,8 +47,8 @@ for isub = subinds_to_run
 %     try 
         loadfile = [PATH_RESULTS filesep SUBJECT '_responses.mat'];
         load(loadfile)
-
-        %%% the problem addressed here might be fixable by looking at electrods.txt, but 'port' isn't an important variable for our analysis 
+        
+%%% this problem might be fixable by looking at 
         if isnumeric(resp.port) 
             resp.port = num2cell(resp.port);
         end

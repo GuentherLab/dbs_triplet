@@ -8,9 +8,8 @@
 
 clear
 setpaths_dbs_triplet()
-PATH_STIM_INFO = [PATH_TRIPLET_CODE filesep 'stim_info']; % save results here
-syl_onsets_filename = [PATH_STIM_INFO filesep 'stim_syl_onset_timing_stats']; 
-syl_dur_filename = [PATH_STIM_INFO filesep 'stim_syl_durations']; 
+syl_onsets_filename = [PATH_STIM_INFO filesep 'stim_syl_onset_timing_stats.txt']; 
+syl_dur_filename = [PATH_STIM_INFO filesep 'stim_syl_durations.txt']; 
 
 subs = readtable([PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt']); % TURBO path
 nsubs = height(subs);
@@ -56,7 +55,7 @@ std_range = std(stats_stim_trip.range_syl_ons2ons)
 max_range = max(stats_stim_trip.range_syl_ons2ons)
 
 mkdir(PATH_STIM_INFO)
-writetable(stats_stim_trip, syl_onsets_filename, "FileType","text", "WriteRowNames",false, "Delimiter","tab")
+writetable(stats_stim_trip, syl_onsets_filename, "FileType","text", "WriteRowNames",true, "Delimiter","tab")
 
 %% syllable duration
 % stim syl durations are identical for a given syl, so just get durations from first subject
@@ -67,7 +66,7 @@ trials_stim_syl = readtable(stimsylpath);
 durstats_stim_syl = grpstats(trials_stim_syl,"stim",["mean","std","min","max","range"],"DataVars","duration");
 stim_syl_durations = sortrows(durstats_stim_syl(:,{'stim','mean_duration'}), 'stim');
 stim_syl_durations = renamevars(stim_syl_durations, "mean_duration", "duration"); 
-writetable(stim_syl_durations, syl_dur_filename, "FileType","text", "WriteRowNames",false, "Delimiter","tab")
+writetable(stim_syl_durations, syl_dur_filename, "FileType","text", "WriteRowNames",true, "Delimiter","tab")
 
 
 
