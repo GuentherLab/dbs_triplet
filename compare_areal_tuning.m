@@ -1,12 +1,16 @@
  %%%% check whether there is a nonrandom distribution of significantly tuned electrodes across areas
-  % load resp_all_subjects first
+  load resp_all_subjects first
 
 % close all
 
  %% params
 vardefault('show_barplot',1);
 
-newfig = 1; 
+newfig = true
+
+if newfig 
+    hfig = figure('color','w');
+end
 
 %%% define anatomical regions composed of smaller areas
 regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... middle frontal gyrus... maybe also inf front sulcus
@@ -44,6 +48,10 @@ param = 'p_rank';
 % param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
+%  param = {'p_trans_id',1};
+%  param = {'p_trans_id', 2};
+%   param = {'p_phonotactic_prob',1};
+%  param = {'p_phonotactic_prob',2};
 
 % param = 'p_stim_cons_allpos';
 % param = 'p_stim_vow_allpos';
@@ -54,7 +62,7 @@ param = 'p_rank';
 % param = 'p_prep_syl_constit';
 
 % param = 'p_prod_cons_allpos';
-% param = 'p_prod_vow_allpos';
+   param = 'p_prod_vow_allpos';
 % param = 'p_prod_syl_allpos';
 
 
@@ -108,34 +116,34 @@ expected_sgn_per_region_random = proportion_signficant_overall * areastats.nelc_
 
 
 
+
 %% plotting
 if show_barplot
 
-    if newfig 
-        hfig = figure('color','w');
-    end
     hbar = bar(areastats.prop_sgn);
-
     hold on
 
     ebar_neg =  areastats.prop_sgn - areastats.ebar_lims(:,1); 
     ebar_pos =  -areastats.prop_sgn + areastats.ebar_lims(:,2); 
-    h_ebar = errorbar([1:nregions]', areastats.prop_sgn, ebar_neg, ebar_pos,'--');
-    h_ebar.LineWidth = 0.8;
-    h_ebar.LineStyle = 'none';
-    h_ebar.Color = [0 0 0];
+    h_ebar = errorbar([1:nregions]', areastats.prop_sgn, ebar_neg, ebar_pos, 'LineStyle', 'none', 'Color', [0 0 0], 'LineWidth', 0.8);
 
+    % Draw and label the significance threshold line
+    hyline = yline(pthresh, '--', ['alpha = ' num2str(pthresh)], 'LabelHorizontalAlignment', 'left', 'LabelVerticalAlignment', 'bottom', 'LineWidth', 1.5, 'Color', [0.5 0.5 0.5]);
+    hyline.LabelHorizontalAlignment = 'right'; % Adjust label position if needed
+
+    % Set graph properties
     hax = gca;
     hax.XTickLabels = areastats.region;
-    hyline = yline(pthresh);
-    set(0, 'DefaultTextInterpreter', 'none')
-    titlestr = [full_param_string, '..... p = ' num2str(chi_p)] ;
-    htitle = title(titlestr); 
+    set(0, 'DefaultTextInterpreter', 'none');
 
+    % Title to include chi-square test p-value
+    titlestr = [full_param_string, '..... p = ' num2str(chi_p)] ;
+    title(titlestr); 
+
+    % Set bar face color
     hbar.FaceColor = bar_face_color; 
 
 end
 
 hold off
-
 

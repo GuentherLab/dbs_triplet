@@ -11,13 +11,21 @@ setpaths_dbs_triplet()
 
 %% set params
 
+<<<<<<< Updated upstream
 struct_to_plot = 'ctx';
+=======
+ struct_to_plot = 'ctx';
+>>>>>>> Stashed changes
     snap_to_surf = 1; % cortex only - if true, project eletrodes to nearest point on ctx surface
     % shift electrodes so that they aren't covered by the brain surface
     %%% gets applied after snapping to surface
     %%% .... if snapping, offset of -1 should be enough to have points entirely above ctx surface (in L hem)
     x_offset = -1;
+<<<<<<< Updated upstream
 % struct_to_plot = 'stn';
+=======
+%struct_to_plot = 'stn';
+>>>>>>> Stashed changes
 % struct_to_plot = 'thal';
 
 %%% pick hemisphere to plot - subcortical only
@@ -25,22 +33,31 @@ side = 'L';
 % side = 'R'; 
 
 inclusion_mode = 'thresh';
+<<<<<<< Updated upstream
 %     p_thresh = 0.05; 
     p_thresh = 0.00001; 
+=======
+ p_thresh = 0.0001; 
+     %p_thresh = 0.00001; 
+>>>>>>> Stashed changes
     % p_thresh = 0.05 / 3; % bonf corrected 0.05
 % inclusion_mode = 'proportion';
     p_proportion = 0.01; 
 
 % param = 'p_rank';
-% param = {'p_prod_syl',1};
+%  param = {'p_prod_syl',1};
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
-% param = {'p_prod_cons',1};
-% param = {'p_prod_cons',2};
+%param = {'p_prod_cons',1};
+%  param = {'p_prod_cons',2};
 % param = {'p_prod_cons',3};
+<<<<<<< Updated upstream
 param = {'p_prod_vow',1};
+=======
+   param = {'p_prod_vow',1};
+>>>>>>> Stashed changes
 % param = {'p_prod_vow',2};
-% param = {'p_prod_vow',3};
+%  param = {'p_prod_vow',3};
 % % % % % % % % param = 'p_prod_cons_best_anypos';
 % % % % % % % % param = 'p_prod_vow_best_anypos';
 % % % % % % % param = 'p_prod_syl_best_anypos';
@@ -49,7 +66,7 @@ param = {'p_prod_vow',1};
 % param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
-% param = {'p_prep_cons',1};
+%  param = {'p_prep_cons',1};
 % param = {'p_prep_cons',2};
 % param = {'p_prep_cons',3};
 % param = {'p_prep_vow',1};
@@ -57,7 +74,16 @@ param = {'p_prod_vow',1};
 % param = {'p_prep_vow',3};
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
+<<<<<<< Updated upstream
 % param = 'p_prep_syl_constit';
+=======
+%param = 'p_prep_syl_constit';
+%DT parameters
+%  param = {'p_trans_id',1};
+%  param = {'p_trans_id', 2};
+% param = {'p_phonotactic_prob',1};
+%param = {'p_phonotactic_prob',2};
+>>>>>>> Stashed changes
 
 exclude_if_p_zero = 1; % exclude channels if they have p=0 for the key parameter
 
@@ -66,7 +92,11 @@ also_plot_nonsgnf_elcs = 1; % if true, plot non-significant electrodes alongside
 plotcolor = 'r';
 plotcolor_nonsgn = [0.4 0.4 0.4]; 
 
+<<<<<<< Updated upstream
 marker_size = 40; % size of electrode marker; scatter 'SizeData' parameter
+=======
+marker_size = 35; % size of electrode marker; scatter 'SizeData' parameter
+>>>>>>> Stashed changes
 marker_size_nonsgn = 10; 
 
 view_angle = [-90, 0]; % use [-90, 0] for straight-on lateral left hemisphere
@@ -211,4 +241,23 @@ titlestr = param;
 title(titlestr,'interpreter', 'none')
 
 % print(gcf,[PATH_ANALYSIS 'qqq.png'],'-dpng','-r300')
+
+%DT added 
+
+legendEntries = {}; % Initialize a cell array to hold legend entries.
+legendHandles = []; % Initialize an array to hold legend handles (the plotted objects).
+
+% Check if non-significant electrodes are plotted and add them to the legend.
+if also_plot_nonsgnf_elcs
+    legendHandles(end+1) = hscat_non_sgnf; % Add the handle for non-significant electrodes.
+    legendEntries{end+1} = 'Non-significant electrodes'; % Add the legend entry.
+end
+
+% Add the significant electrodes to the legend and use "alpha" instead of "p".
+legendHandles(end+1) = hscat_sgnf; % Add the handle for significant electrodes.
+legendEntries{end+1} = ['Significant electrodes (alpha = ' num2str(p_thresh) ')']; % Update the legend entry with "alpha".
+
+% Create the legend with updated entries.
+legend(legendHandles, legendEntries, 'Location', 'bestoutside');
+
 
