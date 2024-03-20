@@ -29,9 +29,8 @@ groupval_inds_to_plot = []; % plot all vals
 % groupval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-trial_grouping_var = []; % average all trials in a single trace
 % trial_grouping_var = 'stim_volume'; 
-% trial_grouping_var = {'cons',1};
+trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
 % trial_grouping_var = {'vow',1};
@@ -149,8 +148,7 @@ trials_tmp.prod_syl_off_adj = trials_tmp.prod_syl_off - trials_tmp.prod_syl_on(:
 %% organize responses by grouping var
 % find trial details for the appropriate subject
 if isempty(trial_grouping_var) % plot all trials in a single trace
-    triptabvals = true(ntrials,1); 
-    full_var_string = 'all_trials';
+
 elseif ~trial_grouping_var
     [triptabvals, ~, full_var_string] = triplet_tablevar(trials,trial_grouping_var); 
 end
@@ -183,7 +181,7 @@ nvals_to_plot = length(groupval_inds_to_plot);
 % error bars
 if show_error_bars
     hfill = fill([xtime, fliplr(xtime)], [resp_align.sem_lims(1,:), fliplr(resp_align.sem_lims(2,:))], [0.8 0.8 0.8]); % standard error
-%         hfill.LineStyle = 'none'; % no border
+        hfill.LineStyle = 'none'; % no border
     hold on 
 end
 
@@ -205,10 +203,7 @@ htitle = title([thissub, '___', channame, '... ', full_var_string], 'Interpreter
 %     hleg = legend(resp_grpd.groupval{groupval_inds_to_plot});
 
 f=get(gca,'Children');
-
-if ~isempty(trial_grouping_var)
-    hleg = legend(flipud(f(end-nvals_to_plot+1:end)),resp_grpd.groupval{groupval_inds_to_plot});
-end
+hleg = legend(flipud(f(end-nvals_to_plot+1:end)),resp_grpd.groupval{groupval_inds_to_plot});
 
 % stim syllable onsets
 hstim_syl(1) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style, 'HandleVisibility','off');
@@ -239,5 +234,24 @@ if plot_raster
     imagesc(resp_align.resp)
 %     xlabel('Time (sec)')
     ylabel('Trial')
+
+% % % % % % % % %     hold on
+% % % % % % % % %         % stim syllable onsets
+% % % % % % % % %     hstim_syl(1) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style);
+% % % % % % % % %     hstim_syl(2) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style);
+% % % % % % % % %     hstim_syl(3) = xline(xline_fn(trials_tmp.stim_syl_on_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_on, 'LineStyle',xline_style);
+% % % % % % % % %     
+% % % % % % % % %     % stim offset
+% % % % % % % % %     hstim_syl(3) = xline(mean(trials_tmp.stim_syl_off_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_stim_syl_off, 'LineStyle',xline_style);
+% % % % % % % % %     
+% % % % % % % % %     % produced syllable onsets
+% % % % % % % % %     hprod_syl(1) = xline(0, 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style); 
+% % % % % % % % %     hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_on_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style);
+% % % % % % % % %     hprod_syl(3) = xline(xline_fn(trials_tmp.prod_syl_on_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_on, 'LineStyle',xline_style);
+% % % % % % % % %     
+% % % % % % % % %     % produced syllable offsets
+% % % % % % % % %     hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,1),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style);
+% % % % % % % % %     hprod_syl(2) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,2),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style);
+% % % % % % % % %     hprod_syl(3) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,3),'omitnan'), 'LineWidth',xline_width, 'Color',xline_color_prod_syl_off, 'LineStyle',xline_style);
 
 end
