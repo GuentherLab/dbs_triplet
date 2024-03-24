@@ -26,7 +26,7 @@ for isub = subinds_to_run
     
     SUBJECT = subs.subject{isub}
        
-    response_types()
+    response_types_triplet()
     savefile = [PATH_RESULTS, filesep, SUBJECT '_responses'];
     save(savefile, 'trials', 'resp')
 end

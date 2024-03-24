@@ -31,6 +31,11 @@ base_win_sec = [1, 0.3];
 post_speech_win_sec = 0.5; % time to include after 3rd-syllable voice offset in HG timecourse
 min_trials_for_good_channel = 4; 
 
+% for responses during syl 1 production, start the analyzed 'speech period' this early in seconds to capture pre-sound muscle activation
+% also end the prep period this early
+%%% extending the window in this way for syl 2 and syl 3 might be trickier, because there is often very little time between the preceding offset and the syl2/3 onset
+prod_syl1_window_extend_start = 0;  
+
 % add the following variables to the electrodes response table... use 'electrode'/'chan' as key variable
 info_vars_to_copy = {'chan','type','connector','port','strip','comment','target','side','nat_x','nat_y','nat_z',...
     'leadDBS_x','leadDBS_y','leadDBS_z','tkRAS_x','tkRAS_y','tkRAS_z','mni_linear_x','mni_linear_y','mni_linear_z',...
@@ -245,7 +250,11 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
                            trials_phon.session_id == trials.session_id(itrial); 
     for isyl = 1:3
         stim_syl_inds = D_hg.time{ft_idx} > trials.stim_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.stim_syl_off(itrial,isyl); % time idx when syl 1 2 3 were played
-        prod_syl_inds = D_hg.time{ft_idx} > trials.prod_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 1 2 3 were spoken
+        if isyl == 1 % for syl 1, start the analyzed 'speech window' early to account for pre-speech muscle activity
+            prod_syl_inds = D_hg.time{ft_idx} > [trials.prod_syl_on(itrial,isyl)-prod_syl1_window_extend_start] & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 1 was spoken
+        elseif ismember(isyl, [2 3])
+            prod_syl_inds = D_hg.time{ft_idx} > trials.prod_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 2 3 were spoken
+        end
         for ichan = 1:nchans
             resp.stim{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, stim_syl_inds) ) - resp.base{ichan}(itrial); 
             resp.prod{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, prod_syl_inds) ) - resp.base{ichan}(itrial); 
@@ -260,8 +269,8 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     end
     
     % preparatory responses
-    %%%% prep period inds: after stim ends and before first syllable prod onset
-    prep_inds = D_hg.time{ft_idx} > trials.stim_syl_off(itrial,3) & D_hg.time{ft_idx} < trials.prod_syl_on(itrial,1); 
+    %%%% prep period inds: after stim ends and before first syllable prod onset, adjusted by prod_syl1_window_extend_start
+    prep_inds = D_hg.time{ft_idx} > trials.stim_syl_off(itrial,3) & D_hg.time{ft_idx} < [trials.prod_syl_on(itrial,1) - prod_syl1_window_extend_start]; 
     for ichan = 1:nchans
         resp.prep{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
     end
@@ -391,6 +400,7 @@ resp.elc_info_row = nan(nchans,1);
 for ichan = 1:nchans
     good_trials = ~isnan(resp.base{ichan}); % non-artifactual trials for this channel
     n_good_trials = nnz(good_trials); 
+    zeroes_vec = zeros(n_good_trials,1); 
     resp.n_usable_trials(ichan) = nnz(good_trials); 
     if resp.n_usable_trials(ichan) < min_trials_for_good_channel
         resp.usable_chan(ichan) = false; 
@@ -399,8 +409,8 @@ for ichan = 1:nchans
         resp.usable_chan(ichan) = true; 
     end 
     
-    % preparatory activity............................ need to not use absolute value so that we can have negative values
-    [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), zeros(size(resp.prep{ichan}(good_trials))) ); 
+    % preparatory activity
+    [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), zeroes_vec) ; 
     
     % rank-order selectivity
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');
