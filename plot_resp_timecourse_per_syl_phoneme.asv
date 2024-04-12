@@ -5,15 +5,15 @@
  %
  % % % updated by AM 2022/8/21
  
-close all
+% close all
 
 %% params
-srt_row = 35;
+srt_row = 1;
 smooth_timecourses = 1; 
-    smooth_windowsize = 30; 
+    smooth_windowsize = 20; 
 %      smooth_method = 'movmean'; 
      smooth_method = 'gaussian';
-show_error_bars = 0; 
+show_error_bars = 1; 
 
 y_ax_hardlims = []; % cut off y axis if it's lesser/greater than this value
 % y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
@@ -35,7 +35,7 @@ groupval_inds_to_plot = []; % plot all vals
 %%% choose the stimulus variable which will be used to sort trials
 % trial_grouping_var = []; % average all trials in a single trace
 % trial_grouping_var = 'stim_volume'; 
-% trial_grouping_var = {'cons',1};
+trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'cons',2};
 % trial_grouping_var = {'cons',3};
 % trial_grouping_var = {'vow',1};
@@ -46,7 +46,7 @@ groupval_inds_to_plot = []; % plot all vals
 % trial_grouping_var = {'syl',3}; 
 % trial_grouping_var = 'cons_constit';
 % trial_grouping_var = 'vow_constit'; 
-trial_grouping_var = 'syl_constit';
+% trial_grouping_var = 'syl_constit';
  
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')

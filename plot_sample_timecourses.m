@@ -1,5 +1,5 @@
-% rowlist = 18:25; 
-rowlist = 18:21; 
+rowlist = 1:6; 
+% rowlist = 18:21; 
 % rowlist = 22:25;
 
 y_axmax = 3.5; 
@@ -7,7 +7,7 @@ y_axmax = 3.5;
 nplotrows = 2; 
 
 % either plot just timecourses, or timecourses plus brains
-plot_brains_on_row2 = 1; 
+plot_brains_on_row2 = 0; 
 
 nelcs = length(rowlist);
 

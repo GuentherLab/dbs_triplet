@@ -6,7 +6,7 @@ setpaths_dbs_triplet()
 % param = 'p_rank';
 % param = 'p_prep';
 
-% param = {'p_prep_cons',1};
+param = {'p_prep_cons',1};
 % param = {'p_prep_cons',2};
 % param = {'p_prep_cons',3};
 % param = {'p_prep_vow',1};
@@ -19,13 +19,13 @@ setpaths_dbs_triplet()
 % param = {'p_prod_cons',1};
 % param = {'p_prod_cons',2};
 % param = {'p_prod_cons',3};
-param = {'p_prod_syl',1};
+% param = {'p_prod_syl',1};
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
 
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-% param = 'p_prep_syl_constit';
+param = 'p_prep_syl_constit';
 
 % param = 'p_stim_cons_allpos';
 % param = 'p_stim_vow_allpos';
@@ -52,3 +52,5 @@ if exclude_if_p_zero
     srt = srt(~pzero_rows,:);    
         clear srtvals idxorder
 end
+
+srt = srt(string(srt.type) ~= "ecog",:); % exclude ecog electrodes
