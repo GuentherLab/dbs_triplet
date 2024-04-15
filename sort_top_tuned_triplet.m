@@ -25,7 +25,7 @@ param = {'p_prep_cons',1};
 
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-param = 'p_prep_syl_constit';
+% param = 'p_prep_syl_constit';
 
 % param = 'p_stim_cons_allpos';
 % param = 'p_stim_vow_allpos';
