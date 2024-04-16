@@ -413,19 +413,17 @@ for ichan = 1:nchans
     
 
     %%%%%%%%%% % test for general task responsivity
-    % above-baseline prod activity
-    mean_stim_trial_resp = mean(resp.stim{ichan}(good_trials,:),2); % averaged within-trial response from 3 stim periods
-    [~, resp.p_stim(ichan)] = ttest(mean_stim_trial_resp, zeroes_vec) ; 
+
 
     % above-baseline preparatory activity
     [~, resp.p_prep(ichan)] = ttest(resp.prep{ichan}(good_trials), zeroes_vec) ; 
     
     % above-baseline prod activity
     mean_prod_trial_resp = mean(resp.prod{ichan}(good_trials,:),2); % averaged within-trial response from 3 prod periods
-    [~, resp.p_prod(ichan)] = ttest(mean_prod_trial_resp, zeroes_vec) ; 
+    [~, resp.p_prod(ichan)] = ttest(resp.prep{ichan}(good_trials), zeroes_vec) ; 
 
-    % test for nonrandom responsiveness across baseline vs. stim vs. prep
-    resp.p_rspv(ichan) = anova1([zeroes_vec, mean_stim_trial_resp, resp.prep{ichan}(good_trials), mean_prod_trial_resp],    [],    'off'); 
+    % nonrandom responsiveness across baseline vs. stim vs. prep
+    resp.p_rspv(ichan) = anova1([zeroes_vec, , , mean_prod_trial_resp],    [],    'off'); 
     resp.rspv(ichan) = resp.p_rspv(ichan) < responsivity_alpha; 
 
     %%%%%%%%% rank-order selectivity during production

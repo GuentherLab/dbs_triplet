@@ -8,7 +8,7 @@
 close all
 
 %% params
-srt_row = 35;
+srt_row = 1;
 smooth_timecourses = 1; 
     smooth_windowsize = 30; 
 %      smooth_method = 'movmean'; 
@@ -108,7 +108,7 @@ elseif ~isempty(sort_cond)
 end
 
  %%
- plot_response_timecourse()
+ plot_resp_timecourse()
 
  %%
 
