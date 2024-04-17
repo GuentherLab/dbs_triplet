@@ -24,10 +24,11 @@ subinds_to_run = [1:nsubs]; % all subjects
 for isub = subinds_to_run
     clearvars -except subs isub nsubs subinds_to_run compiled_responses_filepath subject_list_filename
     
-    SUBJECT = subs.subject{isub}
+    op.sub = subs.subject{isub};
+    fprintf([op.sub, '\n'])
        
     response_types_triplet()
-    savefile = [PATH_RESULTS, filesep, SUBJECT '_responses'];
+    savefile = [PATH_RESULTS, filesep, op.sub '_responses'];
     save(savefile, 'trials', 'resp')
 end
 
@@ -40,12 +41,12 @@ nsubs = height(subs);
 resp_temp = table;
 
 for isub = subinds_to_run
-    SUBJECT = subs.subject{isub};
-    PATH_SYNC = [PATH_DATA filesep SUBJECT filesep 'Preprocessed Data\Sync'];
+    op.sub = subs.subject{isub};
+    PATH_SYNC = [PATH_DATA filesep op.sub filesep 'Preprocessed Data\Sync'];
     PATH_ANNOT = [PATH_SYNC filesep 'annot'];
 
 %     try 
-        loadfile = [PATH_RESULTS filesep SUBJECT '_responses.mat'];
+        loadfile = [PATH_RESULTS filesep op.sub '_responses.mat'];
         load(loadfile)
 
         %%% the problem addressed here might be fixable by looking at electrods.txt, but 'port' isn't an important variable for our analysis 

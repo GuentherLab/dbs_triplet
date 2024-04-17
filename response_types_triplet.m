@@ -4,18 +4,16 @@ setpaths_dbs_triplet()
 
 %% parameters 
 % % % % % data-loading parameters
-vardefault('SUBJECT','DBS3012');
 
 DATE=datestr(now,'yyyymmdd');
 
-setpaths_dbs_triplet()
-PATH_SUBJECT=[PATH_DATA filesep SUBJECT];
+PATH_SUBJECT=[PATH_DATA filesep op.sub];
 PATH_PREPROCESSED = [PATH_SUBJECT filesep 'Preprocessed Data'];
 PATH_FIELDTRIP = [PATH_PREPROCESSED filesep 'FieldTrip']; 
 PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
 PATH_ANNOT = [PATH_SYNC filesep 'annot'];
-    stimsylpath = [PATH_ANNOT filesep SUBJECT '_stimulus_syllable.txt']; 
-ARTIFACT_CRIT = 'E'; 
+    stimsylpath = [PATH_ANNOT filesep op.sub '_stimulus_syllable.txt']; 
+op.art_crit = 'E'; 
 SAMPLE_RATE = 100; % downsample rate in hz for high gamma traces
 
 % files with info to be used if stim syl timing info is missing for a subject
@@ -52,23 +50,23 @@ unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','
 
 
 %% load and organize data
-load([PATH_FIELDTRIP filesep SUBJECT '_ft_hg_trial_ref_criteria_' ARTIFACT_CRIT '_denoised.mat']);
+load([PATH_FIELDTRIP filesep op.sub '_ft_hg_trial_ref_criteria_' op.art_crit '_denoised.mat']);
 
 % for some subjects (3030,4061,4072,4077,4078,4080,4084,4085), AM had to make an xlsx version of this table
 %%% for an unknown reason, distal and morel labels were being imported as nans....
 %%% ..... this was due to some unexpected cell data formatting (usually in the first 9 rows) of the table....
 %%% ..... fixed this problem by filling in one cell in these rows of distal/morel with a space...
 %%% ...... which made them import correctly as cells/strings
-if exist([PATH_ANNOT filesep SUBJECT '_electrode_fixed-distal-morel-labels.xlsx'], 'file')
-    elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode_fixed-distal-morel-labels.xlsx']); 
+if exist([PATH_ANNOT filesep op.sub '_electrode_fixed-distal-morel-labels.xlsx'], 'file')
+    elc_info = readtable([PATH_ANNOT filesep op.sub '_electrode_fixed-distal-morel-labels.xlsx']); 
 else
-    elc_info = readtable([PATH_ANNOT filesep SUBJECT '_electrode.txt']); 
+    elc_info = readtable([PATH_ANNOT filesep op.sub '_electrode.txt']); 
 end
 
-trials_prod_syl = readtable([PATH_ANNOT filesep SUBJECT '_produced_syllable.txt';]); % load syllable timing info
-trials_stim_trip = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_triplet.txt';]); % stim timing info
-trials_prod_trip = readtable([PATH_ANNOT filesep SUBJECT '_produced_triplet.txt';]); % speech timing info
-trials_phon = readtable([PATH_ANNOT filesep SUBJECT '_produced_phoneme.txt';]); % speech timing info
+trials_prod_syl = readtable([PATH_ANNOT filesep op.sub '_produced_syllable.txt';]); % load syllable timing info
+trials_stim_trip = readtable([PATH_ANNOT filesep op.sub '_stimulus_triplet.txt';]); % stim timing info
+trials_prod_trip = readtable([PATH_ANNOT filesep op.sub '_produced_triplet.txt';]); % speech timing info
+trials_phon = readtable([PATH_ANNOT filesep op.sub '_produced_phoneme.txt';]); % speech timing info
 
 % account for some tables using onset/duration convention vs. starts/ends convention
 if ~any(contains(trials_prod_trip.Properties.VariableNames,'starts'))
@@ -108,7 +106,7 @@ cel_tr_stim = cell(ntrials_stim,1);
 %%% check whether subject is missing _stimulus_syllable.txt
 %%% if it is missing, use stim timing estimates averaged from other subjects
 if exist(stimsylpath, 'file') % subject has stim syl timing
-    trials_stim_syl = readtable([PATH_ANNOT filesep SUBJECT '_stimulus_syllable.txt';]); % stim timing info
+    trials_stim_syl = readtable([PATH_ANNOT filesep op.sub '_stimulus_syllable.txt';]); % stim timing info
 elseif ~exist(stimsylpath, 'file') % subject doesn't have stim syl timing
     stim_syl_durations = readtable(syl_dur_filename, ReadRowNames=true); % fixed durations from other subjects
     stats_stim_trip = readtable(syl_onsets_filename, ReadRowNames=true); % average syl onset times from other subjects
@@ -533,5 +531,5 @@ resp = resp(resp.usable_chan,:); % remove channels with few/no usuable trials
 elc_info_copy = renamevars(elc_info(resp.elc_info_row,:),'electrode','chan');
 resp = join(resp, elc_info_copy(:,info_vars_to_copy)); % add elc_info to resp
 resp = removevars(resp,{'elc_info_row','usable_chan'}); 
-resp.sub = repmat(SUBJECT, height(resp), 1);
+resp.sub = cellstr(repmat(op.sub, height(resp), 1));
 resp = movevars(resp,{'sub','chan','fs_anatomy','MOREL_label_1','DISTAL_label_1'},'Before',1);

@@ -1,7 +1,8 @@
 %%%% set paths for AM triplet analysis depending on computer
 
 [~,compname] = system('hostname'); compname = string(deblank(compname));
-
+vardefault('op',struct);
+field_default('op','art_crit','E'); % E = high gamma, F = beta
 
  switch compname
      case {'MSI','677-GUE-WL-0010'} % AM personal computer, work laptop
@@ -33,7 +34,7 @@
  end
 
  % common paths
-PATH_ARTIFACT = [PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_E']; % keep in repo to sync across devices
+PATH_ARTIFACT = [PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_' op.art_crit]; % keep in repo to sync across devices
 PATH_STIM_INFO = [PATH_TRIPLET_CODE filesep 'stim_info']; 
 
 paths_to_add = {PATH_DATA;... % derivatives and (if on server) sourcedata

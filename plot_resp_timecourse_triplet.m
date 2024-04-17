@@ -1,25 +1,23 @@
- %%%% plot the timecourses of electrode's responses for different phonemes/syllables
- % load resp_all_subjects first
- %
- % align all trialwise responses to speech onset of syllable #1
- %
- % % % updated by AM 2022/8/21
- 
+%%% wrapper for plot_resp_timecourse.m specific to the DBS-SEQ project 
+ % load resp_all_subjects and run sort_top_tuned first 
+
 close all
 
 %% params
-srt_row = 35;
+srt_row = 1;
 smooth_timecourses = 1; 
     smooth_windowsize = 30; 
 %      smooth_method = 'movmean'; 
      smooth_method = 'gaussian';
 show_error_bars = 0; 
+newfig = 1; 
 
 y_ax_hardlims = []; % cut off y axis if it's lesser/greater than this value
 % y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
 % y_ax_hardlims = [-4 10]; % cut off y axis if it's lesser/greater than this value
 
-xlimits = [-3 2]; 
+% xlimits = [-3 2]; 
+xlimits = [-2.5 1.2]; % narrower lims for presentations
 
 plotops.linewidth = 2; 
 
@@ -33,9 +31,9 @@ condval_inds_to_plot = []; % plot all vals
 % condval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-% sort_cond = []; % average all trials in a single trace
+% sort_cond = []; % do not sort by trial condition; average all trials
 % sort_cond = 'stim_volume'; 
-% sort_cond = {'cons',1};
+sort_cond = {'cons',1};
 % sort_cond = {'cons',2};
 % sort_cond = {'cons',3};
 % sort_cond = {'vow',1};
@@ -46,7 +44,7 @@ condval_inds_to_plot = []; % plot all vals
 % sort_cond = {'syl',3}; 
 % sort_cond = 'cons_constit';
 % sort_cond = 'vow_constit'; 
-sort_cond = 'syl_constit';
+% sort_cond = 'syl_constit';
  
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
@@ -74,43 +72,41 @@ yline_zero_style = '-';
 % trial_time_adj_method = 'median_plus_sd'; % median plus stdev
 trial_time_adj_method = 'max';
 
+%%%%% trial table varname for times used for time-locking responses
+time_align_var = {'prod_syl_on',1}; % syl 1 production onset
 
 
-%% align responses
+
+%% set up trials table for alignment
 channame = srt.chan{srt_row};
-thissub = srt.sub(srt_row,:);
+op.sub = srt.sub{srt_row};
 
-subrow = find(subs.subject == string(thissub));
-trials = subs.trials{subrow}; 
-
-
-ntrials = height(trials);
- % align resp_allonses to first syl onset
- nans_tr = nan(ntrials,1); 
- trials_tmp = trials; % temporary copy of trials table
+subrow = find(subs.subject == string(op.sub));
+trials_tmp = subs.trials{subrow}; 
+[trials_tmp.align_time, ~, align_var_name] = triplet_tablevar(trials_tmp, time_align_var); % get times for timelocking responses
  
-
-
-%%
-% times relative to produced syllable #1 onset
-trials_tmp.stim_syl_on_adj = trials_tmp.stim_syl_on - trials_tmp.prod_syl_on(:,1) ; 
-trials_tmp.stim_syl_off_adj = trials_tmp.stim_syl_off - trials_tmp.prod_syl_on(:,1) ; 
-trials_tmp.prod_syl_on_adj = trials_tmp.prod_syl_on - trials_tmp.prod_syl_on(:,1) ; 
-trials_tmp.prod_syl_off_adj = trials_tmp.prod_syl_off - trials_tmp.prod_syl_on(:,1) ; 
-
-%% organize responses by grouping var
+% organize responses by grouping var
 % find trial details for the appropriate subject
 if isempty(sort_cond) % plot all trials in a single trace
     trial_conds = true(ntrials,1); 
     full_var_string = 'all_trials';
 elseif ~isempty(sort_cond)
-    [trial_conds, ~, full_var_string] = triplet_tablevar(trials,sort_cond); 
+    [trial_conds, ~, full_var_string] = triplet_tablevar(trials_tmp,sort_cond); 
 end
 
- %%
- plot_response_timecourse()
+resprow = strcmp(resp.chan,channame) & strcmp(resp.sub,thissub);
+timecourses_unaligned = resp.timecourse{resprow};
 
- %%
+ %% sort trials by condition, get average responses + error, plot
+ plot_resp_timecourse()
+
+ %% triplet-specific processing
+
+ % get times relative to produced syllable #1 onset
+trials_tmp.stim_syl_on_adj = trials_tmp.stim_syl_on - trials_tmp.prod_syl_on(:,1) ; 
+trials_tmp.stim_syl_off_adj = trials_tmp.stim_syl_off - trials_tmp.prod_syl_on(:,1) ; 
+trials_tmp.prod_syl_on_adj = trials_tmp.prod_syl_on - trials_tmp.prod_syl_on(:,1) ; 
+trials_tmp.prod_syl_off_adj = trials_tmp.prod_syl_off - trials_tmp.prod_syl_on(:,1) ; 
 
 htitle = title([thissub, '___', channame, '... ', full_var_string], 'Interpreter','none');
 %     hleg = legend(resp_grpd.condval{condval_inds_to_plot});
