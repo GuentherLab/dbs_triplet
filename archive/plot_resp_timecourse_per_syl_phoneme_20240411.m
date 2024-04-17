@@ -5,10 +5,10 @@
  %
  % % % updated by AM 2022/8/21
  
-close all
+% close all
 
 %% params
-srt_row = 35;
+srt_row = 24;
 smooth_timecourses = 1; 
     smooth_windowsize = 30; 
 %      smooth_method = 'movmean'; 
@@ -33,7 +33,7 @@ groupval_inds_to_plot = []; % plot all vals
 % groupval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-% trial_grouping_var = []; % average all trials in a single trace
+trial_grouping_var = []; % average all trials in a single trace
 % trial_grouping_var = 'stim_volume'; 
 % trial_grouping_var = {'cons',1};
 % trial_grouping_var = {'cons',2};
@@ -46,10 +46,10 @@ groupval_inds_to_plot = []; % plot all vals
 % trial_grouping_var = {'syl',3}; 
 % trial_grouping_var = 'cons_constit';
 % trial_grouping_var = 'vow_constit'; 
-trial_grouping_var = 'syl_constit';
+% trial_grouping_var = 'syl_constit';
  
-% set(0,'DefaultFigureWindowStyle','docked')
-set(0,'DefaultFigureWindowStyle','normal')
+set(0,'DefaultFigureWindowStyle','docked')
+% set(0,'DefaultFigureWindowStyle','normal')
 
 plot_timecourses = 1; 
 plot_raster = 0; 

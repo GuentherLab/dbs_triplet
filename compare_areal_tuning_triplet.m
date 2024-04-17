@@ -25,7 +25,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 %                  'gp', {'GPe_L','GPi_sensorimotor_L'}; % <20 electrodes, so maybe not worth including
                 };
 
-param = 'p_rank'; 
+% param = 'p_rank'; 
 % param = 'p_prep';
 
 % param = {'p_stim_cons',1};
@@ -54,7 +54,7 @@ param = 'p_rank';
 
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-% param = 'p_prep_syl_constit';
+param = 'p_prep_syl_constit';
 
 % param = 'p_prod_cons_allpos';
 % param = 'p_prod_vow_allpos';

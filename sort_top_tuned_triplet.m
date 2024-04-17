@@ -3,7 +3,7 @@
 
 setpaths_dbs_triplet()
 
-% param = 'p_rank';
+param = 'p_rank';
 % param = 'p_prep';
 
 % param = {'p_prep_cons',1};
@@ -16,7 +16,7 @@ setpaths_dbs_triplet()
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
 
-param = {'p_prod_cons',1};
+% param = {'p_prod_cons',1};
 % param = {'p_prod_cons',2};
 % param = {'p_prod_cons',3};
 % param = {'p_prod_syl',1};

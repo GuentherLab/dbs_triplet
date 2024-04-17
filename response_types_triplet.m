@@ -186,8 +186,8 @@ cel3 = repmat({nans_tr3},nchans,1); % 3 values per trial per chan
 nancons = nan(nchans, n_unqcons); 
 nanvow = nan(nchans, n_unqvow); 
 nansyl = nan(nchans, n_unqsyl); 
-resp = table(   D_hg.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch, nans_ch, nans_ch,  logch,  nans_ch, nans_ch,  nans_ch3,    nans_ch3,    nans_ch3,     nans_ch3,    nans_ch3,    nans_ch3,     nancons,          nanvow,            nansyl,           nans_ch3,      nans_ch3,    nans_ch3,    nans_ch,           logch, ...
-  'VariableNames', {'chan', 'base', 'timecourse',             'stim', 'prep', 'prod', 'trans', 'p_stim','p_prep', 'p_prod', 'rspv','p_rspv','p_rank','p_stim_cons','p_stim_vow','p_stim_syl','p_prep_cons','p_prep_vow','p_prep_syl','p_prep_cons_pref','p_prep_vow_pref','p_prep_syl_pref', 'p_prod_cons','p_prod_vow','p_prod_syl','n_usable_trials', 'usable_chan'}); 
+resp = table(   D_hg.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch, nans_ch, nans_ch,  logch,  nans_ch, nans_ch,  nans_ch3,    nans_ch3,    nans_ch3,     nans_ch3,    nans_ch3,    nans_ch3,     nancons,          nanvow,            nansyl,           nans_ch3,      nans_ch3,    nans_ch3,    nans_ch3,         nans_ch,           logch, ...
+  'VariableNames', {'chan', 'base', 'timecourse',             'stim', 'prep', 'prod', 'trans', 'p_stim','p_prep', 'p_prod', 'rspv','p_rspv','p_rank','p_stim_cons','p_stim_vow','p_stim_syl','p_prep_cons','p_prep_vow','p_prep_syl','p_prep_cons_pref','p_prep_vow_pref','p_prep_syl_pref', 'p_prod_cons','p_prod_vow','p_prod_syl','prod_syl_mean','n_usable_trials', 'usable_chan'}); 
 
 % extract epoch-related responses
 %%%% trials.times{itrial} use global time coordinates
@@ -428,6 +428,8 @@ for ichan = 1:nchans
 
     %%%%%%%%% rank-order selectivity during production
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');
+    resp.prod_syl_mean(ichan,:) = nanmean(resp.prod{ichan}(good_trials,:)); % mean response in each prod position
+    [~, resp.prod_rank_pref(ichan)] = max(resp.prod_syl_mean(ichan,:)); % which is the prod rank with highest respose
     
 
     %%%%%% selectivity in prep epoch for each specific phonemic feature in any of the 3 upcoming positions

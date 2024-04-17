@@ -8,8 +8,7 @@ setpaths_dbs_triplet()
 subject_list_filename = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt']; % created by generate_triplet_subject_list.m
 % subject_list_filename = [PATH_ARTIFACT filesep 'P08_Subjects_3000.txt'];
 
-% compiled_responses_filepath = [PATH_RESULTS, filesep, 'resp_all_subjects']; 
-compiled_responses_filepath = [PATH_RESULTS, filesep, 'resp_all_subjects_incl_4000s'];
+compiled_responses_filepath = [PATH_RESULTS, filesep, 'resp_all_subjects']; 
 
 
 
