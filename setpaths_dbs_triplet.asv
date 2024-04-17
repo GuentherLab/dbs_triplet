@@ -31,7 +31,7 @@
          error('computer name not recognized; please add computer to setpaths_dbs_triplet.m')
  end
 
-addpath([PATH_IEEG_FT_FUNCS_AM, filesep, 'util']); % add first so we can use vardefault and field_default
+addpath(); % add first so we can use vardefault and field_default
 
 vardefault('op',struct);
 field_default('op','art_crit','E'); % E = high gamma, F = beta
