@@ -13,13 +13,15 @@ compiled_responses_filepath = [PATH_RESULTS, filesep, 'resp_all_subjects_incl_40
 
 
 
-%% get responses types
+
 subs = readtable(subject_list_filename);
 nsubs = height(subs);
 
 subinds_to_run = [1:nsubs]; % all subjects
 % subinds_to_run = []; % 
 % subinds_to_run = [28:nsubs]; % 4000-series subs
+
+%% get responses types for individual subjects
 
 for isub = subinds_to_run
     clearvars -except subs isub nsubs subinds_to_run compiled_responses_filepath subject_list_filename

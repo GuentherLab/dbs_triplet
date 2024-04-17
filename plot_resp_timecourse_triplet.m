@@ -94,8 +94,10 @@ elseif ~isempty(sort_cond)
     [trial_conds, ~, full_var_string] = triplet_tablevar(trials_tmp,sort_cond); 
 end
 
+
 resprow = strcmp(resp.chan,channame) & strcmp(resp.sub,thissub);
 timecourses_unaligned = resp.timecourse{resprow};
+
 
  %% sort trials by condition, get average responses + error, plot
  plot_resp_timecourse()

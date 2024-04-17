@@ -7,7 +7,9 @@ setpaths_dbs_triplet()
  %% params
 vardefault('show_barplot',1);
 
+analyze_responsive_elcs_only = 1; 
 newfig = 1; 
+warn_about_unassigned_elcs = 0; 
 
 %%% define anatomical regions composed of smaller areas
 regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... middle frontal gyrus... maybe also inf front sulcus
