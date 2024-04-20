@@ -39,7 +39,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 % param = {'p_stim_vow',3};
 
 % param = {'p_prep_cons',1};
-% param = {'p_prep_cons',2};
+param = {'p_prep_cons',2};
 % param = {'p_prep_cons',3};
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
@@ -54,7 +54,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-param = 'p_prep_syl_constit';
+% param = 'p_prep_syl_constit';
 
 % param = 'p_prod_cons_allpos';
 % param = 'p_prod_vow_allpos';

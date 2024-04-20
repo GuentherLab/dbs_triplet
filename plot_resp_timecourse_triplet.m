@@ -1,10 +1,13 @@
 %%% wrapper for plot_resp_timecourse.m specific to the DBS-SEQ project 
  % load resp_all_subjects and run sort_top_tuned first 
 
-close all
+% close all
+set(0,'DefaultFigureWindowStyle','docked')
+% set(0,'DefaultFigureWindowStyle','normal')
+cmapname = 'jet'; 
 
 %% params
-srt_row = 1;
+srt_row = 9;
 smooth_timecourses = 1; 
     smooth_windowsize = 30; 
 %      smooth_method = 'movmean'; 
@@ -33,9 +36,9 @@ condval_inds_to_plot = []; % plot all vals
 %%% choose the stimulus variable which will be used to sort trials
 % sort_cond = []; % do not sort by trial condition; average all trials
 % sort_cond = 'stim_volume'; 
-sort_cond = {'cons',1};
+% sort_cond = {'cons',1};
 % sort_cond = {'cons',2};
-% sort_cond = {'cons',3};
+sort_cond = {'cons',3};
 % sort_cond = {'vow',1};
 % sort_cond = {'vow',2};
 % sort_cond = {'vow',3};
@@ -45,9 +48,7 @@ sort_cond = {'cons',1};
 % sort_cond = 'cons_constit';
 % sort_cond = 'vow_constit'; 
 % sort_cond = 'syl_constit';
- 
-% set(0,'DefaultFigureWindowStyle','docked')
-set(0,'DefaultFigureWindowStyle','normal')
+
 
 plot_timecourses = 1; 
 plot_raster = 0; 
@@ -95,9 +96,8 @@ elseif ~isempty(sort_cond)
 end
 
 
-resprow = strcmp(resp.chan,channame) & strcmp(resp.sub,thissub);
+resprow = strcmp(resp.chan,channame) & strcmp(resp.sub,op.sub);
 timecourses_unaligned = resp.timecourse{resprow};
-
 
  %% sort trials by condition, get average responses + error, plot
  plot_resp_timecourse()
@@ -141,3 +141,5 @@ hyline = yline(0, 'LineWidth',yline_zero_width, 'Color',yline_zero_color, 'LineS
 
 xlabel('Time (sec)')
 ylabel('HG power (normed)')
+
+

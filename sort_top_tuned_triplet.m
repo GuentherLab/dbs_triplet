@@ -3,7 +3,7 @@
 
 setpaths_dbs_triplet()
 
-param = 'p_rank';
+% param = 'p_rank';
 % param = 'p_prep';
 
 % param = {'p_prep_cons',1};
@@ -33,7 +33,7 @@ param = 'p_rank';
 
 % param = 'p_prod_cons_allpos';
 % param = 'p_prod_vow_allpos';
-% param = 'p_prod_syl_allpos';
+param = 'p_prod_syl_allpos';
 
 exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
 

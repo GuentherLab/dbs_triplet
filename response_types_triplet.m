@@ -22,13 +22,13 @@ syl_onsets_filename = [PATH_STIM_INFO filesep 'stim_syl_onset_timing_stats'];
 syl_dur_filename = [PATH_STIM_INFO filesep 'stim_syl_durations']; 
 
 % analysis parameters
-%%%% for baseline window, use the period from -base_win_sec(1) to -base_win_sec(2) before syl #1 stim onset
+%%%% for baseline window, use the period from -op.base_win_sec(1) to -op.base_win_sec(2) before syl #1 stim onset
 %%% baseline should end at least a few 100ms before stim onset in order to not include anticipatory activity in baseline
 %%% nb: in Triplet task, time between voice offset and the subsequent trial's stim onset is likely ~2.2sec, so baseline must be shorter than this duration
-base_win_sec = [1, 0.3]; 
-post_speech_win_sec = 0.5; % time to include after 3rd-syllable voice offset in HG timecourse
-min_trials_for_good_channel = 4; 
-responsivity_alpha = 0.05;  % consider electrodes responsive if they have above-baseline responses during one response epoch at this level
+op.base_win_sec = [1, 0.3]; 
+op.post_speech_win_sec = 0.5; % time to include after 3rd-syllable voice offset in response timecourse
+op.min_trials_for_good_channel = 4; 
+op.responsivity_alpha = 0.05;  % consider electrodes responsive if they have above-baseline responses during one response epoch at this level
 
 % for responses during syl 1 production, start the analyzed 'speech period' this early in seconds to capture pre-sound muscle activation
 % also end the prep period this early
@@ -52,102 +52,7 @@ unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','
 
 %% load and organize data
 load([PATH_FIELDTRIP filesep op.sub '_ft_hg_trial_ref_criteria_' op.art_crit '_denoised.mat']);
-
-% for some subjects (3030,4061,4072,4077,4078,4080,4084,4085), AM had to make an xlsx version of this table
-%%% for an unknown reason, distal and morel labels were being imported as nans....
-%%% ..... this was due to some unexpected cell data formatting (usually in the first 9 rows) of the table....
-%%% ..... fixed this problem by filling in one cell in these rows of distal/morel with a space...
-%%% ...... which made them import correctly as cells/strings
-if exist([PATH_ANNOT filesep op.sub '_electrode_fixed-distal-morel-labels.xlsx'], 'file')
-    elc_info = readtable([PATH_ANNOT filesep op.sub '_electrode_fixed-distal-morel-labels.xlsx']); 
-else
-    elc_info = readtable([PATH_ANNOT filesep op.sub '_electrode.txt']); 
-end
-
-trials_prod_syl = readtable([PATH_ANNOT filesep op.sub '_produced_syllable.txt';]); % load syllable timing info
-trials_stim_trip = readtable([PATH_ANNOT filesep op.sub '_stimulus_triplet.txt';]); % stim timing info
-trials_prod_trip = readtable([PATH_ANNOT filesep op.sub '_produced_triplet.txt';]); % speech timing info
-trials_phon = readtable([PATH_ANNOT filesep op.sub '_produced_phoneme.txt';]); % speech timing info
-
-% account for some tables using onset/duration convention vs. starts/ends convention
-if ~any(contains(trials_prod_trip.Properties.VariableNames,'starts'))
-    trials_prod_trip.starts = trials_prod_trip.onset;
-end
-if ~any(contains(trials_prod_trip.Properties.VariableNames,'ends'))
-    trials_prod_trip.ends = trials_prod_trip.starts + trials_prod_trip.duration; 
-end
-
-% remove trials from stim trials table that do not have a corresponding fieldtrip event
-%%% for the purposes of finding a fully overlapping ft trial, set trialtable's trial start as beginning of baseline and trial end as end of production plus buffer
-cfg = [];
-cfg.trials = trials_stim_trip; 
-    cfg.trials.starts = cfg.trials.starts - base_win_sec(1); % adjust trial start to be beginning of baseline period
-    for itrial = 1:height(trials_stim_trip)
-        matchrow = trials_prod_trip.session_id==trials_stim_trip.session_id(itrial) & trials_prod_trip.trial_id==trials_stim_trip.trial_id(itrial);
-        if any(matchrow) % if this trial has stim timing and prod timing, end trial at prod end plus buffer
-            cfg.trials.ends(itrial) = trials_prod_trip.ends(matchrow) + post_speech_win_sec; 
-        elseif ~any(matchrow) % if this trial has stim timing but no prod timing, add buffer to end of stim timing
-            cfg.trials.ends(itrial) = cfg.trials.ends(itrial) + 1 + post_speech_win_sec; 
-        end
-    end
-cfg.plot_times = 0;
-[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
-
-% rename vars
-trials.syl = [trials.stim1, trials.stim2, trials.stim3]; 
-trials = removevars(trials,{'stim1','stim2','stim3'});
-
-% vars for table construction
-%%% note that these variables are taken from stim trials table, which may be larger than 'trials' variable....
-%%% ... because some trials listed in trials_stim_trip may have been cut from 'trials' due to not matching up with fieldtrip data
-ntrials_stim = height(trials_stim_trip); 
-nans_tr_stim = nan(ntrials_stim,1); 
-cel_tr_stim = cell(ntrials_stim,1); 
-
-%%% check whether subject is missing _stimulus_syllable.txt
-%%% if it is missing, use stim timing estimates averaged from other subjects
-if exist(stimsylpath, 'file') % subject has stim syl timing
-    trials_stim_syl = readtable([PATH_ANNOT filesep op.sub '_stimulus_syllable.txt';]); % stim timing info
-elseif ~exist(stimsylpath, 'file') % subject doesn't have stim syl timing
-    stim_syl_durations = readtable(syl_dur_filename, ReadRowNames=true); % fixed durations from other subjects
-    stats_stim_trip = readtable(syl_onsets_filename, ReadRowNames=true); % average syl onset times from other subjects
-
-    % construct an estimated stim syl timing table
-    
-    trials_stim_syl = table(nans_tr_stim, nans_tr_stim, nans_tr_stim,   nans_tr_stim,   nans_tr_stim,    nans_tr_stim, cel_tr_stim, 'VariableNames',...
-                           {'starts',     'ends',       'duration',     'session_id',   'trial_id',      'syl_id',     'stim'}); 
-        trials_stim_syl = repmat(trials_stim_syl,3,1); % triple in height because we have 3 syls per trial
-        trials_stim_syl.session_id = repelem(trials_stim_trip.session_id, 3, 1); 
-        trials_stim_syl.trial_id = repelem(trials_stim_trip.trial_id, 3, 1); 
-        trials_stim_syl.syl_id = repmat([1:3]', ntrials_stim, 1); 
-        sylcat = [trials_stim_trip.stim1, trials_stim_trip.stim2, trials_stim_trip.stim3;]';
-            trials_stim_syl.stim = sylcat(:);
-
-    for itrial_stim_trip = 1:ntrials_stim % this counter refers to full trials (triplets), not individual stim
-        triptabstats_row = string(trials_stim_trip.stim{itrial_stim_trip}) == string(stats_stim_trip.stim); 
-        isess = trials_stim_trip.session_id(itrial_stim_trip); 
-        trial_id_in_sess = trials_stim_trip.trial_id(itrial_stim_trip); % session-relative trial number
-        for isyl = 1:3
-            trials_stim_syl_row = find(trials_stim_syl.session_id == isess & trials_stim_syl.trial_id == trial_id_in_sess  &  trials_stim_syl.syl_id == isyl); 
-            syldurtab_row = string(trials_stim_syl.stim{itrial_stim_trip}) == string(stim_syl_durations.stim); 
-            this_syl_dur = stim_syl_durations.duration(syldurtab_row);
-            trials_stim_syl.duration(trials_stim_syl_row) = this_syl_dur;
-            switch isyl
-                case 1
-                    trials_stim_syl.starts(trials_stim_syl_row) = trials_stim_trip.starts(itrial_stim_trip); % syl 1 starts at beginning of triplet
-                    trials_stim_syl.ends(trials_stim_syl_row)   = trials_stim_trip.starts(itrial_stim_trip) + this_syl_dur; 
-                case 2              % find timepoints relative to triplet beginning
-                    ons1_to_ons2 = stats_stim_trip.mean_syl_ons2ons_1(triptabstats_row); % time between syl 1 onset and syl 2 onset (estimated)
-                    trials_stim_syl.starts(trials_stim_syl_row) = trials_stim_trip.starts(itrial_stim_trip) + ons1_to_ons2; 
-                    trials_stim_syl.ends(trials_stim_syl_row)   = trials_stim_trip.starts(itrial_stim_trip) + ons1_to_ons2 + this_syl_dur; 
-                case 3              % find timepoints relative to triplet ending
-                    trials_stim_syl.starts(trials_stim_syl_row) = trials_stim_trip.ends(itrial_stim_trip) - this_syl_dur;
-                    trials_stim_syl.ends(trials_stim_syl_row)   = trials_stim_trip.ends(itrial_stim_trip); % syl 3 ends at ending of triplet
-            end
-        end
-    end
-
-end
+load_triplet_stim_beh_timing()
 
 %% get responses in predefined epochs
 %%% 'base' = average during pre-stim baseline
@@ -202,7 +107,7 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     speechtrial_match = trials_prod_trip.session_id == isess & trials_prod_trip.trial_id == trial_id_in_sess;
     if any(speechtrial_match)
         trials.has_speech_timing(itrial) = true; 
-        trials.ends(itrial) = trials_prod_trip.ends(speechtrial_match) + post_speech_win_sec;
+        trials.ends(itrial) = trials_prod_trip.ends(speechtrial_match) + op.post_speech_win_sec;
         trials.duration(itrial) = trials.ends(itrial) - trials.starts(itrial); 
     elseif ~any(speechtrial_match)
         trials.has_speech_timing(itrial) = false; 
@@ -234,7 +139,7 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     trials.times{itrial} = D_hg.time{ft_idx}(match_time_inds); % times in this redefined trial window... still using global time coordinates
 
     % get trial-relative baseline time indices; window time-locked to first stim onset
-    base_inds = D_hg.time{ft_idx} > [trials.stim_syl_on(itrial,1) - base_win_sec(1)] & D_hg.time{ft_idx} < [trials.stim_syl_on(itrial,1) - base_win_sec(2)]; 
+    base_inds = D_hg.time{ft_idx} > [trials.stim_syl_on(itrial,1) - op.base_win_sec(1)] & D_hg.time{ft_idx} < [trials.stim_syl_on(itrial,1) - op.base_win_sec(2)]; 
 
     % baseline activity and timecourse
     for ichan = 1:nchans
@@ -402,7 +307,7 @@ for ichan = 1:nchans
     n_good_trials = nnz(good_trials); 
     zeroes_vec = zeros(n_good_trials,1); 
     resp.n_usable_trials(ichan) = nnz(good_trials); 
-    if resp.n_usable_trials(ichan) < min_trials_for_good_channel
+    if resp.n_usable_trials(ichan) < op.min_trials_for_good_channel
         resp.usable_chan(ichan) = false; 
         continue; % skip stats analysis if channel had too few good trials
     else
@@ -424,7 +329,7 @@ for ichan = 1:nchans
 
     % test for nonrandom responsiveness across baseline vs. stim vs. prep
     resp.p_rspv(ichan) = anova1([zeroes_vec, mean_stim_trial_resp, resp.prep{ichan}(good_trials), mean_prod_trial_resp],    [],    'off'); 
-    resp.rspv(ichan) = resp.p_rspv(ichan) < responsivity_alpha; 
+    resp.rspv(ichan) = resp.p_rspv(ichan) < op.responsivity_alpha; 
 
     %%%%%%%%% rank-order selectivity during production
     resp.p_rank(ichan) = anova1(resp.prod{ichan}(good_trials,:),[],'off');
