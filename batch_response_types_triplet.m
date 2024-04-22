@@ -8,7 +8,10 @@ setpaths_dbs_triplet()
 subject_list_filename = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt']; % created by generate_triplet_subject_list.m
 % subject_list_filename = [PATH_ARTIFACT filesep 'P08_Subjects_3000.txt'];
 
-compiled_responses_filepath = [PATH_RESULTS, filesep, 'resp_all_subjects']; 
+op.art_crit = 'E'; op.resp_signal = 'hg';
+% op.art_crit = 'F'; op.resp_signal = 'beta';
+
+compiled_responses_filepath = [PATH_RESULTS, filesep, 'resp_all_subjects_', op.resp_signal]; 
 
 
 
@@ -29,7 +32,7 @@ for isub = subinds_to_run
     fprintf([op.sub, '\n'])
        
     response_types_triplet()
-    savefile = [PATH_RESULTS, filesep, op.sub '_responses'];
+    savefile = [PATH_RESULTS, filesep, op.sub '_responses_' op.resp_signal];
     save(savefile, 'trials', 'resp')
 end
 
@@ -47,7 +50,7 @@ for isub = subinds_to_run
     PATH_ANNOT = [PATH_SYNC filesep 'annot'];
 
 %     try 
-        loadfile = [PATH_RESULTS filesep op.sub '_responses.mat'];
+        loadfile = [PATH_RESULTS filesep op.sub '_responses.mat_' op.resp_signal '.mat'];
         load(loadfile)
 
         %%% the problem addressed here might be fixable by looking at electrods.txt, but 'port' isn't an important variable for our analysis 

@@ -70,7 +70,7 @@ for isub = sub_inds_to_run
             
             P08A09_highgamma_from_denoised(SUBJECT); 
     
-            P08A09_detect_artifact_criteria_E(SUBJECT);
+            P08A09_detect_artifact_criteria_E_20240419(SUBJECT);
     
             P09_redefine_trial_common_average_reference_denoised(SUBJECT);
     

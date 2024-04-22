@@ -1,25 +1,40 @@
 % look for elcs with particualr response profiles
 
 setpaths_dbs_triplet()
-set_project_specific_variables()
 
 %% parameters 
+% % % % % data-loading parameters
+
+DATE=datestr(now,'yyyymmdd');
+
+PATH_SUBJECT=[PATH_DATA filesep op.sub];
+PATH_PREPROCESSED = [PATH_SUBJECT filesep 'Preprocessed Data'];
+PATH_FIELDTRIP = [PATH_PREPROCESSED filesep 'FieldTrip']; 
+PATH_SYNC = [PATH_SUBJECT filesep 'Preprocessed Data' filesep 'Sync'];
+PATH_ANNOT = [PATH_SYNC filesep 'annot'];
+    stimsylpath = [PATH_ANNOT filesep op.sub '_stimulus_syllable.txt']; 
+op.art_crit = 'E'; 
+SAMPLE_RATE = 100; % downsample rate in hz for high gamma traces
+
+% files with info to be used if stim syl timing info is missing for a subject
+%%% created by average_stim_syl_timing.m
+syl_onsets_filename = [PATH_STIM_INFO filesep 'stim_syl_onset_timing_stats']; 
+syl_dur_filename = [PATH_STIM_INFO filesep 'stim_syl_durations']; 
 
 % analysis parameters
 %%%% for baseline window, use the period from -op.base_win_sec(1) to -op.base_win_sec(2) before syl #1 stim onset
 %%% baseline should end at least a few 100ms before stim onset in order to not include anticipatory activity in baseline
 %%% nb: in Triplet task, time between voice offset and the subsequent trial's stim onset is likely ~2.2sec, so baseline must be shorter than this duration
-field_default('op','base_win_sec', [1, 0.3]); 
-field_default('op','post_speech_win_sec',0.5); % time to include after 3rd-syllable voice offset in response timecourse
-field_default('op','min_trials_for_good_channel', 4); 
-field_default('op','responsivity_alpha', 0.05);  % consider electrodes responsive if they have above-baseline responses during one response epoch at this level
+op.base_win_sec = [1, 0.3]; 
+op.post_speech_win_sec = 0.5; % time to include after 3rd-syllable voice offset in response timecourse
+op.min_trials_for_good_channel = 4; 
+op.responsivity_alpha = 0.05;  % consider electrodes responsive if they have above-baseline responses during one response epoch at this level
 
 % for responses during syl 1 production, start the analyzed 'speech period' this early in seconds to capture pre-sound muscle activation
 % also end the prep period this early
 %%% extending the window in this way for syl 2 and syl 3 might be trickier, because there is often very little time between the preceding offset and the syl2/3 onset
 prod_syl1_window_extend_start = 0;  
 
-%% load and organize data
 % add the following variables to the electrodes response table... use 'electrode'/'chan' as key variable
 info_vars_to_copy = {'chan','type','connector','port','strip','comment','target','side','nat_x','nat_y','nat_z',...
     'leadDBS_x','leadDBS_y','leadDBS_z','tkRAS_x','tkRAS_y','tkRAS_z','mni_linear_x','mni_linear_y','mni_linear_z',...
@@ -34,7 +49,9 @@ unqcons = {'gh','s','t','v'};
 unqvow = {'ah','ee','oo'};
 unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','voo'};
 
-load([PATH_FIELDTRIP filesep op.sub '_ft_', op.resp_signal, '_trial_ref_criteria_' op.art_crit, op.denoise_string, '.mat']);
+
+%% load and organize data
+load([PATH_FIELDTRIP filesep op.sub '_ft_hg_trial_ref_criteria_' op.art_crit '_denoised.mat']);
 load_triplet_stim_beh_timing()
 
 %% get responses in predefined epochs
@@ -54,7 +71,7 @@ cfg.trials = trials_stim_trip;
         end
     end
 cfg.plot_times = 0;
-[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_wavpow);
+[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
 
 % rename vars
 trials.syl = [trials.stim1, trials.stim2, trials.stim3]; 

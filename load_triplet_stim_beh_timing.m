@@ -1,8 +1,17 @@
  %%%% load triplet subject-specific tables for stim and speech timing
+ % called by set_project_specific_variables
+ % variables created here are used primarily by response_types_triplet.m
 
 setpaths_dbs_triplet()
-field_default('op','base_win_sec',[1, 0.3]);
+field_default('op','base_win_sec',[1, 0.3]); % see resp_types_triplet about baseline window
+field_default('op','post_speech_win_sec',0.5); % time to include after 3rd-syllable voice offset in response timecourse
 
+stimsylpath = [PATH_ANNOT filesep op.sub '_stimulus_syllable.txt']; 
+
+% files with info to be used if stim syl timing info is missing for a subject
+%%% created by average_stim_syl_timing.m
+syl_onsets_filename = [PATH_STIM_INFO filesep 'stim_syl_onset_timing_stats']; 
+syl_dur_filename = [PATH_STIM_INFO filesep 'stim_syl_durations']; 
 
 % for some subjects (3030,4061,4072,4077,4078,4080,4084,4085), AM had to make an xlsx version of this table
 %%% for an unknown reason, distal and morel labels were being imported as nans....
@@ -27,26 +36,6 @@ end
 if ~any(contains(trials_prod_trip.Properties.VariableNames,'ends'))
     trials_prod_trip.ends = trials_prod_trip.starts + trials_prod_trip.duration; 
 end
-
-% remove trials from stim trials table that do not have a corresponding fieldtrip event
-%%% for the purposes of finding a fully overlapping ft trial, set trialtable's trial start as beginning of baseline and trial end as end of production plus buffer
-cfg = [];
-cfg.trials = trials_stim_trip; 
-    cfg.trials.starts = cfg.trials.starts - op.base_win_sec(1); % adjust trial start to be beginning of baseline period
-    for itrial = 1:height(trials_stim_trip)
-        matchrow = trials_prod_trip.session_id==trials_stim_trip.session_id(itrial) & trials_prod_trip.trial_id==trials_stim_trip.trial_id(itrial);
-        if any(matchrow) % if this trial has stim timing and prod timing, end trial at prod end plus buffer
-            cfg.trials.ends(itrial) = trials_prod_trip.ends(matchrow) + op.post_speech_win_sec; 
-        elseif ~any(matchrow) % if this trial has stim timing but no prod timing, add buffer to end of stim timing
-            cfg.trials.ends(itrial) = cfg.trials.ends(itrial) + 1 + op.post_speech_win_sec; 
-        end
-    end
-cfg.plot_times = 0;
-[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_hg);
-
-% rename vars
-trials.syl = [trials.stim1, trials.stim2, trials.stim3]; 
-trials = removevars(trials,{'stim1','stim2','stim3'});
 
 % vars for table construction
 %%% note that these variables are taken from stim trials table, which may be larger than 'trials' variable....
@@ -97,5 +86,14 @@ elseif ~exist(stimsylpath, 'file') % subject doesn't have stim syl timing
             end
         end
     end
-
 end
+
+% define trial epochs for referencing
+% % % Use generous buffers around the cue and speech production, even if this means that consecutive trials overlap. 
+cue_presentation = bml_annot_read([PATH_ANNOT filesep op.sub '_cue_presentation.txt']);
+epoch = cue_presentation(:,{'stim1_onset','ends','session_id','trial_id'});
+epoch.starts = epoch.stim1_onset - 1.5;
+epoch.ends = epoch.ends + 2;
+epoch = bml_annot_table(epoch);
+
+clear sylcat isess ons1_to_ons2 this_syl_dur syldurtab_row trial_id_in_sess triptabstats_row stats_stim_trip stim_syl_durations ntrials_stim cel_tr_stim nans_tr_stim
