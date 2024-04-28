@@ -4,11 +4,11 @@
 %%% if we want to include time tolerance data for each subject, it is available in : 
 %%% ...... Z:\DBS\DBS_subject_lists\time-tolerance.tsv
 
-clear
+% clear
 
 
 %% params
-op.art_crit = 'E'; op.resp_signal = 'hg';
+% op.art_crit = 'E'; op.resp_signal = 'hg';
 % op.art_crit = 'F'; op.resp_signal = 'beta';
 
 op.denoised = 1; % work with vibration-denoised data
@@ -16,7 +16,7 @@ op.denoised = 1; % work with vibration-denoised data
 setpaths_dbs_triplet() % need to run after setting art crit
 
 % op.rereference_method = 'none';
-op.rereference_method = 'CTAR';
+% op.rereference_method = 'CTAR';
 
 op.out_freq = 100; % freq of wavpow output files
 
@@ -25,7 +25,7 @@ PROTOCOL_TABLE = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt'];  % creat
 
 subject_table = readtable(PROTOCOL_TABLE);         
 
-sub_inds_to_run = 1:height(subject_table);
+sub_inds_to_run = 2:height(subject_table);
 % sub_inds_to_run = [1 2];
 
 

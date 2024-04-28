@@ -1,0 +1,47 @@
+subject	Dx	ECoGLoc	ECoGN_Contacts	Gender	HasEvokedPotentialRecordings_	HasTaskMERRecordings_	HasTaskLeadLFPRecordings_	HasTaskRecordings_	LeadModel	LeadType	Method	Num_ECoGStrips	SurgeryDate	Target	Task	TaskSide	TaskN_Sessions_Bilateral_	TaskN_Sessions_Left_	TaskN_Sessions_Right_
+DBS3001	PD	Vocal motor-sensory	54	Male	No	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	1	2016-11-17	STN	U01 speech	Left	NaN	4	
+DBS3002	PD	Vocal motor-sensory	54	Male	No	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	1	2017-01-06	STN	U01 speech	Left	NaN	3	
+DBS3003	PD	Broca's area, Vocal motor-sensory	4, 54	Male	No	Yes	No	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2017-03-30	STN	U01 speech	Left	NaN	3	
+DBS3004	PD	Vocal motor-sensory	54	Male	No	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	1	2017-04-04	STN	U01 speech	Left	NaN	3	
+DBS3005	PD	Broca's area, Vocal motor-sensory	6, 54	Male	No	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	2	2017-04-06	STN	U01 speech	Left	NaN	3	
+DBS3006	PD	Vocal motor-sensory	63	Female	No	Yes	No	Yes	6172 (short) - St. Jude	St. Jude	MER	1	2017-05-04	STN	U01 speech	Left	NaN	3	
+DBS3008	PD	Vocal motor-sensory	63	Male	Yes	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	1	2017-06-01	STN	U01 speech	Left	NaN	2	
+DBS3010	PD	Broca's area, SMA, Vocal motor-sensory	4, 63, 63	Male	Yes	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	3	2017-07-25	STN	U01 speech	Left	NaN	3	
+DBS3011	PD	Broca's area, Vocal motor-sensory	4, 63	Male	Yes	Yes	Yes	Yes	6172 (short) - St. Jude	St. Jude		2	2017-08-24	STN	U01 speech	Left	NaN	3	
+DBS3012	PD	Broca's area, Vocal motor-sensory	4, 63	Male	Yes	Yes	Yes	Yes	3389 - Medtronic	Medtronic	MER	2	2017-09-14	STN	U01 speech	Left	NaN	4	
+DBS3014	PD	Broca's area, Vocal motor-sensory	63, 63	Male	No	Yes	Yes	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2017-11-02	STN	U01 speech	Left	NaN	3	
+DBS3015	PD	Vocal motor-sensory	63	Male	No	Yes	Yes	Yes	6172 (short) - St. Jude	St. Jude	MER	1	2017-11-07	STN	U01 speech	Left	NaN	4	
+DBS3016	PD	Vocal motor-sensory	63	Female	No	Yes	Yes	Yes	6172 (short) - St. Jude	St. Jude	MER	1	2018-02-27	STN	U01 speech	Left	NaN	2	
+DBS3017	PD	Vocal motor-sensory	63	Male	Yes	Yes	No	Yes	6172 (short) - St. Jude	St. Jude	MER	1	2018-03-22	STN	U01 speech	Left	NaN	3	
+DBS3018	PD	Broca's area, SMA	63, 63	Female	Yes	Yes	Yes	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2018-03-29	STN	U01 speech	Left	NaN	4	
+DBS3019	PD	SMA, Vocal motor-sensory	63, 63	Male	Yes	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	2	2018-04-26	STN	U01 speech	Left	NaN	3	
+DBS3020	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	Yes	Yes	Vercise - Boston Scientific	Boston Scientific	MER	2	2018-05-03	STN	U01 speech	Left	NaN	3	
+DBS3021	PD	Broca's area, Vocal motor-sensory	63, 63	Female	No	Yes	Yes	Yes	3389 - Medtronic	Medtronic		2	2018-05-24	STN	U01 speech	Left	NaN	3	
+DBS3022	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	Yes	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2018-07-19	STN	U01 speech	Left	NaN	3	
+DBS3023	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	Yes	Yes	Vercise - Boston Scientific	Boston Scientific	MER	2	2018-09-18	STN	U01 speech	Left	NaN	2	
+DBS3024	PD	Broca's area, Vocal motor-sensory	63, 63	Female	Yes	Yes	Yes	Yes	Vercise - Boston Scientific	Boston Scientific	MER	2	2018-09-20	STN	U01 speech	Left	NaN	3	
+DBS3026	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	No	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2019-01-03	STN	U01 speech	Left	NaN	2	
+DBS3027	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	Yes	Yes	Vercise - Boston Scientific	Boston Scientific	MER	2	2019-01-03	STN	U01 speech	Left	NaN	3	
+DBS3028	PD	Broca's area, Vocal motor-sensory	63, 63	Female	Yes	Yes	Yes	Yes	Vercise - Boston Scientific	Boston Scientific	MER	2	2019-01-17	STN	U01 speech	Left	NaN	4	
+DBS3029	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	No	Yes	3389 - Medtronic	Medtronic	MER	2	2019-01-24	STN	U01 speech	Left	NaN	2	
+DBS3030	PD	Broca's area, Vocal motor-sensory	63, 63	Female	Yes	Yes	No	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2019-01-31	STN	U01 speech	Left	NaN	2	
+DBS3031	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	No	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2019-02-19	STN	U01 speech	Left	NaN	2	
+DBS4057	ET	Vocal motor-sensory	54	Female	No	No	No	Yes	3387 - Medtronic	Medtronic	MER	1	2017-01-03	VIM	U01 speech	Left, Right	NaN	1	1
+DBS4058	ET	Vocal motor-sensory	54	Female	No	No	No	Yes	3387 - Medtronic	Medtronic	iMRI	1	2017-01-12	VIM	U01 speech	Left	NaN	1	
+DBS4061	PD	Broca's area, Vocal motor-sensory	6, 54	Male	No	Yes	No	Yes	3387 - Medtronic	Medtronic	MER	2	2017-03-17	GPi	U01 speech	Left	NaN	2	
+DBS4066	Dystonia	Broca's area, Vocal motor-sensory	6, 63	Female	No	No	No	Yes	6173 (long) - St. Jude	St. Jude		2	2017-06-20	VIM	U01 speech	Left	NaN	1	
+DBS4067	ET	Broca's area, Vocal motor-sensory	6, 63	Female	No	No	No	Yes	3387 - Medtronic	Medtronic	iMRI	2	2017-07-13	VIM	U01 speech	Left, Right	NaN		
+DBS4070	ET	Broca's area, Vocal motor-sensory	4, 63	Female	No	No	Yes	Yes	3387 - Medtronic	Medtronic		2	2017-09-07	VIM	U01 speech	Left, Right	NaN	1	2
+DBS4072	ET	Broca's area, Vocal motor-sensory	63, 63	Male	No	No	No	Yes	6173 (long) - St. Jude	St. Jude		2	2017-09-26	VIM	U01 speech	Left, Bilateral	1	1	
+DBS4073	ET	Vocal motor-sensory	63	Female	No	No	No	Yes	6173 (long) - St. Jude	St. Jude		1	2017-11-28	VIM	U01 speech	Left	NaN	1	
+DBS4074	ET	Vocal motor-sensory	63	Male	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		1	2017-11-30	VIM	U01 speech	Left	NaN	1	
+DBS4075	ET	Broca's area, Vocal motor-sensory	63, 63	Female	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		2	2017-12-21	VIM	U01 speech	Left	NaN	1	
+DBS4076	ET	Vocal motor-sensory	63	Male	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		1	2018-06-21	VIM	U01 speech	Left, Bilateral	1	2	
+DBS4077	ET	Broca's area, Vocal motor-sensory	63, 63	Male	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		2	2018-04-19	VIM	U01 speech	Left, Bilateral	1	1	
+DBS4078	ET	Broca's area, Vocal motor-sensory	63, 63	Male	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		2	2018-05-10	VIM	U01 speech	Left, Bilateral	1	1	
+DBS4080	ET	Broca's area, Vocal motor-sensory	63, 63	Female	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		2	2018-06-14	VIM	U01 speech	Left, Right	NaN	1	1
+DBS4083	ET	Broca's area, Vocal motor-sensory	63, 63	Male	No	No	Yes	Yes	3387 - Medtronic	Medtronic		2	2018-09-11	VIM	U01 speech	Bilateral	2		
+DBS4084	ET	Broca's area, Hand motor-sensory	63, 63	Male	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		2	2018-11-15	VIM	U01 speech	Left, Bilateral	1	1	
+DBS4085	PD	Broca's area, Vocal motor-sensory	63, 63	Male	Yes	Yes	Yes	Yes	6172 (short) - St. Jude	St. Jude	MER	2	2018-11-29	GPi	U01 speech	Left	NaN	1	
+DBS4086	ET	Broca's area, Vocal motor-sensory	63, 63	Male	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		2	2018-12-06	VIM	U01 speech	Left, Bilateral	1	1	
+DBS4087	ET	Broca's area, Vocal motor-sensory	63, 63	Female	No	No	Yes	Yes	6173 (long) - St. Jude	St. Jude		2	2019-01-08	VIM	U01 speech	Left, Bilateral	1	1	

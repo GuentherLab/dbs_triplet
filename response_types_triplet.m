@@ -1,5 +1,6 @@
 % look for elcs with particualr response profiles
 
+clear
 setpaths_dbs_triplet()
 set_project_specific_variables()
 

@@ -3423,3 +3423,1457 @@ batch_P08_P09_triplet_20240420
 
 * Preprocessing subject DBS3001...[Warning: correcting numerical inaccuracy in the time axes] 
 the call to "ft_selectdata" took 2 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+doing DBS3001 ecog_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+[Warning: group 1 has only 16 rows] 
+[Warning: partial epoch 10 loaded] 
+[Warning: partial epoch 11 loaded] 
+[Warning: partial epoch 12 loaded] 
+[Warning: trials [1             2             3             4             5             6             7
+8             9            10            11            12            13            14            15            16 ]
+don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3             4             5             6             7
+8             9            10            11            12            13            14            15            16 ]
+don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn  1 conn  2 conn  3 conn  4 
+Detecting trial 2, labels: 
+conn  1 conn  2 conn  3 conn  4 
+Detecting trial 3, labels: 
+conn  1 conn  2 conn  3 conn  4 
+Detecting trial 4, labels: 
+conn  1 conn  2 conn  3 conn  4 
+using labels from template
+doing DBS3001 macro_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 2, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 3, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 4, labels: 
+macro_c macro_p macro_m 
+[Warning: group 1 has only 3 rows] 
+[Warning: trials [1             2             3 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn  0 
+Detecting trial 2, labels: 
+conn  0 
+Detecting trial 3, labels: 
+conn  0 
+Detecting trial 4, labels: 
+conn  0 
+using labels from template
+doing DBS3001 dbs_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: partial epoch 336 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: partial epoch 336 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the input is raw data with 60 channels and 336 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_databrowser', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m', 302)" style="font-weight:bold">ft_databrowser</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m',302,0)">line 302</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 108)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',108,0)">line 108</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 58)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',58,0)">line 58</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+detected   0 visual artifacts
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: data contains NaNs, no filtering or preprocessing applied] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_prepare_layout" took 0 seconds
+the call to "ft_databrowser" took 3 seconds
+the input is raw data with 60 channels and 334 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive
+segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 127)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',127,0)">line 127</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 58)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',58,0)">line 58</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 60 channels and 334 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive
+segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 133)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 58)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',58,0)">line 58</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 60 channels and 336 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive
+segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 139)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',139,0)">line 139</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 58)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',58,0)">line 58</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+
+* Preprocessing subject DBS3002...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+[Warning: Variable 'D_wavpow_trial' not found.] 
+{Unrecognized function or variable 'D_wavpow_trial'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_detect_artifact_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m', 27)" style="font-weight:bold">P08A09_detect_artifact_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m',27,0)">line 27</a>)
+[trials, trials_ft] = P08_correct_fieldtrip_trialtable_discrepancies(cfg1,D_wavpow_trial);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 56)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',56,0)">line 56</a>)
+end
+} 
+<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m',27,1)">27  </a>[trials, trials_ft] = P08_correct_fieldtrip_trialtable_discrepancies(cfg1,D_wavpow_trial); 
+opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m',27,0)
+if system_dependent('IsDebugMode')==1, dbcont; end
+batch_P08_P09_triplet_20240420
+
+* Preprocessing subject DBS3002...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+doing DBS3002 ecog_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 
+[Warning: group 1 has only 54 rows] 
+[Warning: partial epoch 34 loaded] 
+[Warning: partial epoch 35 loaded] 
+[Warning: trials [1             2             3             4            10            11            12
+13            14            15            16            17            18            19            20            21
+22            23            24            25            26            27            28            29            30
+31            32            33            34            35            36            37            38            39
+40            41            42            43            44            45            46            47            48
+49            50            51            52            53            54 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3             4            10            11            12
+13            14            15            16            17            18            19            20            21
+22            23            24            25            26            27            28            29            30
+31            32            33            34            35            36            37            38            39
+40            41            42            43            44            45            46            47            48
+49            50            51            52            53            54 ]  don't comply with reltimetol of
+0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn1 conn2 conn3 conn4 
+Detecting trial 2, labels: 
+conn1 conn2 conn3 conn4 
+Detecting trial 3, labels: 
+conn1 conn2 conn3 conn4 
+consolidating by default overlap/contiguity criterion
+using labels from template
+doing DBS3002 macro_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 2, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 3, labels: 
+macro_c macro_p macro_m 
+[Warning: group 1 has only 3 rows] 
+[Warning: trials [1             2             3 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn0 
+Detecting trial 2, labels: 
+conn0 
+Detecting trial 3, labels: 
+conn0 
+using labels from template
+doing DBS3002 dbs_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: partial epoch 11 loaded] 
+[Warning: partial epoch 353 loaded] 
+[Warning: epoch 354 not found in raw] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: partial epoch 11 loaded] 
+[Warning: partial epoch 353 loaded] 
+[Warning: epoch 354 not found in raw] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the input is raw data with 60 channels and 353 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_databrowser', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m', 302)" style="font-weight:bold">ft_databrowser</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m',302,0)">line 302</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 108)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',108,0)">line 108</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+detected   0 visual artifacts
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: data contains NaNs, no filtering or preprocessing applied] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_prepare_layout" took 0 seconds
+the call to "ft_databrowser" took 2 seconds
+the input is raw data with 60 channels and 351 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 127)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',127,0)">line 127</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 60 channels and 351 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 133)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 60 channels and 353 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 139)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',139,0)">line 139</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+
+* Preprocessing subject DBS3003...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 1 seconds
+doing DBS3003 ecog_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_201 ecog_202 ecog_203 ecog_204 
+
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_201 ecog_202 ecog_203 ecog_204 
+
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_201 ecog_202 ecog_203 ecog_204 
+
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_201 ecog_202 ecog_203 ecog_204 
+[Warning: group 1 has only 58 rows] 
+[Warning: partial epoch 22 loaded] 
+[Warning: partial epoch 43 loaded] 
+[Warning: partial epoch 54 loaded] 
+[Warning: trials [1             2             4             5             6             7             8
+9            10            11            12            13            14            15            16            17
+18            19            20            21            22            23            24            25            26
+27            28            29            30            31            32            33            34            35
+37            38            41            42            43            44            45            46            47
+49            50            51            52            53            54            55            56            57
+58 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             4             5             6             7             8
+9            10            11            12            13            14            15            16            17
+18            19            20            21            22            23            24            25            26
+27            28            29            30            31            32            33            34            35
+37            38            41            42            43            44            45            46            47
+49            50            51            52            53            54            55            56            57
+58 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn1 conn2 conn3 conn4 conn5 
+Detecting trial 2, labels: 
+conn1 conn2 conn3 conn4 conn5 
+Detecting trial 3, labels: 
+conn1 conn2 conn3 conn4 conn5 
+Detecting trial 4, labels: 
+conn1 conn2 conn3 conn4 conn5 
+consolidating by default overlap/contiguity criterion
+using labels from template
+doing DBS3003 macro_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 2, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 3, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 4, labels: 
+macro_c macro_p macro_m 
+[Warning: group 1 has only 3 rows] 
+[Warning: trials [1             2 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn0 
+Detecting trial 2, labels: 
+conn0 
+Detecting trial 3, labels: 
+conn0 
+Detecting trial 4, labels: 
+conn0 
+using labels from template
+doing DBS3003 dbs_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+dbs_R1 dbs_R2A dbs_R2B dbs_R2C dbs_R3A dbs_R3B dbs_R3C dbs_R4 dbs_L1 dbs_L2A 
+dbs_L2B dbs_L2C dbs_L3A dbs_L3B dbs_L3C dbs_L4 
+
+Detecting trial 2, labels: 
+dbs_R1 dbs_R2A dbs_R2B dbs_R2C dbs_R3A dbs_R3B dbs_R3C dbs_R4 dbs_L1 dbs_L2A 
+dbs_L2B dbs_L2C dbs_L3A dbs_L3B dbs_L3C dbs_L4 
+
+Detecting trial 3, labels: 
+dbs_R1 dbs_R2A dbs_R2B dbs_R2C dbs_R3A dbs_R3B dbs_R3C dbs_R4 dbs_L1 dbs_L2A 
+dbs_L2B dbs_L2C dbs_L3A dbs_L3B dbs_L3C dbs_L4 
+
+Detecting trial 4, labels: 
+dbs_R1 dbs_R2A dbs_R2B dbs_R2C dbs_R3A dbs_R3B dbs_R3C dbs_R4 dbs_L1 dbs_L2A 
+dbs_L2B dbs_L2C dbs_L3A dbs_L3B dbs_L3C dbs_L4 
+[Warning: group 1 has only 16 rows] 
+[Warning: trials [1             2             3             4             5             6             7
+8             9            10            11            12            13            14            15            16 ]
+don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3             4             5             6             7
+8             9            10            11            12            13            14            15            16 ]
+don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn6 
+Detecting trial 2, labels: 
+conn6 
+Detecting trial 3, labels: 
+conn6 
+Detecting trial 4, labels: 
+conn6 
+consolidating by default overlap/contiguity criterion
+using labels from template
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: partial epoch 83 loaded] 
+[Warning: partial epoch 84 loaded] 
+[Warning: partial epoch 136 loaded] 
+[Warning: partial epoch 162 loaded] 
+[Warning: partial epoch 170 loaded] 
+[Warning: partial epoch 194 loaded] 
+[Warning: partial epoch 213 loaded] 
+[Warning: partial epoch 248 loaded] 
+[Warning: partial epoch 281 loaded] 
+[Warning: partial epoch 292 loaded] 
+[Warning: partial epoch 305 loaded] 
+[Warning: partial epoch 357 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: partial epoch 83 loaded] 
+[Warning: partial epoch 84 loaded] 
+[Warning: partial epoch 136 loaded] 
+[Warning: partial epoch 162 loaded] 
+[Warning: partial epoch 170 loaded] 
+[Warning: partial epoch 194 loaded] 
+[Warning: partial epoch 213 loaded] 
+[Warning: partial epoch 248 loaded] 
+[Warning: partial epoch 281 loaded] 
+[Warning: partial epoch 292 loaded] 
+[Warning: partial epoch 305 loaded] 
+[Warning: partial epoch 357 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the input is raw data with 80 channels and 357 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_databrowser', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m', 302)" style="font-weight:bold">ft_databrowser</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m',302,0)">line 302</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 108)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',108,0)">line 108</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+detected   0 visual artifacts
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: data contains NaNs, no filtering or preprocessing applied] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_prepare_layout" took 0 seconds
+the call to "ft_databrowser" took 2 seconds
+the input is raw data with 80 channels and 345 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 127)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',127,0)">line 127</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 80 channels and 345 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 133)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 80 channels and 357 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 139)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',139,0)">line 139</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+
+* Preprocessing subject DBS3004...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+doing DBS3004 ecog_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 {Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_annot_detect')" style="font-weight:bold">bml_annot_detect</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_detect_artifact_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m', 213)" style="font-weight:bold">P08A09_detect_artifact_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m',213,0)">line 213</a>)
+    cfg1.threshold = THRESHOLD(ises,:);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 49)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',49,0)">line 49</a>)
+    P08A09_detect_artifact_denoised(op);
+} 
+op
+
+op = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+               art_crit: 'E'
+            resp_signal: 'hg'
+               denoised: 1
+     rereference_method: 'CTAR'
+               out_freq: 100
+                    sub: 'DBS3004'
+         denoise_string: '_denoised'
+           base_win_sec: [1 0.300000000000000]
+    post_speech_win_sec: 0.500000000000000
+
+batch_P08_P09_triplet_20240420
+
+* Preprocessing subject DBS3005...[Warning: correcting numerical inaccuracy in the time axes] 
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_selectdata>cellmatselect')" style="font-weight:bold">ft_selectdata>cellmatselect</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_selectdata>makeselection', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_selectdata.m', 518)" style="font-weight:bold">ft_selectdata>makeselection</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_selectdata.m',518,0)">line 518</a>)
+        data.(datfield) = cellmatselect(data.(datfield), seldim, selindx, numel(dimtok)==1);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_selectdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_selectdata.m', 307)" style="font-weight:bold">ft_selectdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_selectdata.m',307,0)">line 307</a>)
+    if fieldhaschan,    varargin{i} = makeselection(varargin{i}, datfield{j}, dimtok, find(ismember(dimtok,{'chan' '{chan}'})), selchan{i},    avgoverchan,     cfg.select, average);  end
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('multifreq_avg_power', 'C:\Users\amsmeier\ieeg_ft_funcs_am\multifreq_avg_power.m', 24)" style="font-weight:bold">multifreq_avg_power</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\multifreq_avg_power.m',24,0)">line 24</a>)
+D_eltype = ft_selectdata(cfg1,D_in);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_wavpow_from_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_wavpow_from_denoised.m', 49)" style="font-weight:bold">P08A09_wavpow_from_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_wavpow_from_denoised.m',49,0)">line 49</a>)
+    D_wavpow_eltype{i_eltype} = multifreq_avg_power(cfg1, D);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 47)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',47,0)">line 47</a>)
+    P08A09_wavpow_from_denoised(op); %%% compute and save wav power
+} 
+batch_P08_P09_triplet_20240420
+
+* Preprocessing subject DBS3005...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+doing DBS3005 ecog_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_201 ecog_202 ecog_203 ecog_204 ecog_205 ecog_206 
+
+
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_201 ecog_202 ecog_203 ecog_204 ecog_205 ecog_206 
+
+
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_201 ecog_202 ecog_203 ecog_204 ecog_205 ecog_206 
+
+[Warning: partial epoch 7 loaded] 
+[Warning: partial epoch 8 loaded] 
+[Warning: partial epoch 9 loaded] 
+[Warning: partial epoch 10 loaded] 
+[Warning: partial epoch 11 loaded] 
+[Warning: partial epoch 12 loaded] 
+[Warning: partial epoch 13 loaded] 
+[Warning: partial epoch 14 loaded] 
+[Warning: partial epoch 15 loaded] 
+[Warning: partial epoch 16 loaded] 
+[Warning: partial epoch 55 loaded] 
+[Warning: trials [1             2             3             4             5             6            17
+18            19            20            21            22            23            24            25            26
+27            28            29            30            31            32            36            37            38
+39            40            41            42            43            44            45            46            47
+48            49            50            51            52            53            54            56            57
+58            59            60 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3             4             5             6            17
+18            19            20            21            22            23            24            25            26
+27            28            29            30            31            32            36            37            38
+39            40            41            42            43            44            45            46            47
+48            49            50            51            52            53            54            56            57
+58            59            60 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn1 conn2 conn3 conn4 conn5 
+Detecting trial 2, labels: 
+conn1 conn2 conn3 conn4 conn5 
+Detecting trial 3, labels: 
+conn1 conn2 conn3 conn4 conn5 
+consolidating by default overlap/contiguity criterion
+using labels from template
+doing DBS3005 macro_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 2, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 3, labels: 
+macro_c macro_p macro_m 
+[Warning: group 1 has only 3 rows] 
+[Warning: partial epoch 1 loaded] 
+[Warning: partial epoch 3 loaded] 
+[Warning: trials [1             2             3 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn0 
+Detecting trial 2, labels: 
+conn0 
+Detecting trial 3, labels: 
+conn0 
+using labels from template
+doing DBS3005 dbs_beta 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: partial epoch 102 loaded] 
+[Warning: partial epoch 103 loaded] 
+[Warning: epoch 104 not found in raw] 
+[Warning: epoch 105 not found in raw] 
+[Warning: epoch 106 not found in raw] 
+[Warning: epoch 107 not found in raw] 
+[Warning: epoch 108 not found in raw] 
+[Warning: epoch 109 not found in raw] 
+[Warning: epoch 110 not found in raw] 
+[Warning: epoch 111 not found in raw] 
+[Warning: epoch 112 not found in raw] 
+[Warning: epoch 113 not found in raw] 
+[Warning: epoch 114 not found in raw] 
+[Warning: epoch 115 not found in raw] 
+[Warning: epoch 116 not found in raw] 
+[Warning: epoch 117 not found in raw] 
+[Warning: epoch 118 not found in raw] 
+[Warning: epoch 119 not found in raw] 
+[Warning: epoch 120 not found in raw] 
+[Warning: partial epoch 360 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: partial epoch 102 loaded] 
+[Warning: partial epoch 103 loaded] 
+[Warning: epoch 104 not found in raw] 
+[Warning: epoch 105 not found in raw] 
+[Warning: epoch 106 not found in raw] 
+[Warning: epoch 107 not found in raw] 
+[Warning: epoch 108 not found in raw] 
+[Warning: epoch 109 not found in raw] 
+[Warning: epoch 110 not found in raw] 
+[Warning: epoch 111 not found in raw] 
+[Warning: epoch 112 not found in raw] 
+[Warning: epoch 113 not found in raw] 
+[Warning: epoch 114 not found in raw] 
+[Warning: epoch 115 not found in raw] 
+[Warning: epoch 116 not found in raw] 
+[Warning: epoch 117 not found in raw] 
+[Warning: epoch 118 not found in raw] 
+[Warning: epoch 119 not found in raw] 
+[Warning: epoch 120 not found in raw] 
+[Warning: partial epoch 360 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the input is raw data with 66 channels and 343 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_databrowser', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m', 302)" style="font-weight:bold">ft_databrowser</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m',302,0)">line 302</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 108)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',108,0)">line 108</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+detected   0 visual artifacts
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: data contains NaNs, no filtering or preprocessing applied] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_prepare_layout" took 0 seconds
+the call to "ft_databrowser" took 2 seconds
+the input is raw data with 66 channels and 339 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 127)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',127,0)">line 127</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 66 channels and 339 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 133)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 66 channels and 343 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 139)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',139,0)">line 139</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+
+* Preprocessing subject DBS3006...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 3 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 1 seconds
+doing DBS3006 ecog_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 {Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_annot_detect')" style="font-weight:bold">bml_annot_detect</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_detect_artifact_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m', 215)" style="font-weight:bold">P08A09_detect_artifact_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_detect_artifact_denoised.m',215,0)">line 215</a>)
+    artifact_eltype_1 = bml_annot_rowbind(artifact_eltype_1, bml_annot_detect(cfg1,D_wavpow_eltype_env_log10));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 49)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',49,0)">line 49</a>)
+    P08A09_detect_artifact_denoised(op);
+} 
+batch_P08_P09_triplet_20240420
+
+* Preprocessing subject DBS3008...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 1 seconds
+doing DBS3008 ecog_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_155 ecog_156 ecog_157 ecog_158 ecog_159 ecog_160 
+ecog_161 ecog_162 ecog_163 
+
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_155 ecog_156 ecog_157 ecog_158 ecog_159 ecog_160 
+ecog_161 ecog_162 ecog_163 
+
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_155 ecog_156 ecog_157 ecog_158 ecog_159 ecog_160 
+ecog_161 ecog_162 ecog_163 
+[Warning: partial epoch 1 loaded] 
+[Warning: trials [1             2             3             4             5             6             8
+9            10            13            14            15            17            19            20            22
+23            25            26            28            29            30            31            32            34
+35            37            39            40            41            42            43            46            47
+48            49            50            51            52            53            54            55            56
+57            58            59 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3             4             5             6             8
+9            10            13            14            15            17            19            20            22
+23            25            26            28            29            30            31            32            34
+35            37            39            40            41            42            43            46            47
+48            49            50            51            52            53            54            55            56
+57            58            59 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn1 conn2 conn3 conn4 
+Detecting trial 2, labels: 
+conn1 conn2 conn3 conn4 
+Detecting trial 3, labels: 
+conn1 conn2 conn3 conn4 
+consolidating by default overlap/contiguity criterion
+using labels from template
+doing DBS3008 macro_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 2, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 3, labels: 
+macro_c macro_p macro_m 
+doing DBS3008 dbs_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+dbs_L01 dbs_L02 dbs_L03 dbs_L04 
+
+Detecting trial 2, labels: 
+dbs_L01 dbs_L02 dbs_L03 dbs_L04 
+
+Detecting trial 3, labels: 
+dbs_L01 dbs_L02 dbs_L03 dbs_L04 
+[Warning: group 1 has only 4 rows] 
+[Warning: trials [1             3             4 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             3             4 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn5 
+Detecting trial 2, labels: 
+conn5 
+Detecting trial 3, labels: 
+conn5 
+using labels from template
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 3 seconds
+[Warning: partial epoch 1 loaded] 
+[Warning: partial epoch 241 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: partial epoch 1 loaded] 
+[Warning: partial epoch 241 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the input is raw data with 73 channels and 360 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_databrowser', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m', 302)" style="font-weight:bold">ft_databrowser</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m',302,0)">line 302</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 108)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',108,0)">line 108</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+detected   0 visual artifacts
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: data contains NaNs, no filtering or preprocessing applied] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_prepare_layout" took 0 seconds
+the call to "ft_databrowser" took 2 seconds
+the input is raw data with 73 channels and 358 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 127)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',127,0)">line 127</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 73 channels and 358 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 133)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 73 channels and 360 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 139)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',139,0)">line 139</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 0 seconds
+
+* Preprocessing subject DBS3010...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 5 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 1 seconds
+doing DBS3010 ecog_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_155 ecog_156 ecog_157 ecog_158 ecog_159 ecog_160 
+ecog_161 ecog_162 ecog_163 ecog_201 ecog_202 ecog_203 ecog_204 ecog_205 ecog_206 ecog_207 
+ecog_208 ecog_209 ecog_210 ecog_211 ecog_212 ecog_213 ecog_214 ecog_215 ecog_216 ecog_217 
+ecog_218 ecog_219 ecog_220 ecog_221 ecog_222 ecog_223 ecog_224 ecog_225 ecog_226 ecog_227 
+ecog_228 ecog_229 ecog_230 ecog_231 ecog_232 ecog_233 ecog_234 ecog_235 ecog_236 ecog_237 
+ecog_238 ecog_239 ecog_240 ecog_241 ecog_242 ecog_243 ecog_244 ecog_245 ecog_246 ecog_247 
+ecog_248 ecog_249 ecog_250 ecog_251 ecog_252 ecog_253 ecog_254 ecog_255 ecog_256 ecog_257 
+ecog_258 ecog_259 ecog_260 ecog_261 ecog_262 ecog_263 ecog_301 ecog_302 ecog_303 ecog_304 
+
+
+Detecting trial 2, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_155 ecog_156 ecog_157 ecog_158 ecog_159 ecog_160 
+ecog_161 ecog_162 ecog_163 ecog_201 ecog_202 ecog_203 ecog_204 ecog_205 ecog_206 ecog_207 
+ecog_208 ecog_209 ecog_210 ecog_211 ecog_212 ecog_213 ecog_214 ecog_215 ecog_216 ecog_217 
+ecog_218 ecog_219 ecog_220 ecog_221 ecog_222 ecog_223 ecog_224 ecog_225 ecog_226 ecog_227 
+ecog_228 ecog_229 ecog_230 ecog_231 ecog_232 ecog_233 ecog_234 ecog_235 ecog_236 ecog_237 
+ecog_238 ecog_239 ecog_240 ecog_241 ecog_242 ecog_243 ecog_244 ecog_245 ecog_246 ecog_247 
+ecog_248 ecog_249 ecog_250 ecog_251 ecog_252 ecog_253 ecog_254 ecog_255 ecog_256 ecog_257 
+ecog_258 ecog_259 ecog_260 ecog_261 ecog_262 ecog_263 ecog_301 ecog_302 ecog_303 ecog_304 
+
+
+Detecting trial 3, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_155 ecog_156 ecog_157 ecog_158 ecog_159 ecog_160 
+ecog_161 ecog_162 ecog_163 ecog_201 ecog_202 ecog_203 ecog_204 ecog_205 ecog_206 ecog_207 
+ecog_208 ecog_209 ecog_210 ecog_211 ecog_212 ecog_213 ecog_214 ecog_215 ecog_216 ecog_217 
+ecog_218 ecog_219 ecog_220 ecog_221 ecog_222 ecog_223 ecog_224 ecog_225 ecog_226 ecog_227 
+ecog_228 ecog_229 ecog_230 ecog_231 ecog_232 ecog_233 ecog_234 ecog_235 ecog_236 ecog_237 
+ecog_238 ecog_239 ecog_240 ecog_241 ecog_242 ecog_243 ecog_244 ecog_245 ecog_246 ecog_247 
+ecog_248 ecog_249 ecog_250 ecog_251 ecog_252 ecog_253 ecog_254 ecog_255 ecog_256 ecog_257 
+ecog_258 ecog_259 ecog_260 ecog_261 ecog_262 ecog_263 ecog_301 ecog_302 ecog_303 ecog_304 
+
+
+Detecting trial 4, labels: 
+ecog_101 ecog_102 ecog_103 ecog_104 ecog_105 ecog_106 ecog_107 ecog_108 ecog_109 ecog_110 
+ecog_111 ecog_112 ecog_113 ecog_114 ecog_115 ecog_116 ecog_117 ecog_118 ecog_119 ecog_120 
+ecog_121 ecog_122 ecog_123 ecog_124 ecog_125 ecog_126 ecog_127 ecog_128 ecog_129 ecog_130 
+ecog_131 ecog_132 ecog_133 ecog_134 ecog_135 ecog_136 ecog_137 ecog_138 ecog_139 ecog_140 
+ecog_141 ecog_142 ecog_143 ecog_144 ecog_145 ecog_146 ecog_147 ecog_148 ecog_149 ecog_150 
+ecog_151 ecog_152 ecog_153 ecog_154 ecog_155 ecog_156 ecog_157 ecog_158 ecog_159 ecog_160 
+ecog_161 ecog_162 ecog_163 ecog_201 ecog_202 ecog_203 ecog_204 ecog_205 ecog_206 ecog_207 
+ecog_208 ecog_209 ecog_210 ecog_211 ecog_212 ecog_213 ecog_214 ecog_215 ecog_216 ecog_217 
+ecog_218 ecog_219 ecog_220 ecog_221 ecog_222 ecog_223 ecog_224 ecog_225 ecog_226 ecog_227 
+ecog_228 ecog_229 ecog_230 ecog_231 ecog_232 ecog_233 ecog_234 ecog_235 ecog_236 ecog_237 
+ecog_238 ecog_239 ecog_240 ecog_241 ecog_242 ecog_243 ecog_244 ecog_245 ecog_246 ecog_247 
+ecog_248 ecog_249 ecog_250 ecog_251 ecog_252 ecog_253 ecog_254 ecog_255 ecog_256 ecog_257 
+ecog_258 ecog_259 ecog_260 ecog_261 ecog_262 ecog_263 ecog_301 ecog_302 ecog_303 ecog_304 
+
+[Warning: partial epoch 16 loaded] 
+[Warning: partial epoch 20 loaded] 
+[Warning: trials [1             2             3             4             5             6             7
+8             9            10            11            12            13            15            17            18
+19            20            21            22            23            24            25            26            27
+28            29            30            31            32            33            35            36            37
+42            43            44            45            46            47            48            49            50
+51            52            53            54            55            56            57            58            59
+60 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3             4             5             6             7
+8             9            10            11            12            13            15            17            18
+19            20            21            22            23            24            25            26            27
+28            29            30            31            32            33            35            36            37
+42            43            44            45            46            47            48            49            50
+51            52            53            54            55            56            57            58            59
+60 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn 1 conn 2 conn 3 conn 4 conn 5 conn 6 conn 7 conn 8 conn 9 
+Detecting trial 2, labels: 
+conn 1 conn 2 conn 3 conn 4 conn 5 conn 6 conn 7 conn 8 conn 9 
+Detecting trial 3, labels: 
+conn 1 conn 2 conn 3 conn 4 conn 5 conn 6 conn 7 conn 8 conn 9 
+Detecting trial 4, labels: 
+conn 1 conn 2 conn 3 conn 4 conn 5 conn 6 conn 7 conn 8 conn 9 
+consolidating by default overlap/contiguity criterion
+using labels from template
+doing DBS3010 macro_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 2, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 3, labels: 
+macro_c macro_p macro_m 
+
+Detecting trial 4, labels: 
+macro_c macro_p macro_m 
+doing DBS3010 dbs_beta 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+dbs_L01 dbs_L02 dbs_L03 dbs_L04 dbs_R01 dbs_R02 dbs_R03 dbs_R04 
+
+Detecting trial 2, labels: 
+dbs_L01 dbs_L02 dbs_L03 dbs_L04 dbs_R01 dbs_R02 dbs_R03 dbs_R04 
+
+Detecting trial 3, labels: 
+dbs_L01 dbs_L02 dbs_L03 dbs_L04 dbs_R01 dbs_R02 dbs_R03 dbs_R04 
+
+Detecting trial 4, labels: 
+dbs_L01 dbs_L02 dbs_L03 dbs_L04 dbs_R01 dbs_R02 dbs_R03 dbs_R04 
+[Warning: group 1 has only 8 rows] 
+[Warning: partial epoch 1 loaded] 
+[Warning: partial epoch 2 loaded] 
+[Warning: partial epoch 5 loaded] 
+[Warning: partial epoch 6 loaded] 
+[Warning: trials [1             2             3             4             5             6             7
+8 ]  don't comply with timetol of 0.000000] 
+[Warning: trials [1             2             3             4             5             6             7
+8 ]  don't comply with reltimetol of 0.000100] 
+consolidating by default overlap/contiguity criterion
+using levels of conn_label as labels
+
+Detecting trial 1, labels: 
+conn10 conn11 
+Detecting trial 2, labels: 
+conn10 conn11 
+Detecting trial 3, labels: 
+conn10 conn11 
+Detecting trial 4, labels: 
+conn10 conn11 
+using labels from template
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 8 seconds
+[Warning: partial epoch 79 loaded] 
+[Warning: partial epoch 86 loaded] 
+[Warning: partial epoch 100 loaded] 
+[Warning: partial epoch 112 loaded] 
+[Warning: partial epoch 143 loaded] 
+[Warning: partial epoch 153 loaded] 
+[Warning: partial epoch 186 loaded] 
+[Warning: partial epoch 213 loaded] 
+[Warning: partial epoch 217 loaded] 
+[Warning: partial epoch 218 loaded] 
+[Warning: partial epoch 237 loaded] 
+[Warning: partial epoch 268 loaded] 
+[Warning: partial epoch 288 loaded] 
+[Warning: partial epoch 294 loaded] 
+[Warning: partial epoch 304 loaded] 
+[Warning: partial epoch 309 loaded] 
+[Warning: partial epoch 324 loaded] 
+[Warning: partial epoch 334 loaded] 
+[Warning: partial epoch 338 loaded] 
+[Warning: partial epoch 346 loaded] 
+[Warning: partial epoch 347 loaded] 
+[Warning: partial epoch 356 loaded] 
+[Warning: partial epoch 357 loaded] 
+[Warning: partial epoch 397 loaded] 
+[Warning: partial epoch 402 loaded] 
+[Warning: partial epoch 413 loaded] 
+[Warning: partial epoch 417 loaded] 
+[Warning: partial epoch 421 loaded] 
+[Warning: partial epoch 450 loaded] 
+[Warning: partial epoch 456 loaded] 
+[Warning: partial epoch 464 loaded] 
+[Warning: partial epoch 470 loaded] 
+[Warning: partial epoch 474 loaded] 
+[Warning: partial epoch 476 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: partial epoch 79 loaded] 
+[Warning: partial epoch 86 loaded] 
+[Warning: partial epoch 100 loaded] 
+[Warning: partial epoch 112 loaded] 
+[Warning: partial epoch 143 loaded] 
+[Warning: partial epoch 153 loaded] 
+[Warning: partial epoch 186 loaded] 
+[Warning: partial epoch 213 loaded] 
+[Warning: partial epoch 217 loaded] 
+[Warning: partial epoch 218 loaded] 
+[Warning: partial epoch 237 loaded] 
+[Warning: partial epoch 268 loaded] 
+[Warning: partial epoch 288 loaded] 
+[Warning: partial epoch 294 loaded] 
+[Warning: partial epoch 304 loaded] 
+[Warning: partial epoch 309 loaded] 
+[Warning: partial epoch 324 loaded] 
+[Warning: partial epoch 334 loaded] 
+[Warning: partial epoch 338 loaded] 
+[Warning: partial epoch 346 loaded] 
+[Warning: partial epoch 347 loaded] 
+[Warning: partial epoch 356 loaded] 
+[Warning: partial epoch 357 loaded] 
+[Warning: partial epoch 397 loaded] 
+[Warning: partial epoch 402 loaded] 
+[Warning: partial epoch 413 loaded] 
+[Warning: partial epoch 417 loaded] 
+[Warning: partial epoch 421 loaded] 
+[Warning: partial epoch 450 loaded] 
+[Warning: partial epoch 456 loaded] 
+[Warning: partial epoch 464 loaded] 
+[Warning: partial epoch 470 loaded] 
+[Warning: partial epoch 474 loaded] 
+[Warning: partial epoch 476 loaded] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the input is raw data with 144 channels and 480 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_databrowser', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m', 302)" style="font-weight:bold">ft_databrowser</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_databrowser.m',302,0)">line 302</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 108)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',108,0)">line 108</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+detected   0 visual artifacts
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: data contains NaNs, no filtering or preprocessing applied] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_prepare_layout" took 0 seconds
+the call to "ft_databrowser" took 2 seconds
+the input is raw data with 144 channels and 448 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 127)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',127,0)">line 127</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 144 channels and 448 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 133)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+the input is raw data with 144 channels and 480 trials
+[Warning: the data does not contain a trial definition] 
+[Warning: reconstructing sampleinfo by assuming that the trials are consecutive segments of a continuous recording] 
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fixsampleinfo', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m', 102)" style="font-weight:bold">fixsampleinfo</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\private\fixsampleinfo.m',102,0)">line 102</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_datatype_raw', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m', 149)" style="font-weight:bold">ft_datatype_raw</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_datatype_raw.m',149,0)">line 149</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_checkdata', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m', 267)" style="font-weight:bold">ft_checkdata</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\utilities\ft_checkdata.m',267,0)">line 267</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ft_timelockanalysis', 'Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m', 101)" style="font-weight:bold">ft_timelockanalysis</a> (<a href="matlab: opentoline('Y:\Users\lbullock\MATLAB_external_libs_Turbo20230907\fieldtrip\ft_timelockanalysis.m',101,0)">line 101</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P09_redefine_trial_common_avg_ref_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m', 139)" style="font-weight:bold">P09_redefine_trial_common_avg_ref_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P09_redefine_trial_common_avg_ref_denoised.m',139,0)">line 139</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 51)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',51,0)">line 51</a>)
+[Warning: correcting numerical inaccuracy in the time axes] 
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_timelockanalysis" took 0 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 3 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+concatenating over the "chan" dimension
+the call to "ft_selectdata" took 0 seconds
+the call to "ft_appenddata" took 1 seconds
+
+* Preprocessing subject DBS3011...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fast_wavtransform')" style="font-weight:bold">fast_wavtransform</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_wavtransform', 'C:\Program Files\Brain-Modulation-Lab\bml\timefreq\bml_wavtransform.m', 116)" style="font-weight:bold">bml_wavtransform</a> (<a href="matlab: opentoline('C:\Program Files\Brain-Modulation-Lab\bml\timefreq\bml_wavtransform.m',116,0)">line 116</a>)
+    wavdata = fast_wavtransform(fq,D.trial{tr},D.fsample,width);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_envelope_wavpow', 'C:\Program Files\Brain-Modulation-Lab\bml\signal\bml_envelope_wavpow.m', 49)" style="font-weight:bold">bml_envelope_wavpow</a> (<a href="matlab: opentoline('C:\Program Files\Brain-Modulation-Lab\bml\signal\bml_envelope_wavpow.m',49,0)">line 49</a>)
+env = bml_wavtransform(cfg1,data);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('multifreq_avg_power', 'C:\Users\amsmeier\ieeg_ft_funcs_am\multifreq_avg_power.m', 46)" style="font-weight:bold">multifreq_avg_power</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\multifreq_avg_power.m',46,0)">line 46</a>)
+        evalc(cmd); % use evalc to suppress console output
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_wavpow_from_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_wavpow_from_denoised.m', 49)" style="font-weight:bold">P08A09_wavpow_from_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_wavpow_from_denoised.m',49,0)">line 49</a>)
+    D_wavpow_eltype{i_eltype} = multifreq_avg_power(cfg1, D);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 47)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',47,0)">line 47</a>)
+    P08A09_wavpow_from_denoised(op); %%% compute and save wav power
+} 
+batch_P08_P09_triplet_20240420
+
+* Preprocessing subject DBS3008...{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_wavpow_from_denoised')" style="font-weight:bold">P08A09_wavpow_from_denoised</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 47)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',47,0)">line 47</a>)
+    P08A09_wavpow_from_denoised(op); %%% compute and save wav power
+} 
+batch_P08_P09_triplet_20240420
+
+* Preprocessing subject DBS3012...[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 2 seconds
+[Warning: correcting numerical inaccuracy in the time axes] 
+the call to "ft_selectdata" took 1 seconds
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fast_wavtransform')" style="font-weight:bold">fast_wavtransform</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_wavtransform', 'C:\Program Files\Brain-Modulation-Lab\bml\timefreq\bml_wavtransform.m', 116)" style="font-weight:bold">bml_wavtransform</a> (<a href="matlab: opentoline('C:\Program Files\Brain-Modulation-Lab\bml\timefreq\bml_wavtransform.m',116,0)">line 116</a>)
+    wavdata = fast_wavtransform(fq,D.trial{tr},D.fsample,width);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_envelope_wavpow', 'C:\Program Files\Brain-Modulation-Lab\bml\signal\bml_envelope_wavpow.m', 49)" style="font-weight:bold">bml_envelope_wavpow</a> (<a href="matlab: opentoline('C:\Program Files\Brain-Modulation-Lab\bml\signal\bml_envelope_wavpow.m',49,0)">line 49</a>)
+env = bml_wavtransform(cfg1,data);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('multifreq_avg_power', 'C:\Users\amsmeier\ieeg_ft_funcs_am\multifreq_avg_power.m', 46)" style="font-weight:bold">multifreq_avg_power</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\multifreq_avg_power.m',46,0)">line 46</a>)
+        evalc(cmd); % use evalc to suppress console output
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_wavpow_from_denoised', 'C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_wavpow_from_denoised.m', 49)" style="font-weight:bold">P08A09_wavpow_from_denoised</a> (<a href="matlab: opentoline('C:\Users\amsmeier\ieeg_ft_funcs_am\P08A09_wavpow_from_denoised.m',49,0)">line 49</a>)
+    D_wavpow_eltype{i_eltype} = multifreq_avg_power(cfg1, D);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240420', 'C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m', 47)" style="font-weight:bold">batch_P08_P09_triplet_20240420</a> (<a href="matlab: opentoline('C:\Users\amsmeier\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240420.m',47,0)">line 47</a>)
+    P08A09_wavpow_from_denoised(op); %%% compute and save wav power
+} 
