@@ -1,15 +1,15 @@
 %%% wrapper for plot_resp_timecourse.m specific to the DBS-SEQ project 
  % load resp_all_subjects and run sort_top_tuned first 
 
-% close all
+close all
 set(0,'DefaultFigureWindowStyle','docked')
 % set(0,'DefaultFigureWindowStyle','normal')
 cmapname = 'jet'; 
 
 %% params
-srt_row = 219;
+srt_row = 1;
 smooth_timecourses = 1; 
-    smooth_windowsize = 20; 
+    smooth_windowsize = 30; 
 %      smooth_method = 'movmean'; 
      smooth_method = 'gaussian';
 show_error_bars = 0; 
@@ -36,13 +36,13 @@ condval_inds_to_plot = []; % plot all vals
 %%% choose the stimulus variable which will be used to sort trials
 % sort_cond = []; % do not sort by trial condition; average all trials
 % sort_cond = 'stim_volume'; 
-sort_cond = {'cons',1};
+% sort_cond = {'cons',1};
 % sort_cond = {'cons',2};
 % sort_cond = {'cons',3};
 % sort_cond = {'vow',1};
 % sort_cond = {'vow',2};
 % sort_cond = {'vow',3};
-% sort_cond = {'syl',1}; 
+sort_cond = {'syl',1}; 
 % sort_cond = {'syl',2}; 
 % sort_cond = {'syl',3}; 
 % sort_cond = 'cons_constit';

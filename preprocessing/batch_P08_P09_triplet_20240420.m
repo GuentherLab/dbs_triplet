@@ -9,23 +9,24 @@
 
 %% params
 % op.art_crit = 'E'; op.resp_signal = 'hg';
-% op.art_crit = 'F'; op.resp_signal = 'beta';
+op.art_crit = 'F'; op.resp_signal = 'beta';
 
 op.denoised = 1; % work with vibration-denoised data
 
-setpaths_dbs_triplet() % need to run after setting art crit
-
 % op.rereference_method = 'none';
-% op.rereference_method = 'CTAR';
+op.rereference_method = 'CTAR';
 
 op.out_freq = 100; % freq of wavpow output files
 
-% % % % PROTOCOL_TABLE = 'P08_Subjects_3000.txt';
+%%%%%%%%%%%%%%%%%%%%%%%
+setpaths_dbs_triplet() % need to run after setting art crit
+%%%%%%%%%%%%%%%%%%
+
 PROTOCOL_TABLE = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt'];  % created by generate_triplet_subject_list.m
 
 subject_table = readtable(PROTOCOL_TABLE);         
 
-sub_inds_to_run = 2:height(subject_table);
+sub_inds_to_run = 9:height(subject_table);
 % sub_inds_to_run = [1 2];
 
 
@@ -44,9 +45,9 @@ for isub = sub_inds_to_run
 
     close all force
     
-    P08A09_wavpow_from_denoised(op); %%% compute and save wav power
-
-    P08A09_detect_artifact_denoised(op);
+%     P08A09_wavpow_from_denoised(op); %%% compute and save wav power
+% 
+%     P08A09_detect_artifact_denoised(op);
 
     P09_redefine_trial_common_avg_ref_denoised(op);
 

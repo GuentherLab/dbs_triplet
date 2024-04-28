@@ -1,8 +1,7 @@
 % look for elcs with particualr response profiles
 
-clear
-setpaths_dbs_triplet()
-set_project_specific_variables()
+% clear
+setpaths_dbs_triplet(); set_project_specific_variables()
 
 %% parameters 
 
@@ -35,7 +34,8 @@ unqcons = {'gh','s','t','v'};
 unqvow = {'ah','ee','oo'};
 unqsyl = {'ghah','ghee','ghoo','sah','see','soo','tah','tee','too','vah','vee','voo'};
 
-load([PATH_FIELDTRIP filesep op.sub '_ft_', op.resp_signal, '_trial_ref_criteria_' op.art_crit, op.denoise_string, '.mat']);
+loadfile = [FT_FILE_PREFIX op.resp_signal '_trial_ar-',op.art_crit, '_ref-',op.rereference_method, op.denoise_string, '.mat']; 
+load(loadfile, 'D_wavpow_trial');
 load_triplet_stim_beh_timing()
 
 %% get responses in predefined epochs
@@ -55,14 +55,14 @@ cfg.trials = trials_stim_trip;
         end
     end
 cfg.plot_times = 0;
-[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_wavpow);
+[trials, trials_ft]  = P08_correct_fieldtrip_trialtable_discrepancies(cfg,D_wavpow_trial);
 
 % rename vars
 trials.syl = [trials.stim1, trials.stim2, trials.stim3]; 
 trials = removevars(trials,{'stim1','stim2','stim3'});
 
 % vars for table construction
-nchans = length(D_hg.label);
+nchans = length(D_wavpow_trial.label);
 nans_ch = nan(nchans,1); 
 nans_ch2 = nan(nchans,2); 
 nans_ch3 = nan(nchans,3); 
@@ -95,7 +95,7 @@ cel3 = repmat({nans_tr3},nchans,1); % 3 values per trial per chan
 nancons = nan(nchans, n_unqcons); 
 nanvow = nan(nchans, n_unqvow); 
 nansyl = nan(nchans, n_unqsyl); 
-resp = table(   D_hg.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch, nans_ch, nans_ch,  logch,  nans_ch, nans_ch,  nans_ch3,    nans_ch3,    nans_ch3,     nans_ch3,    nans_ch3,    nans_ch3,     nancons,          nanvow,            nansyl,           nans_ch3,      nans_ch3,    nans_ch3,    nans_ch3,         nans_ch,           logch, ...
+resp = table(   D_wavpow_trial.label, cel,   repmat({cel_tr},nchans,1),  cel3,    cel,    cel3,  cel2,    nans_ch, nans_ch, nans_ch,  logch,  nans_ch, nans_ch,  nans_ch3,    nans_ch3,    nans_ch3,     nans_ch3,    nans_ch3,    nans_ch3,     nancons,          nanvow,            nansyl,           nans_ch3,      nans_ch3,    nans_ch3,    nans_ch3,         nans_ch,           logch, ...
   'VariableNames', {'chan', 'base', 'timecourse',             'stim', 'prep', 'prod', 'trans', 'p_stim','p_prep', 'p_prod', 'rspv','p_rspv','p_rank','p_stim_cons','p_stim_vow','p_stim_syl','p_prep_cons','p_prep_vow','p_prep_syl','p_prep_cons_pref','p_prep_vow_pref','p_prep_syl_pref', 'p_prod_cons','p_prod_vow','p_prod_syl','prod_syl_mean','n_usable_trials', 'usable_chan'}); 
 
 % extract epoch-related responses
@@ -138,34 +138,34 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         trials.prod_syl_off(itrial,isyl) = trials_prod_syl.ends(trials_prod_syl_row); % prod syllable end time
     end
 
-    % get indices within the trial-specific set of timepoints of D_hg.time{ft_idx} that match our specified trial window
-    match_time_inds = D_hg.time{ft_idx} > trials.starts(itrial) & D_hg.time{ft_idx} < trials.ends(itrial); 
-    trials.times{itrial} = D_hg.time{ft_idx}(match_time_inds); % times in this redefined trial window... still using global time coordinates
+    % get indices within the trial-specific set of timepoints of D_D_wavpow_trial.time{ft_idx} that match our specified trial window
+    match_time_inds = D_wavpow_trial.time{ft_idx} > trials.starts(itrial) & D_wavpow_trial.time{ft_idx} < trials.ends(itrial); 
+    trials.times{itrial} = D_wavpow_trial.time{ft_idx}(match_time_inds); % times in this redefined trial window... still using global time coordinates
 
     % get trial-relative baseline time indices; window time-locked to first stim onset
-    base_inds = D_hg.time{ft_idx} > [trials.stim_syl_on(itrial,1) - op.base_win_sec(1)] & D_hg.time{ft_idx} < [trials.stim_syl_on(itrial,1) - op.base_win_sec(2)]; 
+    base_inds = D_wavpow_trial.time{ft_idx} > [trials.stim_syl_on(itrial,1) - op.base_win_sec(1)] & D_wavpow_trial.time{ft_idx} < [trials.stim_syl_on(itrial,1) - op.base_win_sec(2)]; 
 
     % baseline activity and timecourse
     for ichan = 1:nchans
         % use mean rather than nanmean, so that trials which had artifacts marked with NaNs will be excluded
-        resp.base{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, base_inds), 'includenan' ); % mean HG during baseline
+        resp.base{ichan}(itrial) = mean( D_wavpow_trial.trial{ft_idx}(ichan, base_inds), 'includenan' ); % mean HG during baseline
         % get baseline-normalized trial timecourse
-       resp.timecourse{ichan}{itrial} =  D_hg.trial{ft_idx}(ichan, match_time_inds) - resp.base{ichan}(itrial); 
+       resp.timecourse{ichan}{itrial} =  D_wavpow_trial.trial{ft_idx}(ichan, match_time_inds) - resp.base{ichan}(itrial); 
     end
     
     % syllable-specific responses
     trials_phon_rowmatch = trials_phon.trial_id == trials.trial_id(itrial) & ...
                            trials_phon.session_id == trials.session_id(itrial); 
     for isyl = 1:3
-        stim_syl_inds = D_hg.time{ft_idx} > trials.stim_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.stim_syl_off(itrial,isyl); % time idx when syl 1 2 3 were played
+        stim_syl_inds = D_wavpow_trial.time{ft_idx} > trials.stim_syl_on(itrial,isyl) & D_wavpow_trial.time{ft_idx} < trials.stim_syl_off(itrial,isyl); % time idx when syl 1 2 3 were played
         if isyl == 1 % for syl 1, start the analyzed 'speech window' early to account for pre-speech muscle activity
-            prod_syl_inds = D_hg.time{ft_idx} > [trials.prod_syl_on(itrial,isyl)-prod_syl1_window_extend_start] & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 1 was spoken
+            prod_syl_inds = D_wavpow_trial.time{ft_idx} > [trials.prod_syl_on(itrial,isyl)-prod_syl1_window_extend_start] & D_wavpow_trial.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 1 was spoken
         elseif ismember(isyl, [2 3])
-            prod_syl_inds = D_hg.time{ft_idx} > trials.prod_syl_on(itrial,isyl) & D_hg.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 2 3 were spoken
+            prod_syl_inds = D_wavpow_trial.time{ft_idx} > trials.prod_syl_on(itrial,isyl) & D_wavpow_trial.time{ft_idx} < trials.prod_syl_off(itrial,isyl); % time idx when syl 2 3 were spoken
         end
         for ichan = 1:nchans
-            resp.stim{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, stim_syl_inds) ) - resp.base{ichan}(itrial); 
-            resp.prod{ichan}(itrial,isyl) = mean( D_hg.trial{ft_idx}(ichan, prod_syl_inds) ) - resp.base{ichan}(itrial); 
+            resp.stim{ichan}(itrial,isyl) = mean( D_wavpow_trial.trial{ft_idx}(ichan, stim_syl_inds) ) - resp.base{ichan}(itrial); 
+            resp.prod{ichan}(itrial,isyl) = mean( D_wavpow_trial.trial{ft_idx}(ichan, prod_syl_inds) ) - resp.base{ichan}(itrial); 
         end
 
         % phoneme info
@@ -178,9 +178,9 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     
     % preparatory responses
     %%%% prep period inds: after stim ends and before first syllable prod onset, adjusted by prod_syl1_window_extend_start
-    prep_inds = D_hg.time{ft_idx} > trials.stim_syl_off(itrial,3) & D_hg.time{ft_idx} < [trials.prod_syl_on(itrial,1) - prod_syl1_window_extend_start]; 
+    prep_inds = D_wavpow_trial.time{ft_idx} > trials.stim_syl_off(itrial,3) & D_wavpow_trial.time{ft_idx} < [trials.prod_syl_on(itrial,1) - prod_syl1_window_extend_start]; 
     for ichan = 1:nchans
-        resp.prep{ichan}(itrial) = mean( D_hg.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
+        resp.prep{ichan}(itrial) = mean( D_wavpow_trial.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
     end
 
     % inter-syllable transition period responses
@@ -188,9 +188,9 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         % 'transition' periods start/end halfway through the syllable
         trials.trans_on(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,1:2) + trials.prod_syl_off(itrial,1:2)]; % avg start/end
         trials.trans_off(itrial,:) = 0.5 * [trials.prod_syl_on(itrial,2:3) + trials.prod_syl_off(itrial,2:3)]; % avg start/end
-        trans_inds = D_hg.time{ft_idx} > trials.trans_on(itrial,itrans) & D_hg.time{ft_idx} < trials.trans_off(itrial,itrans); 
+        trans_inds = D_wavpow_trial.time{ft_idx} > trials.trans_on(itrial,itrans) & D_wavpow_trial.time{ft_idx} < trials.trans_off(itrial,itrans); 
        for ichan = 1:nchans
-           resp.trans{ichan}(itrial,itrans) = mean( D_hg.trial{ft_idx}(ichan, trans_inds) ) - resp.base{ichan}(itrial);
+           resp.trans{ichan}(itrial,itrans) = mean( D_wavpow_trial.trial{ft_idx}(ichan, trans_inds) ) - resp.base{ichan}(itrial);
        end
     end
 

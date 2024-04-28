@@ -12,13 +12,16 @@ setpaths_dbs_triplet()
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
-% param = {'p_prep_syl',1};
+param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
 
 % param = {'p_prod_cons',1};
 % param = {'p_prod_cons',2};
 % param = {'p_prod_cons',3};
+% param = {'p_prod_vow',1};
+% param = {'p_prod_vow',2};
+% param = {'p_prod_vow',3};
 % param = {'p_prod_syl',1};
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
@@ -33,7 +36,7 @@ setpaths_dbs_triplet()
 
 % param = 'p_prod_cons_allpos';
 % param = 'p_prod_vow_allpos';
-param = 'p_prod_syl_allpos';
+% param = 'p_prod_syl_allpos';
 
 exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
 
@@ -54,3 +57,5 @@ if exclude_if_p_zero
 end
 
 srt = srt(string(srt.type) ~= "ecog",:); % exclude ecog electrodes
+
+openvar srt
