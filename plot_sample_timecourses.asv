@@ -3,11 +3,10 @@
 % close all
 
 % rowlist = 1:6; 
-rowlist = 7:12;
-% rowlist = 13:18; 
-% rowlist = 19:24; 
-% rowlist = 25:30;
-% rowlist = 31:36;
+% rowlist = 7:12;
+rowlist = 13:18; 
+% rowlist = 18:21; 
+% rowlist = 22:25;
 
 % y_axmax = 3.5; 
 
@@ -27,8 +26,8 @@ if ~plot_brains_on_row2
         thisrow = rowlist(ielc); 
         subplot(nplotrows,nelcs/nplotrows,ielc);
         srt_row = thisrow;
-        newfig = 0;
-        plot_resp_timecourse_triplet()
+        newfig = 1;
+        plot_resp_timecourse_triplet
     
         ylimdefault = ylim;
 %         ylim([ylimdefault(1), min(y_axmax,ylimdefault(2))])
@@ -39,8 +38,8 @@ elseif plot_brains_on_row2
         thisrow = rowlist(ielc);
         subplot(2,nelcs,ielc)
         srt_row = thisrow;
-        newfig = 0;
-        plot_resp_timecourse_triplet()
+        newfig = 1;
+        plot_resp_timecourse_triplet
     
         ylimdefault = ylim;
 %         ylim([ylimdefault(1), min(y_axmax,ylimdefault(2))])

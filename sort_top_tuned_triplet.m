@@ -3,8 +3,12 @@
 
 setpaths_dbs_triplet()
 
+subcortical_only = 1; 
+
+% param = 'p_stim';
+% param = 'p_prod';
+param = 'p_prep';
 % param = 'p_rank';
-% param = 'p_prep';
 
 % param = {'p_prep_cons',1};
 % param = {'p_prep_cons',2};
@@ -12,7 +16,7 @@ setpaths_dbs_triplet()
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
-param = {'p_prep_syl',1};
+% param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
 
@@ -26,10 +30,6 @@ param = {'p_prep_syl',1};
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
 
-% param = 'p_prep_cons_constit';
-% param = 'p_prep_vow_constit'; 
-% param = 'p_prep_syl_constit';
-
 % param = 'p_stim_cons_allpos';
 % param = 'p_stim_vow_allpos';
 % param = 'p_stim_syl_allpos';
@@ -37,6 +37,10 @@ param = {'p_prep_syl',1};
 % param = 'p_prod_cons_allpos';
 % param = 'p_prod_vow_allpos';
 % param = 'p_prod_syl_allpos';
+
+% param = 'p_prep_cons_constit';
+% param = 'p_prep_vow_constit'; 
+% param = 'p_prep_syl_constit';
 
 exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
 
@@ -56,6 +60,7 @@ if exclude_if_p_zero
         clear srtvals idxorder
 end
 
-srt = srt(string(srt.type) ~= "ecog",:); % exclude ecog electrodes
-
+if subcortical_only
+    srt = srt(string(srt.type) ~= "ecog",:); % exclude ecog electrodes
+end
 openvar srt

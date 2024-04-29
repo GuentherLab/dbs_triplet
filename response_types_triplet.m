@@ -14,6 +14,8 @@ field_default('op','post_speech_win_sec',0.5); % time to include after 3rd-sylla
 field_default('op','min_trials_for_good_channel', 4); 
 field_default('op','responsivity_alpha', 0.05);  % consider electrodes responsive if they have above-baseline responses during one response epoch at this level
 
+field_default('op','rereference_method','CTAR')
+
 % for responses during syl 1 production, start the analyzed 'speech period' this early in seconds to capture pre-sound muscle activation
 % also end the prep period this early
 %%% extending the window in this way for syl 2 and syl 3 might be trickier, because there is often very little time between the preceding offset and the syl2/3 onset

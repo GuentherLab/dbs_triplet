@@ -1,19 +1,21 @@
 %%% wrapper for plot_resp_timecourse.m specific to the DBS-SEQ project 
  % load resp_all_subjects and run sort_top_tuned first 
 
+%  clearvars except -resp -subs -op
 % close all
 set(0,'DefaultFigureWindowStyle','docked')
 % set(0,'DefaultFigureWindowStyle','normal')
+
 cmapname = 'jet'; 
 
 %% params
-srt_row = 219;
-smooth_timecourses = 1; 
-    smooth_windowsize = 20; 
-%      smooth_method = 'movmean'; 
-     smooth_method = 'gaussian';
+vardefault('srt_row',2);
+vardefault('smooth_timecourses',1); 
+    vardefault('smooth_windowsize',20); 
+%      vardefault('smooth_method', 'movmean'; 
+     vardefault('smooth_method','gaussian');
 show_error_bars = 0; 
-newfig = 1; 
+vardefault('newfig',1); 
 
 y_ax_hardlims = []; % cut off y axis if it's lesser/greater than this value
 % y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
@@ -34,9 +36,9 @@ condval_inds_to_plot = []; % plot all vals
 % condval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-% sort_cond = []; % do not sort by trial condition; average all trials
+sort_cond = []; % do not sort by trial condition; average all trials
 % sort_cond = 'stim_volume'; 
-sort_cond = {'cons',1};
+% sort_cond = {'cons',1};
 % sort_cond = {'cons',2};
 % sort_cond = {'cons',3};
 % sort_cond = {'vow',1};
@@ -86,6 +88,7 @@ op.sub = srt.sub{srt_row};
 subrow = find(subs.subject == string(op.sub));
 trials_tmp = subs.trials{subrow}; 
 [trials_tmp.align_time, ~, align_var_name] = triplet_tablevar(trials_tmp, time_align_var); % get times for timelocking responses
+ntrials = height(trials_tmp);
  
 % organize responses by grouping var
 % find trial details for the appropriate subject

@@ -5,13 +5,13 @@
 clear
 
 %% params
-% op.art_crit = 'E'; op.resp_signal = 'hg';
-op.art_crit = 'F'; op.resp_signal = 'beta';
+op.art_crit = 'E'; op.resp_signal = 'hg';
+% op.art_crit = 'F'; op.resp_signal = 'beta';
 
 op.denoised = 1; % work with vibration-denoised data
 
-op.rereference_method = 'none';
-% op.rereference_method = 'CTAR';
+% op.rereference_method = 'none';
+op.rereference_method = 'CTAR';
 
 op.out_freq = 100; % freq of wavpow output files
 
@@ -44,7 +44,7 @@ for isub = subinds_to_run
        
     response_types_triplet()
     savefile = [subs_resp_dir, filesep, op.sub '_responses_' analysis_spec_string];
-    save(savefile, 'trials', 'resp')
+    save(savefile, 'trials', 'resp', 'op')
 end
 toc
 
@@ -78,6 +78,7 @@ end
 
 
 resp = resp_temp; clear resp_temp
-save(compiled_responses_filepath,'resp','subs',  '-v7.3')
+op = rmfield(op,'sub'); % save non-subject-specific version
+save(compiled_responses_filepath,'resp','subs','op',  '-v7.3')
 
 toc

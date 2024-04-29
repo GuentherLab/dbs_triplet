@@ -7,9 +7,9 @@ setpaths_dbs_triplet()
  %% params
 vardefault('show_barplot',1);
 
-analyze_responsive_elcs_only = 1; 
-newfig = 1; 
-warn_about_unassigned_elcs = 0; 
+vardeafult('analyze_responsive_elcs_only', 0); 
+vardefault('newfig',0); 
+vardefault('warn_about_unassigned_elcs',0); 
 
 %%% define anatomical regions composed of smaller areas
 regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... middle frontal gyrus... maybe also inf front sulcus
@@ -25,8 +25,9 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 %                  'gp', {'GPe_L','GPi_sensorimotor_L'}; % <20 electrodes, so maybe not worth including
                 };
 
-% param = 'p_rank'; 
 % param = 'p_prep';
+% param = 'p_rank';
+% param = 'p_rspv';
 
 % param = {'p_stim_cons',1};
 % param = {'p_stim_cons',2};
@@ -44,7 +45,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
 % param = {'p_prep_vow',3};
-param = {'p_prep_syl',1};
+% param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
 

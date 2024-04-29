@@ -5,7 +5,8 @@
 %%% ...... Z:\DBS\DBS_subject_lists\time-tolerance.tsv
 
 % clear
-
+set(0,'DefaultFigureWindowStyle','docked')
+% set(0,'DefaultFigureWindowStyle','normal')
 
 %% params
 % op.art_crit = 'E'; op.resp_signal = 'hg';
@@ -26,8 +27,8 @@ PROTOCOL_TABLE = [PATH_ARTIFACT filesep 'P08_Subjects_to_analyze.txt'];  % creat
 
 subject_table = readtable(PROTOCOL_TABLE);         
 
-sub_inds_to_run = 9:height(subject_table);
-% sub_inds_to_run = [1 2];
+sub_inds_to_run = 1:height(subject_table);
+% sub_inds_to_run = [9];
 
 
 
@@ -47,7 +48,7 @@ for isub = sub_inds_to_run
     
 %     P08A09_wavpow_from_denoised(op); %%% compute and save wav power
 % 
-%     P08A09_detect_artifact_denoised(op);
+    P08A09_detect_artifact_denoised(op);
 
     P09_redefine_trial_common_avg_ref_denoised(op);
 
