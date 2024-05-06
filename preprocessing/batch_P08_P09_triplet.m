@@ -14,8 +14,8 @@ op.art_crit = 'F'; op.resp_signal = 'beta';
 
 op.denoised = 1; % work with vibration-denoised data
 
-% op.rereference_method = 'none';
-op.rereference_method = 'CTAR';
+op.rereference_method = 'none';
+% op.rereference_method = 'CTAR';
 
 op.out_freq = 100; % freq of wavpow output files
 
@@ -46,13 +46,13 @@ for isub = sub_inds_to_run
 
     close all force
     
-%     P08A09_wavpow_from_denoised(op); %%% compute and save wav power
+    P08A09_wavpow_from_raw_denoised(op); %%% compute and save wav power
 % 
     P08A09_detect_artifact_denoised(op);
 
-    P09_redefine_trial_common_avg_ref_denoised(op);
+    P09_redefine_trial_reref(op);
 
-    P09_wavpow_from_denoised_rereferenced(op); %%% check that this produces identical outputs as wavpow version, then remove/archive it
+    P10_wavpow_from_rereferenced(op); 
 
 
 end

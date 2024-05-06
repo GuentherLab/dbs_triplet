@@ -1,5 +1,6 @@
  %%%% check whether there is a nonrandom distribution of significantly tuned electrodes across areas
   % load resp_all_subjects first
+
 setpaths_dbs_triplet()
 
 % close all
@@ -7,9 +8,9 @@ setpaths_dbs_triplet()
  %% params
 vardefault('show_barplot',1);
 
-vardeafult('analyze_responsive_elcs_only', 0); 
-vardefault('newfig',0); 
+vardefault('analyze_responsive_elcs_only', 0); 
 vardefault('warn_about_unassigned_elcs',0); 
+field_default('op','newfig',0); 
 
 %%% define anatomical regions composed of smaller areas
 regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... middle frontal gyrus... maybe also inf front sulcus
@@ -25,7 +26,9 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 %                  'gp', {'GPe_L','GPi_sensorimotor_L'}; % <20 electrodes, so maybe not worth including
                 };
 
+% param = 'p_stim'; 
 % param = 'p_prep';
+param = 'p_prod'; 
 % param = 'p_rank';
 % param = 'p_rspv';
 

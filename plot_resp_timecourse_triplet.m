@@ -1,15 +1,15 @@
 %%% wrapper for plot_resp_timecourse.m specific to the DBS-SEQ project 
  % load resp_all_subjects and run sort_top_tuned first 
 
-%  clearvars except -resp -subs -op
+ clearvars -except resp resp_hg resp_beta subs op srt
 % close all
-set(0,'DefaultFigureWindowStyle','docked')
+% set(0,'DefaultFigureWindowStyle','docked')
 % set(0,'DefaultFigureWindowStyle','normal')
 
 cmapname = 'jet'; 
 
 %% params
-vardefault('srt_row',2);
+vardefault('srt_row',1);
 vardefault('smooth_timecourses',1); 
     vardefault('smooth_windowsize',20); 
 %      vardefault('smooth_method', 'movmean'; 
@@ -17,14 +17,12 @@ vardefault('smooth_timecourses',1);
 show_error_bars = 0; 
 vardefault('newfig',1); 
 
-y_ax_hardlims = []; % cut off y axis if it's lesser/greater than this value
-% y_ax_hardlims = [-1 4]; % cut off y axis if it's lesser/greater than this value
-% y_ax_hardlims = [-4 10]; % cut off y axis if it's lesser/greater than this value
+vardefault('plotop',struct);
+field_default('plotop','x_ax_hardlims',[-3, 2]); % widest allowable x limits
 
-% xlimits = [-3 2]; 
-xlimits = [-2.5 1.2]; % narrower lims for presentations
+field_default('plotop','y_ax_hardlims',[]); % widest allowable y limits
 
-plotops.linewidth = 2; 
+field_default('plotop','linewidth',2); 
 
 condval_inds_to_plot = []; % plot all vals
 % condval_inds_to_plot = [1 4 7 10]; 
@@ -36,12 +34,12 @@ condval_inds_to_plot = []; % plot all vals
 % condval_inds_to_plot = [1:12]; 
 
 %%% choose the stimulus variable which will be used to sort trials
-sort_cond = []; % do not sort by trial condition; average all trials
+% sort_cond = []; % do not sort by trial condition; average all trials
 % sort_cond = 'stim_volume'; 
 % sort_cond = {'cons',1};
 % sort_cond = {'cons',2};
 % sort_cond = {'cons',3};
-% sort_cond = {'vow',1};
+sort_cond = {'vow',1};
 % sort_cond = {'vow',2};
 % sort_cond = {'vow',3};
 % sort_cond = {'syl',1}; 
@@ -93,7 +91,8 @@ ntrials = height(trials_tmp);
 % organize responses by grouping var
 % find trial details for the appropriate subject
 if isempty(sort_cond) % plot all trials in a single trace
-    trial_conds = true(ntrials,1); 
+    trial_conds = ones(ntrials,1); 
+    sortvar_type = '';
     sortvar_full_string = 'all_trials';
 elseif ~isempty(sort_cond)
     [trial_conds, sortvar_type, sortvar_full_string] = triplet_tablevar(trials_tmp,sort_cond); 
@@ -114,7 +113,13 @@ trials_tmp.stim_syl_off_adj = trials_tmp.stim_syl_off - trials_tmp.prod_syl_on(:
 trials_tmp.prod_syl_on_adj = trials_tmp.prod_syl_on - trials_tmp.prod_syl_on(:,1) ; 
 trials_tmp.prod_syl_off_adj = trials_tmp.prod_syl_off - trials_tmp.prod_syl_on(:,1) ; 
 
-htitle = title([thissub, '___', channame, '... ', sortvar_full_string], 'Interpreter','none');
+if string(resp.type{resprow}) == 'ecog'
+    anatstr = resp.fs_anatomy{resprow};
+elseif any(strcmp(resp.type{resprow}, {'dbs','macro'}))
+    anatstr = resp.MOREL_label_1{resprow};
+end
+
+htitle = title({[thissub, '_', channame, ' (',anatstr,')'], sortvar_full_string}, 'Interpreter','none');
 %     hleg = legend(resp_grpd.condval{condval_inds_to_plot});
 
 f=get(gca,'Children');
@@ -157,6 +162,5 @@ hprod_syl(3) = xline(xline_fn(trials_tmp.prod_syl_off_adj(:,3),'omitnan'), 'Line
 hyline = yline(0, 'LineWidth',yline_zero_width, 'Color',yline_zero_color, 'LineStyle',yline_zero_style, 'HandleVisibility','off');
 
 xlabel('Time (sec)')
-ylabel('HG power (normed)')
 
 

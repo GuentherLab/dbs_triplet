@@ -5,6 +5,8 @@
 setpaths_dbs_triplet()
 field_default('op','base_win_sec',[1, 0.3]); % see resp_types_triplet about baseline window
 field_default('op','post_speech_win_sec',0.5); % time to include after 3rd-syllable voice offset in response timecourse
+field_default('op','prebuffer_sec',1.5); % padding time to include before/after trial onset/offset - for rereferencing
+field_default('op','postbuffer_sec',2); % padding time to include before/after trial onset/offset - for rereferencing
 
 stimsylpath = [PATH_ANNOT filesep op.sub '_stimulus_syllable.txt']; 
 
@@ -92,8 +94,8 @@ end
 % % % Use generous buffers around the cue and speech production, even if this means that consecutive trials overlap. 
 cue_presentation = bml_annot_read([PATH_ANNOT filesep op.sub '_cue_presentation.txt']);
 epoch = cue_presentation(:,{'stim1_onset','ends','session_id','trial_id'});
-epoch.starts = epoch.stim1_onset - 1.5;
-epoch.ends = epoch.ends + 2;
+epoch.starts = epoch.stim1_onset - op.prebuffer_sec;
+epoch.ends = epoch.ends + op.postbuffer_sec;
 epoch = bml_annot_table(epoch);
 
 clear sylcat isess ons1_to_ons2 this_syl_dur syldurtab_row trial_id_in_sess triptabstats_row stats_stim_trip stim_syl_durations ntrials_stim cel_tr_stim nans_tr_stim

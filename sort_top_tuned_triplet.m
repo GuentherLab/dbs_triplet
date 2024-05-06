@@ -3,11 +3,11 @@
 
 setpaths_dbs_triplet()
 
-subcortical_only = 1; 
+subcortical_only = 0; 
 
 % param = 'p_stim';
 % param = 'p_prod';
-param = 'p_prep';
+% param = 'p_prep';
 % param = 'p_rank';
 
 % param = {'p_prep_cons',1};
@@ -38,11 +38,11 @@ param = 'p_prep';
 % param = 'p_prod_vow_allpos';
 % param = 'p_prod_syl_allpos';
 
-% param = 'p_prep_cons_constit';
+param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
 % param = 'p_prep_syl_constit';
 
-exclude_if_p_zero = 1; % delete channels if they have p=0 for the key parameter
+exclude_if_p_zero = 0; % delete channels if they have p=0 for the key parameter
 
 %%
 %  load('resp_all_subjects.mat'); 
