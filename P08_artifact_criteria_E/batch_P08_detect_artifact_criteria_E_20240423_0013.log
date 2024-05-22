@@ -1,0 +1,29 @@
+=== Running protocol P08_detect_artifact_criteria_E ===
+Forced run, overwritting any manual change.
+
+* Subject DBS3004: 
+SUBJECT =
+
+    'DBS3004'
+
+doing DBS3004 ecog_h_gamma 
+the call to "ft_selectdata" took 0 seconds
+
+Detecting trial 1, labels: 
+ecog_101 {Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_crop_idx')" style="font-weight:bold">bml_crop_idx</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_crop_idx_valid', 'C:\docs\code\bml\signal\bml_crop_idx_valid.m', 32)" style="font-weight:bold">bml_crop_idx_valid</a> (<a href="matlab: opentoline('C:\docs\code\bml\signal\bml_crop_idx_valid.m',32,0)">line 32</a>)
+[starts_idx,ends_idx] = bml_crop_idx(cfg, varargin{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('bml_annot_detect', 'C:\docs\code\bml\annot\bml_annot_detect.m', 116)" style="font-weight:bold">bml_annot_detect</a> (<a href="matlab: opentoline('C:\docs\code\bml\annot\bml_annot_detect.m',116,0)">line 116</a>)
+        [s,e] = bml_crop_idx_valid(env_coord,starts,ends);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P08A09_detect_artifact_criteria_E', 'C:\docs\code\ieeg_ft_funcs_am\P08A09_detect_artifact_criteria_E.m', 238)" style="font-weight:bold">P08A09_detect_artifact_criteria_E</a> (<a href="matlab: opentoline('C:\docs\code\ieeg_ft_funcs_am\P08A09_detect_artifact_criteria_E.m',238,0)">line 238</a>)
+    artifact_eltype_1 = bml_annot_rowbind(artifact_eltype_1, bml_annot_detect(cfg,D_hg_eltype_env_log10));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('batch_P08_P09_triplet_20240205', 'C:\docs\code\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240205.m', 71)" style="font-weight:bold">batch_P08_P09_triplet_20240205</a> (<a href="matlab: opentoline('C:\docs\code\dbs_triplet\preprocessing\batch_P08_P09_triplet_20240205.m',71,0)">line 71</a>)
+            P08A09_detect_artifact_criteria_E(SUBJECT);
+} 
+opentoline('C:\docs\code\ieeg_ft_funcs_am\P08A09_detect_artifact_criteria_E.m',238,0)
+opentoline('C:\docs\code\bml\annot\bml_annot_detect.m',116,0)
