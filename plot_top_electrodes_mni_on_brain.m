@@ -2,7 +2,7 @@
 
 % close all
 % clear
-clearvars -except resp
+clearvars -except resp subs
 
 % set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultFigureWindowStyle','normal')
@@ -25,7 +25,7 @@ side = 'L';
 % side = 'R'; 
 
 inclusion_mode = 'thresh';
-    p_thresh = 0.0001; 
+    p_thresh = 0.001; 
     % p_thresh = 0.00001; 
     % p_thresh = 0.05 / 3; % bonf corrected 0.05
 % inclusion_mode = 'proportion';
@@ -36,7 +36,7 @@ inclusion_mode = 'thresh';
 % param = {'p_prod_syl',2};
 % param = {'p_prod_syl',3};
 % param = {'p_prod_cons',1};
- param = {'p_prod_cons',2};
+%  param = {'p_prod_cons',2};
 % param = {'p_prod_cons',3};
 % param = {'p_prod_vow',1};
 % param = {'p_prod_vow',2};
@@ -49,7 +49,7 @@ inclusion_mode = 'thresh';
 % param = {'p_prep_syl',1};
 % param = {'p_prep_syl',2};
 % param = {'p_prep_syl',3};
-% param = {'p_prep_cons',1};
+param = {'p_prep_cons',1};
 % param = {'p_prep_cons',2};
 % param = {'p_prep_cons',3};
 % param = {'p_prep_vow',1};
@@ -67,7 +67,7 @@ plotcolor = 'r';
 plotcolor_nonsgn = [0.6 0.6 0.6]; 
 
 marker_size = 40; % size of electrode marker; scatter 'SizeData' parameter
-marker_size_nonsgn = 20; 
+marker_size_nonsgn = 5; 
 
 view_angle = [-90, 0]; % use [-90, 0] for straight-on lateral left hemisphere
 

@@ -14,6 +14,10 @@ field_default('op','post_speech_win_sec',0.5); % time to include after 3rd-sylla
 field_default('op','min_trials_for_good_channel', 4); 
 field_default('op','responsivity_alpha', 0.05);  % consider electrodes responsive if they have above-baseline responses during one response epoch at this level
 
+% if following option is true, divide responses by baseline after subtracting baseline
+%%% this will turn response values into more interpretable units
+field_default('op','divide_response_by_baseline',1); 
+
 field_default('op','rereference_method','CTAR')
 
 % for responses during syl 1 production, start the analyzed 'speech period' this early in seconds to capture pre-sound muscle activation
@@ -153,6 +157,11 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         resp.base{ichan}(itrial) = mean( D_wavpow_trial.trial{ft_idx}(ichan, base_inds), 'includenan' ); % mean HG during baseline
         % get baseline-normalized trial timecourse
        resp.timecourse{ichan}{itrial} =  D_wavpow_trial.trial{ft_idx}(ichan, match_time_inds) - resp.base{ichan}(itrial); 
+
+        if op.divide_response_by_baseline
+            resp.timecourse{ichan}{itrial} = resp.timecourse{ichan}{itrial} ./ resp.base{ichan}(itrial); 
+        end
+
     end
     
     % syllable-specific responses
@@ -168,6 +177,12 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         for ichan = 1:nchans
             resp.stim{ichan}(itrial,isyl) = mean( D_wavpow_trial.trial{ft_idx}(ichan, stim_syl_inds) ) - resp.base{ichan}(itrial); 
             resp.prod{ichan}(itrial,isyl) = mean( D_wavpow_trial.trial{ft_idx}(ichan, prod_syl_inds) ) - resp.base{ichan}(itrial); 
+            
+            if op.divide_response_by_baseline
+                resp.stim{ichan}(itrial,isyl) = resp.stim{ichan}(itrial,isyl) ./  resp.base{ichan}(itrial);
+                resp.prod{ichan}(itrial,isyl) = resp.prod{ichan}(itrial,isyl) ./  resp.base{ichan}(itrial);
+            end
+
         end
 
         % phoneme info
@@ -183,6 +198,11 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
     prep_inds = D_wavpow_trial.time{ft_idx} > trials.stim_syl_off(itrial,3) & D_wavpow_trial.time{ft_idx} < [trials.prod_syl_on(itrial,1) - prod_syl1_window_extend_start]; 
     for ichan = 1:nchans
         resp.prep{ichan}(itrial) = mean( D_wavpow_trial.trial{ft_idx}(ichan, prep_inds) , 'includenan' ) - resp.base{ichan}(itrial);
+        
+        if op.divide_response_by_baseline
+            resp.prep{ichan}(itrial) = resp.prep{ichan}(itrial) ./  resp.base{ichan}(itrial);
+        end
+
     end
 
     % inter-syllable transition period responses
@@ -193,6 +213,11 @@ for itrial = 1:ntrials_stim % itrial is absolute index across sessions; does not
         trans_inds = D_wavpow_trial.time{ft_idx} > trials.trans_on(itrial,itrans) & D_wavpow_trial.time{ft_idx} < trials.trans_off(itrial,itrans); 
        for ichan = 1:nchans
            resp.trans{ichan}(itrial,itrans) = mean( D_wavpow_trial.trial{ft_idx}(ichan, trans_inds) ) - resp.base{ichan}(itrial);
+
+            if op.divide_response_by_baseline
+                resp.trans{ichan}(itrial,itrans) = resp.trans{ichan}(itrial,itrans) ./  resp.base{ichan}(itrial);
+            end
+
        end
     end
 

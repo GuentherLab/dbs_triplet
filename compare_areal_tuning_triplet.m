@@ -28,7 +28,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 
 % param = 'p_stim'; 
 % param = 'p_prep';
-param = 'p_prod'; 
+% param = 'p_prod'; 
 % param = 'p_rank';
 % param = 'p_rspv';
 

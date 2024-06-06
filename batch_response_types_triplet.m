@@ -73,6 +73,7 @@ for isub = subinds_to_run
 
         resp_temp = [resp_temp; resp];
         subs.trials{isub} = trials; 
+        subs.ntrials(isub) = height(trials); 
 %     end
 end
 
