@@ -11,21 +11,21 @@ setpaths_dbs_triplet()
 
 %% set params
 
- struct_to_plot = 'ctx';
+%  struct_to_plot = 'ctx';
     snap_to_surf = 1; % cortex only - if true, project eletrodes to nearest point on ctx surface
     % shift electrodes so that they aren't covered by the brain surface
     %%% gets applied after snapping to surface
     %%% .... if snapping, offset of -1 should be enough to have points entirely above ctx surface (in L hem)
     x_offset = -1;
-%struct_to_plot = 'stn';
+struct_to_plot = 'stn';
 % struct_to_plot = 'thal';
 
 %%% pick hemisphere to plot - subcortical only
-side = 'L'; 
-% side = 'R'; 
+% side = 'L'; 
+side = 'R'; 
 
 inclusion_mode = 'thresh';
-    p_thresh = 0.001; 
+    p_thresh = 0.01; 
     % p_thresh = 0.00001; 
     % p_thresh = 0.05 / 3; % bonf corrected 0.05
 % inclusion_mode = 'proportion';

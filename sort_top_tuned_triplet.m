@@ -3,7 +3,7 @@
 
 setpaths_dbs_triplet()
 
-subcortical_only = 1; 
+subcortical_only = 0; 
 
 % param = 'p_stim';
 % param = 'p_prod';
