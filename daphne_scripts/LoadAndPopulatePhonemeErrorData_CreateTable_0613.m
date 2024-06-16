@@ -46,6 +46,7 @@ for i_sub = 1:length(dbsIDs)
 
         for itrial = 1:ntrials 
             match_rows = subtable.phoneme_tables{i_sub}.trial_id == subtable.triplet_tables{i_sub}.trial_id(itrial);
+            match_rows = match_rows & subtable.phoneme_tables{i_sub}.session_id == subtable.triplet_tables{i_sub}.session_id(itrial);
             nerrors = nnz(subtable.phoneme_tables{i_sub}.phonetic_ontarget(match_rows) ~= 1);
             subtable.triplet_tables{i_sub}.num_error_phonemes(itrial) = nerrors;
         end
