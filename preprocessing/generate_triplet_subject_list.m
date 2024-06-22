@@ -8,16 +8,22 @@ subj_list_savename = {[PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_E' files
                         [PATH_TRIPLET_CODE filesep 'P08_artifact_criteria_F' filesep 'P08_Subjects_to_analyze.txt']}; 
 
 subs_to_exclude = {...
+<<<<<<< Updated upstream
 %     'DBS3004';... % got stuck during P08 preprocessing, maybe artifact detection... might be fixable; was not a problem with HG preprocessing scripts used before 2024/4/20
 %     'DBS3006';... % got stuck during P08 preprocessing, maybe artifact detection... might be fixable; was not a problem with HG preprocessing scripts used before 2024/4/20
 %     'DBS3011';... % got stuck during P08 preprocessing, maybe artifact detection [block 2]... might be fixable; was not a problem with HG preprocessing scripts used before 2024/4/20
     'DBS3025';... % causes error in P09_highgamma_from_denoised_rereferenced.m during a specific trial; also had hearing issues - see DBS3000-Sessions and intraop notes
     'DBS4060';... % missing stim timing info
     'DBS4062';... % missing stim timing info
+=======
+    % 'DBS3025';... % causes error in P09_highgamma_from_denoised_rereferenced.m during a specific trial; also had hearing issues - see DBS3000-Sessions and intraop notes
+    % 'DBS4060';... % missing stim timing info
+    % 'DBS4062';... % missing stim timing info
+>>>>>>> Stashed changes
     'DBS4068';... % electrodes table is missing mni info
     'DBS4069';... % "Missed first trial, very short session, couldn't stay awake"... only 18 trials
-    'DBS4071';... % got stuck during P08 preprocessing, maybe artifact detection... might be fixable
-    'DBS4079';... % got stuck during P08 preprocessing, maybe artifact detection... might be fixable
+    % 'DBS4071';... % got stuck during P08 preprocessing, maybe artifact detection... might be fixable
+    % 'DBS4079';... % got stuck during P08 preprocessing, maybe artifact detection... might be fixable
     'DBS4081';... % didn't do triplet task because couldn't hear stim; see intraop notes
     'DBS4082';... % aborted task because patient starting vomiting
 };
