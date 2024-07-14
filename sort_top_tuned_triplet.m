@@ -5,13 +5,22 @@ setpaths_dbs_triplet()
 
 subcortical_only = 0; 
 
+% fs_anatomy_labels = []; 
+% fs_anatomy_labels = {'parstriangularis'};
+% fs_anatomy_labels = {'parsopercularis'};
+% fs_anatomy_labels = {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};
+fs_anatomy_labels = {'precentral'};
+% fs_anatomy_labels = {'precentral','postcentral'};
+% fs_anatomy_labels = {'supramarginal'};
+% fs_anatomy_labels = {'superiortemporal', 'bankssts' };
+
 % param = 'p_stim';
 % param = 'p_prod';
-param = 'p_prep';
+% param = 'p_prep';
 % param = 'p_rank';
 
 % param = {'p_prep_cons',1};
-% param = {'p_prep_cons',2};
+param = {'p_prep_cons',2};
 % param = {'p_prep_cons',3};
 % param = {'p_prep_vow',1};
 % param = {'p_prep_vow',2};
@@ -63,4 +72,9 @@ end
 if subcortical_only
     srt = srt(string(srt.type) ~= "ecog",:); % exclude ecog electrodes
 end
+
+if ~isempty(fs_anatomy_labels)
+    srt = srt(contains(srt.fs_anatomy,fs_anatomy_labels), :); % include elcs only from specified areas
+end
+
 openvar srt

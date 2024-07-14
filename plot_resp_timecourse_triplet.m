@@ -1,7 +1,7 @@
 %%% wrapper for plot_resp_timecourse.m specific to the DBS-SEQ project 
  % load resp_all_subjects and run sort_top_tuned first 
 
- clearvars -except resp resp_hg resp_beta subs op srt
+ clearvars -except resp resp_hg resp_beta subs op srt srt_row rowlist nplotrows nelcs newfig ielc thisrow sort_cond
 % close all
 % set(0,'DefaultFigureWindowStyle','docked')
 % set(0,'DefaultFigureWindowStyle','normal')
@@ -39,7 +39,7 @@ condval_inds_to_plot = []; % plot all vals
 % sort_cond = {'cons',1};
 % sort_cond = {'cons',2};
 % sort_cond = {'cons',3};
-sort_cond = {'vow',1};
+% sort_cond = {'vow',1};
 % sort_cond = {'vow',2};
 % sort_cond = {'vow',3};
 % sort_cond = {'syl',1}; 

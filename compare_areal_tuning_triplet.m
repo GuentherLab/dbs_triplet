@@ -17,6 +17,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
                 'ifg',  {'parsopercularis', 'parsorbitalis',  'parstriangularis'};... % inferior frontal gyrus
                 'smc',  {'postcentral', 'precentral'};...                   % sensorimotor cortex
                 'suptemp', {'superiortemporal', 'bankssts' }; ... % superior temporal
+                'smg', {'supramarginal'}; ...
                 % 'thal', {'Left-Thalamus-Proper' , 'Right-Thalamus-Proper' };... % thalamus.... use MOREL labels instead
                 % 'wm',   {'Left-Cerebral-White-Matter', 'Right-Cerebral-White-Matter'}; ... % white matter.... use MOREL labels instead
                 % 'ventdc', {'Left-VentralDC', 'Right-VentralDC'}... %% ? not sure what VentralDC is.... use MOREL labels instead
@@ -58,7 +59,7 @@ regiondef = {   'mfg',  {'rostralmiddlefrontal' , 'caudalmiddlefrontal'};... mid
 
 % param = 'p_prep_cons_constit';
 % param = 'p_prep_vow_constit'; 
-% param = 'p_prep_syl_constit';
+param = 'p_prep_syl_constit';
 
 % param = 'p_prod_cons_allpos';
 % param = 'p_prod_vow_allpos';
