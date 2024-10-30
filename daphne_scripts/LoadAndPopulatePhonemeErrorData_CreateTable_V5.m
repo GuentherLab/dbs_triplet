@@ -1,10 +1,14 @@
 clear;
+%would modify this num_error_phonemes rename trial_average, new variable in the table that instead of being a 44x1, a 44x2 
+
 % Define the base directory
 baseDir = 'Z:\DBS';
+
 % List of DBS IDs
 dbsIDs = {'DBS3002', 'DBS3004', 'DBS3006', 'DBS3010', 'DBS3011', 'DBS3014', ...
           'DBS3015', 'DBS3016', 'DBS3017', 'DBS3018', 'DBS3019', 'DBS3020', ...
           'DBS3032', 'DBS4079', 'DBS4080'};
+
 % Initialize the main table
 subtable = table(dbsIDs','VariableNames',{'subject'});
 nsubs_to_analyze = height(subtable);

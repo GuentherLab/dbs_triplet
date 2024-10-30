@@ -1,0 +1,179 @@
+DBS ID: DBS3001
+Mean rt1: 0.2934
+Mean rt2: 0.3130
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3002
+Mean rt1: 0.2394
+Mean rt2: 0.2361
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3003
+Mean rt1: 0.4427
+Mean rt2: 0.3942
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3004
+Mean rt1: 0.3788
+Mean rt2: 0.3392
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3005
+Mean rt1: 0.3010
+Mean rt2: 0.2567
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3006
+Mean rt1: 0.4516
+Mean rt2: 0.3786
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3008
+Mean rt1: 0.4182
+Mean rt2: 0.4245
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3010
+Mean rt1: 0.2959
+Mean rt2: 0.3060
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3011
+Mean rt1: 0.1693
+Mean rt2: 0.1708
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3012
+Mean rt1: 0.3157
+Mean rt2: 0.3006
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3014
+Mean rt1: 0.3190
+Mean rt2: 0.4118
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3015
+Mean rt1: 0.4921
+Mean rt2: 0.5013
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3016
+Mean rt1: 0.3141
+Mean rt2: 0.2825
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3017
+Mean rt1: 0.5511
+Mean rt2: 0.4865
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3018
+Mean rt1: 0.3331
+Mean rt2: 0.3333
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3019
+Mean rt1: 0.2931
+Mean rt2: 0.2960
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3020
+Mean rt1: 0.4079
+Mean rt2: 0.3691
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3021
+Mean rt1: 0.3422
+Mean rt2: 0.3258
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3022
+Mean rt1: 0.2700
+Mean rt2: 0.2630
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3023
+Mean rt1: 0.3650
+Mean rt2: 0.3643
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3024
+Mean rt1: 0.2774
+Mean rt2: 0.2714
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3025
+Mean rt1: 0.3446
+Mean rt2: 0.3759
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3026
+Mean rt1: 0.3734
+Mean rt2: 0.3137
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3027
+Mean rt1: 0.3774
+Mean rt2: 0.4028
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3028
+Mean rt1: 0.3525
+Mean rt2: 0.3223
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3029
+Mean rt1: 0.4230
+Mean rt2: 0.4131
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS3030
+Mean rt1: 0.7973
+Mean rt2: 0.9400
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS3031
+Mean rt1: 0.3412
+Mean rt2: 0.3620
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS4057
+Mean rt1: 0.5897
+Mean rt2: 0.5669
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS4058
+Mean rt1: 0.3753
+Mean rt2: 0.3784
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS4060
+Mean rt1: 0.3714
+Mean rt2: 0.3787
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS4061
+Mean rt1: 0.3407
+Mean rt2: 0.3202
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS4062
+Mean rt1: 0.4713
+Mean rt2: 0.4199
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+DBS ID: DBS4066
+Mean rt1: 0.4791
+Mean rt2: 0.5538
+rt2 is greater than rt1 on average.
+--------------------------------------------
+DBS ID: DBS4067
+Mean rt1: 0.5825
+Mean rt2: 0.4811
+rt1 is greater than or equal to rt2 on average.
+--------------------------------------------
+
+Summary:
+Number of times avg rt1 is greater than avg rt2: 20
+Number of times avg rt2 is greater than avg  rt1: 15
