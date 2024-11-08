@@ -31,7 +31,7 @@ subtable.transition_tables = cell(nsubs_to_analyze,1); % New column for storing 
 % Loop through each subject
 for i_sub = 1:nsubs_to_analyze
     dbsID = subtable.subject{i_sub};
-    syllableFilePath = fullfile(baseDir, dbsID, 'Preprocessed Data', 'Sync', 'annot', sprintf('%s_produced_syllable.txt', dbsID));
+    syllableFilePath = fullfile(baseDir, dbsID, 'Preprocessed Data', 'Sync', 'annot', sprintf('%s_produced_phoneme.txt', dbsID));
    
     % Load syllable table if it exists
     if exist(syllableFilePath, 'file')
