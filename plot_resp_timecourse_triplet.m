@@ -1,3 +1,7 @@
+%% this calls the non-function version of this plot_resp_timecourse - just kept for compatibility with AM's dbs-triplet scripts
+% ---- next step when working on triplet should be updating this triplet script to work with the updation function of plot_resp_timecourse.m, then archiving this function version
+
+
 %%% wrapper for plot_resp_timecourse.m specific to the DBS-SEQ project 
  % load resp_all_subjects and run sort_top_tuned first 
 
@@ -103,7 +107,7 @@ resprow = strcmp(resp.chan,channame) & strcmp(resp.sub,op.sub);
 timecourses_unaligned = [table(trial_conds, resp.timecourse{resprow}, 'VariableNames', {'cond','timecourse'}), trials_tmp] ;
 
  %% sort trials by condition, get average responses + error, plot
- plot_resp_timecourse()
+ plot_resp_timecourse_20260225()
 
  %% triplet-specific processing
 
